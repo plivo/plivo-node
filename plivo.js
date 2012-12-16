@@ -1000,9 +1000,14 @@ util.inherits(Speak, Response);
 util.inherits(Wait, Response);
 util.inherits(DTMF, Response);
 
+/**
+ * Module Exports
+ */
+
 exports.Response = function() {
     return new Response();
 }
-exports.Plivo = function() {
+
+exports.RestAPI = function() {
     return plivo;
 }
