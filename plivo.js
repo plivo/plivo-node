@@ -86,6 +86,46 @@ plivo.make_call = function (params, callback) {
     });
 };
 
+plivo.get_cdrs = function (params, callback) {
+    var action = 'Call/';
+    var method = 'GET';
+    
+    request(action, method, params, function(err, response) {
+        callback(err, response);
+    });
+};
+
+plivo.get_cdr = function (params, callback) {
+    var action = 'Call/' + params['call_uuid'] + '/';
+    delete params.call_uuid;
+    var method = 'GET';
+    
+    request(action, method, params, function(err, response) {
+        callback(err, response);
+    });
+};
+
+plivo.get_live_calls = function (params, callback) {
+    var action = 'Call/';
+    var method = 'GET';
+   
+    params.status = 'live';
+    request(action, method, params, function(err, response) {
+        callback(err, response);
+    });
+};
+
+plivo.get_live_call = function (params, callback) {
+    var action = 'Call/' + params['call_uuid'] + '/';
+    delete params.call_uuid;
+    var method = 'GET';
+   
+    params.status = 'live';
+    request(action, method, params, function(err, response) {
+        callback(err, response);
+    });
+};
+
 plivo.transfer_call = function (params, callback) {
     var action = 'Call/' + params['call_uuid'] + '/';
     delete params.call_uuid;
@@ -159,6 +199,16 @@ plivo.speak = function (params, callback) {
     var action = 'Call/' + params['call_uuid'] + '/Speak/';
     delete params.call_uuid;
     var method = 'POST';
+    
+    request(action, method, params, function(err, response) {
+        callback(err, response);
+    });
+};
+
+plivo.speak_stop = function (params, callback) {
+    var action = 'Call/' + params['call_uuid'] + '/Speak/';
+    delete params.call_uuid;
+    var method = 'DELETE';
     
     request(action, method, params, function(err, response) {
         callback(err, response);
@@ -480,7 +530,7 @@ plivo.get_recordings = function (params, callback) {
     });
 };
 
-plivo.get_recordings = function (params, callback) {
+plivo.get_recording = function (params, callback) {
     var action = 'Recording/' + params['recording_id'] + '/';
     var method = 'GET';
 
