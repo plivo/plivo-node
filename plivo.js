@@ -663,7 +663,10 @@ Response.prototype = {
             }
              this.elem.att(keys[i],attributes[keys[i]])
          }    
-         this.elem.text(body)
+
+         if (body) {
+             this.elem.text(body)
+         }
     },
 
     addConference: function(body, attributes) {
