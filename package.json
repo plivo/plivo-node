@@ -1,0 +1,22 @@
+{
+  "name": "plivo",
+  "version": "0.0.0",
+  "description": "Plivo NodeJS helper library.",
+  "main": "lib/plivo.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/plivo/plivo-node.git"
+  },
+  "keywords": [
+    "plivo",
+    "rest",
+    "api"
+  ],
+  "author": "Plivo Team",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "xmlbuilder": "~0.4.2",
+    "request": "~2.12.0"
+  }
+}
