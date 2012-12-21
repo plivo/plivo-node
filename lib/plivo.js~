@@ -603,7 +603,7 @@ plivo.get_numbers = function (params, callback) {
     });
 };
 
-plivo.get_number = function (params, callback) {
+plivo.get_number_details = function (params, callback) {
     var action = 'Number/' + params['number'] + '/';
     delete params.number;
     var method = 'GET';
