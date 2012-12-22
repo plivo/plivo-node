@@ -22,7 +22,10 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nock": "~0.14.2",
+    "mocha": "~1.7.4"
+  },
   "scripts": {
     "test": "mocha --reporter spec"
   }
