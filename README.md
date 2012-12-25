@@ -1,4 +1,3 @@
-plivo-node
-==========
+# plivo-node [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png)](http://travis-ci.org/plivo/plivo-node)
 
-Plivo node.js helper
+Plivo Node.js Helper
