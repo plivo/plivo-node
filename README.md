@@ -206,7 +206,7 @@ To run tests:
 
 `npm test`
 
-or 
+or
 
 `mocha --reporter spec`
 
