@@ -1,4 +1,6 @@
-# plivo-node [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png)](http://travis-ci.org/plivo/plivo-node)
+# plivo-node [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png?branch=master)](http://travis-ci.org/plivo/plivo-node)
+
+
 
 Node.js helper library for the Plivo API. This helper implements the following features:
 * Wrappers for Plivo REST API
