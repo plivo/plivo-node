@@ -13,7 +13,7 @@ Further information on the Plivo Developer API and related concpets is available
 ## Installation
 Installing using npm (node package manager):
 
-`npm install plivo`
+`npm install git://github.com/plivo/plivo-node.git`
 
 If you don't have npm installed or don't want to use it:
 
