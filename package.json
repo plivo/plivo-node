@@ -10,7 +10,8 @@
   "keywords": [
     "plivo",
     "rest",
-    "api"
+    "api",
+    "telephony"
   ],
   "author": "Plivo Team",
   "license": "MIT",
