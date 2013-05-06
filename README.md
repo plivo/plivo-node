@@ -2,7 +2,9 @@
 
 
 
-Node.js helper library for the Plivo API. This helper implements the following features:
+Node.js helper library for the [Plivo](http://plivo.com) API, an open source telephony application prototyping framework supporting voice calls, SMS, SIP etc.
+
+This helper implements the following features:
 * Wrappers for Plivo REST API
 * XML generation for synchronously controlling incoming calls and messages.
 
