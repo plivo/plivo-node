@@ -1,6 +1,5 @@
-# plivo-node [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png?branch=master)](http://travis-ci.org/plivo/plivo-node)
-
-
+#plivo-node
+[![NPM version](https://badge.fury.io/js/plivo-node.png)](http://badge.fury.io/js/plivo-node)  [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png?branch=master)](http://travis-ci.org/plivo/plivo-node) 
 
 Node.js helper library for the Plivo API. This helper implements the following features:
 * Wrappers for Plivo REST API
@@ -10,29 +9,29 @@ We have developed some examples to show you how to use our node.js helper and to
 
 Further information on the Plivo Developer API and related concpets is available at https://www.plivo.com/docs/. Helper libraries for other languages are available at https://www.plivo.com/docs/helpers/.
 
-## Installation
+
+Installation
+---------------
 Installing using npm (node package manager):
-
-`npm install plivo`
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+npm install plivo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you don't have npm installed or don't want to use it:
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cd ~/.node_libraries # or the directory where node modules are stored in your OS.
 git clone git://github.com/plivo/plivo-node.git plivo
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **NOTE:** If you are not using `npm` for installation, then make sure that the dependencies used are installed as well.
 
 ## Dependencies
 
 Required Dependencies:
-
 * [xmlbuilder](https://github.com/oozcitak/xmlbuilder-js)
 * [request](https://github.com/mikeal/request)
 
 Dev Dependencies (for running tests):
-
 * [nock](https://github.com/flatiron/nock)
 * [mocha](http://visionmedia.github.com/mocha/)
 
@@ -40,8 +39,8 @@ Dev Dependencies (for running tests):
 
 `plivo` node.js helper can be used to make REST API calls and can also be used to control incoming calls and messages.
 
-### REST API
-
+REST API
+--------
 `RestAPI` takes one argument i.e. an object that contains two keys - `authId` and `authToken`, like so:
 
 
@@ -102,7 +101,8 @@ api.get_cdrs({ limit: 10 }, function(status, response) {
 ```
 
 
-### XML Generation
+XML Generation
+---------------
 XML Generation can be used to generate XML that Plivo understands to synchronously control calls and messages. You may want to use it in with a web framework like [Express](http://expressjs.com/), [Geddy](http://geddyjs.org/) or whichever you prefer.
 
 To use this feature, use the object returned by the `plivo.Response` function. Use it like so:
@@ -170,7 +170,8 @@ OUTPUTS to screen:
 
 ```
 
-#### Nesting of Elements
+Nesting of Elements
+-------------------------
 Every element has a defined set of elements that can be nested in it. For example `Speak`, `Play`, `Wait` and a few others can be nested under `PreAnswer`, and `User`, `Number` cannot be nested under `Response`.
 
 To allow nesting, all the `add<XML Element>` methods return the `<XML Element>` object to allow calling `add<XML Element>` methods on them for nesting. For example:
@@ -202,19 +203,21 @@ OUTPUTS to screen:
 */
 ```
 
-## Tests
-
+Tests
+------
 To run tests:
-
 `npm test`
 
 or
-
 `mocha --reporter spec`
 
-## License
+License
+-------
 *plivo-node* is licensed under the MIT License.
 
-## References
+References
+----------
 * [Plivo API Documentation and Concepts](https://www.plivo.com/docs/)
 * [Examples](http://github.com/plivo/plivo-examples-node)
+
+ 
