@@ -203,6 +203,26 @@ OUTPUTS to screen:
 */
 ```
 
+Express Request Validator Middleware
+-------------------------------------
+
+Plivo contains a express middleware that will validate requests from plivo. It
+will respond with 401 or 403 to plivo if request is not authenticated.
+
+```js
+
+var plivo = require('plivo');
+
+var api = plivo.RestAPI({
+  authId: '<your AUTH ID>',
+  authToken: '<your AUTH TOKEN>',
+});
+
+app.use(api.middleware())
+
+```
+
+
 Tests
 ------
 To run tests:
