@@ -1,2 +1,3 @@
+2013-09-25 Added relayDTMF to <Conference> and async to <DTMF>
 2013-07-23 addRecord Response mandatory parameter 'body' dropped
 2013-02-23 pricing API added
