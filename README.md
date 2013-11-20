@@ -165,7 +165,7 @@ console.log(response.toXML());
 /*
 OUTPUTS to screen:
 
-<Response><Speak loop="2">Welcome</Speak><Wait length="3"/><DTMF>12345</DTMF></Response>
+<Response><Speak loop="2">Hello world!</Speak><Wait length="3"/><DTMF>12345</DTMF></Response>
 */
 
 ```
