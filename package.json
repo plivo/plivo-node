@@ -1,6 +1,6 @@
 {
   "name": "plivo-node",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Plivo NodeJS helper library.",
   "main": "lib/plivo.js",
   "repository": {
