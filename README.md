@@ -14,13 +14,13 @@ Installation
 ---------------
 Installing using npm (node package manager):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-npm install plivo
+npm install plivo-node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you don't have npm installed or don't want to use it:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cd ~/.node_libraries # or the directory where node modules are stored in your OS.
-git clone git://github.com/plivo/plivo-node.git plivo
+git clone git://github.com/plivo/plivo-node.git plivo-node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **NOTE:** If you are not using `npm` for installation, then make sure that the dependencies used are installed as well.
@@ -45,7 +45,7 @@ REST API
 
 
 ```
-var plivo = require('plivo');
+var plivo = require('plivo-node');
 
 var api = plivo.RestAPI({
   authId: '<your AUTH ID>',
@@ -108,7 +108,7 @@ XML Generation can be used to generate XML that Plivo understands to synchronous
 To use this feature, use the object returned by the `plivo.Response` function. Use it like so:
 
 ```
-var plivo = require('plivo');
+var plivo = require('plivo-node');
 var response = plivo.Response();
 
 // generates XML string.
