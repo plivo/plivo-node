@@ -1,7 +1,7 @@
 #plivo-node
 [![NPM version](https://badge.fury.io/js/plivo-node.png)](http://badge.fury.io/js/plivo-node)  [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png?branch=master)](http://travis-ci.org/plivo/plivo-node) 
 
-Node.js helper library for the [Plivo](http://plivo.com) API, an open source telephony application prototyping framework supporting voice calls, SMS, SIP etc.
+Node.js helper library for the [Plivo](http://plivo.com) API, to create powerful Voice and SMS applications.
 
 This helper implements the following features:
 * Wrappers for Plivo REST API
