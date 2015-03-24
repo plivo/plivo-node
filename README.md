@@ -9,8 +9,7 @@ This helper implements the following features:
 
 We have developed some examples to show you how to use our node.js helper and to help you get started quickly. These examples are available at http://github.com/plivo/plivo-examples-node.
 
-Further information on the Plivo Developer API and related concpets is available at https://www.plivo.com/docs/. Helper libraries for other languages are available at https://www.plivo.com/docs/helpers/.
-
+More information on the Plivo APIs and related concepts are available at https://www.plivo.com/docs/.
 
 Installation
 ---------------
