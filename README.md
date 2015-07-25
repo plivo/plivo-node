@@ -9,14 +9,13 @@ This helper implements the following features:
 
 We have developed some examples to show you how to use our node.js helper and to help you get started quickly. These examples are available at http://github.com/plivo/plivo-examples-node.
 
-Further information on the Plivo Developer API and related concpets is available at https://www.plivo.com/docs/. Helper libraries for other languages are available at https://www.plivo.com/docs/helpers/.
-
+More information on Plivo APIs and related concepts, refer https://www.plivo.com/docs/.
 
 Installation
 ---------------
 Installing using npm (node package manager):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-npm install plivo-node
+npm install plivo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you don't have npm installed or don't want to use it:
 
@@ -47,7 +46,7 @@ REST API
 
 
 ```
-var plivo = require('plivo-node');
+var plivo = require('plivo');
 
 var api = plivo.RestAPI({
   authId: '<your AUTH ID>',
@@ -110,7 +109,7 @@ XML Generation can be used to generate XML that Plivo understands to synchronous
 To use this feature, use the object returned by the `plivo.Response` function. Use it like so:
 
 ```
-var plivo = require('plivo-node');
+var plivo = require('plivo');
 var response = plivo.Response();
 
 // generates XML string.
