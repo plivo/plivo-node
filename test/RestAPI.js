@@ -78,14 +78,6 @@ describe('RestAPI', function() {
             });
         });
 
-        it('should throw error when API params are not provided for POST requests.', function() {
-            assert.throws(
-                function () {
-                    rest.make_call({}, function(status, response) { console.log(status); });
-                }
-            );
-        });
-
         it('should continue when callback is not provided.', function() {
             assert.doesNotThrow(
                 function () {
