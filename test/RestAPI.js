@@ -123,4 +123,32 @@ describe('RestAPI', function() {
             });
         });
     });
+
+	describe('create_signature()', function() {
+		var rest = plivo.RestAPI({
+			authId: '0123456789',
+			authToken: '0123456789abc',
+		});
+
+		it('should match signature of plain text', function(done) {
+			var params = { 'ascii': ' !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~' };
+			var test_signature = rest.create_signature('https://' + rest.options.host, params);
+		
+			assert.equal('pNTHTayG6CHS3s2c7AbsJUYIrno=', test_signature);
+
+			done();
+	
+		});
+
+		it('should match signature of utf-8 text', function(done) {
+			var params = { 'utf': '\xC4\xA4\xC4\x98\xC4\xBD\xC4\xBF\xC5\x8C\xC2\xA0\xE1\xBA\x80\xCE\xB8\xC5\x94\xC4\xBD\xE1\xB8\x8A\xE2\x80\xA6\xC2\xA9\xF0\x9D\x8C\x86\xE2\x98\x83\xF0\x9F\x98\x80\xF0\x9F\x98\x81\xF0\x9F\x98\x82\xF0\x9F\x98\x83\xF0\x9F\x98\x84\xF0\x9F\x98\x85\xF0\x9F\x98\x86\xF0\x9F\x98\x87' };
+			var test_signature = rest.create_signature('https://' + rest.options.host, params);
+	
+			assert.equal('0gQVBqlj63pjoVO6dHmGJsEajS4=', test_signature);
+
+			done();
+		
+		});
+	});
+
 });
