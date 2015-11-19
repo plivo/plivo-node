@@ -70,25 +70,16 @@ describe('RestAPI', function() {
                 .reply(204, "");
 
         it('should treat params as callback when params are not provided and optional is true.', function(done) {
-            // rest.get_cdrs(function(status, response) {
-            //     assert.equal(200, status);
-            //     assert.equal('object', typeof response);
-            //
-            //     done();
-            // });
-            rest
-              .get_cdrs()
-              .then( function ( response ) {
-                assert.equal( 'object', typeof response );
-                assert.equal( 200, response.statusCode )
-                done();
-              })
-              .then( null, function( err ) {
-                  done( err );
-              })
-              .catch( function ( ex ) {
-                done( ex );
-              });
+            rest.get_cdrs(function( error, response ) {
+                if ( error ) {
+                  done( error )
+                } else {
+                  assert.equal( 'object', typeof response);
+                  assert.equal( 200, response.response.statusCode );
+
+                  done();
+                }
+            });
         });
 
         it('should continue when callback is not provided.', function() {
@@ -115,7 +106,7 @@ describe('RestAPI', function() {
               .get_cdrs( {limit: 5} )
               .then( function ( response ) {
                 assert.equal( 'object', typeof response );
-                assert.equal( 200, response.statusCode )
+                assert.equal( 200, response.response.statusCode )
                 done();
               })
               .then( null, function( err ) {
@@ -146,7 +137,7 @@ describe('RestAPI', function() {
               })
               .then( function ( response ) {
                 assert.equal( 'object', typeof response );
-                assert.equal( 201, response.statusCode );
+                assert.equal( 201, response.response.statusCode );
                 done();
               })
               .then( null, function( err ) {
@@ -168,7 +159,7 @@ describe('RestAPI', function() {
             rest
               .hangup_all_calls()
               .then( function ( response ) {
-                assert.equal( 204, response.statusCode )
+                assert.equal( 204, response.response.statusCode )
                 done();
               })
               .then( null, function( err ) {
