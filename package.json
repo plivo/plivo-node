@@ -17,8 +17,9 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "xmlbuilder": "~0.4.2",
-    "request": "~2.12.0"
+    "bluebird": "^3.0.5",
+    "request": "~2.12.0",
+    "xmlbuilder": "~0.4.2"
   },
   "directories": {
     "test": "test"
