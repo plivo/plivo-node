@@ -49,8 +49,8 @@ REST API
 var plivo = require('plivo');
 
 var api = plivo.RestAPI({
-  authId: '<your AUTH ID>',
-  authToken: '<your AUTH TOKEN>',
+  authId: process.env.authId,
+  authToken: process.env.authToken,
 });
 ```
 
