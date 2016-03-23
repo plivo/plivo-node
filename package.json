@@ -18,13 +18,13 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "xmlbuilder": "~0.4.2",
-    "request": "~2.12.0"
+    "request": "~2.67.0"
   },
   "directories": {
     "test": "test"
   },
   "devDependencies": {
-    "nock": "~0.14.2",
+    "nock": "~7.5.0",
     "mocha": "~1.7.4"
   },
   "scripts": {
