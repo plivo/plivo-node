@@ -123,6 +123,57 @@ describe('RestAPI', function() {
                 done();
             });
         });
+
+        describe('timeout', function() {
+            beforeEach(function() {
+              rest.options.timeout = 1; // Quickly terminate all network requests.
+            });
+
+            afterEach(function() {
+              rest.options.timeout = undefined;
+            });
+
+            it('should observe the user-defined timeout on GET requests.', function(done) {
+                endpoint.get('/v1/Account/0123456789/Call/').delay(1000).reply(200);
+                rest.get_cdrs(function(status, response) {
+                    assert.equal(408, status);
+                    assert.equal('undefined', typeof response);
+
+                    done();
+                });
+            });
+
+            it('should observe the user-defined timeout on POST requests.', function(done) {
+                endpoint.post('/v1/Account/0123456789/Call/').delay(1000).reply(200);
+                rest.make_call({}, function(status, response) {
+                    assert.equal(408, status);
+                    assert.equal('undefined', typeof response);
+
+                    done();
+                });
+            });
+
+            it('should observe the user-defined timeout on DELETE requests.', function(done) {
+                endpoint.delete('/v1/Account/0123456789/Call/').delay(1000).reply(200);
+                rest.hangup_all_calls(function(status, response) {
+                    assert.equal(408, status);
+                    assert.equal('undefined', typeof response);
+
+                    done();
+                });
+            });
+
+            it('should not time out all requests', function(done) {
+                rest.options.timeout = 100;
+                endpoint.get('/v1/Account/0123456789/Call/').delay(10).reply(200, {});
+                rest.get_cdrs(function(status, response) {
+                    assert.equal(200, status);
+                    assert.equal('object', typeof response);
+
+                    done();
+                });
+            })
+        });
     });
 
 	describe('create_signature()', function() {
