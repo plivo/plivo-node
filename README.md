@@ -1,5 +1,5 @@
 #plivo-node
-[![NPM version](https://badge.fury.io/js/plivo-node.png)](http://badge.fury.io/js/plivo-node)  [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png?branch=master)](http://travis-ci.org/plivo/plivo-node) 
+[![NPM version](https://badge.fury.io/js/plivo-node.png)](http://badge.fury.io/js/plivo-node)  [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png?branch=master)](http://travis-ci.org/plivo/plivo-node)
 
 Node.js helper library for the [Plivo](http://plivo.com) API, to create powerful Voice and SMS applications.
 
@@ -50,7 +50,7 @@ var plivo = require('plivo');
 
 var api = plivo.RestAPI({
   authId: '<your AUTH ID>',
-  authToken: '<your AUTH TOKEN>',
+  authToken: '<your AUTH TOKEN>'
 });
 ```
 
@@ -66,7 +66,7 @@ So for example, to make a call, you may do something like this:
 /**
  * api.make_call accepts params and callback
  */
- 
+
 // Keys and values to be used for params are the same as documented for our REST API.
 // So for using RestAPI.make_call, valid params can be checked
 // at https://www.plivo.com/docs/api/call/#outbound.
@@ -101,6 +101,21 @@ api.get_cdrs({ limit: 10 }, function(status, response) {
 });
 ```
 
+#### Timeout
+
+A custom timeout can be specified for all network requests made through the api. Just specify a `timeout` value in milliseconds.
+
+```
+var plivo = require('plivo');
+
+var api = plivo.RestAPI({
+  authId: '<your AUTH ID>',
+  authToken: '<your AUTH TOKEN>',
+  timeout: 0 // Default value (no timeout).
+});
+```
+
+If the request is aborted because of a timeout, a status code `408` will be returned and an undefined response body. Note that this timeout value affects both connection timeouts and server timeouts. Therefore, with a timeout value of `1000`, the request can take no more than 2 seconds (up to 1000 milliseconds to connect and up to 1000 milliseconds for the server to give a response).
 
 XML Generation
 ---------------
@@ -220,5 +235,3 @@ References
 ----------
 * [Plivo API Documentation and Concepts](https://www.plivo.com/docs/)
 * [Examples](http://github.com/plivo/plivo-examples-node)
-
- 
