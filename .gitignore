@@ -13,4 +13,7 @@ logs
 results
 node_modules
 
+# Ignore Webstorm files
+.idea
+
 npm-debug.log

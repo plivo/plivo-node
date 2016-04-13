@@ -17,15 +17,15 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "xmlbuilder": "~0.4.2",
-    "request": "~2.12.0"
+    "request": "^2.71.0",
+    "xmlbuilder": "~8.0.0"
   },
   "directories": {
     "test": "test"
   },
   "devDependencies": {
-    "nock": "~0.14.2",
-    "mocha": "~1.7.4"
+    "nock": "~8.0.0",
+    "mocha": "~2.4.5"
   },
   "scripts": {
     "test": "mocha --reporter spec"

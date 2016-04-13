@@ -51,6 +51,7 @@ describe('RestAPI', function() {
         assert.equal('object', typeof plivo.RestAPI({ authId: '0123456789', authToken: '0123456789abc' }));
     });
 
+
     describe('request()', function() {
         var rest = plivo.RestAPI({
             authId: '0123456789',
@@ -58,16 +59,20 @@ describe('RestAPI', function() {
         });
 
         var endpoint = nock('https://' + rest.options.host + ':443');
-        endpoint.get('/v1/Account/0123456789/Call/?')
+        endpoint.get('/v1/Account/0123456789/Call/')
                 .reply(200, JSON.stringify({}))
                 .get('/v1/Account/0123456789/Call/?limit=5')
                 .reply(200, JSON.stringify({}))
-                .get('/v1/Account/0123456789/Call/xxxxxxxxxxxxxxxxx/?')
+                .get('/v1/Account/0123456789/Call/xxxxxxxxxxxxxxxxx/')
                 .reply(200, JSON.stringify({}))
+                .get('/v1/Account/0123456789/Call/yyyyyyyyyyyyyyyyy/')
+                .reply(404, JSON.stringify({}))
                 .post('/v1/Account/0123456789/Call/', "{\"answer_url\":\"http://test.com\",\"to\":\"1234567890\",\"from\":\"1234567890\"}")
                 .reply(201, JSON.stringify({}))
+                .post('/v1/Account/0123456789/Call/', "{\"answer_url\":\"http://test.com\"}")
+                .reply(401, JSON.stringify({}))
                 .delete('/v1/Account/0123456789/Call/')
-                .reply(204, "");
+                .reply(204, " ");
 
         it('should treat params as callback when params are not provided and optional is true.', function(done) {
             rest.get_cdrs(function(status, response) {
@@ -86,6 +91,15 @@ describe('RestAPI', function() {
                     });
                 }
             );
+        });
+        it('test call not found 404.', function() {
+            rest.get_cdr({
+                call_uuid: 'yyyyyyyyyyyyyyyyy',
+            }, function(status, response) {
+                assert.equal(404, status);
+                assert.equal('object', typeof response);
+                done();
+            });;
         });
 
         it('should successfully send GET requests with parameters.', function(done) {
@@ -113,14 +127,39 @@ describe('RestAPI', function() {
             });
         });
 
+        it('fail sending POST request. 401 bad request', function(done) {
+            rest.make_call({
+                answer_url: 'http://test.com',
+            }, function(status, response) {
+                assert.equal(401, status);
+                assert.equal('object', typeof response);
+
+                done();
+            });
+        });
+
         it('should successfully send DELETE requests.', function(done) {
             rest.hangup_all_calls(function(status, response) {
                 assert.equal(204, status);
                 assert.equal('string', typeof response);
-                assert.equal('', response);
+                assert.equal(' ', response);
 
                 done();
             });
+        });
+
+        it('should treat params as callback when params are not provided and optional is true.', function () {
+            var restEndpoint1 = plivo.RestAPI({
+                authId: '0123456789',
+                authToken: '0123456789abc',
+            });
+
+            var restEndpoint2 = plivo.RestAPI({
+                authId: '987654321',
+                authToken: '0987654321abc',
+            });
+            assert.notEqual(restEndpoint1.options.authId, restEndpoint2.options.authId)
+            assert.notEqual(restEndpoint1.options.authToken, restEndpoint2.options.authToken)
         });
     });
 
