@@ -148,7 +148,7 @@ describe('RestAPI', function() {
             });
         });
 
-        it('should treat params as callback when params are not provided and optional is true.', function () {
+        it('should keep credentials unique per client.  Clients should not share credentials', function () {
             var restEndpoint1 = plivo.RestAPI({
                 authId: '0123456789',
                 authToken: '0123456789abc',
