@@ -127,7 +127,7 @@ OUTPUTS to screen:
 * `add<XML Element>`: there are many methods that follow this kind of naming pattern. Replace `<XML Element>` with any valid XML element listed on https://www.plivo.com/docs/xml/. Some of these methods accept `body` param (a string) as an argument, some accept `attributes` (an object that is a map of valid attributes of the `<XML Element>`) as an argument and some accept both. Which method accepts which paramter depends upon the element.
   * `addConference`: accepts `body` and `attributes` as arguments
   * `addNumber`: accepts `body` and `attributes` as arguments
-  * `addUser`: accepts `body` as argument
+  * `addUser`: accepts `body` and `attributes` as arguments
   * `addDial`: accepts `attributes` as argument
   * `addGetDigits`: accepts `attributes` as argument
   * `addHangup`: accepts `attributes` as argument
