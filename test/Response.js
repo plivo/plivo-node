@@ -24,7 +24,8 @@ Utility.areEqual = function(x, y) {
 
     var key;
     for (key in y) {
-        if (x[key] !== y[key]) {
+        var yProp = y[key];
+        if (!yProp && x[key] !== yProp.value) {
             return false;
         }
     }
@@ -69,7 +70,7 @@ describe('Response', function() {
             response.addSpeak(text);
 
             // signifies that this is not an XML element but text
-            assert.equal('', response.elem.children[child_pos].children[0].name);
+            assert.equal(undefined, response.elem.children[child_pos].children[0].name);
 
             // check if the text provided was added as provided or not
             assert.equal(text, response.elem.children[child_pos].children[0].value);
@@ -84,6 +85,7 @@ describe('Response', function() {
                 timeout: '10',
             };
             response.addDial(attributes);
+
 
             if (!Utility.areEqual(attributes, response.elem.children[child_pos].attributes)) {
                 assert.fail(response.elem.children[child_pos].attributes,
