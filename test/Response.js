@@ -170,7 +170,9 @@ describe('Response', function() {
             assert.throws(
                 function() {
                     hangup_element.addNumber('1234567890');
-                }
+                },
+                /Number cannot be nested in Hangup/,
+                'Did not throw with expected message'
             );
         });
 
