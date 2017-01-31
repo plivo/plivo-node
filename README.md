@@ -86,6 +86,27 @@ api.make_call(params, function(status, response) {
     console.log('Response:', response);
   }
 });
+
+/**
+ * api.send_message accepts params and callback
+ */
+
+var params = {
+  src: '<your number>',
+  dst: '<recipient's number>',
+  text: '<Message text>'
+};
+
+api.send_message(params, function(status, response) {
+  if (status >= 200 && status < 300) {
+    console.log('Successfully made call request.');
+    console.log('Response:', response);
+  } else {
+    console.log('Oops! Something went wrong.');
+    console.log('Status:', status);
+    console.log('Response:', response);
+  }
+});
 ```
 
 Some `RestAPI` methods that implement Plivo REST API that do not have required parameters may ommit the use of `params` if not required. For example, to get [Call Detail Records](https://www.plivo.com/docs/api/call/#detail) using our [Call API](https://www.plivo.com/docs/api/call/), you may do something like this:
