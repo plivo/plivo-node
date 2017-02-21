@@ -1,5 +1,5 @@
 #plivo-node
-[![NPM version](https://badge.fury.io/js/plivo-node.png)](http://badge.fury.io/js/plivo-node)  [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png?branch=master)](http://travis-ci.org/plivo/plivo-node) 
+[![NPM version](https://badge.fury.io/js/plivo.svg)](http://badge.fury.io/js/plivo)  [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.svg?branch=master)](http://travis-ci.org/plivo/plivo-node) 
 
 Node.js helper library for the [Plivo](http://plivo.com) API, to create powerful Voice and SMS applications.
 
