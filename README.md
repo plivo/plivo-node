@@ -100,7 +100,69 @@ api.get_cdrs({ limit: 10 }, function(status, response) {
   ...
 });
 ```
-
+Rest API methods list (updated 20/Feb/2015):
+  * `make_call`
+  * `get_cdrs`
+  * `get_cdr`
+  * `get_live_calls`
+  * `get_live_call`
+  * `transfer_call`
+  * `hangup_all_calls`
+  * `hangup_call`
+  * `record`
+  * `record_stop`
+  * `play`
+  * `play_stop`
+  * `speak`
+  * `speak_stop`
+  * `send_digits`
+  * `hangup_request`
+  * `get_live_conferences`
+  * `get_live_conference`
+  * `hangup_all_conferences`
+  * `hangup_conference`
+  * `hangup_conference_member`
+  * `play_conference_member`
+  * `stop_play_conference_member`
+  * `speak_conference_member`
+  * `deaf_conference_member`
+  * `undeaf_conference_member`
+  * `mute_conference_member`
+  * `unmute_conference_member`
+  * `kick_conference_member`
+  * `record_conference`
+  * `stop_record_conference`
+  * `get_account`
+  * `modify_account`
+  * `get_subaccounts`
+  * `get_subaccount`
+  * `create_subaccount`
+  * `modify_subaccount`
+  * `delete_subaccount`
+  * `get_applications`
+  * `get_application`
+  * `create_application`
+  * `modify_application`
+  * `delete_application`
+  * `get_recordings`
+  * `get_recording`
+  * `get_endpoints`
+  * `get_endpoint`
+  * `create_endpoint`
+  * `modify_endpoint`
+  * `delete_endpoint`
+  * `get_numbers`
+  * `get_number_details`
+  * `unrent_number`
+  * `get_number_group`
+  * `get_number_group_details`
+  * `rent_from_number_group`
+  * `edit_number`
+  * `link_application_number`
+  * `unlink_application_number`
+  * `send_message`
+  * `get_messages`
+  * `get_message`
 
 XML Generation
 ---------------
