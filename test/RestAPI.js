@@ -188,6 +188,13 @@ describe('RestAPI', function() {
 			done();
 		
 		});
+
+                it('should match signature when URI requires encoding', function(done) {
+                        var query_string = '/?test=needs%20encoding';
+                        var test_signature = rest.create_signature('https://' + rest.options.host + query_string, {});
+                        assert.equal('nZsvPk6VyueGOBSXGAv+blNoiQ8=', test_signature);
+                        done();
+                });
 	});
 
 });
