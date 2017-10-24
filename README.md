@@ -1,5 +1,7 @@
 #plivo-node
-[![NPM version](https://badge.fury.io/js/plivo-node.png)](http://badge.fury.io/js/plivo-node)  [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png?branch=master)](http://travis-ci.org/plivo/plivo-node) 
+[![NPM version](https://badge.fury.io/js/plivo-node.png)](http://badge.fury.io/js/plivo-node)  [![Build Status](https://secure.travis-ci.org/plivo/plivo-node.png?branch=master)](http://travis-ci.org/plivo/plivo-node)
+
+**Important:** A new version of the Node.js SDK `4.0.0-beta.1` is released as a public Beta and is now available on NPM. Visit the [4.0 release branch](https://github.com/plivo/plivo-node/tree/4.0) to know more.
 
 Node.js helper library for the [Plivo](http://plivo.com) API, to create powerful Voice and SMS applications.
 
@@ -66,7 +68,7 @@ So for example, to make a call, you may do something like this:
 /**
  * api.make_call accepts params and callback
  */
- 
+
 // Keys and values to be used for params are the same as documented for our REST API.
 // So for using RestAPI.make_call, valid params can be checked
 // at https://www.plivo.com/docs/api/call/#outbound.
@@ -220,5 +222,3 @@ References
 ----------
 * [Plivo API Documentation and Concepts](https://www.plivo.com/docs/)
 * [Examples](http://github.com/plivo/plivo-examples-node)
-
- 
