@@ -1,4 +1,7 @@
 # Change Log
+## [0.4.2](https://github.com/plivo/plivo-node/releases/tag/v0.4.2)(2017-12-15)
+- Fixed #63: `unlink_application_number` not working
+
 ## [4.0.0-beta.1](https://github.com/plivo/plivo-node/releases/tag/v4.0.0-beta.1)(2017-10-24)
 - The new SDK works with Node.js >= 4. It has been tested against the versions 4, 5, 6, 7 and 8.
 - The API interfaces are consistent and guessable
