@@ -23,7 +23,7 @@ describe('Application', function () {
   it('has meta information', function () {
     return client.applications.list()
       .then(function(applications) {
-        assert.equal(applications.meta.total_count, 19)
+        assert.equal(applications.meta.totalCount, 19)
       })
   });
 
