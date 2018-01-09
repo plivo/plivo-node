@@ -280,7 +280,7 @@ describe('calls', function () {
     it('should get a livecall', function () {
       return client.calls.getLiveCall('6653422-91b6-4716-9fad-9463daaeeec2')
         .then(function (resp) {
-          console.log(resp);
+          // console.log(resp);
           assert.equal(resp.callUuid, '6653422-91b6-4716-9fad-9463daaeeec2');
         });
     });

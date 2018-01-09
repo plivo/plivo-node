@@ -20,6 +20,13 @@ describe('Application', function () {
       })
   });
 
+  it('has meta information', function () {
+    return client.applications.list()
+      .then(function(applications) {
+        assert.equal(applications.meta.total_count, 19)
+      })
+  });
+
   it('should create application via interface', function () {
     return client.applications.create('appName')
       .then(function(application){
