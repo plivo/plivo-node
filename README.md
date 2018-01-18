@@ -4,7 +4,7 @@ The Node.js SDK makes it simpler to integrate communications into your Node.js a
 ## Installation
 Install the SDK using [npm](https://www.npmjs.com/package/plivo)
 
-    $ npm install plivo@beta
+    $ npm install plivo
 
 If you have the `0.4.1` version (a.k.a legacy) already installed, you may have to first uninstall it before installing the new version.
 
@@ -96,4 +96,4 @@ This generates the following XML:
 Refer to the [Plivo API Reference](https://api-reference.plivo.com/latest/node/introduction/overview) for more examples. Also refer to the [guide to setting up dev environment](https://developers.plivo.com/getting-started/setting-up-dev-environment/) on [Plivo Developers Portal](https://developers.plivo.com) to setup an Express server & use it to test out your integration in under 5 minutes.
 
 ## Reporting issues
-Report any feedback or problems with this beta version by [opening an issue on Github](https://github.com/plivo/plivo-node/issues).
+Report any feedback or problems with this version by [opening an issue on Github](https://github.com/plivo/plivo-node/issues).

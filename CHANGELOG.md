@@ -1,4 +1,8 @@
 # Change Log
+## [4.0.0](https://github.com/plivo/plivo-node/releases/tag/v4.0.0)(2018-01-18)
+- Add timeout support while making the API requests
+- Add meta property to list responses
+
 ## [4.0.0-beta.1](https://github.com/plivo/plivo-node/releases/tag/v4.0.0-beta.1)(2017-10-24)
 - The new SDK works with Node.js >= 4. It has been tested against the versions 4, 5, 6, 7 and 8.
 - The API interfaces are consistent and guessable
