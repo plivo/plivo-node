@@ -31,6 +31,20 @@ describe('Security', function () {
     );
   });
 
+  it('should fail for correct url but with port', function () {
+    assert.equal(
+      validateSignature('https://answer.url:8000','12345','ehV3IKhLysWBxC1sy8INm0qGoQYdYsHwuoKjsX7FsXc=','my_auth_token'),
+      false
+    );
+  });
+
+  it('should pass for correct url with port,auth_token,nonce and signature', function () {
+    assert.equal(
+      validateSignature('https://answer.url:8000','24725744043720739450','LDphWoWimP4QM5AoWI1uwP6WmlWtt5ITPZjXIWYvCNU=','my_auth_token'),
+      true
+    );
+  });
+
   it('should fail for wrong url,auth_token,nonce and signature', function () {
     assert.equal(
       validateSignature('https://answer.url','123456','ehV3IKhLysWBxC1sy8INm0qGoQYdYsHwuoKjsX7FsXc=','my_auth_tokens'),
