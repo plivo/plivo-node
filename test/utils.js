@@ -51,4 +51,16 @@ describe('Security', function () {
       false
     );
   });
+
+  it('should generate url with port', function () {
+    var validate = validateSignature('https://answer.url:8080','123456','xeV6S6BPIQJ/rgKCjCm/Fo2ve5zNe1fatQoHyRT8vxQ=','my_auth_tokens')
+    assert.equal(validate, true);
+  });
+
+  it('should fail for url with port', function () {
+    assert.equal(
+      validateSignature('https://answer.url:8080','12345','ehV3IKhLysWBxC1sy8INm0qGoQYdYsHwuoKjsX7FsXc=','my_auth_token'),
+      false
+    );
+  });
 });
