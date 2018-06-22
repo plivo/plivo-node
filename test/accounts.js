@@ -39,8 +39,16 @@ describe('Account', function () {
       })
   });
 
-  it('should create subAccount via interface', function() {
-    return client.subAccounts.create('Test Subaccount', true);
+  it('should create enabled subAccount via interface', function() {
+    return client.subAccounts.create('Test Subaccount', {'enabled': true);
+  })
+
+  it('should create disabled subAccount via interface', function() {
+    return client.subAccounts.create('Test Subaccount', {'enabled': false);
+  })
+
+  it('should create disabled subAccount via interface', function() {
+    return client.subAccounts.create('Test Subaccount');
   })
 
   it('should get subAccount by id via interface', function () {
