@@ -39,8 +39,28 @@ describe('Account', function () {
       })
   });
 
-  it('should create subAccount via interface', function() {
-    return client.subAccounts.create('Test Subaccount', true);
+  it('should create enabled subAccount via interface', function() {
+    return client.subAccounts.create('Test Subaccount', {'enabled': true})
+    .then(function(genericResponse) {
+      assert.equal(genericResponse.message, 'created')
+      assert.equal(genericResponse.authId, 'SANDLHYZBIZMU4ZDEXNM')
+    })
+  })
+
+  it('should create disabled subAccount via interface', function() {
+    return client.subAccounts.create('Test Subaccount', {'enabled': false})
+    .then(function(genericResponse) {
+      assert.equal(genericResponse.message, 'created')
+      assert.equal(genericResponse.authId, 'SANDLHYZBIZMU4ZDEXNM')
+    })
+  })
+
+  it('should create disabled subAccount via interface', function() {
+    return client.subAccounts.create('Test Subaccount')
+    .then(function(genericResponse) {
+      assert.equal(genericResponse.message, 'created')
+      assert.equal(genericResponse.authId, 'SANDLHYZBIZMU4ZDEXNM')
+    })
   })
 
   it('should get subAccount by id via interface', function () {
