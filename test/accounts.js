@@ -39,8 +39,15 @@ describe('Account', function () {
       })
   });
 
+  it('should not create subAccount without subAccount name and throw error', function() {
+    return client.subAccounts.create()
+    .catch(function(errorResponse) {
+      assert.equal(errorResponse, 'Error: Missing mandatory field: name')
+    })
+  })
+
   it('should create enabled subAccount via interface', function() {
-    return client.subAccounts.create('Test Subaccount', {'enabled': true})
+    return client.subAccounts.create('Test Subaccount', true)
     .then(function(genericResponse) {
       assert.equal(genericResponse.message, 'created')
       assert.equal(genericResponse.authId, 'SANDLHYZBIZMU4ZDEXNM')
@@ -48,7 +55,7 @@ describe('Account', function () {
   })
 
   it('should create disabled subAccount via interface', function() {
-    return client.subAccounts.create('Test Subaccount', {'enabled': false})
+    return client.subAccounts.create('Test Subaccount', false)
     .then(function(genericResponse) {
       assert.equal(genericResponse.message, 'created')
       assert.equal(genericResponse.authId, 'SANDLHYZBIZMU4ZDEXNM')
