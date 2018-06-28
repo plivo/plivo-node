@@ -1,4 +1,8 @@
 # Change Log
+
+## [4.0.1](https://github.com/plivo/plivo-node/releases/tag/v4.0.1)(2018-06-28)
+- Fix create subaccount method to enable subaccount while creation
+
 ## [4.0.0](https://github.com/plivo/plivo-node/releases/tag/v4.0.0)(2018-01-18)
 - Add timeout support while making the API requests
 - Add meta property to list responses
