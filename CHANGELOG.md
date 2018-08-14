@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.0.2](https://github.com/plivo/plivo-node/releases/tag/v4.0.2)(2018-08-14)
+- Add Powerpack option for sending messages.
+
 ## [4.0.1](https://github.com/plivo/plivo-node/releases/tag/v4.0.1)(2018-06-28)
 - Fix create subaccount method to enable subaccount while creation
 
