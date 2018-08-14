@@ -42,10 +42,17 @@ describe('message', function () {
       })
   });
 
-  it('should throw error - src is required via interface', function () {
-    return client.messages.send(null, 'dst', 'text')
+  it('should throw error - src and powerpack both not present', function () {
+    return client.messages.send(null, 'dst', 'text', {}, null)
       .catch(function(err){
-        assert.equal(err.message, 'Missing mandatory field: src')
+        assert.equal(err.message, 'Neither of src or powerpack uuid present, either one is required')
+      })
+  });
+
+  it('should throw error - src and powerpack both are present', function () {
+    return client.messages.send('91235456917375', 'dst', 'text', {}, '916386027476')
+      .catch(function(err){
+        assert.equal(err.message, 'Either of src or powerpack uuid, both of them are present')
       })
   });
 
