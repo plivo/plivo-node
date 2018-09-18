@@ -1,5 +1,9 @@
 # Change Log
 
+## [4.0.3](https://github.com/plivo/plivo-node/releases/tag/v4.0.3)(2018-09-18)
+- Queued status added for filtering calls in queued status.
+- Added log_incoming_messages parameter to application create and update.
+
 ## [4.0.2](https://github.com/plivo/plivo-node/releases/tag/v4.0.2)(2018-08-14)
 - Add Powerpack option for sending messages.
 
