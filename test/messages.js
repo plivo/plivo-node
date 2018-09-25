@@ -28,7 +28,10 @@ describe('message', function () {
   });
 
   it('should send message via interface', function () {
-    return client.messages.send('src', 'dst', 'text')
+    var optionalParams = {
+      trackable : true
+    }
+    return client.messages.send('src', 'dst', 'text', optionalParams)
       .then(function(message){
             assert.equal(message.message, 'message(s) queued')
       })
