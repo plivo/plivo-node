@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.0.4](https://github.com/plivo/plivo-node/releases/tag/v4.0.4)(2018-10-29)
+- Add live calls filtering by from, to numbers and call_direction.
+
 ## [4.0.3](https://github.com/plivo/plivo-node/releases/tag/v4.0.3)(2018-09-18)
 - Queued status added for filtering calls in queued status.
 - Added log_incoming_messages parameter to application create and update.
