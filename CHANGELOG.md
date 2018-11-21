@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.0.5](https://github.com/plivo/plivo-node/releases/tag/v4.0.5)(2018-11-21)
+- Add sub-account cascade delete support.
+
 ## [4.0.4](https://github.com/plivo/plivo-node/releases/tag/v4.0.4)(2018-10-29)
 - Add live calls filtering by from, to numbers and call_direction.
 
