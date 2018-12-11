@@ -53,7 +53,7 @@ describe('phlo client init', function () {
 
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall(mpcId).call('919920700964', '919898967510');
+    let result = await phlo.multiPartyCall(mpcId).call('919920700964', '919620074923');
     return true;
 
   });
@@ -61,7 +61,7 @@ describe('phlo client init', function () {
   it('Warm Transfer - multi party call', async function () {
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall(mpcId).warmTransfer('919920700964', '919898967510');
+    let result = await phlo.multiPartyCall(mpcId).warmTransfer('919920700964', '919818620296');
     return true;
   });
 
@@ -73,10 +73,13 @@ describe('phlo client init', function () {
   });
 
   it('Abort Transfer - multi party call', async function () {
-    let phloClient = new PhloClient(authId, authToken);
-    let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall(mpcId).abortTransfer('919920700964', '919898967510');
+    setTimeout(async () => {
+      let phloClient = new PhloClient(authId, authToken);
+      let phlo = phloClient.phlo(phloId);
+      let result = await phlo.multiPartyCall(mpcId).abortTransfer('919620074923', '919920700964');
+    }, 2000);
     return true;
+
   });
 
 });
