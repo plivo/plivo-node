@@ -48,7 +48,7 @@ gulp.task('pre-test', function () {
 gulp.task('test', ['pre-test'], function (cb) {
   var mochaErr;
 
-  gulp.src('test/**/phlo.js')
+  gulp.src('test/**/phloMember.js')
     .pipe(plumber())
     .pipe(mocha({ reporter: 'spec' }))
     .on('error', function (err) {
