@@ -13,6 +13,7 @@ describe('Phlo Member test cases', function () {
 
   let memberAddress = '919920700964';
   let memberAddress2 = '919898967510';
+  let nixonAddress = '919620074923';
 
   /******************** Phlo resource test cases *********************/
 
@@ -30,7 +31,7 @@ describe('Phlo Member test cases', function () {
   it('voicemail drop - Phlo Member', async function () {
     try {
       let phloClient = new PhloClient(authId, authToken);
-      let result = await phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).voicemailDrop();
+      let result = await phloClient.phlo(phloId).multiPartyCall(nodeId).member(nixonAddress).voicemailDrop();
       console.log('voicemail Drop call result -', result);
       return true;
     } catch (err) {
@@ -52,7 +53,7 @@ describe('Phlo Member test cases', function () {
   it('hold - Phlo Member', async function () {
     try {
       let phloClient = new PhloClient(authId, authToken);
-      let result = await phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).hold();
+      let result = await phloClient.phlo(phloId).multiPartyCall(nodeId).member(nixonAddress).hold();
       console.log('hold result -', result);
       return true;
     } catch (err) {
