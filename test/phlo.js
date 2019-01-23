@@ -4,10 +4,11 @@ import {
   PhloClient
 } from '../lib/rest/client';
 
+let authId = 'MAZJJKMWNLZJNIYJKYYT';
+let authToken = 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw';
+
 describe('phlo client init', function () {
 
-  let authId = 'MAZJJKMWNLZJNIYJKYYT';
-  let authToken = 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw';
   let phloId = 'b30083e9-73c9-42a2-acfa-c08e6e66cd83';
 
   /******************** Phlo resource test cases *********************/
@@ -38,9 +39,16 @@ describe('phlo client init', function () {
     return true;
   });
 
+});
+
+// Multiparty call test cases
+describe('phlo - multiparty call test cases', function () {
+
+  let phloId = 'b30083e9-73c9-42a2-acfa-c08e6e66cd83';
+  let mpcId = '85169eaf-d8b9-4e3d-9baf-13eb6b231bb0';
+
   /******************** Multiparty call test cases *********************/
 
-  let mpcId = '85169eaf-d8b9-4e3d-9baf-13eb6b231bb0';
 
   it('Get multiparty call details', async function () {
     let phloClient = new PhloClient('MAZJJKMWNLZJNIYJKYYT', 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw');
@@ -81,5 +89,18 @@ describe('phlo client init', function () {
     return true;
 
   });
+})
 
+
+// Conference Bridge test cases
+describe('phlo - conference bridge test cases', function () {
+
+  //   let mpcId = '85169eaf-d8b9-4e3d-9baf-13eb6b231bb0';
+
+  //   it('Get multiparty call details', async function () {
+  //     let phloClient = new PhloClient('MAZJJKMWNLZJNIYJKYYT', 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw');
+  //     let result = await phloClient.phlo('b30083e9-73c9-42a2-acfa-c08e6e66cd83').multiPartyCall.get('85169eaf-d8b9-4e3d-9baf-13eb6b231bb0');
+  //     // console.log('get multiparty call result', result);
+  //     return true;
+  //   });
 });
