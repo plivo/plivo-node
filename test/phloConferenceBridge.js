@@ -20,12 +20,13 @@ describe('phlo - conference bridge test cases', function () {
     //     return true;
     // });
 
-    // it('Make a Call - Conference Bridge', async function () {
-    //     let phloClient = new PhloClient(authId, authToken);
-    //     let phlo = phloClient.phlo(phloId);
-    //     let result = await phlo.conferenceBridge(cbId).call('919898967510', '919920700964');
-    //     return true;
-    // });
+    it('Make a Call - Conference Bridge', async function () {
+        let phloClient = new PhloClient(authId, authToken);
+        let phlo = phloClient.phlo(phloId);
+        let result = await phlo.conferenceBridge(cbId).call('919920700964', '919925263431');
+        console.log('add number to conference result', result);
+        return true;
+    });
 
     // it('Warm Transfer - Conference Bridge', async function () {
     //     let phloClient = new PhloClient(authId, authToken);
