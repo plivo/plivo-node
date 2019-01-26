@@ -46,7 +46,7 @@ console.log('Cold transfer result', coldTransferResult);
 // Abort Transfer - multi party call
 phloClient = new PhloClient(authId, authToken);
 let abortResult = await phloClient.phlo(phloId).multiPartyCall(mpcId).abortTransfer(mpcTargetNo);
-console.log('Abort transfer result', abortResult);
+// console.log('Abort transfer result', abortResult);
 
 /**************************** Multiparty call member examples **************************/
 
