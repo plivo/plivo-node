@@ -2,111 +2,74 @@
 
 import {
     PhloClient
-} from '../lib/rest/client';
+} from '../lib/rest/client-test';
 
 let authId = 'MAZJJKMWNLZJNIYJKYYT';
 let authToken = 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw';
+let phloId = '2a38dc9b-b48e-4e4e-b49b-0677c556989c';
+let cbId = 'f501faf1-0703-4619-86fa-d537b689e331';
 
 // Conference Bridge test cases
 describe('phlo - conference bridge test cases', function () {
 
-    let phloId = '2a38dc9b-b48e-4e4e-b49b-0677c556989c';
-    let cbId = 'f501faf1-0703-4619-86fa-d537b689e331';
 
-    // it('Get conference bridge details', async function () {
-    //     let phloClient = new PhloClient(authId, authToken);
-    //     let result = await phloClient.phlo(phloId).conferenceBridge.get(cbId);
-    //     console.log('get conference bridge result', result);
-    //     return true;
-    // });
-
-    it('Make a Call - Conference Bridge', async function () {
+    it('Get conference bridge details', async function () {
         let phloClient = new PhloClient(authId, authToken);
-        let phlo = phloClient.phlo(phloId);
-        let result = await phlo.conferenceBridge(cbId).call('919920700964', '919925263431');
-        console.log('add number to conference result', result);
+        let result = await phloClient.phlo(phloId).conferenceBridge.get(cbId);
+        // console.log('get conference bridge result', result);
         return true;
     });
 
-    // it('Warm Transfer - Conference Bridge', async function () {
-    //     let phloClient = new PhloClient(authId, authToken);
-    //     let phlo = phloClient.phlo(phloId);
-    //     let result = await phlo.conferenceBridge(cbId).warmTransfer('919920700964', '919620074923');
-    //     return true;
-    // });
+    it('Mute a Member - Conference Bridge', async function () {
+        let phloClient = new PhloClient(authId, authToken);
+        let phlo = phloClient.phlo(phloId);
+        let result = await phlo.conferenceBridge(cbId).member('919920700964').mute();
+        // console.log('Mute a member result => ', result);
+        return true;
+    });
 
-    // it('Cold Transfer - Conference Bridge', async function () {
-    //     let phloClient = new PhloClient(authId, authToken);
-    //     let phlo = phloClient.phlo(phloId);
-    //     let result = await phlo.conferenceBridge(cbId).coldTransfer('919920700964', '919898967510');
-    //     return true;
-    // });
+    it('Unmute a Member - Conference Bridge', async function () {
+        let phloClient = new PhloClient(authId, authToken);
+        let phlo = phloClient.phlo(phloId);
+        let result = await phlo.conferenceBridge(cbId).member('919920700964').unmute();
+        // console.log('Unmute a member result => ', result);
+        return true;
+    });
 
-    // it('Abort Transfer - Conference Bridge', async function () {
-    //     setTimeout(async () => {
-    //         let phloClient = new PhloClient(authId, authToken);
-    //         let phlo = phloClient.phlo(phloId);
-    //         let result = await phlo.conferenceBridge(cbId).abortTransfer('919920700964');
-    //     }, 2000);
-    //     return true;
-    // });
 
-    // // =========== Member test cases =========== //
+    it('Leave a Member - Conference Bridge', async function () {
+        let phloClient = new PhloClient(authId, authToken);
+        let phlo = phloClient.phlo(phloId);
+        let result = await phlo.conferenceBridge(cbId).member('919920700964').leave();
+        // console.log('Mute a member result => ', result);
+        return true;
+    });
 
-    // it('member resumeCall - Conference Bridge', async function () {
-    //     try {
-    //         let phloClient = new PhloClient(authId, authToken);
-    //         let result = await phloClient.phlo(phloId).conferenceBridge(cbId).member(memberAddress).resumeCall();
-    //         console.log('resume call result -', result);
-    //         return true;
-    //     } catch (err) {
-    //         throw err;
-    //     }
-    // });
+    it('Mute a Member using member.get() - Conference Bridge', async function () {
+        let phloClient = new PhloClient(authId, authToken);
+        let phlo = phloClient.phlo(phloId);
+        let result = await phlo.conferenceBridge(cbId).member.get('919920700964').mute();
+        // console.log('Mute a member result => ', result);
+        return true;
+    });
 
-    // it('member voicemail drop - Conference Bridge', async function () {
-    //     try {
-    //         let phloClient = new PhloClient(authId, authToken);
-    //         let result = await phloClient.phlo(phloId).conferenceBridge(cbId).member(nixonAddress).voicemailDrop();
-    //         console.log('voicemail Drop call result -', result);
-    //         return true;
-    //     } catch (err) {
-    //         throw err;
-    //     }
-    // });
+    it('Unmute a Member using member.get() - Conference Bridge', async function () {
+        let phloClient = new PhloClient(authId, authToken);
+        let phlo = phloClient.phlo(phloId);
+        let result = await phlo.conferenceBridge(cbId).member.get('919920700964').unmute();
+        // console.log('Unmute a member result => ', result);
+        return true;
+    });
 
-    // it('member hangup - Conference Bridge', async function () {
-    //     try {
-    //         let phloClient = new PhloClient(authId, authToken);
-    //         let result = await phloClient.phlo(phloId).conferenceBridge(cbId).member(memberAddress2).hangup();
-    //         console.log('hangup result -', result);
-    //         return true;
-    //     } catch (err) {
-    //         throw err;
-    //     }
-    // });
 
-    // it('member hold - Conference Bridge', async function () {
-    //     try {
-    //         let phloClient = new PhloClient(authId, authToken);
-    //         let result = await phloClient.phlo(phloId).conferenceBridge(cbId).member(nixonAddress).hold();
-    //         console.log('hold result -', result);
-    //         return true;
-    //     } catch (err) {
-    //         throw err;
-    //     }
-    // });
+    it('Leave a Member using member.get() - Conference Bridge', async function () {
+        let phloClient = new PhloClient(authId, authToken);
+        let phlo = phloClient.phlo(phloId);
+        let result = await phlo.conferenceBridge(cbId).member.get('919920700964').leave();
+        // console.log('Mute a member result => ', result);
+        return true;
+    });
 
-    // it('member unhold - Conference Bridge', async function () {
-    //     try {
-    //         let phloClient = new PhloClient(authId, authToken);
-    //         let result = await phloClient.phlo(phloId).conferenceBridge(cbId).member(memberAddress).unhold();
-    //         console.log('hold result -', result);
-    //         return true;
-    //     } catch (err) {
-    //         throw err;
-    //     }
-    // });
 
 });
 
