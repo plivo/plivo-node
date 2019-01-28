@@ -13,115 +13,118 @@ let mpcId = '85169eaf-d8b9-4e3d-9baf-13eb6b231bb0';
 
 describe('PhloInterface', function () {
 
-  it('Should initialize phlo via phloClient.phlo.get(phloId)', async function () {
+  it('Should initialize phlo via phloClient.phlo.get(phloId)', function () {
     let phloClient = new PhloClient(authId, authToken);
-    let phloResult = await phloClient.phlo.get(phloId);
-    // console.log('phlo result is ', phloResult);
+    phloClient.phlo.get(phloId).then(function (phloResult) {
+      // console.log('phlo result is ', phloResult);
+    });
   });
 
-  it('Should initialize phlo via phloClient.phlo(phloId)', async function () {
-
-    let phloClient = new PhloClient(authId, authToken);
-    let phlo = await phloClient.phlo(phloId);
-    // console.log('init result', phlo);
-    return true;
-  });
-
-  it('Run phlo via phloClient.phlo(phloId).run()', async function () {
+  it('Run phlo via phloClient.phlo(phloId).run()', function () {
 
     let phloClient = new PhloClient('MAZJJKMWNLZJNIYJKYYT', 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw');
-    let phlo = await phloClient.phlo('b30083e9-73c9-42a2-acfa-c08e6e66cd83').run();
-    // console.log('phlo run result', phlo);
-    return true;
+    phloClient.phlo('b30083e9-73c9-42a2-acfa-c08e6e66cd83').run().then(function (phlo) {
+      // console.log('phlo run result', phlo);
+    });
   });
 
-  it('Run phlo via phloClient.phlo.get(phloId).run()', async function () {
+  it('Run phlo via phloClient.phlo.get(phloId).run()', function () {
 
     let phloClient = new PhloClient(authId, authToken);
-    let phlo = await phloClient.phlo.get(phloId);
-    // console.log('phlo result', phlo);
-    let runResult = await phlo.run();
-    // console.log('phlo run result', runResult);
-    return true;
+    phloClient.phlo.get(phloId).then(function (phlo) {
+      // console.log('phlo result', phlo);
+      phlo.run().then(function (phlo) {
+        // console.log('phlo run result', phlo);
+      });
+    });
   });
-});
 
+});
 
 /******************** Multiparty call test cases *********************/
 
 describe('PhloMultiPartyCallInterface', function () {
 
-  // it('Get multiparty call details', async function () {
-  //   let phloClient = new PhloClient(authId, authToken);
-  //   let result = await phloClient.phlo(phloId).multiPartyCall.get(mpcId);
-  //   // console.log('get multiparty call result', result);
-  //   return true;
-  // });
-
-  it('Add member to multi party call', async function () {
-
+  it('Get multiparty call details', function () {
     let phloClient = new PhloClient(authId, authToken);
-    let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall(mpcId).call('919920700964', '919898967510');
-    return true;
+    phloClient.phlo(phloId).multiPartyCall.get(mpcId).then(function (result) {
+      // console.log('get multiparty call result', result);
+    });
   });
 
-  it('Add member to multi party call - using multiPartyCall.get()', async function () {
+  it('Add member to multi party call', function () {
 
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall.get(mpcId);
-    let callResult = await result.call('919920700964', '919898967510');
-    // console.log('call result', callResult);
-    return true;
+    phlo.multiPartyCall(mpcId).call('919920700964', '919898967510').then(function (result) {
+      // console.log('Add member to call', result);
+    });
   });
 
-  it('Warm Transfer - multi party call', async function () {
+  it('Add member to multi party call - using multiPartyCall.get()', function () {
+
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall(mpcId).warmTransfer('919920700964', '919898967510');
-    // console.log('Warm Transfer result', result);
+    phlo.multiPartyCall.get(mpcId).then(function (result) {
+      result.call('919920700964', '919898967510').then(function (callResult) {
+        // console.log('call result', callResult);
+      });
+    })
   });
 
-  it('Warm Transfer - multi party call - using multiPartyCall.get()', async function () {
-
+  it('Warm Transfer - multi party call', function () {
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall.get(mpcId);
-    let warmTransferResult = await result.warmTransfer('919920700964', '919898967510');
-    // console.log('Warm Transfer result', warmTransferResult);
-    return true;
+    phlo.multiPartyCall(mpcId).warmTransfer('919920700964', '919898967510').then(function (callResult) {
+      // console.log('Warm Transfer result', callResult);
+    });
   });
 
-  it('Cold Transfer - multi party call', async function () {
-    let phloClient = new PhloClient(authId, authToken);
-    let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall(mpcId).coldTransfer('919920700964', '919898967510');
-  });
+  it('Warm Transfer - multi party call - using multiPartyCall.get()', function () {
 
-  it('Cold Transfer - multi party call- using multiPartyCall.get()', async function () {
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall(mpcId)
-    let coldTransferResult = await result.coldTransfer('919920700964', '919898967510');
-    // console.log('cold Transfer result', coldTransferResult);
-    return true;
+    phlo.multiPartyCall.get(mpcId).then(function (result) {
+
+      result.warmTransfer('919920700964', '919898967510').then(function (callResult) {
+        // console.log('Warm Transfer result', callResult);
+      });
+    });
 
   });
 
-  it('Abort Transfer - multi party call ', async function () {
+  it('Cold Transfer - multi party call', function () {
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
-    await phlo.multiPartyCall(mpcId).abortTransfer('919920700964');
+    phlo.multiPartyCall(mpcId).coldTransfer('919920700964', '919898967510').then(function (callResult) {
+      // console.log('Warm Transfer result', callResult);
+    });
+
   });
 
-  it('Abort Transfer - multi party call- using multiPartyCall.get()', async function () {
+  it('Cold Transfer - multi party call- using multiPartyCall.get()', function () {
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
-    let result = await phlo.multiPartyCall(mpcId)
-    let abortTransferResult = await result.abortTransfer('919920700964');
-    // console.log('abort Transfer result', abortTransferResult);
-    return true;
+    phlo.multiPartyCall(mpcId).coldTransfer('919920700964', '919898967510').then(function (callResult) {
+      // console.log('cold Transfer result', callResult);
+    });
+  });
+
+  it('Abort Transfer - multi party call ', function () {
+    let phloClient = new PhloClient(authId, authToken);
+    let phlo = phloClient.phlo(phloId);
+    phlo.multiPartyCall(mpcId).abortTransfer('919920700964').then(function (callResult) {
+      // console.log('cold Transfer result', callResult);
+    });
+  });
+
+  it('Abort Transfer - multi party call- using multiPartyCall.get()', function () {
+    let phloClient = new PhloClient(authId, authToken);
+    let phlo = phloClient.phlo(phloId);
+    phlo.multiPartyCall(mpcId).abortTransfer('919920700964').then(function (abortTransferResult) {
+      console.log('cold Transfer result', abortTransferResult);
+    });
+
   });
 
 });

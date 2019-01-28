@@ -16,56 +16,76 @@ describe('Phlo Member Interface', function () {
 
   /******************** Phlo resource test cases *********************/
 
-  it('resumeCall - Phlo Member', async function () {
+  it('resumeCall - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).resumeCall();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).resumeCall().then(function (result) {
+      // console.log('result', result);
+    });
   });
 
-  it('voicemail drop - Phlo Member', async function () {
+  it('voicemail drop - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).voicemailDrop();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).voicemailDrop().then(function (result) {
+      // console.log('result', result);
+    });
   });
 
-  it('hangup - Phlo Member', async function () {
+  it('hangup - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).hangup();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).hangup().then(function (result) {
+      // console.log('result', result);
+    });
   });
 
-  it('hold - Phlo Member', async function () {
+  it('hold - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).hold();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).hold().then(function (result) {
+      // console.log('result', result);
+    });
   });
 
-  it('unhold - Phlo Member', async function () {
+  it('unhold - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).unhold();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member(memberAddress).unhold().then(function (result) {
+      // console.log('result', result);
+    });
   });
 
   /******************** Phlo resource test cases using member.get *********************/
 
-  it('resumeCall using member.get() - Phlo Member', async function () {
+  it('resumeCall using member.get() - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).resumeCall();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).resumeCall().then(function (result) {
+      // console.log('result', result);
+    });
   });
 
-  it('voicemail drop using member.get() - Phlo Member', async function () {
+  it('voicemail drop using member.get() - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).voicemailDrop();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).voicemailDrop().then(function (result) {
+      // console.log('result', result);
+    })
   });
 
-  it('hangup using member.get() - Phlo Member', async function () {
+  it('hangup using member.get() - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).hangup();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).hangup().then(function (result) {
+      // console.log('result', result);
+    });
   });
 
-  it('hold using member.get() - Phlo Member', async function () {
+  it('hold using member.get() - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).hold();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).hold().then(function (result) {
+      // console.log('result', result);
+    });
   });
 
-  it('unhold using member.get() - Phlo Member', async function () {
+  it('unhold using member.get() - Phlo Member', function () {
     let phloClient = new PhloClient(authId, authToken);
-    await phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).unhold();
+    phloClient.phlo(phloId).multiPartyCall(nodeId).member.get(memberAddress).unhold().then(function (result) {
+      // console.log('result', result);
+    });
   });
 
 });
