@@ -2,15 +2,15 @@ var plivo = require('../dist/rest/client-test.js');
 var PhloClient = plivo.PhloClient;
 
 
-let authId = 'auth-id';
-let authToken = 'auth-token';
-let phloId = 'sample-phlo-id';
-let mpcId = 'sample-mpc-id';
+var authId = 'auth-id';
+var authToken = 'auth-token';
+var phloId = 'sample-phlo-id';
+var mpcId = 'sample-mpc-id';
 
-let mpcSourceNo = '919920700964';
-let mpcTargetNo = '919620074923';
-let role = 'agent';
-let phloClient = phlo = null;
+var mpcSourceNo = '919920700964';
+var mpcTargetNo = '919620074923';
+var role = 'agent';
+var phloClient = phlo = null;
 
 //Get Phlo details by phlo id
 phloClient = new PhloClient(authId, authToken);
