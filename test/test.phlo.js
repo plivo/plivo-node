@@ -6,10 +6,10 @@ import {
 // } from '../lib/rest/client';
 import { doesNotReject } from 'assert';
 
-let authId = 'MAZJJKMWNLZJNIYJKYYT';
-let authToken = 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw';
-let phloId = 'b30083e9-73c9-42a2-acfa-c08e6e66cd83';
-let mpcId = '85169eaf-d8b9-4e3d-9baf-13eb6b231bb0';
+let authId = 'auth-id';
+let authToken = 'auth-token';
+let phloId = 'sample-phlo-id';
+let mpcId = 'sample-mpc-id';
 
 describe('PhloInterface', function () {
 
@@ -22,8 +22,8 @@ describe('PhloInterface', function () {
 
   it('Run phlo via phloClient.phlo(phloId).run()', function () {
 
-    let phloClient = new PhloClient('MAZJJKMWNLZJNIYJKYYT', 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw');
-    phloClient.phlo('b30083e9-73c9-42a2-acfa-c08e6e66cd83').run().then(function (phlo) {
+    let phloClient = new PhloClient(authId, authToken);
+    phloClient.phlo(phloId).run().then(function (phlo) {
       // console.log('phlo run result', phlo);
     });
   });

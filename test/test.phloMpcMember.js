@@ -7,10 +7,10 @@ import {
 
 describe('Phlo Member Interface', function () {
 
-  let authId = 'MAZJJKMWNLZJNIYJKYYT';
-  let authToken = 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw';
-  let phloId = 'b30083e9-73c9-42a2-acfa-c08e6e66cd83';
-  let nodeId = '85169eaf-d8b9-4e3d-9baf-13eb6b231bb0';
+  let authId = 'auth-id';
+  let authToken = 'auth-token';
+  let phloId = 'sample-phlo-id';
+  let nodeId = 'sample-mpc-id';
 
   let memberAddress = '919920700964';
 
