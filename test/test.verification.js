@@ -39,47 +39,87 @@ describe('IdentityVerification Interface', function () {
     // });
 
     it('Update Identity', function () {
-    });
 
-    it('Delete Identity', function () {
-    });
-
-    it('Dummy', function () {
-        // await client.verification.retreive_address(5);
-
-        //  let addressList = await client.verification.list_all_addresses();
-        //  console.log('addreess list is =>', JSON.stringify(addressList));
-
-        //  let addressCreate = await client.verification.create_address('IN', '9274222998', 'Mr', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34');
-        // console.log('address Create is=>',JSON.stringify(addressCreate));
-
-        //  await client.verification.delete_address(5); 
-
-        // await client.verification.update_address('usa', '9274222998', 'Mrs', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34');
-
-
-        // await client.verification.retreive_identity(5);
-
-        // Get identity list
-
-
-        // Get Identity Details
-
-
-
-
-        // Delete identity
-        // Delete https://api.numbers.plivodev.com/v1/Account/MAMTI0ZWVIMDC5MMRIOT/Verification/Identity/10962759733523/
-        // { api_id: 'dd3d0294-243f-11e9-b496-0242ac110002', error: 'failed' }
-        // client.verification.delete_identity(20594710404052).then(function (identityDelete) {
-        //     console.log('identity Delete result =>', JSON.stringify(identityDelete));
-        // });
-
-
-        // client.verification.update_identity('IN', '9274222998', 'Mr', 'ABC', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', null, null, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34').then(function (updateResult) {
-        //     console.log('identity update result =>', JSON.stringify(updateResult));
-        // });
+        client.verification.update_identity('IN', '9274222998', 'Mr', 'ABC', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', null, null, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34').then(function (updateResult) {
+            console.log('identity update result =>', JSON.stringify(updateResult));
+        });
 
     });
+
+    // it('Delete Identity', function () {
+    // });
+
+    // it('Dummy', function () {
+    //     // await client.verification.retreive_address(5);
+
+    //     //  let addressList = await client.verification.list_all_addresses();
+    //     //  console.log('addreess list is =>', JSON.stringify(addressList));
+
+    //     //  let addressCreate = await client.verification.create_address('IN', '9274222998', 'Mr', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34');
+    //     // console.log('address Create is=>',JSON.stringify(addressCreate));
+
+    //     //  await client.verification.delete_address(5); 
+
+    //     // await client.verification.update_address('usa', '9274222998', 'Mrs', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34');
+
+
+    //     // await client.verification.retreive_identity(5);
+
+    //     // Get identity list
+
+
+    //     // Get Identity Details
+
+
+
+
+    //     // Delete identity
+    //     // Delete https://api.numbers.plivodev.com/v1/Account/MAMTI0ZWVIMDC5MMRIOT/Verification/Identity/10962759733523/
+    //     // { api_id: 'dd3d0294-243f-11e9-b496-0242ac110002', error: 'failed' }
+    //     // client.verification.delete_identity(20594710404052).then(function (identityDelete) {
+    //     //     console.log('identity Delete result =>', JSON.stringify(identityDelete));
+    //     // });
+
+
+
+    // });
+
+});
+
+describe('AddressVerification Interface', function () {
+
+    // it('Get Address List', function () {
+    //     client.verification.list_all_addresses().then(function (addressList) {
+    //         console.log('addressList list is =>', JSON.stringify(addressList));
+    //     });
+    // });
+
+    // it('Get Address Details', function () {
+    //     client.verification.retreive_address(14632037725844).then(function (identityDetails) {
+    //         console.log('identity detail is =>', JSON.stringify(identityDetails));
+    //     });
+    // });
+
+    // it('Create Address', function () {
+
+    //     client.verification.create_address('IN', '9274222998', 'Mr', 'ABC', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34').then(function (createResponse) {
+    //         console.log('address Create response =>', JSON.stringify(createResponse));
+    //     });
+
+    // });
+
+    // it('Update Address', function () {
+
+    //     // client.verification.update_address('usa', '9274222998', 'Mrs', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34').then(function (updateResponse) {
+    //     //     console.log('address update response =>', JSON.stringify(updateResponse));
+    //     // });
+
+    // });
+
+    // it('Delete Address', function () {
+    //     client.verification.delete_address(20594710404052).then(function (deleteResult) {
+    //         console.log('address delete result =>', JSON.stringify(deleteResult));
+    //     });
+    // });
 
 });
