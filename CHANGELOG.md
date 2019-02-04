@@ -1,7 +1,7 @@
 # Change Log
 
 ## [4.0.6](https://github.com/plivo/plivo-node/releases/tag/v4.0.6)(2019-02-04)
-- Bugfix: ListAllMessages API
+- Bugfix: ListAllMessages API: Fixed filter-by message_time parameter. 
 
 ## [4.0.5](https://github.com/plivo/plivo-node/releases/tag/v4.0.5)(2018-11-21)
 - Add sub-account cascade delete support.
