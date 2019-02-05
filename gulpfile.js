@@ -64,6 +64,7 @@ gulp.task('watch', function () {
 
 gulp.task('coveralls', ['test'], function () {
   if (!process.env.CI) {
+    console.log('ignoring coveralls report generation.');
     return;
   }
 
