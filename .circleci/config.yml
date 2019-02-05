@@ -11,8 +11,8 @@ jobs: # a collection of steps
           command: 'sudo npm install -g npm@latest'
       - run:
           name: install-npm-wee
-          command: npm install --dev
+          command: 'npm install --dev'
       - run: # run tests
           name: test
-          command: 'gulp'
+          command: 'gulp test'
       
