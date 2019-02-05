@@ -11,7 +11,7 @@ jobs: # a collection of steps
           command: 'sudo npm install -g npm@latest'
       - run:
           name: update-gulp
-          command: 'npm install -g gulp'
+          command: 'sudo npm install -g gulp'
       - run:
           name: install-npm-wee
           command: 'npm install --dev'
