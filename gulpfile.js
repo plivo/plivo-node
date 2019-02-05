@@ -43,6 +43,8 @@ gulp.task('pre-test', function () {
 gulp.task('test', ['pre-test'], function (cb) {
   var mochaErr;
 
+  console.log('Running tests with node version', process.version);
+
   gulp.src('test/**/*.js')
     .pipe(plumber())
     .pipe(mocha({ reporter: 'spec' }))
