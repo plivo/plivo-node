@@ -10,6 +10,9 @@ jobs: # a collection of steps
           name: update-npm
           command: 'sudo npm install -g npm@latest'
       - run:
+        name: update-npm
+        command: 'npm install -g gulp'
+      - run:
           name: install-npm-wee
           command: 'npm install --dev'
       - run: # run tests
