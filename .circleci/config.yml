@@ -17,5 +17,5 @@ jobs: # a collection of steps
           command: 'npm install --dev'
       - run: # run tests
           name: test
-          command: 'gulp test'
+          command: 'gulp'
       
