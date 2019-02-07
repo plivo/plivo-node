@@ -1,0 +1,21 @@
+version: 2 # use CircleCI 2.0
+jobs: # a collection of steps
+  build: # runs not using Workflows must have a `build` job as entry point
+    working_directory: ~/src # directory where steps will run
+    docker: # run the steps with Docker
+      - image: circleci/node:11.9.0 # ...with this image as the primary container; this is where all `steps` will run
+    steps: # a collection of executable commands
+      - checkout # special step to check out source code to working directory
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: update-gulp
+          command: 'sudo npm install -g gulp'
+      - run:
+          name: install-npm-wee
+          command: 'npm install --dev'
+      - run: # run tests
+          name: test
+          command: 'gulp'
+      
