@@ -6,6 +6,10 @@ Install the SDK using [npm](https://www.npmjs.com/package/plivo)
 
     $ npm install plivo
 
+For features in beta, use the beta branch.
+
+    $ npm install plivo@beta
+
 If you have the `0.4.1` version (a.k.a legacy) already installed, you may have to first uninstall it before installing the new version.
 
 ## Getting started
