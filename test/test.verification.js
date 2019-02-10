@@ -30,21 +30,29 @@ describe('IdentityVerification Interface', function () {
     //     });
     // });
 
-    // it('Create Identity', function () {
+    // it('Create Identity - Valid Fields', function () {
 
-    //     client.verification.create_identity('IN', '9274222998', 'Mr', 'aBCD', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34').then(function (identityDetails) {
+    //     client.verification.create_identity('in', '', 'Mr', 'aBCD', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34').then(function (identityDetails) {
     //         console.log('identity Create result =>', JSON.stringify(identityDetails));
     //     });
 
     // });
 
-    it('Update Identity', function () {
+    // it('Create Identity - Invalid Fields', function () {
 
-        client.verification.update_identity('IN', '9274222998', 'Mr', 'ABC', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', null, null, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34').then(function (updateResult) {
-            console.log('identity update result =>', JSON.stringify(updateResult));
-        });
+    //     client.verification.create_identity('in', '', 'Mr', 'aBCD', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34').then(function (identityDetails) {
+    //         console.log('identity Create result =>', JSON.stringify(identityDetails));
+    //     });
 
-    });
+    // });
+
+    // it('Update Identity', function () {
+
+    //     client.verification.update_identity(null, '9274222998', 'Mr', 'ABC', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', null, null, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34').then(function (updateResult) {
+    //         console.log('identity update result =>', JSON.stringify(updateResult));
+    //     });
+
+    // });
 
     // it('Delete Identity', function () {
     // });
@@ -100,13 +108,16 @@ describe('AddressVerification Interface', function () {
     //     });
     // });
 
-    // it('Create Address', function () {
+    it('Create Address', function () {
 
-    //     client.verification.create_address('IN', '9274222998', 'Mr', 'ABC', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34').then(function (createResponse) {
-    //         console.log('address Create response =>', JSON.stringify(createResponse));
-    //     });
+        // Upload sample file 
+        var addressProofPath = __dirname + '/api_uploads/address_proof.png';
 
-    // });
+        client.verification.create_address('IN', '9274222998', 'Mr', "ABC", 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'fascal123', 'st12', 'mu34').then(function (createResponse) {
+            console.log('address Create response =>', JSON.stringify(createResponse));
+        });
+
+    });
 
     // it('Update Address', function () {
 
