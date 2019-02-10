@@ -2,6 +2,7 @@ import {
     Client
     // } from '../lib/rest/client';
 } from '../lib/rest/client-test';
+import { AssertionError } from 'assert';
 
 // let authId = 'MAZJJKMWNLZJNIYJKYYT';
 // let authToken = 'ZTQyYjI5NjkyMWE2N2YzMmM3ZWZiYWQ1YWI1NzAw';
@@ -30,21 +31,37 @@ describe('IdentityVerification Interface', function () {
     //     });
     // });
 
-    // it('Create Identity - Valid Fields', function () {
 
-    //     client.verification.create_identity('in', '', 'Mr', 'aBCD', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34').then(function (identityDetails) {
-    //         console.log('identity Create result =>', JSON.stringify(identityDetails));
-    //     });
+    it('Create Identity - In-valid Fields', function (done) {
 
-    // });
+        var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+        client.verification.create_identity("in", "9898997510", 'Mr', null, 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
+            .then(function (identityDetails) {
+                // console.log('identity Create result =>', JSON.stringify(identityDetails));
+                done(new Error("Invalid result. Create identity should throw error with invalid data."))
+            })
+            .catch(function (Erroridentity) {
+                done();
+                // console.log("identity result==>", Erroridentity);
 
-    // it('Create Identity - Invalid Fields', function () {
+            })
+    });
 
-    //     client.verification.create_identity('in', '', 'Mr', 'aBCD', 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34').then(function (identityDetails) {
-    //         console.log('identity Create result =>', JSON.stringify(identityDetails));
-    //     });
+    it('Create Identity - Valid Fields', function (done) {
+        var addressProofPath = __dirname + '/api_uploads/address_proof.png';
 
-    // });
+        var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+        client.verification.create_identity("in", "9898997510", 'Mr', "ABC", 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
+            .then(function (identityDetails) {
+                // console.log('identity Create result =>', JSON.stringify(identityDetails));
+                done();
+            })
+            .catch(function (Erroridentity) {
+                done(new Error("Invalid result. Create identity should not throw error with valid data."))
+                // console.log("identity result==>", Erroridentity);
+
+            })
+    });
 
     // it('Update Identity', function () {
 
@@ -63,7 +80,7 @@ describe('IdentityVerification Interface', function () {
     //     //  let addressList = await client.verification.list_all_addresses();
     //     //  console.log('addreess list is =>', JSON.stringify(addressList));
 
-    //     //  let addressCreate = await client.verification.create_address('IN', '9274222998', 'Mr', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34');
+    //     //  let addressCreate = await client.verification.create_address('IN', '9274222998', 'Mr', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'fascal123', 'st12', 'mu34');
     //     // console.log('address Create is=>',JSON.stringify(addressCreate));
 
     //     //  await client.verification.delete_address(5); 
@@ -107,17 +124,39 @@ describe('AddressVerification Interface', function () {
     //         console.log('identity detail is =>', JSON.stringify(identityDetails));
     //     });
     // });
+    
 
-    it('Create Address', function () {
+    it('Create Address - In-valid Fields', function (done) {
 
-        // Upload sample file 
+        var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+        client.verification.create_address("in", "9898997510", 'Mr', null, 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
+            .then(function (addressDetails) {
+                // console.log('address Create result =>', JSON.stringify(addressDetails));
+                done(new Error("Invalid result. Create address should throw error with invalid data."))
+            })
+            .catch(function (Erroraddress) {
+                done();
+                // console.log("address result==>", Erroraddress);
+
+            })
+    });
+
+    it('Create Address - Valid Fields', function (done) {
         var addressProofPath = __dirname + '/api_uploads/address_proof.png';
 
-        client.verification.create_address('IN', '9274222998', 'Mr', "ABC", 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'fascal123', 'st12', 'mu34').then(function (createResponse) {
-            console.log('address Create response =>', JSON.stringify(createResponse));
-        });
+        var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+        client.verification.create_address("in", "9898997510", 'Mr', "ABC", 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
+            .then(function (addressDetails) {
+                // console.log('address Create result =>', JSON.stringify(addressDetails));
+                done();
+            })
+            .catch(function (Erroraddress) {
+                done(new Error("Invalid result. Create address should not throw error with valid data."))
+                // console.log("address result==>", Erroraddress);
 
+            })
     });
+
 
     // it('Update Address', function () {
 
