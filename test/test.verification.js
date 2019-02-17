@@ -32,6 +32,75 @@ let client = new Client(authId, authToken);
 //     });
 
 
+
+// it('Create Identity - In-valid Fields', function (done) {
+
+//     var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+//     client.verification.create_identity("in", "9898997510", 'Mr', null, 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
+//         .then(function (identityDetails) {
+//             // console.log('identity Create result =>', JSON.stringify(identityDetails));
+//             done(new Error("Invalid result. Create identity should throw error with invalid data."))
+//         })
+//         .catch(function (Erroridentity) {
+//             done();
+//             // console.log("identity result==>", Erroridentity);
+
+//         })
+// });
+
+// it('Create Identity - Valid Fields', function (done) {
+//     var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+
+//     var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+//     client.verification.create_identity("in", "9898997510", 'Mr', "ABC", 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
+//         .then(function (identityDetails) {
+//             // console.log('identity Create result =>', JSON.stringify(identityDetails));
+//             done();
+//         })
+//         .catch(function (Erroridentity) {
+//             done(new Error("Invalid result. Create identity should not throw error with valid data."))
+//             // console.log("identity result==>", Erroridentity);
+
+//         })
+// });
+
+// it('Update Identity', function () {
+
+//     var params={
+//         identity_id :"40796989105693",
+//         proof_type:"PASSPORT",
+//         phone_number_country: "in",
+//         number_type: "9898989685",
+//         // salutation: salutation,
+//         // first_name: first_name,
+//         // last_name: last_name,
+//         // address_line1: address_line1,
+//         // address_line2: address_line2,
+//         // city: city,
+//         // region: region,
+//         // postal_code: postal_code,
+//         // country_iso: country_iso,
+//         // callback_url: callback_url,
+//         // alias: alias,
+//         // file: file,
+//         // proof_type: proof_type,
+//         // id_number: id_number,
+//         // nationality: nationality,
+//         // id_nationality: id_nationality,
+//         // birth_place: birth_place,
+//         // birth_date: birth_date,
+//         // id_issue_date: id_issue_date,
+//         // business_name: business_name,
+//         // fiscal_identification_code: fiscal_identification_code,
+//         // street_code: street_code,
+//         // municipal_code: municipal_code
+//     };
+
+
+//     client.verification.update_identity(params).then(function (updateResult) {
+//         console.log('identity update result =>', JSON.stringify(updateResult));
+//     });
+
 //     it('Create Identity - In-valid Fields', function (done) {
 
 //         var addressProofPath = __dirname + '/api_uploads/address_proof.png';
@@ -69,10 +138,13 @@ let client = new Client(authId, authToken);
 //     //         console.log('identity update result =>', JSON.stringify(updateResult));
 //     //     });
 
-//     // });
 
-//     // it('Delete Identity', function () {
-//     // });
+// it('Delete Identity', function () {
+//     client.verification.delete_identity(17117604461384).then(function (deleteResult) {
+//         console.log('identity delete result =>', JSON.stringify(deleteResult));
+//     });
+// });
+
 
 //     // it('Dummy', function () {
 //     //     // await client.verification.retreive_address(5);
@@ -158,17 +230,40 @@ describe('AddressVerification Interface', function () {
 
 
     it('Update Address', function () {
+        var params = {
+            address_id: "73529957241107",
+            proof_type: "PASSPORT",
+            phone_number_country: "in",
+            number_type: "9898989685",
+            // salutation: salutation,
+            // first_name: first_name,
+            // last_name: last_name,
+            // address_line1: address_line1,
+            // address_line2: address_line2,
+            // city: city,
+            // region: region,
+            // postal_code: postal_code,
+            // country_iso: country_iso,
+            // callback_url: callback_url,
+            // alias: alias,
+            // file: file,
+            // proof_type: proof_type,
+            // id_number: id_number,
+            // fiscal_identification_code: fiscal_identification_code,
+            // street_code: street_code,
+            // municipal_code: municipal_code
+        };
 
-        client.addresses.udpate('usa', '9274222998', 'Mrs', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34').then(function (updateResponse) {
-            console.log('address update response =>', JSON.stringify(updateResponse));
+
+        client.addresses.update(params).then(function (updateResult) {
+            console.log('address update result =>', JSON.stringify(updateResult));
         });
 
     });
-
-    // it('Delete Address', function () {
-    //     client.addresses.delete(20594710404052).then(function (deleteResult) {
-    //         console.log('address delete result =>', JSON.stringify(deleteResult));
-    //     });
-    // });
+    it('Delete Address', function () {
+        client.addresses.deelte(73529957241107).then(function (deleteResult) {
+            console.log('address delete result =>', JSON.stringify(deleteResult));
+        });
+    });
 
 });
