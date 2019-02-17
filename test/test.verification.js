@@ -113,67 +113,60 @@ let client = new Client(authId, authToken);
 
 describe('AddressVerification Interface', function () {
 
-    // it('Get Address List', function () {
-    //     client.verification.list_all_addresses().then(function (addressList) {
-    //         console.log('addressList list is =>', JSON.stringify(addressList));
-    //     });
-    // });
-
     it('Get Address List', function () {
         client.addresses.list().then(function (addressList) {
             console.log('addressList list is =>', JSON.stringify(addressList));
         });
     });
 
-    // it('Get Address Details', function () {
-    //     client.verification.retreive_address(14632037725844).then(function (identityDetails) {
-    //         console.log('identity detail is =>', JSON.stringify(identityDetails));
-    //     });
-    // });
+    it('Get Address Details', function () {
+        client.addresses.get(14632037725844).then(function (identityDetails) {
+            console.log('identity detail is =>', JSON.stringify(identityDetails));
+        });
+    });
 
 
-    // it('Create Address - In-valid Fields', function (done) {
+    it('Create Address - In-valid Fields', function (done) {
 
-    //     var addressProofPath = __dirname + '/api_uploads/address_proof.png';
-    //     client.verification.create_address("in", "9898997510", 'Mr', null, 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
-    //         .then(function (addressDetails) {
-    //             // console.log('address Create result =>', JSON.stringify(addressDetails));
-    //             done(new Error("Invalid result. Create address should throw error with invalid data."))
-    //         })
-    //         .catch(function (Erroraddress) {
-    //             done();
-    //             // console.log("address result==>", Erroraddress);
+        var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+        client.addresses.create("in", "9898997510", 'Mr', null, 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
+            .then(function (addressDetails) {
+                // console.log('address Create result =>', JSON.stringify(addressDetails));
+                done(new Error("Invalid result. Create address should throw error with invalid data."))
+            })
+            .catch(function (Erroraddress) {
+                done();
+                // console.log("address result==>", Erroraddress);
+            })
+    });
 
-    //         })
-    // });
+    it('Create Address - Valid Fields', function (done) {
+        var addressProofPath = __dirname + '/api_uploads/address_proof.png';
 
-    // it('Create Address - Valid Fields', function (done) {
-    //     var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+        var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+        client.addresses.create("in", "9898997510", 'Mr', "ABC", 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
+            .then(function (addressDetails) {
+                // console.log('address Create result =>', JSON.stringify(addressDetails));
+                done();
+            })
+            .catch(function (Erroraddress) {
+                done(new Error("Invalid result. Create address should not throw error with valid data."))
+                // console.log("address result==>", Erroraddress);
 
-    //     var addressProofPath = __dirname + '/api_uploads/address_proof.png';
-    //     client.verification.create_address("in", "9898997510", 'Mr', "ABC", 'DEF', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', addressProofPath, 'passport', '123', 'IN', 'ind-123', 'gujarat', '01-02-1991', 'id-date-12/10/2017', 'bus-plivo', 'fascal123', 'st12', 'mu34')
-    //         .then(function (addressDetails) {
-    //             // console.log('address Create result =>', JSON.stringify(addressDetails));
-    //             done();
-    //         })
-    //         .catch(function (Erroraddress) {
-    //             done(new Error("Invalid result. Create address should not throw error with valid data."))
-    //             // console.log("address result==>", Erroraddress);
-
-    //         })
-    // });
+            })
+    });
 
 
-    // it('Update Address', function () {
+    it('Update Address', function () {
 
-    //     // client.verification.update_address('usa', '9274222998', 'Mrs', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34').then(function (updateResponse) {
-    //     //     console.log('address update response =>', JSON.stringify(updateResponse));
-    //     // });
+        client.addresses.udpate('usa', '9274222998', 'Mrs', 'shweta', 'ravi', 'bhagwati heritage 1201', 'sector-21', 'mumbai', 'maharashtra', '410209', 'IN', 'https://www.google.com/', 'Null', 'Null', 'passport', '123', 'fascal123', 'st12', 'mu34').then(function (updateResponse) {
+            console.log('address update response =>', JSON.stringify(updateResponse));
+        });
 
-    // });
+    });
 
     // it('Delete Address', function () {
-    //     client.verification.delete_address(20594710404052).then(function (deleteResult) {
+    //     client.addresses.delete(20594710404052).then(function (deleteResult) {
     //         console.log('address delete result =>', JSON.stringify(deleteResult));
     //     });
     // });
