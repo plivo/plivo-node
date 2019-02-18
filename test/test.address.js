@@ -1,18 +1,13 @@
 // import { Client } from '../lib/rest/client';
 import { Client } from '../lib/rest/client-test';
 
-
-
-let authId = 'MAMTI0ZWVIMDC5MMRIOT';
-let authToken = 'ZTRmNWUyMWJlYWMyNDc2NjliNzViODdmYjM1ZWNk';
-
-// let authId = 'auth_id';
-// let authToken = 'auth_token';
+let authId = 'auth_id';
+let authToken = 'auth_token';
 
 let client = new Client(authId, authToken);
 
 
-describe('AddressVerification Interface', function () {
+describe('Address Interface', function () {
 
     it('Get Address List', function (done) {
         client.addresses.list().then(function (addressList) {
@@ -134,9 +129,12 @@ describe('AddressVerification Interface', function () {
     });
 
 
-    it('Delete Address', function () {
+    it('Delete Address', function (done) {
         client.addresses.delete(87928077747492).then(function (deleteResult) {
-            console.log('address delete result =>', JSON.stringify(deleteResult));
+            // console.log('address delete result =>', JSON.stringify(deleteResult));
+            done();
+        }).catch(function (err) {
+            done(err);
         });
     });
 

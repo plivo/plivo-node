@@ -45,7 +45,7 @@ gulp.task('test', ['pre-test'], function (cb) {
 
   console.log('Running tests with node version', process.version);
 
-  gulp.src('test/**/test.identity.js')
+  gulp.src('test/**/*.js')
     .pipe(plumber())
     .pipe(mocha({ reporter: 'spec' }))
     .on('error', function (err) {

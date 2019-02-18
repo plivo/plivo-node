@@ -1,12 +1,8 @@
 // import { Client } from '../lib/rest/client';
 import { Client } from '../lib/rest/client-test';
 
-let authId = 'MAMTI0ZWVIMDC5MMRIOT';
-let authToken = 'ZTRmNWUyMWJlYWMyNDc2NjliNzViODdmYjM1ZWNk';
-
-
-// let authId = 'auth_id';
-// let authToken = 'auth_token';
+let authId = 'auth_id';
+let authToken = 'auth_token';
 
 let client = new Client(authId, authToken);
 
