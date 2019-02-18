@@ -1,5 +1,5 @@
-import { Client } from '../lib/rest/client';
-// import { Client } from '../lib/rest/client-test';
+// import { Client } from '../lib/rest/client';
+import { Client } from '../lib/rest/client-test';
 
 
 
@@ -134,7 +134,7 @@ describe('AddressVerification Interface', function () {
 
 
     it('Delete Address', function () {
-        client.addresses.delete(73529957241107).then(function (deleteResult) {
+        client.addresses.delete(87928077747492).then(function (deleteResult) {
             console.log('address delete result =>', JSON.stringify(deleteResult));
         });
     });
