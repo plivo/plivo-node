@@ -43,6 +43,8 @@ gulp.task('pre-test', function () {
 gulp.task('test', ['pre-test'], function (cb) {
   var mochaErr;
 
+  console.log('Running tests with node version', process.version);
+
   gulp.src('test/**/*.js')
     .pipe(plumber())
     .pipe(mocha({ reporter: 'spec' }))
@@ -62,6 +64,7 @@ gulp.task('watch', function () {
 
 gulp.task('coveralls', ['test'], function () {
   if (!process.env.CI) {
+    console.log('ignoring coveralls report generation.');
     return;
   }
 
