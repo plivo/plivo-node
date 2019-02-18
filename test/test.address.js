@@ -2,6 +2,7 @@ import { Client } from '../lib/rest/client';
 // import { Client } from '../lib/rest/client-test';
 
 
+
 let authId = 'MAMTI0ZWVIMDC5MMRIOT';
 let authToken = 'ZTRmNWUyMWJlYWMyNDc2NjliNzViODdmYjM1ZWNk';
 
@@ -10,24 +11,25 @@ let authToken = 'ZTRmNWUyMWJlYWMyNDc2NjliNzViODdmYjM1ZWNk';
 
 let client = new Client(authId, authToken);
 
+
 describe('AddressVerification Interface', function () {
 
-//     it('Get Address List', function (done) {
-//         client.addresses.list().then(function (addressList) {
-//             done();
-//         }).catch(function (err) {
-//             done(new Error("Test Failed. - Failed to fetch address list"))
-//         })
-//     });
+    // it('Get Address List', function (done) {
+    //     client.addresses.list().then(function (addressList) {
+    //         done();
+    //     }).catch(function (err) {
+    //         done(new Error("Test Failed. - Failed to fetch address list"))
+    //     })
+    // });
 
-//     it('Get Address Details', function (done) {
-//         client.addresses.get(14632037725844).then(function (identityDetails) {
-//             // console.log('identity detail is =>', JSON.stringify(identityDetails));
-//             done();
-//         }).catch(function (err) {
-//             done(new Error("Test Failed. - Failed to fetch address details"))
-//         })
-//     });
+    // it('Get Address Details', function (done) {
+    //     client.addresses.get(14632037725844).then(function (identityDetails) {
+    //         // console.log('identity detail is =>', JSON.stringify(identityDetails));
+    //         done();
+    //     }).catch(function (err) {
+    //         done(new Error("Test Failed. - Failed to fetch address details"))
+    //     })
+    // });
 
 
     // it('Create Address - In-valid Fields', function (done) {
@@ -58,82 +60,81 @@ describe('AddressVerification Interface', function () {
     //         })
     // });
 
+    // it('Update Address', function (done) {
 
-//     it('Update Address', function (done) {
-
-//         var addressProofPath = __dirname + '/api_uploads/address_proof.png';
-//         var params = {
-//             address_id: "73529957241107",
-//             proof_type: "PASSPORT",
-//             phone_number_country: "in",
-//             number_type: "9898989685",
-//             salutation: "Mr",
-//             // first_name: first_name,
-//             // last_name: last_name,
-//             // address_line1: address_line1,
-//             // address_line2: address_line2,
-//             // city: city,
-//             // region: region,
-//             // postal_code: postal_code,
-//             // country_iso: country_iso,
-//             // callback_url: callback_url,
-//             // alias: alias,
-//             // file: addressProofPath,
-//             // proof_type: proof_type,
-//             // id_number: id_number,
-//             // fiscal_identification_code: fiscal_identification_code,
-//             // street_code: street_code,
-//             // municipal_code: municipal_code
-//         };
-
-
-//         client.addresses.update(params).then(function (updateResult) {
-//             done();
-//         }).catch((err) => {
-//             done(err);
-//         });
-
-//     });
-
-//     it('Update Address', function (done) {
-
-//         var addressProofPath = __dirname + '/api_uploads/address_proof.png';
-//         var params = {
-//             // address_id: "73529957241107",
-//             proof_type: "PASSPORT",
-//             phone_number_country: "in",
-//             number_type: "9898989685",
-//             salutation: "Mr",
-//             // first_name: first_name,
-//             // last_name: last_name,
-//             // address_line1: address_line1,
-//             // address_line2: address_line2,
-//             // city: city,
-//             // region: region,
-//             // postal_code: postal_code,
-//             // country_iso: country_iso,
-//             // callback_url: callback_url,
-//             // alias: alias,
-//             // file: addressProofPath,
-//             // proof_type: proof_type,
-//             // id_number: id_number,
-//             // fiscal_identification_code: fiscal_identification_code,
-//             // street_code: street_code,
-//             // municipal_code: municipal_code
-//         };
+    //     var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+    //     var params = {
+    //         address_id: "73529957241107",
+    //         proof_type: "PASSPORT",
+    //         phone_number_country: "in",
+    //         number_type: "9898989685",
+    //         salutation: "Mr",
+    //         // first_name: first_name,
+    //         // last_name: last_name,
+    //         // address_line1: address_line1,
+    //         // address_line2: address_line2,
+    //         // city: city,
+    //         // region: region,
+    //         // postal_code: postal_code,
+    //         // country_iso: country_iso,
+    //         // callback_url: callback_url,
+    //         // alias: alias,
+    //         // file: addressProofPath,
+    //         // proof_type: proof_type,
+    //         // id_number: id_number,
+    //         // fiscal_identification_code: fiscal_identification_code,
+    //         // street_code: street_code,
+    //         // municipal_code: municipal_code
+    //     };
 
 
-//         client.addresses.update(params).then(function (updateResult) {
-//             done(new Error("Invalid result. Update address should throw error when address_id not provided."))
-//         }).catch((err) => {
-//             done();
-//         });
+    //     client.addresses.update(params).then(function (updateResult) {
+    //         done();
+    //     }).catch((err) => {
+    //         done(err);
+    //     });
 
-//     });
+    // });
+
+    // it('Update Address', function (done) {
+
+    //     var addressProofPath = __dirname + '/api_uploads/address_proof.png';
+    //     var params = {
+    //         // address_id: "73529957241107",
+    //         proof_type: "PASSPORT",
+    //         phone_number_country: "in",
+    //         number_type: "9898989685",
+    //         salutation: "Mr",
+    //         // first_name: first_name,
+    //         // last_name: last_name,
+    //         // address_line1: address_line1,
+    //         // address_line2: address_line2,
+    //         // city: city,
+    //         // region: region,
+    //         // postal_code: postal_code,
+    //         // country_iso: country_iso,
+    //         // callback_url: callback_url,
+    //         // alias: alias,
+    //         // file: addressProofPath,
+    //         // proof_type: proof_type,
+    //         // id_number: id_number,
+    //         // fiscal_identification_code: fiscal_identification_code,
+    //         // street_code: street_code,
+    //         // municipal_code: municipal_code
+    //     };
+
+
+    //     client.addresses.update(params).then(function (updateResult) {
+    //         done(new Error("Invalid result. Update address should throw error when address_id not provided."))
+    //     }).catch((err) => {
+    //         done();
+    //     });
+
+    // });
 
 
     it('Delete Address', function () {
-        client.addresses.delete(99755439596980).then(function (deleteResult) {
+        client.addresses.delete(73529957241107).then(function (deleteResult) {
             console.log('address delete result =>', JSON.stringify(deleteResult));
         });
     });
