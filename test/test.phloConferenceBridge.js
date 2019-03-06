@@ -15,68 +15,73 @@ describe('phlo - conference bridge test cases', function () {
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
 
-    // //************** Get Conf Details function ***************/
-    // it('Get conference bridge details', function () {
-    //     phloClient.phlo(phloId).conferenceBridge.get(cbId).then(function (result) {
-    //         console.log('get conference bridge result', result);
+    //************** Get Conf Details function ***************/
+    it('Get conference bridge details', function (done) {
+        phloClient.phlo(phloId).conferenceBridge.get(cbId).then(function (result) {
+            console.log('get conference bridge result', result);
+             done();
+            }).catch(function (err) {
+                done(new Error("Test Failed. - Enter Valid Conference Bridge Id"))
+            })
+       
+    });
 
-    //     }).catch(function(err){
-    //         console.log("Invalid Phlo ID",err);
-    //     })
-    // });
+    // //************** Mute function ***************/
+    it('Mute a Member - Conference Bridge', function (done) {
+        phlo.conferenceBridge(cbId).member('919920700964').mute().then(function (result) {
+    console.log('Mute a member result => ', result);
+    done();
+}).catch(function (err) {
+    done(new Error("Test Failed. - Enter Correct Phone Number"))
+})
+    });
 
-    // // //************** Mute function ***************/
-    // it('Mute a Member - Conference Bridge', function () {
-    //     phlo.conferenceBridge(cbId).member('919920700964').mute().then(function (result) {
-    // console.log('Mute a member result => ', result);
-    //     }).catch(function(err){
-    //         console.log("Invalid Number ID",err);
-    //     })
-    // });
-
-    // it('Mute a Member using member.get() - Conference Bridge', function () {
-    //     phlo.conferenceBridge(cbId).member.get('919920700964').mute().then(function (result) {
-    //         console.log('Mute a member result => ', result);
-    //     })
-    //     .catch(function(err){
-    //     console.log("Enter Correct Number",err);
-    //     })
-    // });
-
-    //************** Unmute function ***************/
-    // it('Unmute a Member - Conference Bridge', function () {
-    //     phlo.conferenceBridge(cbId).member('9199120700964').unmute().then(function (result) {
-    //         console.log('Unmute a member result => ', result);
-    //     }).catch(function(err){
-    //             console.log("Enter Correct Number",err);
-    //             })
-    // });
-
-    // it('Unmute a Member using member.get() - Conference Bridge', function () {
-    //     phlo.conferenceBridge(cbId).member.get('919920700964').unmute().then(function (result) {
-    //         console.log('Unmute a member result => ', result);
-    //     }).catch(function(err){
-    //     console.log("Enter Correct Number",err);
-    //     })
-    // });
-
-
-    //************** Leave function ***************/
-    it('Leave a Member - Conference Bridge', function () {
-        phlo.conferenceBridge(cbId).member('919920700964').leave().then(function (result) {
-            console.log('leave member result => ', result);
+    it('Mute a Member using member.get() - Conference Bridge', function (done) {
+        phlo.conferenceBridge(cbId).member.get('919920700964').mute().then(function (result) {
+            console.log('Mute a member result => ', result);
+            done();
         }).catch(function (err) {
-            console.log("Enter Correct Number", err);
+            done(new Error("Test Failed. - Enter Correct Phone Number"))
         })
     });
 
-    it('Leave a Member using member.get() - Conference Bridge', function () {
+    // ************** Unmute function ***************/
+    it('Unmute a Member - Conference Bridge', function (done) {
+        phlo.conferenceBridge(cbId).member('919920700964').unmute().then(function (result) {
+            console.log('Unmute a member result => ', result);
+            done();
+        }).catch(function (err) {
+            done(new Error("Test Failed. - Enter Correct Phone Number"))
+        })
+    });
+
+    it('Unmute a Member using member.get() - Conference Bridge', function (done) {
+        phlo.conferenceBridge(cbId).member.get('919920700964').unmute().then(function (result) {
+            console.log('Unmute a member result => ', result);
+            done();
+        }).catch(function (err) {
+            done(new Error("Test Failed. - Enter Correct Phone Number"))
+        })
+    });
+
+
+    //************** Leave function ***************/
+    it('Leave a Member - Conference Bridge', function (done) {
+        phlo.conferenceBridge(cbId).member('919920700964').leave().then(function (result) {
+            console.log('leave member result => ', result);
+            done();
+        }).catch(function (err) {
+            done(new Error("Test Failed. - Enter Correct Phone Number"))
+        })
+    });
+
+    it('Leave a Member using member.get() - Conference Bridge', function (done) {
         phlo.conferenceBridge(cbId).member.get('919920700964').leave().then(function (result) {
             console.log('leave member result => ', result);
+            done();
+        }).catch(function (err) {
+            done(new Error("Test Failed. - Enter Correct Phone Number"))
         })
-    .catch (function(err) {
-        console.log("Enter Correct Number", err);
-    })
     });
 
 });
