@@ -15,51 +15,68 @@ describe('phlo - conference bridge test cases', function () {
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
 
-    //************** Get Conf Details function ***************/
-    it('Get conference bridge details', function () {
-        phloClient.phlo(phloId).conferenceBridge.get(cbId).then(function (result) {
-            // console.log('get conference bridge result', result);
-        });
-    });
+    // //************** Get Conf Details function ***************/
+    // it('Get conference bridge details', function () {
+    //     phloClient.phlo(phloId).conferenceBridge.get(cbId).then(function (result) {
+    //         console.log('get conference bridge result', result);
 
-    //************** Mute function ***************/
-    it('Mute a Member - Conference Bridge', function () {
-        phlo.conferenceBridge(cbId).member('919920700964').mute().then(function (result) {
-            // console.log('Mute a member result => ', result);
-        });
-    });
+    //     }).catch(function(err){
+    //         console.log("Invalid Phlo ID",err);
+    //     })
+    // });
 
-    it('Mute a Member using member.get() - Conference Bridge', function () {
-        phlo.conferenceBridge(cbId).member.get('919920700964').mute().then(function (result) {
-            // console.log('Mute a member result => ', result);
-        });
-    });
+    // // //************** Mute function ***************/
+    // it('Mute a Member - Conference Bridge', function () {
+    //     phlo.conferenceBridge(cbId).member('919920700964').mute().then(function (result) {
+    // console.log('Mute a member result => ', result);
+    //     }).catch(function(err){
+    //         console.log("Invalid Number ID",err);
+    //     })
+    // });
+
+    // it('Mute a Member using member.get() - Conference Bridge', function () {
+    //     phlo.conferenceBridge(cbId).member.get('919920700964').mute().then(function (result) {
+    //         console.log('Mute a member result => ', result);
+    //     })
+    //     .catch(function(err){
+    //     console.log("Enter Correct Number",err);
+    //     })
+    // });
 
     //************** Unmute function ***************/
-    it('Unmute a Member - Conference Bridge', function () {
-        phlo.conferenceBridge(cbId).member('919920700964').unmute().then(function (result) {
-            // console.log('Unmute a member result => ', result);
-        });
-    });
+    // it('Unmute a Member - Conference Bridge', function () {
+    //     phlo.conferenceBridge(cbId).member('9199120700964').unmute().then(function (result) {
+    //         console.log('Unmute a member result => ', result);
+    //     }).catch(function(err){
+    //             console.log("Enter Correct Number",err);
+    //             })
+    // });
 
-    it('Unmute a Member using member.get() - Conference Bridge', function () {
-        phlo.conferenceBridge(cbId).member.get('919920700964').unmute().then(function (result) {
-            // console.log('Unmute a member result => ', result);
-        });
-    });
+    // it('Unmute a Member using member.get() - Conference Bridge', function () {
+    //     phlo.conferenceBridge(cbId).member.get('919920700964').unmute().then(function (result) {
+    //         console.log('Unmute a member result => ', result);
+    //     }).catch(function(err){
+    //     console.log("Enter Correct Number",err);
+    //     })
+    // });
 
 
     //************** Leave function ***************/
     it('Leave a Member - Conference Bridge', function () {
         phlo.conferenceBridge(cbId).member('919920700964').leave().then(function (result) {
-            // console.log('leave member result => ', result);
-        });
+            console.log('leave member result => ', result);
+        }).catch(function (err) {
+            console.log("Enter Correct Number", err);
+        })
     });
 
     it('Leave a Member using member.get() - Conference Bridge', function () {
         phlo.conferenceBridge(cbId).member.get('919920700964').leave().then(function (result) {
-            // console.log('leave member result => ', result);
-        });
+            console.log('leave member result => ', result);
+        })
+    .catch (function(err) {
+        console.log("Enter Correct Number", err);
+    })
     });
 
 });
