@@ -1,5 +1,9 @@
 # Change Log
 
+## [4.1.0](https://github.com/plivo/plivo-node/releases/tag/v4.1.0)(2019-03-11)
+-  Add PHLO support
+-  Add Multiparty call triggers
+
 ## [4.0.6](https://github.com/plivo/plivo-node/releases/tag/v4.0.6)(2019-02-04)
 - Bugfix: ListAllMessages API: Fixed filter-by message_time parameter. 
 

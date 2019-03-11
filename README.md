@@ -8,6 +8,10 @@ Install the SDK using [npm](https://www.npmjs.com/package/plivo)
 
 If you have the `0.4.1` version (a.k.a legacy) already installed, you may have to first uninstall it before installing the new version.
 
+For features in beta, use the beta branch:
+
+    $ npm install plivo@beta
+    
 ## Getting started
 
 ### Authentication
@@ -90,6 +94,26 @@ This generates the following XML:
 <Response>
   <Speak>Hello, world!</Speak>
 </Response>
+```
+
+### Run a PHLO
+
+```javascript
+var plivo = require('../dist/rest/client.js');
+var PhloClient = plivo.PhloClient;
+
+var authId = 'auth-id';
+var authToken = 'auth-token';
+var phloId = 'PHLO_ID';
+var phloClient = phlo = null;
+
+// Run phlo
+phloClient = new PhloClient(authId, authToken);
+phloClient.phlo(phloId).run().then(function (result) {
+console.log('Phlo run result', result);
+}).catch(function (err) {
+console.error('Phlo run failed', err);
+});
 ```
 
 ### More examples
