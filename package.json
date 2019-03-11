@@ -1,6 +1,6 @@
 {
   "name": "plivo",
-  "version": "4.0.7",
+  "version": "4.1.0",
   "description": "A Node.js SDK to make voice calls & send SMS using Plivo and to generate Plivo XML",
   "homepage": "https://github.com/plivo/plivo-node",
   "files": [
@@ -57,13 +57,13 @@
     "test": "gulp"
   },
   "dependencies": {
+    "base-64": "^0.1.0",
+    "build-url": "^1.0.10",
     "lodash": "^4.17.4",
     "querystring": "^0.2.0",
     "request": "^2.81.0",
-    "xmlbuilder": "^9.0.1",
-    "base-64": "^0.1.0",
-    "build-url": "^1.0.10",
     "uri-parser": "^1.0.0",
-    "utf8": "^2.1.2"
+    "utf8": "^2.1.2",
+    "xmlbuilder": "^9.0.1"
   }
 }
