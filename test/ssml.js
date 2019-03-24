@@ -5,8 +5,21 @@ import { PlivoGenericResponse } from '../lib/base.js';
 
 let client = new Client('sampleid', 'sammpletoken', 'sampleproxy');
 
-let response = new Response();
-let speak_body = "Hello, world!";
-response.addSpeak(speak_body, { voice: 'SRD' });
-console.log(response.toXML());
+describe('SsmlInterface', function () {
+    it('test', function () {
 
+        let response = new Response();
+        let speak_body = ' Here is a number <w role="amazon: VBD">read</w> \
+        as a cardinal number: \
+        <say-ass interpret-as="cardinal">12345</say-ass>. \
+        Here is a word spelled out: \
+        <say-as interpret-as="spell-out">hello</say-as>.';
+
+        // response.addSpeak(speak_body, { language: 'Spanish-Castilian', voice: 'Polly.Conchita' });
+        response.addSpeak(speak_body, { language: 'Spanish-Castilian', voice: 'Polly.Conchita' });
+        console.log(response.toXML());
+
+
+
+    });
+});
