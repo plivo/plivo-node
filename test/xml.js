@@ -1,6 +1,6 @@
 import assert from 'assert';
 import sinon from 'sinon';
-import {Response} from '../lib/utils/plivoxml';
+import { Response } from '../lib/utils/plivoxml';
 
 describe('PlivoXML', function () {
   it('should work', function () {
@@ -17,6 +17,7 @@ describe('PlivoXML', function () {
     response.addPlay('url');
     const dial = response.addDial();
     dial.addNumber('123');
+
     dial.addUser('sip:test@sip.plivo.com');
     response.addMessage('∫test', {
       src: '123',

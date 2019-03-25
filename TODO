@@ -1,12 +1,9 @@
+How to validate languages with voice
 
-1. Polly.*
+Male female voices for polly+voice combination
 
-2. How to validate languages with voice
+Promise, chain will break
 
-3. Male female voices for polly+voice combination
+Will childs be there in ssml for validation?
 
-4. Promise, chain will break
-
-5. Will childs be there in ssml for validation?
-
-6. 
+If Polly.* provided, is language validation required?
