@@ -1,30 +1,9 @@
 import assert from 'assert';
 import { Response, Client } from '../lib/rest/client';
 import { PlivoGenericResponse } from '../lib/base.js';
-
 let client = new Client('sampleid', 'sammpletoken', 'sampleproxy');
 
 describe('SsmlInterface', function () {
-
-    it('Ssml - Valid XML', function (done) {
-
-        let response = new Response();
-
-        // Valid speak body
-        let speak_body = ' Here is a number <w role="amazon: VBD">read</w> \
-        as a cardinal number: \
-        <say-as interpret-as="cardinal">klsdjflksjfsldk</say-as>. \
-        Here is a word spelled out: \
-        <say-as interpret-as="spell-out">hello</say-as>.';
-
-        // response.addSpeak(speak_body, { language: 'Spanish-Castilian', voice: 'Polly.*' });
-        response.addSpeak(speak_body, { language: 'Spanish-Castilian', voice: 'Polly.Conchita' }).then((result) => {
-            done();
-        }).catch((err) => {
-            done("Valid SSML xml should not be rejected.");
-        });
-
-    });
 
     it('Ssml - Invalid SSML XML Structure', function (done) {
 
