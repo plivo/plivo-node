@@ -1,6 +1,9 @@
 # Change Log
 
-## [4.1.0](https://github.com/plivo/plivo-node/releases/tag/v4.1.0)(2019-03-11)
+## [4.1.2](https://github.com/plivo/plivo-node/releases/tag/v4.1.0)(2019-03-11)
+-  Add support: Handling circular reference stringify logic
+
+## [4.1.1](https://github.com/plivo/plivo-node/releases/tag/v4.1.0)(2019-03-11)
 -  Add PHLO support
 -  Add Multiparty call triggers
 
