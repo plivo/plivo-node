@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.1.3](https://github.com/plivo/plivo-node/releases/tag/v4.1.3)(2019-07-09)
+-  Fix API responses by removing ID response variable
+
 ## [4.1.2](https://github.com/plivo/plivo-node/releases/tag/v4.1.0)(2019-03-11)
 -  Add support: Handling circular reference stringify logic
 
