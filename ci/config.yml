@@ -1,0 +1,5 @@
+---
+language: node-sdk
+build:
+  command: |
+      npm install
