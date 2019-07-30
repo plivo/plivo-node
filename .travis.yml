@@ -1,7 +1,7 @@
 service_name: travis-ci
 language: node_js
 node_js:
-  - "node"
+  # - "node" commenting this as we have to find out a solution for node12 & gulp3
   - "lts/*"
   - "8"
   - "7"
