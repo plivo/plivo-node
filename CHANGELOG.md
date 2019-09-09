@@ -1,5 +1,9 @@
 # Change Log
 
+## [4.1.4](https://github.com/plivo/plivo-node/releases/tag/v4.1.3)(2019-11-09)
+-  Add logic to handle all params in one object
+
+
 ## [4.1.3](https://github.com/plivo/plivo-node/releases/tag/v4.1.3)(2019-07-30)
 -  Add proxy-support for Signature Validation
 -  Add HTTP status codes in responses 
