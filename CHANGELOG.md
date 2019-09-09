@@ -1,6 +1,6 @@
 # Change Log
 
-## [4.1.4](https://github.com/plivo/plivo-node/releases/tag/v4.1.3)(2019-11-09)
+## [4.1.4](https://github.com/plivo/plivo-node/releases/tag/v4.1.4)(2019-11-09)
 -  Add logic to handle all params in one object
 
 
