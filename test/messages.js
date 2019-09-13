@@ -28,7 +28,7 @@ describe('message', function () {
   });
 
   it('should send message via interface', function () {
-    return client.messages.send('src', 'dst', 'text',{}, null)
+    return client.messages.send({src:'src', dst:'dst', text:'text',powerpackUUID: null})
       .then(function(message){
             assert.equal(message.message, 'message(s) queued')
       })
