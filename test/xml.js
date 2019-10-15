@@ -14,6 +14,7 @@ describe('PlivoXML', function () {
     response.addConference('test');
     response.addRedirect('url');
     response.addGetDigits();
+    response.addGetInput();
     response.addPlay('url');
     const dial = response.addDial();
     dial.addNumber('123');
