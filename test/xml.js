@@ -23,6 +23,6 @@ describe('PlivoXML', function () {
       src: '123',
       dst: '456',
     });
-    assert.equal('<Response><PreAnswer/><Record/><Hangup/><Speak>text</Speak><Wait/><DTMF>123</DTMF><Conference>test</Conference><Redirect>url</Redirect><GetDigits/><Play>url</Play><Dial><Number>123</Number><User>sip:test@sip.plivo.com</User></Dial><Message src="123" dst="456">∫test</Message></Response>', response.toXML());
+    assert.equal('<Response><PreAnswer/><Record/><Hangup/><Speak>text</Speak><Wait/><DTMF>123</DTMF><Conference>test</Conference><Redirect>url</Redirect><GetDigits/><GetInput/><Play>url</Play><Dial><Number>123</Number><User>sip:test@sip.plivo.com</User></Dial><Message src="123" dst="456">∫test</Message></Response>', response.toXML());
   });
 });
