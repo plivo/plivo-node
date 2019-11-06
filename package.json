@@ -24,7 +24,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-register": "^6.9.0",
     "del": "^2.0.2",
-    "eslint": "^3.19.0",
+    "eslint": "^4.18.2",
     "eslint-config-xo-space": "^0.15.0",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-flowtype": "^2.33.0",
