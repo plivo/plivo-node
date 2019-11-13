@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.1.5](https://github.com/plivo/plivo-node/releases/tag/v4.1.5)(2019-11-13)
+-  Add GetInput XML support
+
 ## [4.1.4](https://github.com/plivo/plivo-node/releases/tag/v4.1.4)(2019-11-06)
 -  Add SSML support
 
