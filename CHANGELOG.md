@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.1.4](https://github.com/plivo/plivo-node/releases/tag/v4.1.4)(2019-11-06)
+-  Add SSML support
+
 ## [4.1.3](https://github.com/plivo/plivo-node/releases/tag/v4.1.3)(2019-07-30)
 -  Add proxy-support for Signature Validation
 -  Add HTTP status codes in responses 
