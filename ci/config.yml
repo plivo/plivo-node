@@ -1,0 +1,7 @@
+---
+parent: central
+serviceName: plivo-node
+language: node-sdk
+build:
+  command: |
+      npm install
