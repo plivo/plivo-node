@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.1.6](https://github.com/plivo/plivo-node/releases/tag/v4.1.6)(2019-11-14)
+-  Fix list APIs to return meta in response.
+
 ## [4.1.5](https://github.com/plivo/plivo-node/releases/tag/v4.1.5)(2019-11-13)
 -  Add GetInput XML support
 
