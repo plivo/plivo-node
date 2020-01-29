@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.1.9](https://github.com/plivo/plivo-node/releases/tag/v4.1.9)(2020-01-29)
+-  Add Powerpack support.
+
 ## [4.1.8](https://github.com/plivo/plivo-node/releases/tag/v4.1.8)(2019-12-20)
 -  Add Powerpack support.
 
