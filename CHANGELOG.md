@@ -1,5 +1,11 @@
 # Change Log
 
+## [4.1.8](https://github.com/plivo/plivo-node/releases/tag/v4.1.8)(2019-12-20)
+-  Add Powerpack support.
+
+## [4.1.7](https://github.com/plivo/plivo-node/releases/tag/v4.1.7)(2019-12-04)
+-  Add MMS support.
+
 ## [4.1.6](https://github.com/plivo/plivo-node/releases/tag/v4.1.6)(2019-11-14)
 -  Fix list APIs to return meta in response.
 
