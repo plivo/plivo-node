@@ -1,75 +1,98 @@
 # Change Log
 
+## [4.1.9](https://github.com/plivo/plivo-node/releases/tag/v4.1.9)(2020-02-22)
+
+- Add Media support.
+
 ## [4.1.8](https://github.com/plivo/plivo-node/releases/tag/v4.1.8)(2019-12-20)
--  Add Powerpack support.
+
+- Add Powerpack support.
 
 ## [4.1.7](https://github.com/plivo/plivo-node/releases/tag/v4.1.7)(2019-12-04)
--  Add MMS support.
+
+- Add MMS support.
 
 ## [4.1.6](https://github.com/plivo/plivo-node/releases/tag/v4.1.6)(2019-11-14)
--  Fix list APIs to return meta in response.
+
+- Fix list APIs to return meta in response.
 
 ## [4.1.5](https://github.com/plivo/plivo-node/releases/tag/v4.1.5)(2019-11-13)
--  Add GetInput XML support
+
+- Add GetInput XML support
 
 ## [4.1.4](https://github.com/plivo/plivo-node/releases/tag/v4.1.4)(2019-11-06)
--  Add SSML support
+
+- Add SSML support
 
 ## [4.1.3](https://github.com/plivo/plivo-node/releases/tag/v4.1.3)(2019-07-30)
--  Add proxy-support for Signature Validation
--  Add HTTP status codes in responses 
+
+- Add proxy-support for Signature Validation
+- Add HTTP status codes in responses
 
 ## [4.1.2](https://github.com/plivo/plivo-node/releases/tag/v4.1.2)(2019-03-19)
--  Add support: Handling circular reference stringify logic
+
+- Add support: Handling circular reference stringify logic
 
 ## [4.1.1](https://github.com/plivo/plivo-node/releases/tag/v4.1.1)(2019-03-11)
--  Add PHLO support
--  Add Multiparty call triggers
+
+- Add PHLO support
+- Add Multiparty call triggers
 
 ## [4.0.6](https://github.com/plivo/plivo-node/releases/tag/v4.0.6)(2019-02-04)
-- Bugfix: ListAllMessages API: Fixed filter-by message_time parameter. 
+
+- Bugfix: ListAllMessages API: Fixed filter-by message_time parameter.
 
 ## [4.0.5](https://github.com/plivo/plivo-node/releases/tag/v4.0.5)(2018-11-21)
+
 - Add sub-account cascade delete support.
 
 ## [4.0.4](https://github.com/plivo/plivo-node/releases/tag/v4.0.4)(2018-10-29)
+
 - Add live calls filtering by from, to numbers and call_direction.
 
 ## [4.0.3](https://github.com/plivo/plivo-node/releases/tag/v4.0.3)(2018-09-18)
+
 - Queued status added for filtering calls in queued status.
 - Added log_incoming_messages parameter to application create and update.
 
 ## [4.0.2](https://github.com/plivo/plivo-node/releases/tag/v4.0.2)(2018-08-14)
+
 - Add Powerpack option for sending messages.
 
 ## [4.0.1](https://github.com/plivo/plivo-node/releases/tag/v4.0.1)(2018-06-28)
+
 - Fix create subaccount method to enable subaccount while creation
 
 ## [4.0.0](https://github.com/plivo/plivo-node/releases/tag/v4.0.0)(2018-01-18)
+
 - Add timeout support while making the API requests
 - Add meta property to list responses
 
 ## [4.0.0-beta.1](https://github.com/plivo/plivo-node/releases/tag/v4.0.0-beta.1)(2017-10-24)
+
 - The new SDK works with Node.js >= 4. It has been tested against the versions 4, 5, 6, 7 and 8.
 - The API interfaces are consistent and guessable
 - Handles pagination automatically when listing all objects of a resource
 - The new SDK has excellent IDE support
 
 ## [0.4.1](https://github.com/plivo/plivo-node/releases/tag/v0.4.1)(2017-02-28)
+
 - Bugfix: validate signature middleware
 
 ## [0.4.0](https://github.com/plivo/plivo-node/releases/tag/v0.4.0)(2016-09-09)
-- Added an entry to the .gitignore for WebStorm IDE's, this prevents un-needed files from being checked in.   
-- Updated Request to version 2.71.0     
-- Some logic for how JSON serialazation has changed, I have updated the request method to reflect that changed   
-- Updated xmlBuilder to 8.0.0     
+
+- Added an entry to the .gitignore for WebStorm IDE's, this prevents un-needed files from being checked in.
+- Updated Request to version 2.71.0
+- Some logic for how JSON serialazation has changed, I have updated the request method to reflect that changed
+- Updated xmlBuilder to 8.0.0
 - Slight update to syntax for creating a new xml doc : xmlBuilder.begin().ele(this.element);
-- Had to update Utility.areEqual to reflect a change in how xmlBuild stores values of child elements   
-- Updated nock to version 8.0.0,   
+- Had to update Utility.areEqual to reflect a change in how xmlBuild stores values of child elements
+- Updated nock to version 8.0.0,
 - Updated Mocha to 2.4.5
 - Fix Travis tests (node v6 and v4)
 
 ## Other changes
+
 - 2015-01-14 Adds support for PhoneNumber API
 - 2013-09-25 Added relayDTMF to <Conference> and async to <DTMF>
 - 2013-07-23 addRecord Response mandatory parameter 'body' dropped
