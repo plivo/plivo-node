@@ -1,8 +1,11 @@
 # Change Log
 
-## [4.1.9](https://github.com/plivo/plivo-node/releases/tag/v4.1.9)(2020-02-25)
+## [4.2.0](https://github.com/plivo/plivo-node/releases/tag/v4.2.0)(2020-02-25)
 
 - Add Media support.
+
+## [4.1.9](https://github.com/plivo/plivo-node/releases/tag/v4.1.9)(2020-02-12)
+-  Fix end_time_gte param in Retrieve a call API.
 
 ## [4.1.8](https://github.com/plivo/plivo-node/releases/tag/v4.1.8)(2019-12-20)
 
