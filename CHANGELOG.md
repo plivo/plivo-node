@@ -1,6 +1,6 @@
 # Change Log
 
-## [4.1.9](https://github.com/plivo/plivo-node/releases/tag/v4.1.9)(2020-02-22)
+## [4.1.9](https://github.com/plivo/plivo-node/releases/tag/v4.1.9)(2020-02-25)
 
 - Add Media support.
 
