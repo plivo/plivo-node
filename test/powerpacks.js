@@ -87,5 +87,52 @@ describe('PowerpackInterface', function () {
         assert.notEqual(result.length, 0)
       })
   });
+  it('list tollfree  via interface', function () {
+    client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
+        function (powerpack) {
+          return powerpack.list_tollfree()
+        })
+      .then(function (result) {
+        assert.notEqual(result.length, 0)
+      })
+  });
+  it('find tollfree  via interface', function () {
+    client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
+        function (powerpack) {
+          return powerpack.find_tollfree('18772209942')
+        })
+      .then(function (result) {
+        assert.Equal(result.number, "18772209942")
+      })
+  });
+  it('add tollfree to powerpack via interface', function () {
+    client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
+        function (powerpack) {
+          return powerpack.add_tollfree('18772209942')
+        })
+      .then(function (result) {
+        assert.Equal(result.number, "18772209942")
+      })
+  });
+  it('remove tollfree via interface', function () {
+    client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
+        function (powerpack) {
+          return powerpack.remove_tollfree("18772209942", true)
+        })
+      .then(function (result) {
+        assert.notEqual(result.response, "success")
+      })
+  });
+  
+  it('remove shortcode via interface', function () {
+    client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
+        function (powerpack) {
+          return powerpack.remove_shortcode("444444")
+        })
+      .then(function (result) {
+        assert.notEqual(result.response, "success")
+      })
+  });
 
 });
+

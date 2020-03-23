@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.2.1](https://github.com/plivo/plivo-node/releases/tag/v4.2.1)(2020-03-25)
+-  Add Tollfree support for Powerpack
+
 ## [4.1.9](https://github.com/plivo/plivo-node/releases/tag/v4.1.9)(2020-02-12)
 -  Fix end_time_gte param in Retrieve a call API.
 
