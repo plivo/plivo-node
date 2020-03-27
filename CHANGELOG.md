@@ -1,7 +1,9 @@
 # Change Log
 
-## [4.2.0](https://github.com/plivo/plivo-node/releases/tag/v4.2.0)(2020-02-25)
+## [4.3.0](https://github.com/plivo/plivo-node/releases/tag/v4.3.0)(2020-03-27)
+- Add post call quality feedback API support.
 
+## [4.2.0](https://github.com/plivo/plivo-node/releases/tag/v4.2.0)(2020-02-25)
 - Add Media support.
 
 ## [4.1.9](https://github.com/plivo/plivo-node/releases/tag/v4.1.9)(2020-02-12)
