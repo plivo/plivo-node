@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.5.0](https://github.com/plivo/plivo-node/releases/tag/v4.5.0)(2020-03-31)
+-  Add application cascade delete support.
+
 ## [4.4.0](https://github.com/plivo/plivo-node/releases/tag/v4.4.0)(2020-03-30)
 -  Add Tollfree support for Powerpack
 
