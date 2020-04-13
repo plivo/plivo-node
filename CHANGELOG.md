@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.5.1](https://github.com/plivo/plivo-node/releases/tag/v4.5.1)(2020-04-13)
+-  Fix Cannot read property 'hasOwnProperty' of undefined error.
+
 ## [4.5.0](https://github.com/plivo/plivo-node/releases/tag/v4.5.0)(2020-03-31)
 -  Add application cascade delete support.
 
