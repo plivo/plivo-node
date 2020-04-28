@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.5.2](https://github.com/plivo/plivo-node/releases/tag/v4.5.2)(2020-04-28)
+-  Fix List Conferences API response.
+
 ## [4.5.1](https://github.com/plivo/plivo-node/releases/tag/v4.5.1)(2020-04-13)
 -  Fix Cannot read property 'hasOwnProperty' of undefined error.
 

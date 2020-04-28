@@ -16,8 +16,8 @@ describe('Conference', function () {
 
     it('should get all conferences', function () {
       return client.conferences.list()
-        .then(function(conferences) {
-          assert.equal(conferences[0].name, 'My Conf Room' )
+        .then(function(response) {
+          assert.equal(response.conferences[0], 'My Conf Room' )
         })
     });
 
