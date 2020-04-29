@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.6.0](https://github.com/plivo/plivo-node/releases/tag/v4.6.0)(2020-04-29)
+-  Add V3 signature helper functions.
+
 ## [4.5.2](https://github.com/plivo/plivo-node/releases/tag/v4.5.2)(2020-04-28)
 -  Fix List Conferences API response.
 
