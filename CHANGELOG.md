@@ -1,7 +1,13 @@
 # Change Log
 
-## [4.6.0](https://github.com/plivo/plivo-node/releases/tag/v4.6.0)(2020-05-04)
+## [4.7.0](https://github.com/plivo/plivo-node/releases/tag/v4.7.0)(2020-05-28)
 -  Add JWT helper functions.
+
+## [4.6.0](https://github.com/plivo/plivo-node/releases/tag/v4.6.0)(2020-04-29)
+-  Add V3 signature helper functions.
+
+## [4.5.2](https://github.com/plivo/plivo-node/releases/tag/v4.5.2)(2020-04-28)
+-  Fix List Conferences API response.
 
 ## [4.5.1](https://github.com/plivo/plivo-node/releases/tag/v4.5.1)(2020-04-13)
 -  Fix Cannot read property 'hasOwnProperty' of undefined error.
