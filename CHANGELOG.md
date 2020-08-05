@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.8.0](https://github.com/plivo/plivo-node/releases/tag/v4.8.0)(2020-07-23)
+-  Add retries to multiple regions for voice requests.
+
 ## [4.7.0](https://github.com/plivo/plivo-node/releases/tag/v4.7.0)(2020-05-28)
 -  Add JWT helper functions.
 
