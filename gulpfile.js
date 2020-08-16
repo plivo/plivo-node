@@ -10,6 +10,7 @@ var babel = require('gulp-babel');
 var del = require('del');
 var isparta = require('isparta');
 
+const merge = require("merge-stream");
 // Initialize the babel transpiler so ES2015 files gets compiled
 // when they're loaded
 require('babel-register');
@@ -73,9 +74,13 @@ gulp.task('coveralls', ['test'], function () {
 });
 
 gulp.task('babel', ['clean'], function () {
-  return gulp.src('lib/**/*.js')
+  return merge([
+    gulp.src('types/**/*.d.ts')
+    .pipe(gulp.dest('dist/')),
+    gulp.src('lib/**/*.js')
     .pipe(babel())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+]);
 });
 
 gulp.task('lintFix', function () {
