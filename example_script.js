@@ -34,7 +34,7 @@ var client = new plivo.Client('MAMDJMMTEZOWY0ZMQWM2', 'OTljNmVmOGVkNGZhNjJlOWIyM
 //   console.error(err);
 // });
 
-client.multiPartyCalls.addParticipant('agent', {"friendlyName" : "TestMPC", 'from' : '+919090909090', 'to': 'sip:koushikqa119062465586783372208@phone-qa.voice.plivodev.com'}).then(function (response) {
+client.multiPartyCalls.addParticipant('agent', {'friendlyName' : 'TestMPC', 'from' : '+919090909090', 'to': 'sip:koushikqa119062465586783372208@phone-qa.voice.plivodev.com'}).then(function (response) {
   console.log(response);
 }, function (err) {
   console.error(err);
