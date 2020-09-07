@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.9.0](https://github.com/plivo/plivo-node/releases/tag/v4.8.0)(2020-08-25)
+-  Add Powerpack for MMS
+
 ## [4.8.0](https://github.com/plivo/plivo-node/releases/tag/v4.8.0)(2020-07-23)
 -  Add retries to multiple regions for voice requests.
 
