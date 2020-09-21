@@ -14,6 +14,8 @@ describe('LookupInterface', function() {
         return client.lookup.get('+14154305555')
             .then(function(number) {
                 assert.equal(number.numberFormat.e164, '+14154305555')
+                assert.equal(number.phoneNumber, '+14154305555')
+                assert.equal(number.resourceUri, '/v1/Lookup/Number/+14154305555?type=carrier')
             })
     });
 });

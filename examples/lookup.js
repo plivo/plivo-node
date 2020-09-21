@@ -3,7 +3,7 @@ let client = new plivo.Client('', '');
 
 client.lookup.get(
     "",
-    "service_provider" // default info
+    "carrier" // default info
 ).then(function(response) {
     console.log(response);
 }).catch(function(error) {
