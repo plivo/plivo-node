@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.10.0](https://github.com/plivo/plivo-node/releases/tag/v4.10.0)(2020-09-21)
+-  Add Lookup API support.
+
 ## [4.9.0](https://github.com/plivo/plivo-node/releases/tag/v4.8.0)(2020-08-25)
 -  Add Powerpack for MMS
 

@@ -77,6 +77,22 @@ client.calls.create(
 
 ```
 
+### Lookup a number
+
+```javascript
+let plivo = require('plivo');
+let client = new plivo.Client('AUTH_ID', 'AUTH_TOKEN');
+
+client.lookup.get(
+    "<number-goes-here>",
+    "carrier"  // default type
+).then(function(response) {
+    console.log(response);
+}).catch(function(error) {
+    console.log(error);
+});
+```
+
 ### Generate Plivo XML
 
 ```javascript
