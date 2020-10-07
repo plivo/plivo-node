@@ -1,5 +1,8 @@
 # Change Log
 
+## [5.0.0](https://github.com/plivo/plivo-node/releases/tag/v4.9.0)(2020-10-07)
+-  Add SDK support for Voice MultiPartyCall APIs and XML
+
 ## [4.15.0](https://github.com/plivo/plivo-node/releases/tag/v4.15.0)(2021-04-19)
 -  Add support for Regulatory Compliance APIs.
 -  Add "npanxx" and "local_calling_area" support for Search Phone Number.
