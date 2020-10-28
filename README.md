@@ -84,8 +84,7 @@ let plivo = require('plivo');
 let client = new plivo.Client('AUTH_ID', 'AUTH_TOKEN');
 
 client.lookup.get(
-    "<number-goes-here>",
-    "carrier"  // default type
+    "<number-goes-here>"
 ).then(function(response) {
     console.log(response);
 }).catch(function(error) {
