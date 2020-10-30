@@ -15,7 +15,7 @@ describe('LookupInterface', function() {
             .then(function(number) {
                 assert.equal(number.numberFormat.e164, '+14154305555')
                 assert.equal(number.phoneNumber, '+14154305555')
-                assert.equal(number.resourceUri, '/v1/Lookup/Number/+14154305555?type=carrier')
+                assert.equal(number.resourceUri, '/v1/Number/+14154305555?type=carrier')
             })
     });
 });
