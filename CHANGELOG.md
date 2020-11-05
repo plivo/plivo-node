@@ -1,5 +1,14 @@
 # Change Log
 
+## [4.11.0](https://github.com/plivo/plivo-node/releases/tag/v4.11.0)(2020-10-30)
+-  Change lookup API endpoint and response.
+
+## [4.10.0](https://github.com/plivo/plivo-node/releases/tag/v4.10.0)(2020-09-21)
+-  Add Lookup API support.
+
+## [4.9.0](https://github.com/plivo/plivo-node/releases/tag/v4.8.0)(2020-08-25)
+-  Add Powerpack for MMS
+
 ## [4.8.0](https://github.com/plivo/plivo-node/releases/tag/v4.8.0)(2020-07-23)
 -  Add retries to multiple regions for voice requests.
 
