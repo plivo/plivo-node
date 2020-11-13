@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.11.1](https://github.com/plivo/plivo-node/releases/tag/v4.11.1)(2020-11-16)
+-  Fix resource not found exception when making sequential requests.
+
 ## [4.11.0](https://github.com/plivo/plivo-node/releases/tag/v4.11.0)(2020-10-30)
 -  Change lookup API endpoint and response.
 
