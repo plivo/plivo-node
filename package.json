@@ -67,7 +67,6 @@
     "uri-parser": "^1.0.0",
     "utf8": "^2.1.2",
     "xml2js": "^0.4.19",
-    "xmlbuilder": "^9.0.1",
-    "graceful-fs": "^4.2.4"
+    "xmlbuilder": "^9.0.1"
   }
 }
