@@ -58,13 +58,14 @@
     "test": "gulp"
   },
   "dependencies": {
-    "@types/node": "^14.14.14",
+    "axios": "^0.19.2",
     "base-64": "^0.1.0",
     "build-url": "^1.0.10",
     "got": "^11.8.1",
     "querystring": "^0.2.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.4",
+    "querystring": "^0.2.0",
     "uri-parser": "^1.0.0",
     "utf8": "^2.1.2",
     "xml2js": "^0.4.19",
