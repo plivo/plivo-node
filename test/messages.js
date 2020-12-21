@@ -1,29 +1,33 @@
 import assert from 'assert';
 import sinon from 'sinon';
-import {Client} from '../lib/rest/client-test';
-import {PlivoGenericResponse} from '../lib/base.js';
+import {
+  Client
+} from '../lib/rest/client-test';
+import {
+  PlivoGenericResponse
+} from '../lib/base.js';
 
 let client = new Client('sampleid', 'sammpletoken', 'sampleproxy');
 
 describe('message', function () {
   it('should get message', function () {
     return client.messages.get(1)
-      .then(function(message) {
+      .then(function (message) {
         assert.equal(message.id, 1)
       })
   });
 
   it('list messages', function () {
     return client.messages.list()
-      .then(function(messages) {
+      .then(function (messages) {
         assert.equal(messages.length, 2)
       })
   });
 
   it('should create message via interface', function () {
     return client.messages.create('src', 'dst', 'text')
-      .then(function(message){
-            assert.equal(message.message, 'message(s) queued')
+      .then(function (message) {
+        assert.equal(message.message, 'message(s) queued')
       })
   });
 
@@ -33,11 +37,18 @@ describe('message', function () {
             assert.equal(message.message, 'message(s) queued')
       })
   });
+  
+  it('should send message via interface', function () {
+    return client.messages.create({src:'src', dst:'dst', text:'text'})
+      .then(function(message){
+            assert.equal(message.message, 'message(s) queued')
+      })
+  });
 
 
   it('should throw error - id is required via interface', function () {
     return client.messages.get()
-      .catch(function(err){
+      .catch(function (err) {
         assert.equal(err.message, 'Missing mandatory field: id')
       })
   });
@@ -53,6 +64,24 @@ describe('message', function () {
     return client.messages.send({src:'91235456917375', dst:'dst', text:'text', powerpackUUID:'916386027476'})
       .catch(function(err){
         assert.equal(err.message, 'Either of src or powerpack uuid, both of them are present')
+      })
+  });
+
+  it('list media', function (done) {
+    client.messages.get('xyz')
+      .then(function (message) {
+        return message.listMedia({})
+      })
+      .then(function (mmsmedia) {
+        assert(mmsmedia instanceof PlivoGenericResponse)
+        done()
+      })
+  });
+  it('should list media via plivo interface!', function (done) {
+    client.messages.listMedia('xyz')
+      .then(function (mmsMedia) {
+        assert(mmsMedia)
+        done()
       })
   });
 
