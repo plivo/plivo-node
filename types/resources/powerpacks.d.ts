@@ -1,3 +1,111 @@
+export class ListAllNumbersResponse {
+	constructor(params: object);
+	apiId: string;
+	meta: object;
+	objects: object;
+}
+export class CreatePowerpackResponse {
+	constructor(params: any);
+	apiId: string;
+	applicationId: string;
+	applicationType: string;
+	createdOn: string;
+	localConnect: string;
+	name: string;
+	numberPool: string;
+	numberPriority: string;
+	stickySender: string;
+	uuid: string;
+}
+export class UpdatePowerpackResponse {
+	constructor(params: object);
+	apiId: string;
+	applicationId: string;
+	applicationType: string;
+	createdOn: string;
+	localConnect: string;
+    name: string;
+	numberPool: string;
+	stickySender: string;
+	uuid: string;
+}
+export class ListShortCodeResponse {
+	constructor(params: object);
+	apiId: string;
+	meta: object;
+	objects: object;
+}
+export class ListTollFreeResponse {
+	constructor(params: object);
+	apiId: string;
+	meta: object;
+	objects: object;
+}
+export class AddNumberResponse {
+	constructor(params: object);
+	apiId: string;
+    accountPhoneNumberResource: string;
+	addedOn: string;
+	countryIso2: string;
+	number: string;
+	numberPoolUuid: string;
+	type: string;
+	service: string;
+}
+export class RemoveNumberResponse {
+	constructor(params: object);
+    apiId: string;
+    response: string;
+}
+export class RemoveTollFreeNumberResponse {
+	constructor(params: object);
+    apiId: any;
+    response: string;
+}
+export class RemoveShortCodeResponse {
+	constructor(params: any);
+    apiId: any;
+    response: string;
+}
+export class AddTollFreeNumberresponse {
+	constructor(params: object);
+	apiId: string;
+	accountPhoneNumberResource: string;
+	addedOn: string;
+	countryIso2: string;
+	number: string;
+	numberPoolUuid: string;
+	type: string;
+	service: string;
+}
+export class RetrieveNumberResponse {
+	constructor(params: object);
+	apiId: string;
+	accountPhoneNumberResource: string;
+	addedOn: string;
+	countryIso2: string;
+	number: string;
+	numberPoolUuid: string;
+	type: string;
+}
+export class RetrieveTollFreeResponse {
+	constructor(params: object);
+	apiId: string;
+	accountPhoneNumberResource: string;
+	addedOn: string;
+	countryIso2: string;
+	number: string;
+	numberPoolUuid: string;
+	type: string;
+}
+export class RetrieveShortCodeResponse {
+	constructor(params: object);
+	apiId: string;
+	addedOn: string;
+	countryIso2: string;
+	shortCode: string;
+	numberPoolUuid: string;
+}
 /**
  * Represents a Powerpack
  * @constructor
@@ -5,55 +113,56 @@
  * @param {object} [data] - data of call
  */
 export class Powerpack extends PlivoResource {
-    constructor(client: any, data?: {});
-    uuid: any;
-    number_pool_id: any;
-    number_pool: NumberPool;
-    list_numbers(params: any): Promise<any>;
-    search_query(params: any): string;
-    count_numbers(params: any): Promise<any>;
-    find_number(number: any): Promise<any>;
-    add_number(number: any): Promise<any>;
-    add_tollfree(tollfree: any): Promise<any>;
-    remove_number(number: any, unrent?: boolean): Promise<any>;
-    remove_tollfree(tollfree: any, unrent?: boolean): Promise<any>;
-    remove_shortcode(shortcode: any): Promise<any>;
-    list_shortcodes(params: any): Promise<any>;
-    list_tollfree(params: any): Promise<any>;
-    find_shortcode(shortcode: any): Promise<any>;
-    find_tollfree(tollfree: any): Promise<any>;
-    buy_add_number(params: any): any;
+	constructor(client: any, data ? : {});
+	uuid: any;
+	number_pool_id: any;
+	number_pool: NumberPool;
+	list_numbers(params: object): Promise < ListAllNumbersResponse > ;
+	search_query(params: object): string;
+	count_numbers(params: object): Promise < any > ;
+	find_number(number: string): Promise < RetrieveNumberResponse > ;
+	add_number(number: string, service ? : string): Promise < AddNumberResponse > ;
+	add_tollfree(tollfree: string, service ? : string): Promise < AddTollFreeNumberresponse > ;
+	remove_number(number: string, unrent ? : boolean): Promise < RemoveNumberResponse > ;
+	remove_tollfree(tollfree: string, unrent ? : boolean): Promise < RemoveTollFreeNumberResponse > ;
+	remove_shortcode(shortcode: string): Promise < RemoveShortCodeResponse > ;
+	list_shortcodes(params: object): Promise < ListShortCodeResponse > ;
+	list_tollfree(params: object): Promise < ListTollFreeResponse > ;
+	find_shortcode(shortcode: object, service ? : string): Promise < RetrieveShortCodeResponse > ;
+	find_tollfree(tollfree: string, service ? : string): Promise < RetrieveTollFreeResponse > ;
+	buy_add_number(params: object): any;
+	[clientKey]: any;
 }
 export class NumberPool extends PlivoResource {
-    constructor(client: any, data?: {});
-    numbers: Numbers;
-    shortcodes: Shortcode;
-    tollfree: Tollfree;
+	constructor(client: any, data ? : {});
+	numbers: Numbers;
+	shortcodes: Shortcode;
+	tollfree: Tollfree;
 }
 export class Numbers extends PlivoResource {
-    constructor(client: any, data?: {});
-    buy_add_number(params: any): any;
-    list(params: any): Promise<any>;
-    count(params: any): Promise<any>;
-    search_query(params: any): string;
-    find(number: any): Promise<any>;
-    add(number: any): Promise<any>;
-    remove(number: any, unrent?: boolean): Promise<any>;
+	constructor(client: any, data ? : {});
+	buy_add_number(params: object): any;
+	list(params: object): Promise < any > ;
+	count(params: object): Promise < any > ;
+	search_query(params: object): string;
+	find(number: object): Promise < any > ;
+	add(number: string, service ? : string): Promise < any > ;
+	remove(number: string, unrent ? : boolean): Promise < any > ;
 }
 export class Shortcode extends PlivoResource {
-    constructor(client: any, data?: {});
-    number_pool_id: any;
-    list(params: any): Promise<any>;
-    find(shortcode: any): Promise<any>;
-    remove(shortcode: any): Promise<any>;
+	constructor(client: any, data ? : {});
+	number_pool_id: any;
+	list(params: object): Promise < any > ;
+	find(shortcode: object): Promise < any > ;
+	remove(shortcode: object): Promise < any > ;
 }
 export class Tollfree extends PlivoResource {
-    constructor(client: any, data?: {});
-    number_pool_id: any;
-    add(tollfree: any): Promise<any>;
-    remove(tollfree: any, unrent?: boolean): Promise<any>;
-    list(params: any): Promise<any>;
-    find(tollfree: any): Promise<any>;
+	constructor(client: any, data ? : {});
+	number_pool_id: any;
+	add(tollfree: string): Promise < any > ;
+	remove(tollfree: string, unrent ? : boolean): Promise < any > ;
+	list(params: object): Promise < any > ;
+	find(tollfree: object): Promise < any > ;
 }
 /**
  * Represents a Powerpack interface
@@ -62,27 +171,55 @@ export class Tollfree extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class PowerpackInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+	constructor(client: any, data ? : {});
     /**
-   * update Powerpack
-   * @method
-   * @param {string} uuid - id of Powerpack
-   * @param {object} params - to update Powerpack
-   * @param {string} [params.name]
-   * @param {string} [params.sticky_sender]
-   * @param {string} [params.local_connect]
-   * @param {string} [params.application_type]
-   * @param {string} [params.application_id]
-   * @promise {object} return {@link Powerpack} object
-   * @fail {Error} return Error
-   */
-    update(uuid: string, params: {
-        name: string;
-        sticky_sender: string;
-        local_connect: string;
-        application_type: string;
-        application_id: string;
-    }): Promise<any>;
+     * get Powerpack by given id
+     * @method
+     * @param {string} uuid - id of Powerpack
+     * @promise {object} return {@link Powerpack} object
+     * @fail {Error} return Error
+     */
+    get(uuid: string): any;
+    /**
+     * create Powerpack
+     * @method
+     * @param {string} name - name of Powerpack
+     * @param {object} params - params to create Powerpack
+     * @param {string} [params.sticky_sender] -
+     * @param {string} [params.local_connect]
+     * @param {string} [params.application_type]
+     * @param {string} [params.application_id]
+     * @promise {object} return {@link PlivoGenericResponse} object
+     * @fail {Error} return Error
+     */
+    create(name: string, params?: {}): Promise<CreatePowerpackResponse>;
+    /**
+	 * update Powerpack
+	 * @method
+	 * @param {string} uuid - id of Powerpack
+	 * @param {object} params - to update Powerpack
+	 * @param {string} [params.name]
+	 * @param {string} [params.sticky_sender]
+	 * @param {string} [params.local_connect]
+	 * @param {string} [params.application_type]
+	 * @param {string} [params.application_id]
+	 * @promise {object} return {@link Powerpack} object
+	 * @fail {Error} return Error
+	 */
+	update(uuid: string, params: {
+		name: string;
+		sticky_sender: string;
+		local_connect: string;
+		application_type: string;
+		application_id: string;
+	}): Promise < UpdatePowerpackResponse > ;
+	[clientKey]: any;
 }
-import { PlivoResource } from "../base.js";
-import { PlivoResourceInterface } from "../base.js";
+import {
+	PlivoResource
+} from "../base";
+declare const clientKey: unique symbol;
+import {
+	PlivoResourceInterface
+} from "../base";
+export {};

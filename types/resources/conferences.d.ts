@@ -1,9 +1,53 @@
 /**
- * Represents a Conference
- * @constructor
- * @param {function} client - make api call
- * @param {object} [data] - data of call
- */
+* Represents a Conference
+* @constructor
+* @param {function} client - make api call
+* @param {object} [data] - data of call
+*/
+export class MuteMemberResponse {
+    constructor(params: object);
+    apiId: string;
+    memberId: string;
+    message: string;
+}
+export class StartRecordingConferenceResponse {
+    constructor(params: object);
+    apiId: string;
+    message: string;
+    recordingId: string;
+    url: string;
+}
+export class RetrieveConferenceResponse {
+    constructor(params: object);
+    apiId: string;
+    conferenceMemberCount: string;
+    conferenceName: string;
+    conferenceRunTime: string;
+    members: string;
+}
+export class ListAllConferenceResponse {
+    constructor(params: object);
+    apiId: string;
+    conferences: string;
+}
+export class SpeakMemberResponse {
+    constructor(params: object);
+    apiId: string;
+    memberId: string;
+    message: string;
+}
+export class PlayAudioMemberResponse {
+    constructor(params: object);
+    apiId: string;
+    memberId: string;
+    message: string;
+}
+export class DeafMemberResponse {
+    constructor(params: string);
+    apiId: string;
+    memberId: string;
+    message: string;
+}
 export class Conference extends PlivoResource {
     constructor(client: any, data?: {});
     id: any;
@@ -37,7 +81,7 @@ export class Conference extends PlivoResource {
      * @promise {PlivoGenericResponse} return PlivoGenericResponse if success
      * @fail {Error} return Error
      */
-    muteMember(memberId: string): Promise<any>;
+    muteMember(memberId: string): Promise<MuteMemberResponse>;
     /**
      * unmute member from conference
      * @method
@@ -53,7 +97,7 @@ export class Conference extends PlivoResource {
      * @promise {PlivoGenericResponse} return PlivoGenericResponse if success
      * @fail {Error} return Error
      */
-    deafMember(memberId: string): Promise<any>;
+    deafMember(memberId: string): Promise<DeafMemberResponse>;
     /**
      * undeaf member from conference
      * @method
@@ -70,7 +114,7 @@ export class Conference extends PlivoResource {
      * @promise {PlivoGenericResponse} return PlivoGenericResponse if success
      * @fail {Error} return Error
      */
-    playAudioToMember(memberId: string, url: string): Promise<any>;
+    playAudioToMember(memberId: string, url: string): Promise<PlayAudioMemberResponse>;
     /**
      * stop playing audio to member
      * @method
@@ -93,7 +137,7 @@ export class Conference extends PlivoResource {
     speakTextToMember(memberId: string, text: string, optionalParams: {
         voice: string;
         language: string;
-    }): Promise<any>;
+    }): Promise<SpeakMemberResponse>;
     /**
      * stop speaking text to member
      * @method
@@ -147,7 +191,7 @@ export class Conference extends PlivoResource {
         transcriptionMethod: string;
         callbackUrl: string;
         callbackMethod: string;
-    }): Promise<any>;
+    }): Promise<StartRecordingConferenceResponse>;
     /**
      * stop recording conference
      * @method
@@ -158,13 +202,29 @@ export class Conference extends PlivoResource {
     [clientKey]: any;
 }
 /**
- * Represents a Conference Interface
- * @constructor
- * @param {function} client - make api call
- * @param {object} [data] - data of call
- */
+* Represents a Conference Interface
+* @constructor
+* @param {function} client - make api call
+* @param {object} [data] - data of call
+*/
 export class ConferenceInterface extends PlivoResourceInterface {
     constructor(client: any, data?: {});
+
+    /**
+     * get conference by id
+     * @method
+     * @param {string} id - id of conference
+     * @promise {@link Conference} return {@link Conference} object if success
+     * @fail {Error} return Error
+     */
+    get(id: string): Promise<RetrieveConferenceResponse>;
+    /**
+     * get all conferences. returns name of all conferences
+     * @method
+     * @promise {@link [Conference]} returns list of {@link Conference} objects if success
+     * @fail {Error} return Error
+     */
+    list(): Promise<ListAllConferenceResponse>;
     /**
      * hangup conference
      * @method
@@ -331,7 +391,7 @@ export class ConferenceInterface extends PlivoResourceInterface {
     stopRecording(id: string): Promise<any>;
     [clientKey]: any;
 }
-import { PlivoResource } from "../base.js";
+import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;
-import { PlivoResourceInterface } from "../base.js";
+import { PlivoResourceInterface } from "../base";
 export {};

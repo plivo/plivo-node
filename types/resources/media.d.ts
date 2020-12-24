@@ -1,3 +1,24 @@
+export class UploadMediaResponse {
+	constructor(params: object);
+	apiId: string;
+	objects: object;
+}
+export class RetrieveMediaResponse {
+	constructor(params: object);
+	apiId: string;
+	contentType: string;
+	fileName: string;
+	mediaId: string;
+	mediaUrl: string;
+	size: string;
+	uploadTime: string;
+}
+export class ListMediaResponse {
+    constructor(params: object);
+    apiId: string;
+    meta: string;
+    objects: string;
+}
 /**
  * Represents a Message
  * @constructor
@@ -5,8 +26,8 @@
  * @param {object} [data] - data of call
  */
 export class Media extends PlivoResource {
-    constructor(client: any, data?: {});
-    id: any;
+	constructor(client: any, data ? : {});
+	id: any;
 }
 /**
  * Represents a Media Interface
@@ -15,16 +36,36 @@ export class Media extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class MediaInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+	constructor(client: any, data ? : {});
+	/**
+	 * Upload Media
+	 * @method
+	 * @fail {Error} return Error
+	 */
+    upload(files: any): Promise<UploadMediaResponse>;
     /**
-     * Upload Media
+     * Get Media by given id
      * @method
+     * @param {string} media_id - id of media
+     * @promise {object} return {@link Media} object if success
      * @fail {Error} return Error
      */
-    upload(files: any): Promise<any>;
-    [clientKey]: any;
+    get(media_id: string): Promise<RetrieveMediaResponse>;
+    /**
+     * Get All Media Detail
+     * @method
+     * @param {object} params - params to get all media details.
+     * @promise {object[]} returns list of Media Object
+     * @fail {Error} returns Error
+     */
+    list(params: object): Promise<any>;
+	[clientKey]: any;
 }
-import { PlivoResource } from "../base.js";
-import { PlivoResourceInterface } from "../base.js";
+import {
+	PlivoResource
+} from "../base";
+import {
+	PlivoResourceInterface
+} from "../base";
 declare const clientKey: unique symbol;
 export {};

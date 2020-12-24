@@ -58,6 +58,7 @@
     "test": "gulp"
   },
   "dependencies": {
+    "@types/node": "^14.14.14",
     "base-64": "^0.1.0",
     "build-url": "^1.0.10",
     "jsonwebtoken": "^8.5.1",

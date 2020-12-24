@@ -4,9 +4,70 @@
  * @param {function} client - make api call
  * @param {object} [data] - data of call
  */
+export class GetAccountDetails {
+    constructor(params: object);
+    accountType: string;
+    address: string;
+    apiId: string;
+    autoRecharge: string;
+    billingMode: string;
+    cashCredits: string;
+    city: string;
+    name: string;
+    resourceUri: string;
+    state: string;
+    timezone: string;
+}
+export class CreateSubAccountResponse {
+    constructor(params: object);
+    apiId: string;
+    authId: string;
+    authToken: string;
+    message: string;
+}
+export class UpdateSubAccountDetails {
+    constructor(params: object);
+    apiId: stringy;
+    message: string;
+}
+export class UpdateAccountDetailsResponse {
+    constructor(params: object);
+    apiId: string;
+    message: string;
+}
+export class GetSubAccountDetails {
+    constructor(params: object);
+    account: string;
+    apiId: string;
+    authId: string;
+    authToken: string;
+    created: string;
+    enabled: string;
+    modified: string;
+    name: string;
+    resourceUri: string;
+}
 export class Subaccount extends PlivoResource {
     constructor(client: any, data?: {});
     id: any;
+    /**
+     * update subaccount
+     * @method
+     * @param {string} name - name of subaccount
+     * @param {boolean} enabled - make account enable or disable
+     * @promise {Subaccount} return object of subaccount
+     * @fail {Error} return Error
+     */
+    update(name: string, enabled: boolean): Promise<UpdateSubAccountDetails>;
+    /**
+     * delete subaccount
+     * @method
+     * @param {boolean} cascade - delete associated applications, phonenumbers & endpoints
+     * @promise {boolean} return true if subaccount deleted
+     * @fail {Error} return Error
+     */
+    delete(cascade: any): Promise<unknown>;
+    [clientKey]: any;
 }
 /**
  * Represents a Subaccount Interface
@@ -16,6 +77,23 @@ export class Subaccount extends PlivoResource {
  */
 export class SubaccountInterface extends PlivoResourceInterface {
     constructor(client: any, data?: {});
+    /**
+     * get subaccount by id
+     * @method
+     * @param {string} id - id of subaccount
+     * @promise {Subaccount} return object of subaccount
+     * @fail {Error} return Error
+     */
+    get(id: string): Promise<GetSubAccountDetails>;
+    /**
+     * create subaccount
+     * @method
+     * @param {string} name - name of subaccount
+     * @param {boolean} enabled - enable or disable subaccount
+     * @promise {PlivoGenericResponse} return object of PlivoGenericObject
+     * @fail {Error} return Error
+     */
+    create(name: string, enabled: boolean): Promise<CreateSubAccountResponse>;
     /**
      * update subaccount
      * @method
@@ -53,6 +131,7 @@ export class Account extends PlivoResource {
      * @fail {Error} return Error
      */
     get(): Promise<any>;
+    update(params: any): Promise<UpdateAccountDetailsResponse>;
     [clientKey]: any;
 }
 /**
@@ -63,6 +142,13 @@ export class Account extends PlivoResource {
  */
 export class AccountInterface extends PlivoResourceInterface {
     constructor(client: any, data?: {});
+    /**
+     * get account detail
+     * @method
+     * @promise {PlivoGenericResponse} return PlivoGenericResponse object
+     * @fail {Error} return Error
+     */
+    get(): Promise<GetAccountDetails>;
     /**
      * update account detail
      * @method
@@ -80,7 +166,7 @@ export class AccountInterface extends PlivoResourceInterface {
     }): Promise<any>;
     [clientKey]: any;
 }
-import { PlivoResource } from "../base.js";
-import { PlivoResourceInterface } from "../base.js";
+import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;
+import { PlivoResourceInterface } from "../base";
 export {};

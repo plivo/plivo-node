@@ -1,3 +1,9 @@
+export class CallFeedbackResponse {
+    constructor(params: object);
+    apiId: string;
+    message: string;
+    status: string;
+}
 export class CallFeedback extends PlivoResource {
     constructor(client: any, data?: {});
     id: any;
@@ -11,9 +17,10 @@ export class CallFeedback extends PlivoResource {
  */
 export class CallFeedbackInterface extends PlivoResourceInterface {
     constructor(client: any, data?: {});
+    create(callUUID: string, rating: string, issues?: never[], notes?: string): Promise<CallFeedbackResponse>;
     [clientKey]: any;
 }
-import { PlivoResource } from "../base.js";
+import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;
-import { PlivoResourceInterface } from "../base.js";
+import { PlivoResourceInterface } from "../base";
 export {};

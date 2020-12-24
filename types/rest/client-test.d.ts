@@ -7,6 +7,7 @@ export class Client {
     conferences: ConferenceInterface;
     endpoints: EndpointInterface;
     messages: MessageInterface;
+    lookup: LookupInterface;
     powerpacks: PowerpackInterface;
     numbers: NumberInterface;
     pricings: PricingInterface;
@@ -29,6 +30,7 @@ import { ApplicationInterface } from "../resources/applications.js";
 import { ConferenceInterface } from "../resources/conferences.js";
 import { EndpointInterface } from "../resources/endpoints.js";
 import { MessageInterface } from "../resources/messages.js";
+import { LookupInterface } from "../resources/lookup.js";
 import { PowerpackInterface } from "../resources/powerpacks.js";
 import { NumberInterface } from "../resources/numbers.js";
 import { PricingInterface } from "../resources/pricings.js";
