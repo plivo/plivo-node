@@ -45,8 +45,8 @@ export class CreateEndpointResponse {
 * @param {object} [data] - data of call
 */
 export class Endpoint extends PlivoResource {
-    constructor(client: any, data?: {});
-    id: any;
+    constructor(client: function, data?: {});
+    id: string;
     /**
      * update Endpoint
      * @method
@@ -75,7 +75,7 @@ export class Endpoint extends PlivoResource {
 * @param {object} [data] - data of call
 */
 export class EndpointInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+    constructor(client: function, data?: {});
     /**
      * Get Endpoint by given id
      * @method
@@ -116,7 +116,7 @@ export class EndpointInterface extends PlivoResourceInterface {
      * @promise {boolean} return true if success
      * @fail {Error} return Error
      */
-    delete(id: any): any;
+    delete(id: string): any;
     [clientKey]: any;
 }
 import { PlivoResource } from "../base";

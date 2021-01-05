@@ -1,3 +1,3 @@
-export function computeOldSignature(authId: any, uri: any, params: any): any;
-export function verifyOldSignature(authId: any, uri: any, params: any, signature: any): boolean;
-export function validateSignature(uri: any, nonce: any, signature: any, auth_token: any): boolean;
+export function computeOldSignature(authid: string, uri: any, params: any): any;
+export function verifyOldSignature(authid: string, uri: any, params: any, signature: any): boolean;
+export function validateSignature(uri: string, nonce: string, signature: string, auth_token: string): boolean;

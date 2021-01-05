@@ -1,4 +1,4 @@
-export function AccessToken(authId: any, authToken: any, username: any, validityOptions?: {}, uid?: any): void;
+export function AccessToken(authid: string, authToken: any, username: any, validityOptions?: {}, uid?: any): void;
 export class AccessToken {
     constructor(authId: string, authToken: string, username: string, validityOptions?: {}, uid?: any);
     authId: string;

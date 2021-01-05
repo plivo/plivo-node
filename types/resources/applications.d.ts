@@ -55,8 +55,8 @@ export class ListAllApplicationResponse {
     subAccount: string;
 }
 export class Application extends PlivoResource {
-    constructor(client: any, data?: {});
-    id: any;
+    constructor(client: function, data?: {});
+    id: string;
     [clientKey]: any;
 }
 /**
@@ -66,7 +66,7 @@ export class Application extends PlivoResource {
 * @param {object} [data] - data of call
 */
 export class ApplicationInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+    constructor(client: function, data?: {});
     /**
      * get application by given id
      * @method

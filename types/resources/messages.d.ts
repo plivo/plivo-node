@@ -37,7 +37,7 @@ export class MessageListResponse {
 }
 export class MMSMediaResponse {
 	constructor(params: object);
-	apiId: any;
+	apiid: string;
 	objects: MMSMedia[];
 }
 export class MMSMedia {
@@ -57,8 +57,8 @@ export class MMSMedia {
  * @param {object} [data] - data of call
  */
 export class Message extends PlivoResource {
-	constructor(client: any, data ? : {});
-	id: any;
+	constructor(client: function, data ? : {});
+	id: string;
 	listMedia(): Promise < any > ;
 }
 /**
@@ -68,7 +68,7 @@ export class Message extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class MessageInterface extends PlivoResourceInterface {
-	constructor(client: any, data ? : {});
+	constructor(client: function, data?: {});
 	/**
 	 * Send Message
 	 * @method

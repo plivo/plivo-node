@@ -1,13 +1,13 @@
 export class RunPHLOResponse {
 	constructor(params: any);
-	apiId: any;
-	phloId: any;
+	apiid: string;
+	phloid: string;
 	message: any;
 }
 export class RetrievePHLOResponse {
 	constructor(params: any);
-	apiId: any;
-	phloId: any;
+	apiid: string;
+	phloid: string;
 	name: any;
 	createdOn: any;
 }
@@ -18,9 +18,9 @@ export class RetrievePHLOResponse {
  * @param {object} [data] - data of phlo
  */
 export class Phlo extends PlivoResource {
-	constructor(client: any, data ? : {});
-	client: any;
-	multiPartyCall: (nodeId: any) => PhloMultiPartyCall;
+	constructor(client: function, data ? : {});
+	client: function;
+	multiPartyCall: (nodeid: string) => PhloMultiPartyCall;
 	/**
 	 * run phlo
 	 * @method
@@ -37,7 +37,7 @@ export class Phlo extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class PhloInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+    constructor(client: function, data?: {});
     get(id: string): Promise<RetrievePHLOResponse>;
 	[clientKey]: any;
 }

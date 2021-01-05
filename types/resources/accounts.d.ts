@@ -27,7 +27,7 @@ export class CreateSubAccountResponse {
 }
 export class UpdateSubAccountDetails {
     constructor(params: object);
-    apiId: stringy;
+    apiId: string;
     message: string;
 }
 export class UpdateAccountDetailsResponse {
@@ -48,8 +48,8 @@ export class GetSubAccountDetails {
     resourceUri: string;
 }
 export class Subaccount extends PlivoResource {
-    constructor(client: any, data?: {});
-    id: any;
+    constructor(client: function, data?: {});
+    id: string;
     /**
      * update subaccount
      * @method
@@ -76,7 +76,7 @@ export class Subaccount extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class SubaccountInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+    constructor(client: function, data?: {});
     /**
      * get subaccount by id
      * @method
@@ -103,7 +103,7 @@ export class SubaccountInterface extends PlivoResourceInterface {
      * @promise {Subaccount} return object of subaccount
      * @fail {Error} return Error
      */
-    update(id: any, name: string, enabled: boolean): Promise<any>;
+    update(id: string, name: string, enabled: boolean): Promise<any>;
     /**
      * delete subaccount
      * @method
@@ -112,7 +112,7 @@ export class SubaccountInterface extends PlivoResourceInterface {
      * @promise {boolean} return true if subaccount deleted
      * @fail {Error} return Error
      */
-    delete(id: any, cascade: boolean): Promise<any>;
+    delete(id: string, cascade: boolean): Promise<any>;
     [clientKey]: any;
 }
 /**
@@ -122,8 +122,8 @@ export class SubaccountInterface extends PlivoResourceInterface {
  * @param {object} [data] - data of call
  */
 export class Account extends PlivoResource {
-    constructor(client: any, data?: {});
-    id: any;
+    constructor(client: function, data?: {});
+    id: string;
     /**
      * get account detail
      * @method
@@ -141,7 +141,7 @@ export class Account extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class AccountInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+    constructor(client: function, data?: {});
     /**
      * get account detail
      * @method

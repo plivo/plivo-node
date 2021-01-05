@@ -49,8 +49,8 @@ export class DeafMemberResponse {
     message: string;
 }
 export class Conference extends PlivoResource {
-    constructor(client: any, data?: {});
-    id: any;
+    constructor(client: function, data?: {});
+    id: string;
     /**
      * hangup conference
      * @method
@@ -208,7 +208,7 @@ export class Conference extends PlivoResource {
 * @param {object} [data] - data of call
 */
 export class ConferenceInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+    constructor(client: function, data?: {});
 
     /**
      * get conference by id

@@ -13,9 +13,9 @@ export class RetrieveMultipartyCallResponse {
 	createdOn: string;
 }
 export class PhloMultiPartyCall extends PlivoResource {
-	constructor(client: any, data ? : {});
+	constructor(client: function, data ? : {});
 	action: string;
-	client: any;
+	client: function;
 	member: (memberAddress: any) => PhloMultiPartyCallMember;
 	call(triggerSource: any, to: any, role: any): Promise < any > ;
 	warmTransfer(triggerSource: any, to: any, role: any): Promise < UpdateMultipartyCallResponse > ;
@@ -25,7 +25,7 @@ export class PhloMultiPartyCall extends PlivoResource {
 	[clientKey]: any;
 }
 export class PhloMultiPartyCallInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+    constructor(client: function, data?: {});
     get(phloId: string, id: string): Promise<RetrieveMultipartyCallResponse>;
 	[clientKey]: any;
 }

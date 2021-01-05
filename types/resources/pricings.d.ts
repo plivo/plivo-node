@@ -16,7 +16,7 @@ export class PricingResponse {
     voice: object;
 }
 export class Pricing extends PlivoResource {
-    constructor(client: any, data?: {});
+    constructor(client: function, data?: {});
     /**
      * Get pricings by country
      * @method
@@ -33,7 +33,7 @@ export class Pricing extends PlivoResource {
 * @param {object} [data] - data of call
 */
 export class PricingInterface extends PlivoResourceInterface {
-    constructor(client: any, data?: {});
+    constructor(client: function, data?: {});
     [clientKey]: any;
 }
 import { PlivoResource } from "../base";
