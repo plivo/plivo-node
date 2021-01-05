@@ -9,12 +9,12 @@ export class LookupResponse {
 }
 export class Number extends PlivoResource {
     constructor(client: function, data?: {});
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 export class LookupInterface extends PlivoResourceInterface {
     constructor(client: function, data?: {});
     get(number: string, type?: string): Promise<LookupResponse>;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;

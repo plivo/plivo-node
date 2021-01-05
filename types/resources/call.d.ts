@@ -32,7 +32,7 @@ export class GetQueuedCallResponse {
 	requestUuid: string;
 }
 export class GetLiveCallResponse {
-	constructor(params: any);
+	constructor(params: object);
 	apiId: string;
 	callStatus: string;
 	callUuid: string;
@@ -236,7 +236,7 @@ export class Call extends PlivoResource {
 	 * @fail {Error} returns Error
 	 */
 	cancel(): Promise < any > ;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 /**
  * Represents a Call Interface
@@ -393,23 +393,23 @@ export class CallInterface extends PlivoResourceInterface {
 	 * @fail {Error} returns Error
 	 */
 	cancel(id: string): Promise < any > ;
-	listLiveCalls(params: any): Promise < any > ;
+	listLiveCalls(params: object): Promise < any > ;
 	getLiveCall(id: string): Promise < any > ;
 	listQueuedCalls(): Promise < any > ;
 	getQueuedCall(id: string): Promise < any > ;
-	[clientKey]: any;
+	[clientKey]: symbol;
 	[liveCallInterfaceKey]: LiveCallInterface;
 	[queuedCallInterfaceKey]: QueuedCallInterface;
 }
 export class LiveCallResource extends PlivoResource {
 	constructor(client: function, data ? : {});
 	id: string;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 export class QueuedCallResource extends PlivoResource {
 	constructor(client: function, data ? : {});
 	id: string;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 import {
 	PlivoResource
@@ -427,7 +427,7 @@ declare const liveCallInterfaceKey: unique symbol;
  */
 declare class LiveCallInterface extends PlivoResourceInterface {
 	constructor(client: function, data ? : {});
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 declare const queuedCallInterfaceKey: unique symbol;
 /**
@@ -441,6 +441,6 @@ declare class QueuedCallInterface extends PlivoResourceInterface {
 	constructor(client: function, data ? : {});
 	get(id: string): Promise < GetQueuedCallResponse > ;
 	list(): Promise < ListAllQueuedCalls > ;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 export {};

@@ -37,7 +37,7 @@ export class ListRecordingResponse {
 export class Recording extends PlivoResource {
 	constructor(client: function, data ? : {});
 	id: string;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 /**
  * Represents a Recording Interface
@@ -55,7 +55,7 @@ export class RecordingInterface extends PlivoResourceInterface {
 	 * @fail {Error} return Error
 	 */
 	delete(id: string): Promise < any > ;
-    [clientKey]: any;
+    [clientKey]: symbol;
     /**
      * Get recording by id
      * @method

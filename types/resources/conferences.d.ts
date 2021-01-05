@@ -199,7 +199,7 @@ export class Conference extends PlivoResource {
      * @fail {Error} return Error
      */
     stopRecording(): Promise<any>;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 /**
 * Represents a Conference Interface
@@ -389,7 +389,7 @@ export class ConferenceInterface extends PlivoResourceInterface {
      * @fail {Error} return Error
      */
     stopRecording(id: string): Promise<any>;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;

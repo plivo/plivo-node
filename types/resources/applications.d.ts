@@ -57,7 +57,7 @@ export class ListAllApplicationResponse {
 export class Application extends PlivoResource {
     constructor(client: function, data?: {});
     id: string;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 /**
 * Represents a Application interface
@@ -155,7 +155,7 @@ export class ApplicationInterface extends PlivoResourceInterface {
         cascade: boolean;
         newEndpointApplication: string;
     }): Promise<any>;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;

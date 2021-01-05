@@ -1,1 +1,1 @@
-export function validateV3Signature(method: any, uri: any, nonce: any, auth_token: any, v3_signature: any, params?: {}): boolean;
+export function validateV3Signature(method:string, uri: string, nonce: string, auth_token: string, v3_signature: string, params?: {}): boolean;

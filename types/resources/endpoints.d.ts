@@ -18,7 +18,7 @@ export class RetrieveEndpointResponse {
     username: string;
 }
 export class ListAllEndpointResponse {
-    constructor(params: any);
+    constructor(params: object);
     apiId: string;
     alias: string;
     application: string;
@@ -66,7 +66,7 @@ export class Endpoint extends PlivoResource {
      * @fail {Error} return Error
      */
     delete(): Promise<unknown>;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 /**
 * Represents a Endpoint Interface
@@ -117,7 +117,7 @@ export class EndpointInterface extends PlivoResourceInterface {
      * @fail {Error} return Error
      */
     delete(id: string): any;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;

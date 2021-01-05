@@ -59,7 +59,7 @@ export class MediaInterface extends PlivoResourceInterface {
      * @fail {Error} returns Error
      */
     list(params: object): Promise<any>;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 import {
 	PlivoResource

@@ -1,11 +1,11 @@
 export class RunPHLOResponse {
-	constructor(params: any);
+	constructor(params: object);
 	apiid: string;
 	phloid: string;
 	message: any;
 }
 export class RetrievePHLOResponse {
-	constructor(params: any);
+	constructor(params: object);
 	apiid: string;
 	phloid: string;
 	name: any;
@@ -28,7 +28,7 @@ export class Phlo extends PlivoResource {
 	 * @fail {Error} return Error
 	 */
 	run(params: object): Promise < RunPHLOResponse > ;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 /**
  * Represents a Phlo Interface
@@ -39,7 +39,7 @@ export class Phlo extends PlivoResource {
 export class PhloInterface extends PlivoResourceInterface {
     constructor(client: function, data?: {});
     get(id: string): Promise<RetrievePHLOResponse>;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 import {
 	PlivoResource

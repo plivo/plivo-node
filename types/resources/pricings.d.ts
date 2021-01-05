@@ -5,7 +5,7 @@
 * @param {object} [data] - data of call
 */
 export class PricingResponse {
-    constructor(params: any);
+    constructor(params: object);
     apiId: string;
     country: string;
     countryCode: string;
@@ -24,7 +24,7 @@ export class Pricing extends PlivoResource {
      * @fail {Error} return Error
      */
     get(): Promise<PricingResponse>;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 /**
 * Represents a Pricing Interface
@@ -34,7 +34,7 @@ export class Pricing extends PlivoResource {
 */
 export class PricingInterface extends PlivoResourceInterface {
     constructor(client: function, data?: {});
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;

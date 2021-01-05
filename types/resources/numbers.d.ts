@@ -26,7 +26,7 @@ export class PhoneNumber extends PlivoResource {
 	 * @fail {Error} return Error
 	 */
 	buy(appId: string): Promise < any > ;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 /**
  * Represents a PhoneNumbers Interface
@@ -45,7 +45,7 @@ export class PhoneNumberInterface extends PlivoResourceInterface {
 	 * @fail {Error} return Error
 	 */
 	buy(number: string, appId: string): Promise < BuyNumberResponse > ;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 /**
  * Represents a Number
@@ -63,7 +63,7 @@ export class NumberResource extends PlivoResource {
 	 * @fail {Error} return Error
 	 */
 	unrent(number: string): Promise < any > ;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 /**
  * Represents a Numbers
@@ -92,7 +92,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	addOwnNumber(numbers: string, carrier: string, region: string, optionalParams: any): Promise < any > ;
+	addOwnNumber(numbers: string, carrier: string, region: string, optionalParams: object): Promise < any > ;
 	/**
 	 * Add own number from carrier
 	 * @method
@@ -101,7 +101,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PhoneNumberInterface} return PhoneNumbers Object if success
 	 * @fail {Error} return Error
 	 */
-	search(countryISO: string, optionalParams: any): Promise < any > ;
+	search(countryISO: string, optionalParams: object): Promise < any > ;
 	/**
 	 * Update Number
 	 * @method
@@ -126,7 +126,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @fail {Error} return Error
 	 */
 	unrent(number: string): Promise < any > ;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 import {
 	PlivoResource

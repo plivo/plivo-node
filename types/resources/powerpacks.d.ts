@@ -5,7 +5,7 @@ export class ListAllNumbersResponse {
 	objects: object;
 }
 export class CreatePowerpackResponse {
-	constructor(params: any);
+	constructor(params: object);
 	apiId: string;
 	applicationId: string;
 	applicationType: string;
@@ -63,7 +63,7 @@ export class RemoveTollFreeNumberResponse {
     response: string;
 }
 export class RemoveShortCodeResponse {
-	constructor(params: any);
+	constructor(params: object);
     apiid: string;
     response: string;
 }
@@ -130,8 +130,8 @@ export class Powerpack extends PlivoResource {
 	list_tollfree(params: object): Promise < ListTollFreeResponse > ;
 	find_shortcode(shortcode: object, service ? : string): Promise < RetrieveShortCodeResponse > ;
 	find_tollfree(tollfree: string, service ? : string): Promise < RetrieveTollFreeResponse > ;
-	buy_add_number(params: object): any;
-	[clientKey]: any;
+	buy_add_number(params: object): Promise <AddNumberResponse>;
+	[clientKey]: symbol;
 }
 export class NumberPool extends PlivoResource {
 	constructor(client: function, data ? : {});
@@ -213,7 +213,7 @@ export class PowerpackInterface extends PlivoResourceInterface {
 		application_type: string;
 		application_id: string;
 	}): Promise < UpdatePowerpackResponse > ;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 import {
 	PlivoResource

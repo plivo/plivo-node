@@ -66,8 +66,8 @@ export class Subaccount extends PlivoResource {
      * @promise {boolean} return true if subaccount deleted
      * @fail {Error} return Error
      */
-    delete(cascade: any): Promise<unknown>;
-    [clientKey]: any;
+    delete(cascade: boolean): Promise<unknown>;
+    [clientKey]: symbol;
 }
 /**
  * Represents a Subaccount Interface
@@ -113,7 +113,7 @@ export class SubaccountInterface extends PlivoResourceInterface {
      * @fail {Error} return Error
      */
     delete(id: string, cascade: boolean): Promise<any>;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 /**
  * Represents a Account
@@ -131,8 +131,8 @@ export class Account extends PlivoResource {
      * @fail {Error} return Error
      */
     get(): Promise<any>;
-    update(params: any): Promise<UpdateAccountDetailsResponse>;
-    [clientKey]: any;
+    update(params: object): Promise<UpdateAccountDetailsResponse>;
+    [clientKey]: symbol;
 }
 /**
  * Represents a Account Interface
@@ -164,7 +164,7 @@ export class AccountInterface extends PlivoResourceInterface {
         city: string;
         address: string;
     }): Promise<any>;
-    [clientKey]: any;
+    [clientKey]: symbol;
 }
 import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;

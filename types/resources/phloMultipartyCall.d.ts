@@ -22,12 +22,12 @@ export class PhloMultiPartyCall extends PlivoResource {
 	coldTransfer(triggerSource: any, to: any, role: any): Promise < UpdateMultipartyCallResponse > ;
     abortTransfer(memberAddress: any): Promise<any>;
     update(action: any, triggerSource: any, to: any, role: any): Promise<UpdateMultipartyCallResponse>;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 export class PhloMultiPartyCallInterface extends PlivoResourceInterface {
     constructor(client: function, data?: {});
     get(phloId: string, id: string): Promise<RetrieveMultipartyCallResponse>;
-	[clientKey]: any;
+	[clientKey]: symbol;
 }
 import {
 	PlivoResource
