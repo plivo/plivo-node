@@ -9,6 +9,29 @@ export class UpdateNumberResponse {
 	apiId: string;
 	message: string;
 }
+
+export class SearchNumberResponse {
+	constructor(params: object);
+	number: string;
+	prefix: string;
+	city: string;	
+	country: string;
+	region: string;
+	rate_center: string;
+	lata: number;
+	type: string;
+	sub_type: string;
+	setup_rate: string;
+	monthly_rental_rate: string;
+	sms_enabled: boolean;
+	sms_rate: string;
+	voice_enabled: boolean;
+	voice_rate: string;
+	restriction: any;
+	restriction_text: any;
+	resource_uri: string;
+}
+
 /**
  * Represents a PhoneNumber
  * @constructor
@@ -44,7 +67,7 @@ export class PhoneNumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId: string): Promise < BuyNumberResponse > ;
+	buy(number: string, appId: string): Promise < any > ;
 	[clientKey]: symbol;
 }
 /**
@@ -81,7 +104,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId: string): Promise < any > ;
+	buy(number: string, appId: string): Promise < BuyNumberResponse > ;
 	/**
 	 * Add own number from carrier
 	 * @method
@@ -92,7 +115,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	addOwnNumber(numbers: string, carrier: string, region: string, optionalParams: object): Promise < any > ;
+	addOwnNumber(numbers: string, carrier: string, region: string, optionalParams: object): Promise < UpdateNumberResponse > ;
 	/**
 	 * Add own number from carrier
 	 * @method
@@ -101,7 +124,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PhoneNumberInterface} return PhoneNumbers Object if success
 	 * @fail {Error} return Error
 	 */
-	search(countryISO: string, optionalParams: object): Promise < any > ;
+	search(countryISO: string, optionalParams: object): Promise < SearchNumberResponse > ;
 	/**
 	 * Update Number
 	 * @method
@@ -117,7 +140,7 @@ export class NumberInterface extends PlivoResourceInterface {
 		appId: string;
 		subAccount: string;
 		alias: string;
-	}): Promise < any > ;
+	}): Promise < UpdateNumberResponse > ;
 	/**
 	 * Unrent Number
 	 * @method

@@ -140,7 +140,7 @@ export class ApplicationInterface extends PlivoResourceInterface {
         defaultEndpointApp: boolean;
         subaccount: string;
         logIncomingMessages: boolean;
-    }): Promise<any>;
+    }): Promise<UpdateApplicationResponse>;
     /**
      * delete Application
      * @method

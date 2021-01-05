@@ -24,7 +24,7 @@ export class UpdatePowerpackResponse {
 	applicationType: string;
 	createdOn: string;
 	localConnect: string;
-    name: string;
+  name: string;
 	numberPool: string;
 	stickySender: string;
 	uuid: string;
@@ -44,7 +44,7 @@ export class ListTollFreeResponse {
 export class AddNumberResponse {
 	constructor(params: object);
 	apiId: string;
-    accountPhoneNumberResource: string;
+  accountPhoneNumberResource: string;
 	addedOn: string;
 	countryIso2: string;
 	number: string;

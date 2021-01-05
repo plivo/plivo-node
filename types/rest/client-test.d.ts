@@ -1,5 +1,5 @@
 export class Client {
-    constructor(authid: string, authToken: any, proxy: any);
+    constructor(authid: string, authToken: string, proxy: string);
     calls: CallInterface;
     accounts: AccountInterface;
     subAccounts: SubaccountInterface;
@@ -20,7 +20,7 @@ export class Client {
  * You can also pass in additional parameters accepted by the node requests module.
  */
 export class PhloClient {
-    constructor(authid: string, authToken: any, options: any);
+    constructor(authid: string, authToken: string, options: string);
     phlo: (phloid: string) => Phlo;
 }
 import { CallInterface } from "../resources/call.js";

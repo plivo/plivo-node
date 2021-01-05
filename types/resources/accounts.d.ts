@@ -103,7 +103,7 @@ export class SubaccountInterface extends PlivoResourceInterface {
      * @promise {Subaccount} return object of subaccount
      * @fail {Error} return Error
      */
-    update(id: string, name: string, enabled: boolean): Promise<any>;
+    update(id: string, name: string, enabled: boolean): Promise<UpdateSubAccountDetails>;
     /**
      * delete subaccount
      * @method
@@ -163,7 +163,7 @@ export class AccountInterface extends PlivoResourceInterface {
         name: string;
         city: string;
         address: string;
-    }): Promise<any>;
+    }): Promise<UpdateAccountDetailsResponse>;
     [clientKey]: symbol;
 }
 import { PlivoResource } from "../base";

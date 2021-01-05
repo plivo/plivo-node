@@ -88,7 +88,7 @@ export class MessageInterface extends PlivoResourceInterface {
 		type: string;
 		url: string;
 		method: string;
-		media_urls: any;
+		media_urls: Array;
 		log: boolean;
 	}): Promise < MessageResponse > ;
 	/**

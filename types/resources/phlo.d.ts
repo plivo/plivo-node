@@ -2,14 +2,14 @@ export class RunPHLOResponse {
 	constructor(params: object);
 	apiid: string;
 	phloid: string;
-	message: any;
+	message: string;
 }
 export class RetrievePHLOResponse {
 	constructor(params: object);
 	apiid: string;
 	phloid: string;
-	name: any;
-	createdOn: any;
+	name: string;
+	createdOn: string;
 }
 /**
  * Represents a Phlo

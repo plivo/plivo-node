@@ -42,7 +42,7 @@ export class MediaInterface extends PlivoResourceInterface {
 	 * @method
 	 * @fail {Error} return Error
 	 */
-    upload(files: any): Promise<UploadMediaResponse>;
+    upload(files: Array): Promise<UploadMediaResponse>;
     /**
      * Get Media by given id
      * @method
