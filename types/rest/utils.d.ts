@@ -1,4 +1,4 @@
-export function camelCaseRequestWrapper(requestFunc: any): (method: any, action: any, params: object) => any;
+export function camelCaseRequestWrapper(requestFunc: any): (method: string, action: string, params: object) => any;
 export function validateSpeakAttributes(content: any, voice: any): {
     success: boolean;
     msg?: undefined;

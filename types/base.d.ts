@@ -3,16 +3,16 @@ export class PlivoGenericResponse {
     id: string;
 }
 export class PlivoResource {
-    constructor(action: any, klass: any, idField: any, request: any);
+    constructor(action: string, klass: any, idField: string, request: any);
     update(params: object, id: string): Promise<any>;
     delete(params: object): Promise<any>;
-    executeAction(task: string, method: string, params: {}, action: any): Promise<any>;
+    executeAction(task: string, method: string, params: {}, action: string): Promise<any>;
     customexecuteAction(url: any, method?: string, params?: {}): Promise<any>;
     customexecuteGetNumberAction(url: any, method?: string, params?: {}): any;
     getMetaResponse(url: any, method?: string, params?: {}): Promise<any>;
 }
 export class PlivoResourceInterface {
-    constructor(action: any, klass: any, idField: any, request: any);
+    constructor(action: string, klass: any, idField: string, request: any);
     get(id: string, params?: {}): Promise<any>;
     list(params: object): Promise<any>;
     create(params: object): Promise<any>;

@@ -1,1 +1,1 @@
-export function Request(config: any): (method: any, action: any, params: object) => Promise<any>;
+export function Request(config: any): (method: string, action: string, params: object) => Promise<any>;
