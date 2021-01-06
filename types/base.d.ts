@@ -3,7 +3,7 @@ export class PlivoGenericResponse {
     id: string;
 }
 export class PlivoResource {
-    constructor(action: string, klass: any, idField: string, request: any);
+    constructor(action: string, Klass: Symbol, idField: string, request: any);
     update(params: object, id: string): Promise<any>;
     delete(params: object): Promise<any>;
     executeAction(task: string, method: string, params: {}, action: string): Promise<any>;
@@ -12,7 +12,7 @@ export class PlivoResource {
     getMetaResponse(url: any, method?: string, params?: {}): Promise<any>;
 }
 export class PlivoResourceInterface {
-    constructor(action: string, klass: any, idField: string, request: any);
+    constructor(action: string, Klass: Symbol, idField: string, request: any);
     get(id: string, params?: {}): Promise<any>;
     list(params: object): Promise<any>;
     create(params: object): Promise<any>;
