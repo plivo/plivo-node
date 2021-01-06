@@ -108,7 +108,7 @@ export class EndpointInterface extends PlivoResourceInterface {
      * @promise {object} return {@link Endpoint} object if success
      * @fail {Error} return Error
      */
-    update(id: string, params: object): any;
+    update(id: string, params: object): Promise<UpdateEndpointResponse>;
     /**
      * delete Endpoint
      * @method
