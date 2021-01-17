@@ -118,7 +118,7 @@ export class RecordCallResponse {
  * @param {object} [data] - data of call
  */
 export class Call extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	id: string;
 	/**
 	 * hangup call
@@ -245,7 +245,7 @@ export class Call extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class CallInterface extends PlivoResourceInterface {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	/**
 	 * Get A Call Detail
 	 * @method
@@ -402,12 +402,12 @@ export class CallInterface extends PlivoResourceInterface {
 	[queuedCallInterfaceKey]: QueuedCallInterface;
 }
 export class LiveCallResource extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	id: string;
 	[clientKey]: symbol;
 }
 export class QueuedCallResource extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	id: string;
 	[clientKey]: symbol;
 }
@@ -426,7 +426,7 @@ declare const liveCallInterfaceKey: unique symbol;
  * @param {object} [data] - data of call
  */
 declare class LiveCallInterface extends PlivoResourceInterface {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	[clientKey]: symbol;
 }
 declare const queuedCallInterfaceKey: unique symbol;
@@ -438,7 +438,7 @@ declare const queuedCallInterfaceKey: unique symbol;
  */
 
 declare class QueuedCallInterface extends PlivoResourceInterface {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	get(id: string): Promise < GetQueuedCallResponse > ;
 	list(): Promise < ListAllQueuedCalls > ;
 	[clientKey]: symbol;

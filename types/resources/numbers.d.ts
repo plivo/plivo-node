@@ -39,7 +39,7 @@ export class SearchNumberResponse {
  * @param {object} [data] - data of call
  */
 export class PhoneNumber extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	id: string;
 	/**
 	 * Buy Phone Number
@@ -59,7 +59,7 @@ export class PhoneNumber extends PlivoResource {
  * @param {string} [data.test] - test data
  */
 export class PhoneNumberInterface extends PlivoResourceInterface {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	/**
 	 * Buy Phone Number
 	 * @method
@@ -77,7 +77,7 @@ export class PhoneNumberInterface extends PlivoResourceInterface {
  * @param {object} [data] - data of call
  */
 export class NumberResource extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	id: string;
 	/**
 	 * Unrent Number
@@ -95,7 +95,7 @@ export class NumberResource extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class NumberInterface extends PlivoResourceInterface {
-	constructor(client: function);
+	constructor(client: Function);
 	/**
 	 * Buy Phone Number
 	 * @method

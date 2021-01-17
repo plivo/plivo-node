@@ -8,11 +8,11 @@ export class LookupResponse {
     resourceUri: string;
 }
 export class Number extends PlivoResource {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     [clientKey]: symbol;
 }
 export class LookupInterface extends PlivoResourceInterface {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     get(number: string, type?: string): Promise<LookupResponse>;
     [clientKey]: symbol;
 }

@@ -5,7 +5,7 @@ export class CallFeedbackResponse {
     status: string;
 }
 export class CallFeedback extends PlivoResource {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     id: string;
     [clientKey]: symbol;
 }
@@ -16,7 +16,7 @@ export class CallFeedback extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class CallFeedbackInterface extends PlivoResourceInterface {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     create(callUUID: string, rating: string, issues?: never[], notes?: string): Promise<CallFeedbackResponse>;
     [clientKey]: symbol;
 }

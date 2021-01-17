@@ -35,7 +35,7 @@ export class ListRecordingResponse {
  * @param {object} [data] - data of call
  */
 export class Recording extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	id: string;
 	[clientKey]: symbol;
 }
@@ -46,7 +46,7 @@ export class Recording extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class RecordingInterface extends PlivoResourceInterface {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	/**
 	 * Delete recording by id
 	 * @method

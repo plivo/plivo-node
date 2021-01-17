@@ -113,7 +113,7 @@ export class RetrieveShortCodeResponse {
  * @param {object} [data] - data of call
  */
 export class Powerpack extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	uuid: string;
 	number_pool_id: string;
 	number_pool: NumberPool;
@@ -134,13 +134,13 @@ export class Powerpack extends PlivoResource {
 	[clientKey]: symbol;
 }
 export class NumberPool extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	numbers: Numbers;
 	shortcodes: Shortcode;
 	tollfree: Tollfree;
 }
 export class Numbers extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	buy_add_number(params: object): any;
 	list(params: object): Promise < any > ;
 	count(params: object): Promise < any > ;
@@ -150,14 +150,14 @@ export class Numbers extends PlivoResource {
 	remove(number: string, unrent ? : boolean): Promise < any > ;
 }
 export class Shortcode extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	number_pool_id: string;
 	list(params: object): Promise < any > ;
 	find(shortcode: object): Promise < any > ;
 	remove(shortcode: object): Promise < any > ;
 }
 export class Tollfree extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	number_pool_id: string;
 	add(tollfree: string): Promise < any > ;
 	remove(tollfree: string, unrent ? : boolean): Promise < any > ;
@@ -171,7 +171,7 @@ export class Tollfree extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class PowerpackInterface extends PlivoResourceInterface {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
     /**
      * get Powerpack by given id
      * @method

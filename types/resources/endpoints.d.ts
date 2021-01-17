@@ -45,7 +45,7 @@ export class CreateEndpointResponse {
 * @param {object} [data] - data of call
 */
 export class Endpoint extends PlivoResource {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     id: string;
     /**
      * update Endpoint
@@ -75,7 +75,7 @@ export class Endpoint extends PlivoResource {
 * @param {object} [data] - data of call
 */
 export class EndpointInterface extends PlivoResourceInterface {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     /**
      * Get Endpoint by given id
      * @method

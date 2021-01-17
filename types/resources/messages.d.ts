@@ -57,7 +57,7 @@ export class MMSMedia {
  * @param {object} [data] - data of call
  */
 export class Message extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	id: string;
 	listMedia(): Promise < any > ;
 }
@@ -68,7 +68,7 @@ export class Message extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class MessageInterface extends PlivoResourceInterface {
-	constructor(client: function, data?: {});
+	constructor(client: Function, data?: {});
 	/**
 	 * Send Message
 	 * @method

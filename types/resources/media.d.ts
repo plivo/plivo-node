@@ -26,7 +26,7 @@ export class ListMediaResponse {
  * @param {object} [data] - data of call
  */
 export class Media extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	id: string;
 }
 /**
@@ -36,7 +36,7 @@ export class Media extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class MediaInterface extends PlivoResourceInterface {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	/**
 	 * Upload Media
 	 * @method

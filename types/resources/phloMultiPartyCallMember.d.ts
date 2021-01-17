@@ -10,9 +10,9 @@ export class UpdateMemberResponse {
 	error: string;
 }
 export class PhloMultiPartyCallMember extends PlivoResource {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	action: string;
-	client: function;
+	client: Function;
 	resumeCall(): Promise < any > ;
 	voicemailDrop(): Promise < any > ;
 	hangup(): Promise < any > ;
@@ -21,9 +21,9 @@ export class PhloMultiPartyCallMember extends PlivoResource {
     update(action: object): Promise<UpdateMemberResponse>;
 }
 export class PhloMultiPartyCallMemberInterface extends PlivoResourceInterface {
-	constructor(client: function, data ? : {});
+	constructor(client: Function, data ? : {});
 	action: string;
-    client: function;
+    client: Function;
     get(phloId: string, nodeId: string, memberAddress: string): any;
 }
 import {

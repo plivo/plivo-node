@@ -48,7 +48,7 @@ export class GetSubAccountDetails {
     resourceUri: string;
 }
 export class Subaccount extends PlivoResource {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     id: string;
     /**
      * update subaccount
@@ -76,7 +76,7 @@ export class Subaccount extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class SubaccountInterface extends PlivoResourceInterface {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     /**
      * get subaccount by id
      * @method
@@ -122,7 +122,7 @@ export class SubaccountInterface extends PlivoResourceInterface {
  * @param {object} [data] - data of call
  */
 export class Account extends PlivoResource {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     id: string;
     /**
      * get account detail
@@ -141,7 +141,7 @@ export class Account extends PlivoResource {
  * @param {object} [data] - data of call
  */
 export class AccountInterface extends PlivoResourceInterface {
-    constructor(client: function, data?: {});
+    constructor(client: Function, data?: {});
     /**
      * get account detail
      * @method

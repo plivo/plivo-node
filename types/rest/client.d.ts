@@ -1,10 +1,13 @@
+export function Response(): any;
+export function validateV3Signature(method: string, uri: string, nonce: string, auth_token: string, v3_signature: string, params?: {}): Boolean;
+export function validateSignature(uri: string, nonce: string, signature: string, auth_token: string): Boolean;
 /**
  * Plivo API client which can be used to access the Plivo APIs.
  * To set a proxy or timeout, pass in options.proxy (url) or options.timeout (number in ms)
  * You can also pass in additional parameters accepted by the node requests module.
  */
 export class Client {
-    constructor(authid: string, authToken: string, options?: string);
+    constructor(authId: string, authToken: string, options?: string);
     calls: CallInterface;
     accounts: AccountInterface;
     subaccounts: SubaccountInterface;
@@ -28,8 +31,8 @@ export class Client {
  * You can also pass in additional parameters accepted by the node requests module.
  */
 export class PhloClient {
-    constructor(authid: string, authToken: string, options?: string);
-    phlo: (phloid: string) => Phlo;
+    constructor(authId: any, authToken: any, options: any);
+    phlo: (phloId: any) => Phlo;
 }
 import { CallInterface } from "../resources/call.js";
 import { AccountInterface } from "../resources/accounts.js";
