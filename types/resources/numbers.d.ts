@@ -27,8 +27,8 @@ export class SearchNumberResponse {
 	sms_rate: string;
 	voice_enabled: boolean;
 	voice_rate: string;
-	restriction: any;
-	restriction_text: any;
+	restriction: string;
+	restriction_text: string;
 	resource_uri: string;
 }
 
