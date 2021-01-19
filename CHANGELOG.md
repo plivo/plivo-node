@@ -1,6 +1,6 @@
 # Change Log
 
-## [4.12.0](https://github.com/plivo/plivo-node/releases/tag/v4.11.0)(2020-10-30)
+## [4.12.0](https://github.com/plivo/plivo-node/releases/tag/v4.12.0)(2021-01-19)
 -  Add Typescript support.
 
 ## [4.11.0](https://github.com/plivo/plivo-node/releases/tag/v4.11.0)(2020-10-30)
