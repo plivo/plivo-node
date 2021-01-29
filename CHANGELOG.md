@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.14.0](https://github.com/plivo/plivo-node/releases/tag/v4.14.0)(2021-01-29)
+-  Add axios as HTTP client library.
+
 ## [4.13.0](https://github.com/plivo/plivo-node/releases/tag/v4.13.0)(2021-01-19)
 -  Add Typescript support.
 
