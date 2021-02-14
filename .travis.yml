@@ -3,6 +3,8 @@ language: node_js
 node_js:
   # - "node" commenting this as we have to find out a solution for node12 & gulp3
   - "lts/*"
+  - "10"
+  - "9"
   - "8"
   - "7"
   - "6"
