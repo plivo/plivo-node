@@ -75,9 +75,9 @@ gulp.task('coveralls', ['test'], function () {
 
 gulp.task('babel', ['clean'], function () {
   return merge([
-    gulp.src('types/**/*.d.ts')
+    gulp.src('types/**/*.d.ts',{base:'.'})
     .pipe(gulp.dest('dist/')),
-    gulp.src('lib/**/*.js')
+    gulp.src('lib/**/*.js',{base:'.'})
     .pipe(babel())
     .pipe(gulp.dest('dist'))
 ]);
