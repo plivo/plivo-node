@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.14.2](https://github.com/plivo/plivo-node/releases/tag/v4.14.2)(2021-02-17)
+-  Fix duplicate call issue for make call API.
+
 ## [4.14.1](https://github.com/plivo/plivo-node/releases/tag/v4.14.1)(2021-02-09)
 -  Fix Buy Number API & env variables support for TypeScript.
 
