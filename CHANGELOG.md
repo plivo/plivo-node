@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.14.3](https://github.com/plivo/plivo-node/releases/tag/v4.14.3)(2021-03-26)
+-  Fix bug on stopRecording and all voice API flows post Typescript changes.
+
 ## [4.14.2](https://github.com/plivo/plivo-node/releases/tag/v4.14.2)(2021-02-17)
 -  Fix duplicate call issue for make call API.
 
