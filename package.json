@@ -62,6 +62,7 @@
     "axios": "^0.19.2",
     "base-64": "^0.1.0",
     "build-url": "^1.0.10",
+    "form-data": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.4",
     "querystring": "^0.2.0",
