@@ -23,6 +23,11 @@ export class Client {
     recordings: RecordingInterface;
     callFeedback: CallFeedbackInterface;
     media: MediaInterface;
+    endUsers: EndUserInterface;
+    complianceDocumentTypes: ComplianceDocumentTypeInterface;
+    complianceDocuments: ComplianceDocumentInterface;
+    complianceRequirements: ComplianceRequirementInterface;
+    complianceApplications: ComplianceApplicationInterface;
     toJSON(...args: any[]): any;
 }
 /**
