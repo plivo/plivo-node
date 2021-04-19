@@ -68,6 +68,7 @@ describe('calls', function () {
       client.calls.get(1)
         .then(function(call){
           return call.transfer()
+          done()
         })
         .then(function(call) {
           assert.equal(call.id, 5)
