@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@types/node": "^14.14.14",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "base-64": "^0.1.0",
     "build-url": "^1.0.10",
     "form-data": "^4.0.0",
