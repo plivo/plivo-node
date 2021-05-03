@@ -2,8 +2,6 @@
 
 [![Version](https://img.shields.io/npm/v/plivo.svg)](https://www.npmjs.org/package/plivo)
 [![Build Status](https://api.travis-ci.org/plivo/plivo-node.svg?branch=master)](https://travis-ci.org/github/plivo/plivo-node)
-[![Coverage Status](https://coveralls.io/repos/github/plivo/plivo-node/badge.svg)](https://coveralls.io/github/plivo/plivo-node)
-[![Downloads](https://img.shields.io/npm/dm/plivo.svg)](https://www.npmjs.com/package/plivo)
 
 The Node.js SDK simplifies the integration of communications into your Node.js applications through the Plivo REST API. You will be able to use the SDK to make voice calls, send SMS, and generate Plivo XML to manage your call flows.
 
@@ -126,7 +124,7 @@ console.log('Phlo run result', result);
 ```
 
 ### More examples
-Refer to the [Plivo API Reference](https://www.plivo.com/docs/sms/api/overview/) for more examples. Also refer to the [guide to setting up dev environment](https://www.plivo.com/docs/sdk/server/node-sdk/) on [Plivo Developers Portal](https://www.plivo.com/docs/sms/quickstart/node-expressjs/) to setup an Express server & use it to test out your integration in under 5 minutes.
+Refer to the [Plivo API Example](https://github.com/plivo/plivo-examples-node) for more examples. Also refer to the [guides for configuring the Express server to run various scenarios](https://www.plivo.com/docs/sms/quickstart/node-expressjs/) & use it to test out your integration in under 5 minutes.
 
 ## Reporting issues
 Report any feedback or problems with this version by [opening an issue on Github](https://github.com/plivo/plivo-node/issues).
