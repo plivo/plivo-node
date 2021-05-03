@@ -1,5 +1,9 @@
-# plivo-node
-The Node.js SDK makes it simpler to integrate communications into your Node.js applications using the Plivo REST API. Using the SDK, you will be able to make voice calls, send SMS and generate Plivo XML to control your call flows.
+# Plivo Node.js library
+
+[![Version](https://img.shields.io/npm/v/plivo.svg)](https://www.npmjs.org/package/plivo)
+[![Build Status](https://api.travis-ci.org/plivo/plivo-node.svg?branch=master)](https://travis-ci.org/github/plivo/plivo-node)
+
+The Node.js SDK simplifies the integration of communications into your Node.js applications through the Plivo REST API. You will be able to use the SDK to make voice calls, send SMS, and generate Plivo XML to manage your call flows.
 
 ## Installation
 Install the SDK using [npm](https://www.npmjs.com/package/plivo)
@@ -15,7 +19,7 @@ For features in beta, use the beta branch:
 ## Getting started
 
 ### Authentication
-To make the API requests, you need to create a `Client` and provide it with authentication credentials (which can be found at [https://manage.plivo.com/dashboard/](https://manage.plivo.com/dashboard/)).
+To make the API requests, you need to create a `Client` and provide it with authentication credentials (which can be found at [https://console.plivo.com/dashboard/](https://console.plivo.com/dashboard/)).
 
 We recommend that you store your credentials in the `PLIVO_AUTH_ID` and the `PLIVO_AUTH_TOKEN` environment variables, so as to avoid the possibility of accidentally committing them to source control. If you do this, you can initialise the client with no arguments and it will automatically fetch them from the environment variables:
 
@@ -27,7 +31,7 @@ Alternatively, you can specifiy the authentication credentials while initializin
 
 ```javascript
 let plivo = require('plivo');
-let client = new plivo.Client('your_auth_id', 'your_auth_token');
+let client = new plivo.Client('<auth_id>', '<auth_token>');
 ```
 
 ### The basics
@@ -52,13 +56,12 @@ let plivo = require('plivo');
 let client = new plivo.Client();
 
 client.messages.create(
-  'your_source_number',
-  'your_destination_number',
+  '+14156667778',
+  '+14156667777',
   'Hello, world!'
-).then(function(message_created) {
-  console.log(message_created)
+).then(function(response) {
+  console.log(response)
 });
-
 ```
 
 ### Make a call
@@ -68,27 +71,23 @@ let plivo = require('plivo');
 let client = new plivo.Client();
 
 client.calls.create(
-  'your_source_number',
-  'your_destination_number',
+  '+14156667778',
+  '+14156667777',
   'http://answer.url'
-).then(function(call_created) {
-  console.log(call_created)
+).then(function(response) {
+  console.log(response)
 });
-
 ```
 
 ### Lookup a number
 
 ```javascript
 let plivo = require('plivo');
-let client = new plivo.Client('AUTH_ID', 'AUTH_TOKEN');
+let client = new plivo.Client('<auth_id>', '<auth_token>');
 
-client.lookup.get(
-    "<number-goes-here>"
-).then(function(response) {
+client.lookup.get('<number-goes-here>')
+.then(function(response) {
     console.log(response);
-}).catch(function(error) {
-    console.log(error);
 });
 ```
 
@@ -114,25 +113,18 @@ This generates the following XML:
 ### Run a PHLO
 
 ```javascript
-var plivo = require('../dist/rest/client.js');
+let plivo = require('plivo');
 var PhloClient = plivo.PhloClient;
-
-var authId = 'auth-id';
-var authToken = 'auth-token';
-var phloId = 'PHLO_ID';
 var phloClient = phlo = null;
 
-// Run phlo
-phloClient = new PhloClient(authId, authToken);
-phloClient.phlo(phloId).run().then(function (result) {
+phloClient = new PhloClient('<auth-id>', '<auth-token>');
+phloClient.phlo('<phlo_id>').run().then(function (result) {
 console.log('Phlo run result', result);
-}).catch(function (err) {
-console.error('Phlo run failed', err);
 });
 ```
 
 ### More examples
-Refer to the [Plivo API Reference](https://api-reference.plivo.com/latest/node/introduction/overview) for more examples. Also refer to the [guide to setting up dev environment](https://developers.plivo.com/getting-started/setting-up-dev-environment/) on [Plivo Developers Portal](https://developers.plivo.com) to setup an Express server & use it to test out your integration in under 5 minutes.
+More examples are available [here](https://github.com/plivo/plivo-examples-node). Also refer to the [guides for configuring the Express server to run various scenarios](https://www.plivo.com/docs/sms/quickstart/node-expressjs/) & use it to test out your integration in under 5 minutes.
 
 ## Reporting issues
 Report any feedback or problems with this version by [opening an issue on Github](https://github.com/plivo/plivo-node/issues).
