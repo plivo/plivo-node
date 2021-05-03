@@ -56,8 +56,8 @@ let plivo = require('plivo');
 let client = new plivo.Client();
 
 client.messages.create(
-  '<source_number>',
-  '<destination_number>',
+  '+14156667778',
+  '+14156667777',
   'Hello, world!'
 ).then(function(response) {
   console.log(response)
@@ -71,8 +71,8 @@ let plivo = require('plivo');
 let client = new plivo.Client();
 
 client.calls.create(
-  '<source_number>',
-  '<destination_number>',
+  '+14156667778',
+  '+14156667777',
   'http://answer.url'
 ).then(function(response) {
   console.log(response)
