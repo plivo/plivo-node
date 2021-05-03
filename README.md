@@ -124,7 +124,7 @@ console.log('Phlo run result', result);
 ```
 
 ### More examples
-More examples can be found in the [Plivo API Example](https://github.com/plivo/plivo-examples-node). Also refer to the [guides for configuring the Express server to run various scenarios](https://www.plivo.com/docs/sms/quickstart/node-expressjs/) & use it to test out your integration in under 5 minutes.
+More examples are available [here](https://github.com/plivo/plivo-examples-node). Also refer to the [guides for configuring the Express server to run various scenarios](https://www.plivo.com/docs/sms/quickstart/node-expressjs/) & use it to test out your integration in under 5 minutes.
 
 ## Reporting issues
 Report any feedback or problems with this version by [opening an issue on Github](https://github.com/plivo/plivo-node/issues).
