@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.16.0](https://github.com/plivo/plivo-node/releases/tag/v4.17.1)(2021-04-06)
+-  Added Fix for Adaptive Powerpack Create & Update functions
+
 ## [4.16.0](https://github.com/plivo/plivo-node/releases/tag/v4.16.0)(2021-04-19)
 -  Added SDK support for Voice MultiPartyCall APIs and XML
 
