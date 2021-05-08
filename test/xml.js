@@ -29,4 +29,15 @@ describe('PlivoXML', function () {
       done("Failed to test Plivo Xml due to unknown error");
     });
   });
+
+  it('tests MultiPartyCall', function (done){
+    const mpcResponse = new Response();
+    mpcResponse.addMultiPartyCall('Nairobi',{
+      role: 'Agent',
+      maxDuration: 1000,
+      statusCallbackEvents: 'participant-speak-events, participant-digit-input-events, add-participant-api-events, participant-state-changes, mpc-state-changes'
+    });
+    assert.equal('<Response><MultiPartyCall role="Agent" maxDuration="1000" statusCallbackEvents="participant-speak-events, participant-digit-input-events, add-participant-api-events, participant-state-changes, mpc-state-changes" maxParticipants="10" waitMusicMethod="GET" agentHoldMusicMethod="GET" customerHoldMusicMethod="GET" record="false" recordFileFormat="mp3" recordingCallbackMethod="GET" statusCallbackMethod="POST" stayAlone="false" coachMode="true" mute="false" hold="false" startMpcOnEnter="true" endMpcOnExit="false" enterSound="beep:1" enterSoundMethod="GET" exitSound="beep:2" exitSoundMethod="GET" onExitActionMethod="POST" relayDTMFInputs="false">Nairobi</MultiPartyCall></Response>',mpcResponse.toXML());
+    done();
+  })
 });

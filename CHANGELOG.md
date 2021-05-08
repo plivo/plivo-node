@@ -1,5 +1,26 @@
 # Change Log
 
+## [4.17.1](https://github.com/plivo/plivo-node/releases/tag/v4.17.1)(2021-05-06)
+-  Added Fix for Adaptive Powerpack Create & Update functions
+
+## [4.17.0](https://github.com/plivo/plivo-node/releases/tag/v4.17.0)(2021-05-04)
+-  Update library: Axios
+-  Add Exception Support
+-  Updated README
+
+## [4.16.0](https://github.com/plivo/plivo-node/releases/tag/v4.16.0)(2021-04-19)
+-  Added SDK support for Voice MultiPartyCall APIs and XML
+
+## [4.15.0](https://github.com/plivo/plivo-node/releases/tag/v4.15.0)(2021-04-19)
+-  Add support for Regulatory Compliance APIs.
+-  Add "npanxx" and "local_calling_area" support for Search Phone Number.
+
+## [4.14.3](https://github.com/plivo/plivo-node/releases/tag/v4.14.3)(2021-03-26)
+-  Fix bug on stopRecording and all voice API flows post Typescript changes.
+
+## [4.14.2](https://github.com/plivo/plivo-node/releases/tag/v4.14.2)(2021-02-17)
+-  Fix duplicate call issue for make call API.
+
 ## [4.14.1](https://github.com/plivo/plivo-node/releases/tag/v4.14.1)(2021-02-09)
 -  Fix Buy Number API & env variables support for TypeScript.
 
