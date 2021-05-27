@@ -1,6 +1,6 @@
 # Change Log
 
-## [4.18.0](https://github.com/plivo/plivo-node/releases/tag/v4.17.0)(2021-05-28)
+## [4.18.0](https://github.com/plivo/plivo-node/releases/tag/v4.18.0)(2021-05-28)
 - New Send Message interface along with existing interface support.
 
 ## [4.17.1](https://github.com/plivo/plivo-node/releases/tag/v4.17.1)(2021-05-06)
