@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.18.0](https://github.com/plivo/plivo-node/releases/tag/v4.18.0)(2021-06-15)
+-  Added stir verification param as part of Get CDR and live call APIs
+
 ## [4.17.1](https://github.com/plivo/plivo-node/releases/tag/v4.17.1)(2021-05-06)
 -  Added Fix for Adaptive Powerpack Create & Update functions
 
