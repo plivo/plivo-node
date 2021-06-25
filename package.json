@@ -1,6 +1,6 @@
 {
   "name": "plivo",
-  "version": "4.18.0",
+  "version": "4.18.1",
   "description": "A Node.js SDK to make voice calls and send SMS using Plivo and to generate Plivo XML",
   "homepage": "https://github.com/plivo/plivo-node",
   "files": [
