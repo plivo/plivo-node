@@ -1,4 +1,9 @@
 # Change Log
+## [4.19.0](https://github.com/plivo/plivo-node/releases/tag/v4.19.0)(2021-06-30)
+-  Added CallerName param in AddParticpant
+-  Added support for Parallel behaviour of RingTimeout and Delaydial.
+-  Added support for Recording at Member Level
+
 ## [4.18.1](https://github.com/plivo/plivo-node/releases/tag/v4.18.1)(2021-06-25)
 -  Fixed the mms media upload functionality
 
