@@ -1,4 +1,9 @@
 # Change Log
+## [4.18.1](https://github.com/plivo/plivo-node/releases/tag/v4.18.1)(2021-06-25)
+-  Fixed the mms media upload functionality
+
+## [4.18.0](https://github.com/plivo/plivo-node/releases/tag/v4.18.0)(2021-06-15)
+-  Added stir verification param as part of Get CDR and live call APIs
 
 ## [v4.18.2](https://github.com/plivo/plivo-node/tree/v4.18.2) (2021-06-18)
 **WARNING**:- Removed the total_count parameter in meta data for list MDR response
