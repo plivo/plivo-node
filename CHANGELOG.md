@@ -1,5 +1,6 @@
 # Change Log
-## [4.19.0](https://github.com/plivo/plivo-node/releases/tag/v4.19.0)(2021-06-30)
+
+## [4.19.0](https://github.com/plivo/plivo-node/releases/tag/v4.19.0)(2021-07-02)
 -  Added CallerName param in AddParticpant
 -  Added support for Parallel behaviour of RingTimeout and Delaydial.
 -  Added support for Recording at Member Level
