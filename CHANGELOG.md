@@ -1,5 +1,8 @@
 # Change Log
 
+## [v4.19.1](https://github.com/plivo/plivo-node/tree/v4.19.1) (2021-07-05)
+- **WARNING**: Removed the total_count parameter in meta data for list MDR response
+
 ## [4.19.0](https://github.com/plivo/plivo-node/releases/tag/v4.19.0)(2021-07-02)
 -  Added CallerName param in AddParticpant
 -  Added support for Parallel behaviour of RingTimeout and Delaydial.
