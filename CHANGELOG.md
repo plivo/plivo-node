@@ -2,6 +2,9 @@
 ## [v4.20.0](https://github.com/plivo/plivo-node/tree/v4.20.0) (2021-07-06)
 - Powerpack ID filter for list MDR
 
+## [v4.19.2](https://github.com/plivo/plivo-node/tree/v4.19.2) (2021-07-08)
+- MPC SDK fixes to pass params in a user-friendly manner.
+
 ## [v4.19.1](https://github.com/plivo/plivo-node/tree/v4.19.1) (2021-07-05)
 - **WARNING**: Removed the total_count parameter in meta data for list MDR response
 
