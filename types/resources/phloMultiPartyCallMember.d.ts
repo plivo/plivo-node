@@ -17,8 +17,8 @@ export class PhloMultiPartyCallMember extends PlivoResource {
 	voicemailDrop(): Promise < any > ;
 	hangup(): Promise < any > ;
 	hold(): Promise < any > ;
-    unhold(): Promise<any>;
-    update(action: object): Promise<UpdateMemberResponse>;
+  unhold(): Promise<any>;
+  update(action: object): Promise<UpdateMemberResponse>;
 }
 export class PhloMultiPartyCallMemberInterface extends PlivoResourceInterface {
 	constructor(client: Function, data ? : {});

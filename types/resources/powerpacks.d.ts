@@ -17,6 +17,21 @@ export class CreatePowerpackResponse {
 	stickySender: string;
 	uuid: string;
 }
+
+export class RetrievePowerpack {
+	constructor(params: object);
+	apiId: string;
+	applicationId: string;
+	applicationType: string;
+	createdOn: string;
+	localConnect: string;
+	name: string;
+	numberPool: string;
+	numberPriority: object;
+	stickySender: string;
+	uuid: string;
+}
+
 export class UpdatePowerpackResponse {
 	constructor(params: object);
 	apiId: string;

@@ -20,8 +20,8 @@ export class PhloMultiPartyCall extends PlivoResource {
 	call(triggerSource: string, to: string, role: string): Promise < any > ;
 	warmTransfer(triggerSource: string, to: string, role: string): Promise < UpdateMultipartyCallResponse > ;
 	coldTransfer(triggerSource: string, to: string, role: string): Promise < UpdateMultipartyCallResponse > ;
-    abortTransfer(memberAddress: string): Promise<any>;
-    update(action: string, triggerSource: string, to: string, role: string): Promise<UpdateMultipartyCallResponse>;
+  abortTransfer(memberAddress: string): Promise<any>;
+  update(action: string, triggerSource: string, to: string, role: string): Promise<UpdateMultipartyCallResponse>;
 	[clientKey]: symbol;
 }
 export class PhloMultiPartyCallInterface extends PlivoResourceInterface {

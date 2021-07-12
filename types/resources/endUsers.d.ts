@@ -29,7 +29,7 @@ export class ListEndUsersResponse {
     constructor(params: object);
     apiId: string;
     meta: Object;
-    objects: Array;
+    objects: Array<string>;
 }
 
 /**
