@@ -2,7 +2,7 @@
 
 ## [v4.20.0](https://github.com/plivo/plivo-node/tree/v4.20.0) (2021-07-13)
 - Fixed a Typescript warning about base interpretation.
-- Added retrievable object responses support to the [Retrieve a Power pack API](https://www.plivo.com/docs/sms/api/powerpack#retrieve-a-powerpack).
+- Added retrievable object responses support for [Retrieve a Power pack API](https://www.plivo.com/docs/sms/api/powerpack#retrieve-a-powerpack).
 - Deleted the package-lock.json lock & request.js files.
 
 ## [v4.19.2](https://github.com/plivo/plivo-node/tree/v4.19.2) (2021-07-08)
