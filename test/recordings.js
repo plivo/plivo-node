@@ -1,7 +1,7 @@
-import assert from 'assert';
-import sinon from 'sinon';
 import {Client} from '../lib/rest/client-test';
 import {PlivoGenericResponse} from '../lib/base.js';
+import assert from 'assert';
+import sinon from 'sinon';
 
 let client = new Client('sampleid', 'sammpletoken', 'sampleproxy');
 
