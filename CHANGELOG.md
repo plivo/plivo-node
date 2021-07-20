@@ -1,7 +1,25 @@
 # Change Log
 
-## [4.18.0](https://github.com/plivo/plivo-node/releases/tag/v4.18.0)(2021-05-28)
-- New Send Message interface along with existing interface support.
+## [v4.20.0](https://github.com/plivo/plivo-node/tree/v4.20.0) (2021-07-13)
+- Power pack ID has been included to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message).
+- Support for filtering messages by Power pack ID has been added to the [list all messages API](https://www.plivo.com/docs/sms/api/message#list-all-messages).
+
+## [v4.19.2](https://github.com/plivo/plivo-node/tree/v4.19.2) (2021-07-08)
+- MPC SDK fixes to pass params in a user-friendly manner.
+
+## [v4.19.1](https://github.com/plivo/plivo-node/tree/v4.19.1) (2021-07-05)
+- **WARNING**: Removed the total_count parameter in meta data for list MDR response
+
+## [4.19.0](https://github.com/plivo/plivo-node/releases/tag/v4.19.0)(2021-07-02)
+-  Added CallerName param in AddParticpant
+-  Added support for Parallel behaviour of RingTimeout and Delaydial.
+-  Added support for Recording at Member Level
+
+## [4.18.1](https://github.com/plivo/plivo-node/releases/tag/v4.18.1)(2021-06-25)
+-  Fixed the mms media upload functionality
+
+## [4.18.0](https://github.com/plivo/plivo-node/releases/tag/v4.18.0)(2021-06-15)
+-  Added stir verification param as part of Get CDR and live call APIs
 
 ## [4.17.1](https://github.com/plivo/plivo-node/releases/tag/v4.17.1)(2021-05-06)
 -  Added Fix for Adaptive Powerpack Create & Update functions

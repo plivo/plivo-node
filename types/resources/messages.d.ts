@@ -19,6 +19,7 @@ export class MessageGetResponse {
 	totalAmount: string;
 	totalRate: string;
 	units: string;
+	powerpackId: string;
 }
 export class MessageListResponse {
 	constructor(params: object);
@@ -34,6 +35,7 @@ export class MessageListResponse {
 	totalAmount: string;
 	totalRate: string;
     units: string;
+	powerpackId: string;
 }
 export class MMSMediaResponse {
 	constructor(params: object);
