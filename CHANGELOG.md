@@ -1,9 +1,10 @@
 # Change Log
 
-## [v4.20.1](https://github.com/plivo/plivo-node/tree/v4.20.1) (2021-07-19)
-- Removed range validation for ringtimeout and delaydial params in MPC.
-- Added validatons for multiple destination values in ringtimeout and delaydial params when lesser number of 'to' values are specified in MPC 
-- Change default request timeout value to 5
+## [v4.20.1](https://github.com/plivo/plivo-node/tree/v4.20.1) (2021-07-27)
+- Updates to [add a member a multi-party call API](https://www.plivo.com/docs/voice/api/multiparty-call/participants#add-a-participant).
+  - Remove validation range for `delay` and `ringtimeout` parameters.
+  - Add appropriate error message for multiple `ringtimeout` and `delaydial` values.
+- Updated default HTTP client request timeout to 5 seconds.
 
 ## [v4.20.0](https://github.com/plivo/plivo-node/tree/v4.20.0) (2021-07-13)
 - Power pack ID has been included to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message).
