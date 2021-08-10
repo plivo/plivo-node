@@ -23,7 +23,7 @@ export class MessageGetResponse {
 }
 export class MessageListResponse {
 	constructor(params: object);
-  errorCode: string;
+    errorCode: string;
 	fromNumber: string;
 	messageDirection: string;
 	messageState: string;
@@ -34,7 +34,7 @@ export class MessageListResponse {
 	toNumber: string;
 	totalAmount: string;
 	totalRate: string;
-  units: string;
+    units: string;
 	powerpackId: string;
 }
 export class MMSMediaResponse {
@@ -90,7 +90,7 @@ export class MessageInterface extends PlivoResourceInterface {
 		type: string;
 		url: string;
 		method: string;
-		media_urls: Array<string>;
+		media_urls: Array;
 		log: boolean;
 	}): Promise < MessageResponse > ;
 	/**

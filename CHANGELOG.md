@@ -1,9 +1,5 @@
 # Change Log
 
-## [v4.21.0](https://github.com/plivo/plivo-node/tree/v4.21.0) (2021-08-05)
-- Fixed a Typescript warning about base interpretation.
-- Add retrievable object responses support for [Retrieve a Power pack API](https://www.plivo.com/docs/sms/api/powerpack#retrieve-a-powerpack).
-
 ## [v4.20.1](https://github.com/plivo/plivo-node/tree/v4.20.1) (2021-07-27)
 - Updates to [add a member a multi-party call API](https://www.plivo.com/docs/voice/api/multiparty-call/participants#add-a-participant).
   - Remove validation range for `delay` and `ringtimeout` parameters.
