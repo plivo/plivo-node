@@ -17,6 +17,21 @@ export class CreatePowerpackResponse {
 	stickySender: string;
 	uuid: string;
 }
+
+export class RetrievePowerpack {
+	constructor(params: object);
+	apiId: string;
+	applicationId: string;
+	applicationType: string;
+	createdOn: string;
+	localConnect: string;
+	name: string;
+	numberPool: string;
+	numberPriority: object;
+	stickySender: string;
+	uuid: string;
+}
+
 export class UpdatePowerpackResponse {
 	constructor(params: object);
 	apiId: string;
@@ -179,7 +194,7 @@ export class PowerpackInterface extends PlivoResourceInterface {
      * @promise {object} return {@link Powerpack} object
      * @fail {Error} return Error
      */
-    get(uuid: string): any;
+    get(uuid: string): Promise<RetrievePowerpack>;
     /**
      * create Powerpack
      * @method
@@ -189,7 +204,7 @@ export class PowerpackInterface extends PlivoResourceInterface {
      * @param {string} [params.local_connect]
      * @param {string} [params.application_type]
      * @param {string} [params.application_id]
-     * @promise {object} return {@link PlivoGenericResponse} object
+     * @promise {object} return {@link RetrievePowerpack} object
      * @fail {Error} return Error
      */
     create(name: string, params?: {}): Promise<CreatePowerpackResponse>;
