@@ -1,5 +1,8 @@
 # Change Log
 
+## [v4.22.0](https://github.com/plivo/plivo-node/tree/v4.22.0) (2021-08-17)
+- Fix [add numbers to a powerpack](https://www.plivo.com/docs/sms/api/numberpool/#add-a-number) API by reverting retrievable object responses support for [Retrieve a Power pack API](https://www.plivo.com/docs/sms/api/powerpack#retrieve-a-powerpack).
+
 ## [v4.21.0](https://github.com/plivo/plivo-node/tree/v4.21.0) (2021-08-05)
 - Fixed a Typescript warning about base interpretation.
 - Add retrievable object responses support for [Retrieve a Power pack API](https://www.plivo.com/docs/sms/api/powerpack#retrieve-a-powerpack).
