@@ -1,7 +1,17 @@
 # Change Log
 
-## [v4.21.0](https://github.com/plivo/plivo-node/tree/v4.21.0) (2021-07-20)
-- This version includes advancements to the Messaging Interface that deals with the [Send SMS/MMS](https://www.plivo.com/docs/sms/api/message#send-a-message) interface, Creating a standard structure for `request/input` arguments to make implementation easier and incorporating support for the older interface.
+## [v4.22.0](https://github.com/plivo/plivo-node/tree/v4.22.0) (2021-08-17)
+- Fix [add numbers to a powerpack](https://www.plivo.com/docs/sms/api/numberpool/#add-a-number) API by reverting retrievable object responses support for [Retrieve a Power pack API](https://www.plivo.com/docs/sms/api/powerpack#retrieve-a-powerpack).
+
+## [v4.21.0](https://github.com/plivo/plivo-node/tree/v4.21.0) (2021-08-05)
+- Fixed a Typescript warning about base interpretation.
+- Add retrievable object responses support for [Retrieve a Power pack API](https://www.plivo.com/docs/sms/api/powerpack#retrieve-a-powerpack).
+
+## [v4.20.1](https://github.com/plivo/plivo-node/tree/v4.20.1) (2021-07-27)
+- Updates to [add a member a multi-party call API](https://www.plivo.com/docs/voice/api/multiparty-call/participants#add-a-participant).
+  - Remove validation range for `delay` and `ringtimeout` parameters.
+  - Add appropriate error message for multiple `ringtimeout` and `delaydial` values.
+- Updated default HTTP client request timeout to 5 seconds.
 
 ## [v4.20.0](https://github.com/plivo/plivo-node/tree/v4.20.0) (2021-07-13)
 - Power pack ID has been included to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message).
