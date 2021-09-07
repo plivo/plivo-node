@@ -1,7 +1,7 @@
 # Change Log
 
 ## [v4.22.1](https://github.com/plivo/plivo-node/tree/v4.22.1) (2021-09-07)
-- Bug fix on voice get request and exception handle.
+- Fix on voice `GET` request and exception handle.
 
 ## [v4.22.0](https://github.com/plivo/plivo-node/tree/v4.22.0) (2021-08-17)
 - Fix [add numbers to a powerpack](https://www.plivo.com/docs/sms/api/numberpool/#add-a-number) API by reverting retrievable object responses support for [Retrieve a Power pack API](https://www.plivo.com/docs/sms/api/powerpack#retrieve-a-powerpack).
