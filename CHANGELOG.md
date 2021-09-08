@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.22.1](https://github.com/plivo/plivo-node/tree/v4.22.1) (2021-09-07)
+## [v4.22.1](https://github.com/plivo/plivo-node/tree/v4.22.1) (2021-09-08)
 - Fix on voice `GET` request and exception handle.
 
 ## [v4.22.0](https://github.com/plivo/plivo-node/tree/v4.22.0) (2021-08-17)
