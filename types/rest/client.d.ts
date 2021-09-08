@@ -54,3 +54,8 @@ import { RecordingInterface } from "../resources/recordings.js";
 import { CallFeedbackInterface } from "../resources/callFeedback.js";
 import { MediaInterface } from "../resources/media.js";
 import { Phlo } from "../resources/phlo.js";
+import { EndUserInterface } from "../resources/endUsers"
+import { ComplianceDocumentTypeInterface } from "../resources/complianceDocumentTypes"
+import { ComplianceDocumentInterface } from "../resources/complianceDocuments"
+import { ComplianceRequirementInterface } from "../resources/complianceRequirements"
+import { ComplianceApplicationInterface } from "../resources/complianceApplications"
