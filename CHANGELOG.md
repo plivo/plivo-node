@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.22.2](https://github.com/plivo/plivo-node/tree/v4.22.12 (2021-09-15)
+## [v4.22.2](https://github.com/plivo/plivo-node/tree/v4.22.2) (2021-09-16)
 - Typescript import fix.
 
 ## [v4.22.1](https://github.com/plivo/plivo-node/tree/v4.22.1) (2021-09-08)
