@@ -3,6 +3,9 @@
 ## [v4.23.0](https://github.com/plivo/plivo-node/tree/v4.23.0) (2021-08-25)
 - This version includes advancements to the Messaging Interface that deals with the [Send SMS/MMS](https://www.plivo.com/docs/sms/api/message#send-a-message) interface, Creating a standard structure for `request/input` arguments to make implementation easier and incorporating support for the older interface.
 
+## [v4.22.1](https://github.com/plivo/plivo-node/tree/v4.22.1) (2021-09-08)
+- Fix on voice `GET` request and exception handle.
+
 ## [v4.22.0](https://github.com/plivo/plivo-node/tree/v4.22.0) (2021-08-17)
 - Fix [add numbers to a powerpack](https://www.plivo.com/docs/sms/api/numberpool/#add-a-number) API by reverting retrievable object responses support for [Retrieve a Power pack API](https://www.plivo.com/docs/sms/api/powerpack#retrieve-a-powerpack).
 
