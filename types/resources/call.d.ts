@@ -18,7 +18,7 @@ export class CreateCallResponse {
 	constructor(params: object);
 	apiId: string;
 	message: string;
-	requestUuid: string;
+	requestUuid: Array<string>;
 }
 export class GetQueuedCallResponse {
 	constructor(params: object);

@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.22.3](https://github.com/plivo/plivo-node/tree/v4.22.3) (2021-09-22)
+**Bug Fix**
+  - Fix Typings for `Make call` & `Send SMS` API response.
+
 ## [v4.22.2](https://github.com/plivo/plivo-node/tree/v4.22.2) (2021-09-16)
 - Typescript import fix.
 
