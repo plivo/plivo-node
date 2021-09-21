@@ -4,6 +4,9 @@
 - This version includes advancements to the Messaging Interface that deals with the [Send SMS/MMS](https://www.plivo.com/docs/sms/api/message#send-a-message) interface, Creating a standard structure for `request/input` arguments to make implementation easier and incorporating support for the older interface.
 
  Example for [send SMS](Example for [send SMS](https://github.com/plivo/plivo-node#send-a-message)
+ 
+## [v4.22.2](https://github.com/plivo/plivo-node/tree/v4.22.2) (2021-09-16)
+- Typescript import fix.
 
 ## [v4.22.1](https://github.com/plivo/plivo-node/tree/v4.22.1) (2021-09-08)
 - Fix on voice `GET` request and exception handle.
