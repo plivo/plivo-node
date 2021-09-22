@@ -5,3 +5,7 @@ language: node-sdk
 build:
   command: |
       npm install
+postDeployJobs:
+  prod:
+    - name: plivo/messaging-qa/nodeSDKSmoke
+      disabled: false
