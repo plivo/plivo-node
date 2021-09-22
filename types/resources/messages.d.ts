@@ -2,7 +2,7 @@ export class MessageResponse {
 	constructor(params: object);
 	apiId: string;
 	message: string;
-	messageUuid: string;
+	messageUuid: Array<string>;
 }
 export class MessageGetResponse {
 	constructor(params: object);
