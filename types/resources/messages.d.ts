@@ -3,6 +3,7 @@ export class MessageResponse {
 	apiId: string;
 	message: string;
 	messageUuid: Array<string>;
+	invalidNumber?: Array<string>;
 }
 export class MessageGetResponse {
 	constructor(params: object);
