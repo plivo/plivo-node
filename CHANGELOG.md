@@ -1,7 +1,8 @@
 # Change Log
+
 ## [v4.22.4](https://github.com/plivo/plivo-node/tree/v4.22.4) (2021-09-27)
 **Bug Fix**
-  - Fix Invalid Destination number response on send sms.
+  - Handle invalid destination number API response for send [SMS API](https://www.plivo.com/docs/sms/api/message/send-a-message/).
 
 ## [v4.22.3](https://github.com/plivo/plivo-node/tree/v4.22.3) (2021-09-22)
 **Bug Fix**
