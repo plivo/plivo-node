@@ -41,7 +41,11 @@ gulp.task('pre-test', function () {
     .pipe(istanbul.hookRequire());
 });
 
-gulp.task('test', ['pre-test'], function (cb) {
+gulp.task('clean', function () {
+  return del('dist');
+});
+
+gulp.task('test', gulp.series('pre-test', function (cb) {
   var mochaErr;
 
   console.log('Running tests with node version', process.version);
@@ -57,13 +61,13 @@ gulp.task('test', ['pre-test'], function (cb) {
     .on('end', function () {
       cb(mochaErr);
     });
-});
+}));
 
 gulp.task('watch', function () {
   gulp.watch(['lib/**/*.js', 'test/**'], ['test']);
 });
 
-gulp.task('coveralls', ['test'], function () {
+gulp.task('coveralls', gulp.series('test', function () {
   if (!process.env.CI) {
     console.log('ignoring coveralls report generation.');
     return;
@@ -71,9 +75,9 @@ gulp.task('coveralls', ['test'], function () {
 
   return gulp.src(path.join(__dirname, 'coverage/lcov.info'))
     .pipe(coveralls());
-});
+}));
 
-gulp.task('babel', ['clean'], function () {
+gulp.task('babel', gulp.series('clean', function () {
   return merge([
     gulp.src('types/**/*.d.ts')
     .pipe(gulp.dest('dist/')),
@@ -81,7 +85,7 @@ gulp.task('babel', ['clean'], function () {
     .pipe(babel())
     .pipe(gulp.dest('dist'))
 ]);
-});
+}));
 
 gulp.task('lintFix', function () {
   return gulp.src('lib/**/*.js')
@@ -91,10 +95,5 @@ gulp.task('lintFix', function () {
     }))
     .pipe(gulp.dest('lib'));
 });
-
-gulp.task('clean', function () {
-  return del('dist');
-});
-
-gulp.task('prepublish', ['babel']);
-gulp.task('default', ['static', 'test', 'coveralls']);
+gulp.task('prepublish', gulp.series('babel'));
+gulp.task('default', gulp.series('static', 'test', 'coveralls'));
