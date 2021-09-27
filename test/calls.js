@@ -59,7 +59,7 @@ describe('calls', function () {
   it('should get call by id!', function (done) {
     client.calls.get(1)
       .then(function(call){
-        assert.equal(call.id, 1)
+        assert.equal(call.callUuid, 'aaa-deeiei3-dfddd')
         done()
       })
   });

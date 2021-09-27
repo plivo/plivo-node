@@ -29,7 +29,7 @@
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-flowtype": "^2.33.0",
     "flow-bin": "^0.47.0",
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.2",
     "gulp-babel": "^6.1.2",
     "gulp-babel-istanbul": "^1.6.0",
     "gulp-coveralls": "^0.1.0",

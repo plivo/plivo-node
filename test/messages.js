@@ -13,7 +13,7 @@ describe('message', function () {
   it('should get message', function () {
     return client.messages.get(1)
       .then(function (message) {
-        assert.equal(message.id, 1)
+        assert.equal(message.units, 1)
       })
   });
 
@@ -60,16 +60,6 @@ describe('message', function () {
       })
   });
 
-  it('list media', function (done) {
-    client.messages.get('xyz')
-      .then(function (message) {
-        return message.listMedia({})
-      })
-      .then(function (mmsmedia) {
-        assert(mmsmedia instanceof PlivoGenericResponse)
-        done()
-      })
-  });
   it('should list media via plivo interface!', function (done) {
     client.messages.listMedia('xyz')
       .then(function (mmsMedia) {

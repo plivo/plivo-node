@@ -9,8 +9,8 @@ describe('Account', function () {
   it('should getAccount', function () {
     return client.accounts.get()
       .then(function(account) {
-        assert.equal(account.authId, 'MANWVLYTK4ZWU1YTY4ZT')
-        assert.equal(account.id, 'MANWVLYTK4ZWU1YTY4ZT')
+        assert.equal(account.resourceUri, '/v1/Account/MANWVLYTK4ZWU1YTY4ZT/')
+        assert.equal(account.accountType, 'standard')
       })
   });
 
