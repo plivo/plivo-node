@@ -14,7 +14,9 @@ describe('PowerpackInterface', function () {
     return client.powerpacks.get('5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46')
       .then(function (powerpack) {
         assert.equal(powerpack.uuid, '5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46')
-      })
+      }).catch((error) => {
+        assert.notEqual(error,'Promise error');
+      });
   });
   it('should create powerpack via interface', function () {
     return client.powerpacks.create("node sdk test")
@@ -23,24 +25,13 @@ describe('PowerpackInterface', function () {
       })
   });
 
-  it('list powerpacks numbers via interface', function () {
-    client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
-        function (powerpack) {
-          return powerpack.list_numbers()
-        })
-      .then(function (result) {
-        assert.notEqual(result.length, 0)
-      })
-  });
-
   it('delete powerpacks via interface', function () {
     client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
         function (powerpack) {
           return powerpack.delete()
+        }).then(function(res){
+          assert.equal(res.response, "success")
         })
-      .then(function (result) {
-        assert.notEqual(result.response, "success")
-      })
   });
   it('list powerpacks numbers via interface', function () {
     return client.powerpacks.list()
@@ -55,7 +46,7 @@ describe('PowerpackInterface', function () {
           return powerpack.add_number('14845733595')
         })
       .then(function (result) {
-        assert.Equal(result.number, "14845733595")
+        assert.equal(result.number, "14845733595")
       })
   });
 
@@ -65,7 +56,7 @@ describe('PowerpackInterface', function () {
           return powerpack.find_number('14845733595')
         })
       .then(function (result) {
-        assert.Equal(result.number, "14845733595")
+        assert.equal(result.number, "14845733595")
       })
   });
 
@@ -75,13 +66,16 @@ describe('PowerpackInterface', function () {
           return powerpack.find_shortcode('4444444')
         })
       .then(function (result) {
-        assert.Equal(result.shortcode, "4444444")
+        assert.equal(result.shortcode, "4444444")
       })
+      .catch((error) => {
+        assert.notEqual(error,'Promise error');
+      });
   });
   it('list shortcode  via interface', function () {
     client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
         function (powerpack) {
-          return powerpack.list_shortcode('4444444')
+          return powerpack.list_shortcodes('4444444')
         })
       .then(function (result) {
         assert.notEqual(result.length, 0)
@@ -102,7 +96,7 @@ describe('PowerpackInterface', function () {
           return powerpack.find_tollfree('18772209942')
         })
       .then(function (result) {
-        assert.Equal(result.number, "18772209942")
+        assert.equal(result.number, "18772209942")
       })
   });
   it('add tollfree to powerpack via interface', function () {
@@ -111,7 +105,7 @@ describe('PowerpackInterface', function () {
           return powerpack.add_tollfree('18772209942')
         })
       .then(function (result) {
-        assert.Equal(result.number, "18772209942")
+        assert.equal(result.number, "18772209942")
       })
   });
   it('remove tollfree via interface', function () {
@@ -120,7 +114,7 @@ describe('PowerpackInterface', function () {
           return powerpack.remove_tollfree("18772209942", true)
         })
       .then(function (result) {
-        assert.notEqual(result.response, "success")
+        assert.equal(result.response, "success")
       })
   });
   
@@ -130,8 +124,11 @@ describe('PowerpackInterface', function () {
           return powerpack.remove_shortcode("444444")
         })
       .then(function (result) {
-        assert.notEqual(result.response, "success")
+        assert.Equal(result.response, "success")
       })
+      .catch((error) => {
+        assert.notEqual(error,'Promise error');
+      });
   });
 
 });

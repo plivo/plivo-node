@@ -59,7 +59,8 @@ describe('calls', function () {
   it('should get call by id!', function (done) {
     client.calls.get(1)
       .then(function(call){
-        assert.equal(call.id, 1)
+        //RetrieveCallResponse has no id ##voice_team fix
+        assert.equal(call.callUuid, 'aaa-deeiei3-dfddd')
         done()
       })
   });
@@ -80,6 +81,7 @@ describe('calls', function () {
   it('should transfer call via plivo interface!', function (done) {
     client.calls.transfer(1, {})
       .then(function(call) {
+           console.log(call)
           assert.equal(call.id, 5)
         done()
       })
@@ -89,6 +91,7 @@ describe('calls', function () {
     it('should hangup call!', function (done) {
       client.calls.get(1)
         .then(function(call){
+          console.log(call)
           return call.hangup()
         })
         .then(function(call) {

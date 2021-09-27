@@ -13,14 +13,16 @@ describe('MediaInterface', function () {
 
   it('list media  via interface', function () {
     return client.media.list()
-      .then(function (media) {
-        assert.notEqual(media.length, 0)
+      .then(function (res) {
+        console.log(res)
+        assert.notEqual(res.length, 0)
       })
   });
   it('should get media', function () {
-    return client.media.get(1)
-      .then(function (media) {
-        assert.equal(media.media_id, 1)
+    return client.media.get('0178eb8a-461a-4fd1-bc37-13eebfdc0676')
+      .then(function (res) {
+        console.log(res)
+        assert.equal(res.mediaId, '0178eb8a-461a-4fd1-bc37-13eebfdc0676')
       })
   });
 });

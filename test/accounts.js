@@ -9,8 +9,8 @@ describe('Account', function () {
   it('should getAccount', function () {
     return client.accounts.get()
       .then(function(account) {
-        assert.equal(account.authId, 'MANWVLYTK4ZWU1YTY4ZT')
-        assert.equal(account.id, 'MANWVLYTK4ZWU1YTY4ZT')
+        assert.equal(account.resourceUri, '/v1/Account/MANWVLYTK4ZWU1YTY4ZT/')
+        assert.equal(account.accountType, 'standard')
       })
   });
 
@@ -23,6 +23,8 @@ describe('Account', function () {
          address: 'address'
        })
           .then(function(account) {
+            console.log("bbbbbb")
+            console.log(account)
             assert.equal(account.name, 'name')
           })
       })
@@ -35,6 +37,7 @@ describe('Account', function () {
       address: 'address'
     })
       .then(function(account) {
+        console.log("cccccc")
         assert.equal(account.name, 'name')
       })
   });
