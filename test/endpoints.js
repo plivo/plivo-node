@@ -9,7 +9,6 @@ describe('Endpoint', function () {
   it('should get Endpoint', function () {
     return client.endpoints.get(1)
       .then(function(endpoint) {
-        console.log(endpoint)
         assert.equal(endpoint.endpointId, 1)
       })
   });
