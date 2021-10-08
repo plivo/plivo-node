@@ -9,7 +9,7 @@ describe('RecordingInterface', function () {
   it('should get recording via interface', function () {
     return client.recordings.get(1)
       .then(function(recording) {
-        assert.equal(recording.id, 1)
+        assert.equal(recording.recordingId, 1)
       })
   });
 
@@ -30,7 +30,7 @@ describe('RecordingInterface', function () {
   it('should delete recording via interface', function () {
     return client.recordings.get(1)
       .then(function(recording){
-        return recording.delete()
+        return client.recordings.delete(1)
       })
       .then(function(status) {
         assert.equal(status, true)

@@ -2,6 +2,8 @@ import assert from 'assert';
 import sinon from 'sinon';
 import {Client} from '../lib/rest/client-test';
 import {PlivoGenericResponse} from '../lib/base.js';
+import {LiveCallResource} from "../dist/resources/call";
+import {ListAllLiveCallResponse} from "../lib/resources/call";
 
 let client = new Client('sampleid', 'sammpletoken', 'sampleproxy');
 
@@ -64,24 +66,22 @@ describe('calls', function () {
       })
   });
   describe('transfer', function () {
-    it('should transfer call!', function (done) {
+    it('should transfer call!', function () {
       client.calls.get(1)
         .then(function(call){
-          return call.transfer()
-          done()
+          return client.calls.transfer(call.id, {legs: "aleg", alegUrl: "http://aleg_url"})
         })
         .then(function(call) {
-          assert.equal(call.id, 5)
-          done()
+          assert.equal(call.message, "call transferred")
         })
     });
   });
 
-  it('should transfer call via plivo interface!', function (done) {
-    client.calls.transfer(1, {})
+  it('should transfer call via plivo interface!', function () {
+    return client.calls.transfer('1', {legs: 'aleg', alegUrl: 'http://aleg_url'})
       .then(function(call) {
-          assert.equal(call.id, 5)
-        done()
+        console.log(call)
+        assert.equal(call.message, "call transferred")
       })
   });
 
@@ -89,20 +89,20 @@ describe('calls', function () {
     it('should hangup call!', function (done) {
       client.calls.get(1)
         .then(function(call){
-          return call.hangup()
+          return client.calls.hangup(1)
         })
         .then(function(call) {
-          assert(call)
+          assert(call, true)
           done()
         })
     });
     it('should cancel call!', function () {
       return client.calls.get(1)
         .then(function(call){
-          return call.cancel();
+          return client.calls.cancel(1);
         })
         .then(function(call) {
-          assert(call);
+          assert(call, true);
         })
     });
     it('should hangup call via plivo interface!', function (done) {
@@ -114,14 +114,13 @@ describe('calls', function () {
     });
   });
   describe('Record', function () {
-    it('should record call!', function (done) {
+    it('should record call!', function () {
       client.calls.get(1)
         .then(function(call){
-          return call.record({})
+          return client.calls.record(call.id)
         })
         .then(function(recordDetail) {
           assert.equal(recordDetail.message, 'call recording started')
-          done()
         })
     });
     it('should record call via plivo interface!', function (done) {
@@ -132,14 +131,13 @@ describe('calls', function () {
         })
     });
 
-    it('should stop recording call!', function (done) {
+    it('should stop recording call!', function () {
       client.calls.get(1)
         .then(function(call){
-          return call.stopRecording({})
+          return client.calls.stopRecording(call.id)
         })
         .then(function(recordDetail) {
           assert(recordDetail instanceof PlivoGenericResponse)
-          done()
         })
     });
 
@@ -159,14 +157,13 @@ describe('calls', function () {
   });
 
   describe('Play', function () {
-    it('should throw error for url!', function (done) {
+    it('should throw error for url!', function () {
       client.calls.get(1)
         .then(function(call) {
-          return call.playMusic()
+          return client.calls.playMusic(call.id)
         })
         .catch(function(err){
           assert.equal(err.message, 'Missing mandatory field: urls, urls should be string.')
-          done()
         })
     });
 
@@ -178,14 +175,13 @@ describe('calls', function () {
         })
     });
 
-    it('play audio file for call', function (done) {
+    it('play audio file for call', function () {
       client.calls.get(1)
         .then(function(call) {
-          return call.playMusic('http://localhost')
+          return client.calls.playMusic(call.id, 'http://localhost')
         })
         .then(function(resp){
           assert.equal(resp.message, 'play started')
-          done()
         })
     });
 
@@ -196,14 +192,13 @@ describe('calls', function () {
           done()
         })
     });
-    it('stop playing audio file for call', function (done) {
+    it('stop playing audio file for call', function () {
       client.calls.get(1)
         .then(function(call) {
-          return call.stopPlayingMusic()
+          return client.calls.stopPlayingMusic(call.id)
         })
         .then(function(resp){
           assert(resp instanceof PlivoGenericResponse)
-          done()
         })
     });
 
@@ -217,25 +212,23 @@ describe('calls', function () {
   });
 
   describe('Speak', function () {
-    it('should throw error for text!', function (done) {
+    it('should throw error for text!', function () {
       client.calls.get(1)
         .then(function(call) {
-          return call.speakText()
+          return client.calls.speakText(call.id)
         })
         .catch(function(err){
           assert.equal(err.message, 'Missing mandatory field: text, text should be string.')
-          done()
         })
     });
 
-    it('play text for call', function (done) {
+    it('play text for call', function () {
       client.calls.get(1)
         .then(function(call) {
-          return call.speakText('this is test')
+          return client.calls.speakText(call.id, 'this is test')
         })
         .then(function(resp){
           assert.equal(resp.message, 'speak started')
-          done()
         })
     });
 
@@ -246,15 +239,14 @@ describe('calls', function () {
           done()
         })
     });
-    it('stop playing text for call', function (done) {
+    it('stop playing text for call', function () {
       client.calls.get(1)
         .then(function(call) {
-          return call.stopSpeakingText()
+          return client.calls.stopSpeakingText(call.id)
         })
         .then(function(resp){
           assert(resp instanceof PlivoGenericResponse)
           assert.equal(resp.message, 'speak stopped')
-          done()
         })
     });
 
@@ -287,7 +279,11 @@ describe('calls', function () {
     });
 
     it('should list livecalls', function () {
-      return client.calls.listLiveCalls();
+      return client.calls.listLiveCalls().
+      then(function (resp){
+        console.log(resp)
+        assert.equal(resp.length, 2)
+      });
     });
   })
 });
