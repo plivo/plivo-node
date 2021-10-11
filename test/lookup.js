@@ -13,7 +13,8 @@ describe('LookupInterface', function() {
     it('should lookup number', function() {
         return client.lookup.get('+14154305555')
             .then(function(number) {
-                assert.equal(number.numberFormat.e164, '+14154305555')
+                console.log(number)
+                assert.equal(number.format.e164, '+14154305555')
                 assert.equal(number.phoneNumber, '+14154305555')
                 assert.equal(number.resourceUri, '/v1/Number/+14154305555?type=carrier')
             })

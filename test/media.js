@@ -19,7 +19,7 @@ describe('MediaInterface', function () {
   });
   it('should get media', function () {
     return client.media.get('0178eb8a-461a-4fd1-bc37-13eebfdc0676')
-      .then(function (media) {
+      .then(function (res) {
         assert.equal(res.mediaId, '0178eb8a-461a-4fd1-bc37-13eebfdc0676')
       })
   });

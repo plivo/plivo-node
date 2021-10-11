@@ -15,16 +15,13 @@ describe('Account', function () {
   });
 
   it('should update Account via interface', function () {
-    return client.accounts.get()
-      .then(function(account){
-       return account.update({
+      return client.accounts.update({
          name: 'name',
          city: 'city',
          address: 'address'
-       })
-          .then(function(account) {
-            assert.equal(account.name, 'name')
-          })
+      }) 
+      .then(function(account) {
+            assert.equal(account.message, 'changed')
       })
   });
 
@@ -35,7 +32,7 @@ describe('Account', function () {
       address: 'address'
     })
       .then(function(account) {
-        assert.equal(account.name, 'name')
+        assert.equal(account.message, 'changed')
       })
   });
 
@@ -80,17 +77,7 @@ describe('Account', function () {
   it('should update subAccount via interface', function () {
     return client.subAccounts.update(1, 'name', true)
       .then(function(account) {
-        assert.equal(account.name, 'name')
-      })
-  });
-
-  it('should update subAccount', function () {
-    return client.subAccounts.get(1)
-      .then(function(subaccount){
-        return subaccount.update('name', true)
-      })
-      .then(function(account) {
-        assert.equal(account.name, 'name')
+        assert.equal(account.message, 'changed')
       })
   });
 
@@ -101,15 +88,6 @@ describe('Account', function () {
       })
   });
 
-  it('delete subAccounts', function () {
-    return client.subAccounts.get(1)
-      .then(function(subaccount){
-        return subaccount.delete()
-      })
-      .then(function(account) {
-        assert.equal(account, true)
-      })
-  });
   it('delete subAccounts via interface', function () {
     return client.subAccounts.delete(1)
       .then(function(accounts) {
