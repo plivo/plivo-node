@@ -1,11 +1,11 @@
-import assert from 'assert';
-import sinon from 'sinon';
 import {
   Client
 } from '../lib/rest/client-test';
 import {
   PlivoGenericResponse
 } from '../lib/base.js';
+import assert from 'assert';
+import sinon from 'sinon';
 
 let client = new Client('sampleid', 'sammpletoken', 'sampleproxy');
 
@@ -32,7 +32,7 @@ describe('message', function () {
   });
 
   it('should send message via interface', function () {
-    return client.messages.send({src:'src', dst:'dst', text:'text',powerpackUUID: null})
+    return client.messages.create({src:'src', dst:'dst', text:'text',powerpackUUID: null})
       .then(function(message){
             assert.equal(message.message, 'message(s) queued')
       })
@@ -61,14 +61,14 @@ describe('message', function () {
   });
 
   it('should throw error - src and powerpack both not present', function () {
-    return client.messages.send({src:null,dst:'dst',text:'text',powerpackUUID:null})
+    return client.messages.create({src:null,dst:'dst',text:'text',powerpackUUID:null})
       .catch(function (err) {
         assert.equal(err.message, 'Neither of src or powerpack uuid present, either one is required')
       })
   });
 
   it('should throw error - src and powerpack both are present', function () {
-    return client.messages.send({src:'91235456917375', dst:'dst', text:'text', powerpackUUID:'916386027476'})
+    return client.messages.create({src:'91235456917375', dst:'dst', text:'text', powerpackUUID:'916386027476'})
       .catch(function (err) {
         assert.equal(err.message, 'Either of src or powerpack uuid, both of them are present')
       })
