@@ -25,7 +25,7 @@ describe('message', function () {
   });
 
   it('should create message via interface', function () {
-    return client.messages.create('src', 'dst', 'text')
+    return client.messages.create({src:'src', dst:'dst', text:'text',powerpackUUID: null})
       .then(function (message) {
         assert.equal(message.message, 'message(s) queued')
       })
@@ -38,6 +38,13 @@ describe('message', function () {
       })
   });
 
+  it('should send message via interface', function () {
+    return client.messages.create({src:'src', dst:'dst', text:'text'})
+      .then(function(message){
+            assert.equal(message.message, 'message(s) queued')
+      })
+  });
+
 
   it('should throw error - id is required via interface', function () {
     return client.messages.get()
@@ -47,14 +54,14 @@ describe('message', function () {
   });
 
   it('should throw error - src and powerpack both not present', function () {
-    return client.messages.send(null, 'dst', 'text', {}, null)
+    return client.messages.send({src:null,dst:'dst',text:'text',powerpackUUID:null})
       .catch(function (err) {
         assert.equal(err.message, 'Neither of src or powerpack uuid present, either one is required')
       })
   });
 
   it('should throw error - src and powerpack both are present', function () {
-    return client.messages.send('91235456917375', 'dst', 'text', {}, '916386027476')
+    return client.messages.send({src:'91235456917375', dst:'dst', text:'text', powerpackUUID:'916386027476'})
       .catch(function (err) {
         assert.equal(err.message, 'Either of src or powerpack uuid, both of them are present')
       })
