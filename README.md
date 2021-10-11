@@ -55,12 +55,12 @@ Also, using `client.resources.list()` would list the first 20 resources by defau
 let plivo = require('plivo');
 let client = new plivo.Client();
 
-client.messages.create(
-  '+14156667778',
-  '+14156667777',
-  'Hello, world!'
-).then(function(response) {
-  console.log(response)
+client.messages.create({
+    src: '+14156667778',
+    dst: '14156667777',
+    text: 'Hello, this is a sample text from Plivo',
+}).then(function(response) {
+    console.log(response)
 });
 ```
 

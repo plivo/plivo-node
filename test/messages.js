@@ -32,9 +32,16 @@ describe('message', function () {
   });
 
   it('should send message via interface', function () {
-    return client.messages.send('src', 'dst', 'text')
-      .then(function (message) {
-        assert.equal(message.message, 'message(s) queued')
+    return client.messages.send({src:'src', dst:'dst', text:'text',powerpackUUID: null})
+      .then(function(message){
+            assert.equal(message.message, 'message(s) queued')
+      })
+  });
+  
+  it('should send message via interface', function () {
+    return client.messages.create({src:'src', dst:'dst', text:'text'})
+      .then(function(message){
+            assert.equal(message.message, 'message(s) queued')
       })
   });
 

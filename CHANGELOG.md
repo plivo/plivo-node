@@ -1,5 +1,11 @@
 # Change Log
 
+## [v4.23.0](https://github.com/plivo/plivo-node/tree/v4.23.0) (2021-10-11)
+**Features - Messaging**
+- This version includes advancements to the Messaging Interface that deals with the [Send SMS/MMS](https://www.plivo.com/docs/sms/api/message#send-a-message) interface, Creating a standard structure for `request/input` arguments to make implementation easier and incorporating support for the older interface.
+
+ Example for [send SMS](https://github.com/plivo/plivo-node#send-a-message)
+ 
 ## [v4.22.4](https://github.com/plivo/plivo-node/tree/v4.22.4) (2021-09-27)
 **Bug Fix**
   - Handle invalid destination number API response for send [SMS API](https://www.plivo.com/docs/sms/api/message/send-a-message/).
