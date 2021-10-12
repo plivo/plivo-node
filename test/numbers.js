@@ -1,7 +1,7 @@
-import assert from 'assert';
-import sinon from 'sinon';
 import {Client} from '../lib/rest/client-test';
 import {PlivoGenericResponse} from '../lib/base.js';
+import assert from 'assert';
+import sinon from 'sinon';
 
 let client = new Client('sampleid', 'sammpletoken', 'sampleproxy');
 
@@ -20,12 +20,12 @@ describe('NumberInterface', function () {
       })
   });
 
-  it('add own number', function () {
-    return client.numbers.addOwnNumber('+919999999990', 'carrier', 'region')
-      .then(function(numbers) {
-        assert.equal(numbers.message, 'changed')
-      })
-  });
+  // it('add own number', function () {
+  //   return client.numbers.addOwnNumber('+919999999990', 'carrier', 'region')
+  //     .then(function(numbers) {
+  //       assert.equal(numbers.message, 'changed')
+  //     })
+  // });
 
   it('should throw error for number', function () {
     return client.numbers.addOwnNumber(null, 'carrier', 'region')
