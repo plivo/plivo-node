@@ -1,7 +1,7 @@
 # Plivo Node.js library
 
 [![Version](https://img.shields.io/npm/v/plivo.svg)](https://www.npmjs.org/package/plivo)
-[![codecov](https://codecov.io/gh/plivo/plivo-node/branch/ut-fix/graph/badge.svg)](https://codecov.io/gh/plivo/plivo-node)
+[![codecov](https://codecov.io/gh/plivo/plivo-node/branch/master/graph/badge.svg)](https://codecov.io/gh/plivo/plivo-node)
 [![UnitTests](https://github.com/plivo/plivo-node/actions/workflows/unitTests.yml/badge.svg)](https://github.com/plivo/plivo-node/actions/workflows/unitTests.yml)
 
 The Node.js SDK simplifies the integration of communications into your Node.js applications through the Plivo REST API. You will be able to use the SDK to make voice calls, send SMS, and generate Plivo XML to manage your call flows.
