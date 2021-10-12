@@ -24,23 +24,6 @@ jobs:
       - run: npm install request
       - run: npm install
       - run: npm test
-  
-  
-  coverage:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Install Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Run unit tests with coverage
-      run: npm test -v -race -coverprofile=coverage.txt
-    - name: Codecov
-      uses: codecov/codecov-action@v2
-      with:
-        file: coverage.txt
-        flags: UnitTests
-        verbose: true
-        fail_ci_if_error: false
+      
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
