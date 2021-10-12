@@ -63,15 +63,15 @@ gulp.task('watch', function () {
   gulp.watch(['lib/**/*.js', 'test/**'], ['test']);
 });
 
-gulp.task('coveralls', gulp.series('test', function () {
-  if (!process.env.CI) {
-    console.log('ignoring coveralls report generation.');
-    return;
-  }
+// gulp.task('coveralls', gulp.series('test', function () {
+//   if (!process.env.CI) {
+//     console.log('ignoring coveralls report generation.');
+//     return;
+//   }
 
-  return gulp.src(path.join(__dirname, 'coverage/lcov.info'))
-    .pipe(coveralls());
-}));
+//   return gulp.src(path.join(__dirname, 'coverage/lcov.info'))
+//     .pipe(coveralls());
+// }));
 
 gulp.task('clean', function () {
   return del('dist');
