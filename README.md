@@ -1,7 +1,8 @@
 # Plivo Node.js library
 
 [![Version](https://img.shields.io/npm/v/plivo.svg)](https://www.npmjs.org/package/plivo)
-[![Build Status](https://api.travis-ci.org/plivo/plivo-node.svg?branch=master)](https://travis-ci.org/github/plivo/plivo-node)
+[![codecov](https://codecov.io/gh/plivo/plivo-node/branch/master/graph/badge.svg)](https://codecov.io/gh/plivo/plivo-node)
+[![UnitTests](https://github.com/plivo/plivo-node/actions/workflows/unitTests.yml/badge.svg)](https://github.com/plivo/plivo-node/actions/workflows/unitTests.yml)
 
 The Node.js SDK simplifies the integration of communications into your Node.js applications through the Plivo REST API. You will be able to use the SDK to make voice calls, send SMS, and generate Plivo XML to manage your call flows.
 
@@ -55,12 +56,12 @@ Also, using `client.resources.list()` would list the first 20 resources by defau
 let plivo = require('plivo');
 let client = new plivo.Client();
 
-client.messages.create(
-  '+14156667778',
-  '+14156667777',
-  'Hello, world!'
-).then(function(response) {
-  console.log(response)
+client.messages.create({
+    src: '+14156667778',
+    dst: '14156667777',
+    text: 'Hello, this is a sample text from Plivo',
+}).then(function(response) {
+    console.log(response)
 });
 ```
 

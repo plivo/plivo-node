@@ -10,7 +10,7 @@ describe('Conference', function () {
     it('should get conference', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          assert.equal(conference.id, 'MyConf')
+          assert.equal(conference.conferenceName, 'MyConf')
         })
     });
 
@@ -125,7 +125,7 @@ describe('Conference', function () {
     it('should Hangup Conference', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.hangup()
+          return client.conferences.hangup(conference.conferenceName)
         })
         .then(function(status) {
           assert.equal(status, true)
@@ -135,7 +135,7 @@ describe('Conference', function () {
     it('should Hangup Member', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.hangupMember(1)
+          return client.conferences.hangupMember(conference.conferenceName,1)
         })
         .then(function(response) {
           assert.equal(response.message, 'hangup')
@@ -145,7 +145,7 @@ describe('Conference', function () {
     it('should Kick Member', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.kickMember(1)
+          return client.conferences.kickMember(conference.conferenceName,1)
         })
         .then(function(response) {
           assert.equal(response.message, 'kicked')
@@ -155,7 +155,7 @@ describe('Conference', function () {
     it('should Mute Member', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.muteMember(1)
+          return client.conferences.muteMember(conference.conferenceName, 1)
         })
         .then(function(response) {
           assert.equal(response.message, 'muted')
@@ -165,7 +165,7 @@ describe('Conference', function () {
     it('should Unmute Member', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.unmuteMember(1)
+          return client.conferences.unmuteMember(conference.conferenceName, 1)
         })
         .then(function(response) {
           assert.equal(response instanceof PlivoGenericResponse, true)
@@ -175,7 +175,7 @@ describe('Conference', function () {
     it('should Deaf Member', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.deafMember(1)
+          return client.conferences.deafMember(conference.conferenceName, 1)
         })
         .then(function(response) {
           assert.equal(response.message, 'deaf')
@@ -185,7 +185,7 @@ describe('Conference', function () {
     it('should undeaf Member', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.undeafMember(1)
+          return client.conferences.undeafMember(conference.conferenceName, 1)
         })
         .then(function(response) {
           assert.equal(response instanceof PlivoGenericResponse, true)
@@ -195,7 +195,7 @@ describe('Conference', function () {
     it('should play Audio to Member', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.playAudioToMember(1, 'http://localhost')
+          return client.conferences.playAudioToMember(conference.conferenceName, 1, 'http://localhost')
         })
         .then(function(response) {
           assert.equal(response.message, 'play queued into conference')
@@ -205,7 +205,7 @@ describe('Conference', function () {
     it('should stop playing Audio to Member', function () {
       client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.stopPlayingAudioToMember(1)
+          return client.conferences.stopPlayingAudioToMember(conference.conferenceName, 1)
         })
         .then(function(response) {
           assert.equal(response.message, 'playing in conference stopped')
@@ -215,7 +215,7 @@ describe('Conference', function () {
     it('should play text to Member', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.speakTextToMember(1, 'text')
+          return client.conferences.speakTextToMember(conference.conferenceName, 1,'text')
         })
         .then(function(response) {
           assert.equal(response.message, 'speak queued into conference')
@@ -225,7 +225,7 @@ describe('Conference', function () {
     it('should stop playing text to Member', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.stopSpeakingTextToMember(1)
+          return client.conferences.stopSpeakingTextToMember(conference.conferenceName, 1)
         })
         .then(function(response) {
           assert.equal(response.message, 'speak stopped')
@@ -235,7 +235,7 @@ describe('Conference', function () {
     it('should stop record conference', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.stopRecording()
+          return client.conferences.stopRecording(conference.conferenceName)
         })
         .then(function(response) {
           assert.equal(response instanceof PlivoGenericResponse, true)
@@ -245,7 +245,7 @@ describe('Conference', function () {
     it('should record conference', function () {
       return client.conferences.get('MyConf')
         .then(function(conference) {
-          return conference.record();
+          return client.conferences.record(conference.conferenceName)
         })
         .then(function(response) {
           assert.equal(response.message, 'conference recording started')
