@@ -9,7 +9,7 @@ describe('Endpoint', function () {
   it('should get Endpoint', function () {
     return client.endpoints.get(1)
       .then(function(endpoint) {
-        assert.equal(endpoint.id, 1)
+        assert.equal(endpoint.endpointId, 1)
       })
   });
 
@@ -32,7 +32,7 @@ describe('Endpoint', function () {
       username: 'username'
     })
       .then(function(endpoint) {
-        assert.equal(endpoint.username, 'username')
+        assert.equal(endpoint.message, 'changed')
       })
   });
 
@@ -48,19 +48,21 @@ describe('Endpoint', function () {
   it('should update endpoint', function () {
     return client.endpoints.get(1)
       .then(function(endpoint) {
-        return endpoint.update({
-          username: 'username'
+        assert.equal(endpoint.username, 'zumba141009125224')
+        assert.equal(endpoint.alias, 'zumba')
+        return client.endpoints.update(endpoint.endpointId, {
+          alias: 'dumbo'
         })
       })
       .then(function(endpoint){
-        assert.equal(endpoint.username, 'username')
+        assert.equal(endpoint.message, 'changed')
       })
   });
 
   it('delete endpoint', function () {
     return client.endpoints.get(1)
       .then(function(endpoint){
-        return endpoint.delete()
+        return client.endpoints.delete(1)
       })
       .then(function(status) {
         assert.equal(status, true)

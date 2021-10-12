@@ -9,7 +9,7 @@ describe('Application', function () {
   it('should get Application', function () {
     return client.applications.get(1)
       .then(function(application) {
-        assert.equal(application.id, 1)
+        assert.equal(application.appId, 1)
       })
   });
 
@@ -37,7 +37,7 @@ describe('Application', function () {
   it('should update Application via interface', function () {
     return client.applications.update(1, {answer_url: 'answerUrl'})
       .then(function(application) {
-        assert.equal(application.answer_url, 'answerUrl')
+        assert.equal(application.message, 'changed')
       })
   });
 
@@ -51,21 +51,23 @@ describe('Application', function () {
   it('should update Application', function () {
     return client.applications.get(1)
       .then(function(application) {
-        return application.update({answer_url: 'answerUrl'})
-      })
-      .then(function(application){
-        assert.equal(application.answer_url, 'answerUrl')
-      })
+        assert.equal(application.appId, 1)
+        return client.applications.update(application.appId,{answer_url: 'answerUrl'})
+          .then(function(application){
+            assert.equal(application.message, 'changed')
+          });
+      });
   });
 
   it('delete application', function () {
     return client.applications.get(1)
       .then(function(application){
-        return application.delete()
-      })
-      .then(function(status) {
-        assert.equal(status, true)
-      })
+        assert.equal(application.appId, 1)
+        return client.applications.delete(application.appId,{answer_url: 'answerUrl'})
+          .then(function(status){
+            assert.equal(status, true)
+          });
+      });
   });
   it('delete application via interface', function () {
     return client.applications.delete(1)
