@@ -5,7 +5,7 @@ var excludeGitignore = require('gulp-exclude-gitignore');
 var mocha = require('gulp-mocha');
 var istanbul = require('gulp-babel-istanbul');
 var plumber = require('gulp-plumber');
-var coveralls = require('gulp-coveralls');
+// var coveralls = require('gulp-coveralls');
 var babel = require('gulp-babel');
 var del = require('del');
 var isparta = require('isparta');
@@ -101,4 +101,4 @@ gulp.task('clean', function () {
 });
 
 gulp.task('prepublish', gulp.series('babel'));
-gulp.task('default', gulp.series('static', 'test', 'coveralls'));
+gulp.task('default', gulp.series('static', 'test'));
