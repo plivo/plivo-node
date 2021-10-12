@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.22.5](https://github.com/plivo/plivo-node/tree/v4.22.5) (2021-10-11)
+**Bug Fix**
+  - LiveCallInterface
+
 ## [v4.22.4](https://github.com/plivo/plivo-node/tree/v4.22.4) (2021-09-27)
 **Bug Fix**
   - Handle invalid destination number API response for send [SMS API](https://www.plivo.com/docs/sms/api/message/send-a-message/).
