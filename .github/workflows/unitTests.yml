@@ -27,6 +27,18 @@ jobs:
       
   coverage:
       runs-on: ubuntu-latest
+      strategy:
+      matrix:
+        node-version: [15.x]
+
       steps:
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+        - uses: actions/checkout@v2
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v2
+          with:
+            node-version: ${{ matrix.node-version }}
+        - run: npm install request
+        - run: npm install
+        - run: npm test
+        - name: Upload coverage to Codecov
+          uses: codecov/codecov-action@v1
