@@ -25,5 +25,8 @@ jobs:
       - run: npm install
       - run: npm test
       
+  coverage:
+      runs-on: ubuntu-latest
+      steps:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
