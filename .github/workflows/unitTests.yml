@@ -28,8 +28,8 @@ jobs:
   coverage:
       runs-on: ubuntu-latest
       strategy:
-      matrix:
-        node-version: [15.x]
+        matrix:
+          node-version: [15.x]
 
       steps:
         - uses: actions/checkout@v2
