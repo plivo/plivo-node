@@ -1,8 +1,15 @@
 # Change Log
 
-## [v4.22.5](https://github.com/plivo/plivo-node/tree/v4.22.5) (2021-10-11)
+## [v4.23.1](https://github.com/plivo/plivo-node/tree/v4.23.1) (2021-10-13)
 **Bug Fix**
-  - LiveCallInterface
+  - LiveCallInterface.
+  - [Buy Number API](https://www.plivo.com/docs/numbers/api/phone-number#buy-a-phone-number) to support app_id
+
+## [v4.23.0](https://github.com/plivo/plivo-node/tree/v4.23.0) (2021-10-11)
+**Features - Messaging**
+- This version includes advancements to the Messaging Interface that deals with the [Send SMS/MMS](https://www.plivo.com/docs/sms/api/message#send-a-message) interface, Creating a standard structure for `request/input` arguments to make implementation easier and incorporating support for the older interface.
+
+ Example for [send SMS](https://github.com/plivo/plivo-node#send-a-message)
 
 ## [v4.22.4](https://github.com/plivo/plivo-node/tree/v4.22.4) (2021-09-27)
 **Bug Fix**
