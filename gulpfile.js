@@ -5,7 +5,6 @@ var excludeGitignore = require('gulp-exclude-gitignore');
 var mocha = require('gulp-mocha');
 var istanbul = require('gulp-babel-istanbul');
 var plumber = require('gulp-plumber');
-var coveralls = require('gulp-coveralls');
 var babel = require('gulp-babel');
 var del = require('del');
 var isparta = require('isparta');
@@ -62,16 +61,6 @@ gulp.task('test', gulp.series('pre-test', function (cb) {
 gulp.task('watch', function () {
   gulp.watch(['lib/**/*.js', 'test/**'], ['test']);
 });
-
-// gulp.task('coveralls', gulp.series('test', function () {
-//   if (!process.env.CI) {
-//     console.log('ignoring coveralls report generation.');
-//     return;
-//   }
-
-//   return gulp.src(path.join(__dirname, 'coverage/lcov.info'))
-//     .pipe(coveralls());
-// }));
 
 gulp.task('clean', function () {
   return del('dist');
