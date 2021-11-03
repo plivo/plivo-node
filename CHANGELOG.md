@@ -1,5 +1,8 @@
 # Change Log
 
+## [v4.24.0](https://github.com/plivo/plivo-node/tree/v4.24.0) (2021-11-03)
+- Added Voice MPC enhancements.
+
 ## [v4.23.1](https://github.com/plivo/plivo-node/tree/v4.23.1) (2021-10-13)
 **Bug Fix**
   - LiveCallInterface.
