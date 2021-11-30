@@ -1,5 +1,10 @@
 # Change Log
 
+## [v4.24.0](https://github.com/plivo/plivo-node/tree/v4.24.0) (2021-11-30)
+**Features - Voice: Multiparty calls**
+- The [Add Multiparty Call API](https://www.plivo.com/docs/voice/api/multiparty-call/participants#add-a-participant) allows for greater functionality by accepting options like `start recording audio`, `stop recording audio`, and their HTTP methods.
+- [Multiparty Calls](https://www.plivo.com/docs/voice/api/multiparty-call/) now has new APIs to `stop` and `play` audio.
+
 ## [v4.23.1](https://github.com/plivo/plivo-node/tree/v4.23.1) (2021-10-13)
 **Bug Fix**
   - LiveCallInterface.

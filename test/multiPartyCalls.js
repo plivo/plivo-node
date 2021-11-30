@@ -92,4 +92,41 @@ describe('multiPartyCalls', function (){
       assert.equal(response.resourceUri, '/v1/Account/MAMDJMMTEZOWY0ZMQWM2/MultiPartyCall/uuid_7503f05f-2d6e-4ab3-b9e6-3b0d81ae9087/Participant/2132/')
     })
   });
+
+  it('should start MPC Participant Recording', function (){
+    return client.multiPartyCalls.startParticipantRecording(10, {friendlyName: 'TestMPC'}).then(function (response){
+      assert(response.message, "MPC: TestMPC participant record started")
+    })
+  });
+
+  it('should stop MPC Participant Recording', function (){
+    return client.multiPartyCalls.stopParticipantRecording(10,{friendlyName: 'TestMPC'}).then(function (response){
+      assert(response instanceof PlivoGenericResponse)
+    })
+  });
+
+  it('should pause MPC Participant Recording', function (){
+    return client.multiPartyCalls.pauseParticipantRecording(10,{friendlyName: 'TestMPC'}).then(function (response){
+      assert(response instanceof PlivoGenericResponse)
+    })
+  });
+
+  it('should resume MPC Participant Recording', function (){
+    return client.multiPartyCalls.resumeParticipantRecording(10,{friendlyName: 'TestMPC'}).then(function (response){
+      assert(response instanceof PlivoGenericResponse)
+    })
+  });
+
+  it('should start MPC Play Audio Member', function (){
+    return client.multiPartyCalls.startPlayAudio(10,'https://s3.amazonaws.com/XXX/XXX.mp3',
+      {friendlyName: 'TestMPC'}).then(function (response){
+      assert(response.message, "play queued into MPC")
+    })
+  });
+
+  it('should stop MPC Play Audio Member', function (){
+    return client.multiPartyCalls.stopPlayAudio(10,{friendlyName: 'TestMPC'}).then(function (response){
+      assert(response instanceof PlivoGenericResponse)
+    })
+  });
 })
