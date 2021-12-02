@@ -1,8 +1,8 @@
 # Change Log
 
 ## [v4.25.0](https://github.com/plivo/plivo-node/tree/v4.25.0) (2021-12-02)
-**Features - SMS: 10dlc Api support**
-- Brand and Campaign API.
+**Features - Messaging: 10DLC API**
+- 10DLC API's for brand and campaign support
 
 ## [v4.24.0](https://github.com/plivo/plivo-node/tree/v4.24.0) (2021-11-30)
 **Features - Voice: Multiparty calls**
