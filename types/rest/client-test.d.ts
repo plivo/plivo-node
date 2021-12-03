@@ -13,6 +13,8 @@ export class Client {
     pricings: PricingInterface;
     recordings: RecordingInterface;
     media: MediaInterface;
+    loa: LOAInterface;
+    hostedMessagingNumber: HostedMessagingNumberInterface;
 }
 /**
  * Plivo API client which can be used to access the Plivo APIs.
@@ -37,3 +39,5 @@ import { PricingInterface } from "../resources/pricings.js";
 import { RecordingInterface } from "../resources/recordings.js";
 import { MediaInterface } from "../resources/media.js";
 import { Phlo } from "../resources/phlo.js";
+import { LOAInterface } from "../resources/loa.js";
+import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber.js";
