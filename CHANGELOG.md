@@ -2,7 +2,7 @@
 
 ## [v4.25.1](https://github.com/plivo/plivo-node/tree/v4.25.1) (2021-12-08)
 **Bug Fix**
-- `undefined response` error from the library axios.
+- Handing `undefined response` error from axios.
 - Timeout has been eliminated for messaging requests.
 
 ## [v4.25.0](https://github.com/plivo/plivo-node/tree/v4.25.0) (2021-12-02)
