@@ -1,5 +1,10 @@
 # Change Log
 
+## [v4.25.1](https://github.com/plivo/plivo-node/tree/v4.25.1) (2021-12-08)
+**Bug Fix**
+- Handling `undefined response` error from axios.
+- Timeout has been eliminated for messaging requests.
+
 ## [v4.25.0](https://github.com/plivo/plivo-node/tree/v4.25.0) (2021-12-02)
 **Features - Messaging: 10DLC API**
 - 10DLC API's for brand and campaign support
