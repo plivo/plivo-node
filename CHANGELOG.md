@@ -1,5 +1,9 @@
 # Change Log
 
+## [5.6.0](https://github.com/plivo/plivo-java/tree/v5.6.0) (2021-12-13)
+**Features - Voice**
+- Routing SDK traffic through Akamai endpoints for all the [Voice APIs](https://www.plivo.com/docs/voice/api/overview/)
+
 ## [v4.25.1](https://github.com/plivo/plivo-node/tree/v4.25.1) (2021-12-08)
 **Bug Fix**
 - Handling `undefined response` error from axios.
