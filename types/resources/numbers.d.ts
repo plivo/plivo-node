@@ -48,7 +48,7 @@ export class PhoneNumber extends PlivoResource {
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(appId: string): Promise < any > ;
+	buy(appId?: string): Promise < any > ;
 	[clientKey]: symbol;
 }
 /**
@@ -67,7 +67,7 @@ export class PhoneNumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId: string): Promise < any > ;
+	buy(number: string, appId?: string): Promise < any > ;
 	[clientKey]: symbol;
 }
 /**
@@ -104,7 +104,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId: string): Promise < BuyNumberResponse > ;
+	buy(number: string, appId?: string): Promise < BuyNumberResponse > ;
 	/**
 	 * Add own number from carrier
 	 * @method
@@ -124,7 +124,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PhoneNumberInterface} return PhoneNumbers Object if success
 	 * @fail {Error} return Error
 	 */
-	search(countryISO: string, optionalParams: object): Promise < SearchNumberResponse > ;
+	search(countryISO: string, optionalParams: object): Promise < SearchNumberResponse[] > ;
 	/**
 	 * Update Number
 	 * @method
