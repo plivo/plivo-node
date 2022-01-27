@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.27.0](https://github.com/plivo/plivo-node/tree/v4.27.0) (2022-01-27)
+**Features - MPCStartCallRecording**
+- Parameter change from statusCallback to recordingCallback
+
 ## [v4.26.0](https://github.com/plivo/plivo-node/tree/v4.26.0) (2021-12-14)
 **Features - Voice**
 - Routing SDK traffic through Akamai endpoints for all the [Voice APIs](https://www.plivo.com/docs/voice/api/overview/)
