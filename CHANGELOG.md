@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.27.0](https://github.com/plivo/plivo-node/tree/v4.27.0) (2022-01-27)
+## [v4.27.0](https://github.com/plivo/plivo-node/tree/v4.27.0) (2022-02-02)
 **Features - MPCStartCallRecording**
 - Parameter change from statusCallback to recordingCallback
 
