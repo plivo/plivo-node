@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.27.0](https://github.com/plivo/plivo-node/tree/v4.27.0) (2022-02-02)
+**Features - MPCStartCallRecording**
+- Parameter change from statusCallback to recordingCallback
+
 ## [v4.26.1](https://github.com/plivo/plivo-node/tree/v4.26.1) (2022-01-21)
 **Bug Fix**
 - Making AppId non mandatory for Buy number and update number APIs(https://github.com/plivo/plivo-node/pull/234)
