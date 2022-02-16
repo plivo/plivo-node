@@ -17,11 +17,11 @@ var listParams = {
 client.loa.create(createParams)
   .then(function (loa) {
     console.log("\n============ created ===========\n", loa)
-    return client.loa.get(loa.id);
+    return client.loa.get(loa.loaId);
   })
   .then(function (loa) {
     console.log("\n============ get ===========\n", loa)
-    return client.loa.delete(loa.id);
+    return client.loa.delete(loa.loaId);
   })
   .then(function (result) {
     console.log("\n============ deleted ===========\n", result)

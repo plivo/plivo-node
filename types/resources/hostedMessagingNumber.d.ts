@@ -7,6 +7,7 @@ export class HostedMessagingNumberResponse {
   file: string;
   createdAt: string;
   linkedNumbers: Array<string>;
+  resourceUri:string;
 }
 
 export class CreateHostedMessagingNumberResponse {
@@ -18,6 +19,8 @@ export class CreateHostedMessagingNumberResponse {
   file: string;
   createdAt: string;
   linkedNumbers: string[];
+  resourceUri:string;
+  message:string;
 }
 
 export class ListHostedMessagingNumberResponse {
