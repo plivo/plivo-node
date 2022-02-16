@@ -20,7 +20,7 @@ var listParams = {
 client.hostedMessagingNumber.create(createParams)
   .then(function (hmn) {
     console.log("\n============ created ===========\n", hmn)
-    return client.hostedMessagingNumber.get(hmn.id);
+    return client.hostedMessagingNumber.get(hmn.hostedMessagingNumberId);
   })
   .then(function (hmn) {
     console.log("\n============ get ===========\n", hmn)

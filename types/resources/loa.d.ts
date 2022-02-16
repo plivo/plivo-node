@@ -7,6 +7,7 @@ export class LOAResponse {
   file: string;
   createdAt: string;
   linkedNumbers: Array<string>;
+  resourceUri: string;
 }
 
 export class CreateLOAResponse {
@@ -18,6 +19,8 @@ export class CreateLOAResponse {
   file: string;
   createdAt: string;
   linkedNumbers: string[];
+  resourceUri: string;
+  message: string;
 }
 
 export class ListLOAResponse {
