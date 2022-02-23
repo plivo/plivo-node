@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.28.0](https://github.com/plivo/plivo-node/tree/v4.28.0) (2022-02-23)
+**Features - Numbers: Hosted Messaging API**
+- Add support for Hosted Messaging APIs.
+
 ## [v4.27.0](https://github.com/plivo/plivo-node/tree/v4.27.0) (2022-02-02)
 **Features - MPCStartCallRecording**
 - Parameter change from statusCallback to recordingCallback
