@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.28.1](https://github.com/plivo/plivo-node/tree/v4.28.1) (2022-03-03)
+**Features - DialElement**
+- confirmTimeout parameter added in dial element
+
 ## [v4.28.0](https://github.com/plivo/plivo-node/tree/v4.28.0) (2022-02-23)
 **Features - Numbers: Hosted Messaging API**
 - Add support for Hosted Messaging APIs.
