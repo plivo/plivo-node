@@ -49,6 +49,7 @@ export class Response {
         callerID?: string;
         callerName?: string;
         confirmSound?: string;
+        confirmTimeout?: string;
         confirmKey?: string;
         dialMusic?: string;
         callbackUrl?: string;
