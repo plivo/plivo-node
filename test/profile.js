@@ -27,7 +27,7 @@ import {
       it('delete profile', function () {
         return client.profile.delete("06ecae31-4bf8-40b9-ac62-e902418e9935")
           .then(function (response) {
-            assert.equal(response.api_id, "eb1e71ae-b01e-11ec-88b1-0242ac110002")
+            assert.equal(response.apiId, "eb1e71ae-b01e-11ec-88b1-0242ac110002")
           })
       });
 
