@@ -18,7 +18,7 @@ import {
     });
     
     it('list profile', function () {
-        return client.profile.list()
+        return client.profile.list({})
           .then(function (response) {
             assert.equal(response.profiles.length, 2)
           })
@@ -36,7 +36,7 @@ import {
         var address = {"street":"123", "city":"Band", "state":"NY", "postal_code":"10001", "country":"US"}
       return client.profile.create("vishnu104", "SECONDARY", "RESELLER","PRIVATE_PROFIT","ABC Inc", "111111111", "PROFESSIONAL", "US", "ABC","NASDAQ","NONE", "google.com", address,authorized_contact)
         .then(function (profile) {
-          assert.equal(profile.profile_uuid, '43d0616e-d50a-445a-a84e-310a089f0618')
+          assert.equal(profile.profileUuid, '43d0616e-d50a-445a-a84e-310a089f0618')
         })
     });
   });
