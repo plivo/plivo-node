@@ -1,4 +1,7 @@
 # Change Log
+## [v4.30.0](https://github.com/plivo/plivo-node/tree/v4.30.0) (2022-03-31)
+**Features - Profile Api**
+- Profile api added for 10dlc support
 
 ## [v4.29.1](https://github.com/plivo/plivo-node/tree/v4.29.1) (2022-03-25)
 **Bug Fix - DialElement**
