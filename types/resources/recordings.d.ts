@@ -12,6 +12,8 @@ export class RetrieveRecordingResponse {
 	recordingType: string;
 	recordingUrl: string;
     resourceUri: string;
+	fromNumber: string;
+	toNumber: string;
 }
 export class ListRecordingResponse {
 	constructor(params: object);
@@ -27,6 +29,8 @@ export class ListRecordingResponse {
 	recordingType: string;
 	recordingUrl: string;
 	resourceUri: string;
+	fromNumber: string;
+	toNumber: string;
 }
 /**
  * Represents a Recording
