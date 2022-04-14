@@ -27,7 +27,7 @@ import {
     it('create brand', function () {
         return client.brand.create("vishnu128", "3cf3e991-2f94-4910-9712-61442987a2d0","starter", false)
           .then(function (brand) {
-            assert.equal(brand.brand.brand_id, 'B1QSGGS')
+            assert.equal(brand.brand_id, 'B1QSGGS')
           })
       });
 
