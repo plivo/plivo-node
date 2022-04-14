@@ -1,5 +1,6 @@
 # Change Log
-## [v4.30.0](https://github.com/plivo/plivo-node/tree/v4.30.0) (2022-03-31)
+
+## [v4.30.0](https://github.com/plivo/plivo-node/tree/v4.30.0) (2022-04-14)
 **Features - Profile Api**
 - Profile api added for 10dlc support
 
