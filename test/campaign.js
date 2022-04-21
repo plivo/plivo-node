@@ -30,7 +30,7 @@ import {
         "2FA"
     ],"sample description text",false,false,false,false,true,true,true,"sample1","sample2")
         .then(function (campaign) {
-          assert.equal(campaign.campaign.brandId, 'BHYYNCK')
+          assert.equal(campaign.campaignId, 'CFSOBZQ')
         })
     });
   });
