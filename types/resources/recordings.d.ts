@@ -31,6 +31,9 @@ export class ListRecordingResponse {
 	resourceUri: string;
 	fromNumber: string;
 	toNumber: string;
+	conferenceUuid: string;
+	mpcName: string;
+	mpcUuid: string;
 }
 /**
  * Represents a Recording
