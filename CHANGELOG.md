@@ -1,9 +1,13 @@
 # Change Log
 
-## [v4.31.0](https://github.com/plivo/plivo-node/tree/v4.31.0) (2022-05-05)
+## [v4.32.0](https://github.com/plivo/plivo-node/tree/v4.32.0) (2022-05-05)
 **Features - List all recordings**
 - `fromNumber` and `toNumber` added in filtering params [List all recordings](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
 - `record_min_member_count` param added to [Add a participant to a multiparty call using API](https://www.plivo.com/docs/voice/api/multiparty-call/participants#add-a-participant)
+
+## [v4.31.0](https://github.com/plivo/plivo-node/tree/v4.31.0) (2022-04-27)
+**Feature - 10DLC API callback**
+- Added callback support for campaign, brand, link number request.
 
 ## [v4.30.0](https://github.com/plivo/plivo-node/tree/v4.30.0) (2022-04-14)
 **Features - Profile Api**
