@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.30.1](https://github.com/plivo/plivo-node/tree/v4.30.1) (2022-04-11)
+## [v4.31.0](https://github.com/plivo/plivo-node/tree/v4.31.0) (2022-05-05)
 **Features - List all recordings**
 - `fromNumber` and `toNumber` added in filtering params [List all recordings](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
 - `record_min_member_count` param added to [Add a participant to a multiparty call using API](https://www.plivo.com/docs/voice/api/multiparty-call/participants#add-a-participant)
