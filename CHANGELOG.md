@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.32.1](https://github.com/plivo/plivo-node/tree/v4.32.1) (2022-06-07)
+## [v4.32.1](https://github.com/plivo/plivo-node/tree/v4.32.1) (2022-06-09)
 **Bug fix - Typescript**
 - Make a call [API](https://www.plivo.com/docs/voice/api/call/#make-a-call) response to support the parameter `requestUuid` of data types `Array<string>` and `string`.
 
