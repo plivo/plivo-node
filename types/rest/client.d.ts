@@ -28,6 +28,8 @@ export class Client {
     complianceDocuments: ComplianceDocumentInterface;
     complianceRequirements: ComplianceRequirementInterface;
     complianceApplications: ComplianceApplicationInterface;
+    loa: LOAInterface;
+    hostedMessagingNumber: HostedMessagingNumberInterface;
     toJSON(...args: any[]): any;
 }
 /**
@@ -59,3 +61,5 @@ import { ComplianceDocumentTypeInterface } from "../resources/complianceDocument
 import { ComplianceDocumentInterface} from "../resources/complianceDocuments";
 import { ComplianceRequirementInterface } from "../resources/complianceRequirements";
 import { ComplianceApplicationInterface } from "../resources/complianceApplications";
+import { LOAInterface } from "../resources/loa";
+import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber";

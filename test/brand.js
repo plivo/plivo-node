@@ -13,7 +13,7 @@ import {
     it('should get brand', function () {
       return client.brand.get('BRPXS6E')
         .then(function (brand) {
-          assert.equal(brand.brand.brandId, 'BRPXS6E')
+          assert.equal(brand.brand.brandId, 'B1QSGGS')
         })
     });
   
@@ -25,10 +25,9 @@ import {
     });
 
     it('create brand', function () {
-        return client.brand.create("New York","ABC Inc.", "US", "111111111","US","johndoe@abc.com","PRIVATE_PROFIT","+11234567890","10001","PENDING",
-        "NY", "NASDAQ","ABC","123", "RETAIL")
+        return client.brand.create("vishnu128", "3cf3e991-2f94-4910-9712-61442987a2d0","starter", false)
           .then(function (brand) {
-            assert.equal(brand.brand.brandId, 'BVI0UQA')
+            assert.equal(brand.brand_id, 'B1QSGGS')
           })
       });
 

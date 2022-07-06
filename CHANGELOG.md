@@ -1,5 +1,51 @@
 # Change Log
 
+## [v4.32.1](https://github.com/plivo/plivo-node/tree/v4.32.1) (2022-06-09)
+**Bug fix - Typescript**
+- Make a call [API](https://www.plivo.com/docs/voice/api/call/#make-a-call) response to support the parameter `requestUuid` of data types `Array<string>` and `string`.
+
+## [v4.32.0](https://github.com/plivo/plivo-node/tree/v4.32.0) (2022-05-05)
+**Features - List all recordings**
+- `fromNumber` and `toNumber` added in filtering params [List all recordings](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
+- `record_min_member_count` param added to [Add a participant to a multiparty call using API](https://www.plivo.com/docs/voice/api/multiparty-call/participants#add-a-participant)
+
+## [v4.31.0](https://github.com/plivo/plivo-node/tree/v4.31.0) (2022-04-27)
+**Feature - 10DLC API callback**
+- Added callback support for campaign, brand, link number request.
+
+## [v4.30.0](https://github.com/plivo/plivo-node/tree/v4.30.0) (2022-04-14)
+**Features - Profile Api**
+- Profile api added for 10dlc support
+
+## [v4.29.1](https://github.com/plivo/plivo-node/tree/v4.29.1) (2022-03-25)
+**Bug Fix - DialElement**
+- `confirmTimeout` parameter added to [The Dial element](https://www.plivo.com/docs/voice/xml/dial/)
+
+## [v4.29.0](https://github.com/plivo/plivo-node/tree/v4.29.0) (2022-03-25)
+**Features - DialElement**
+- `confirmTimeout` parameter added to [The Dial element](https://www.plivo.com/docs/voice/xml/dial/)
+
+## [v4.28.0](https://github.com/plivo/plivo-node/tree/v4.28.0) (2022-02-23)
+**Features - Numbers: Hosted Messaging API**
+- Add support for Hosted Messaging APIs.
+
+## [v4.27.0](https://github.com/plivo/plivo-node/tree/v4.27.0) (2022-02-02)
+**Features - MPCStartCallRecording**
+- Parameter change from statusCallback to recordingCallback
+
+## [v4.26.1](https://github.com/plivo/plivo-node/tree/v4.26.1) (2022-01-21)
+**Bug Fix**
+- Making AppId non mandatory for Buy number and update number APIs(https://github.com/plivo/plivo-node/pull/234)
+
+## [v4.26.0](https://github.com/plivo/plivo-node/tree/v4.26.0) (2021-12-14)
+**Features - Voice**
+- Routing SDK traffic through Akamai endpoints for all the [Voice APIs](https://www.plivo.com/docs/voice/api/overview/)
+
+## [v4.25.1](https://github.com/plivo/plivo-node/tree/v4.25.1) (2021-12-08)
+**Bug Fix**
+- Handling `undefined response` error from axios.
+- Timeout has been eliminated for messaging requests.
+
 ## [v4.25.0](https://github.com/plivo/plivo-node/tree/v4.25.0) (2021-12-02)
 **Features - Messaging: 10DLC API**
 - 10DLC API's for brand and campaign support
