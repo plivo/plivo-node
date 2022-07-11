@@ -1,7 +1,8 @@
 # Change Log
 
-## [v4.33.0](https://github.com/plivo/plivo-go/tree/v4.33.0) (2022-07-06)
-- Add stir attestation param as part of Get CDR and live call APIs
+## [v4.33.0](https://github.com/plivo/plivo-go/tree/v4.33.0) (2022-07-11)
+**Feature - STIR Attestation**
+- Add stir attestation param as part of Get CDR and Get live call APIs Response
 
 ## [v4.32.1](https://github.com/plivo/plivo-node/tree/v4.32.1) (2022-06-09)
 **Bug fix - Typescript**
