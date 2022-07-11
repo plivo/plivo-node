@@ -51,7 +51,7 @@ describe('calls', function () {
   it('should get list of calls!', function (done) {
     client.calls.list()
       .then(function(calls){
-        assert.equal(calls.length, 0)
+        assert.equal(calls.length, 2)
         done()
       })
       .catch(function(e) {
