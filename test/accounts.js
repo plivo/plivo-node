@@ -101,4 +101,11 @@ describe('Account', function () {
         assert.equal(accounts, true)
       })
   });
+
+  it('Should throw error for delete subAccounts via interface', function () {
+    return client.subAccounts.delete()
+     .catch(function(errorResponse) {
+      assert.equal(errorResponse, 'Error: Missing mandatory field: id')
+    })
+  });
 });
