@@ -12,4 +12,5 @@ describe('Token', function () {
         assert.equal(token.token, 'created')
       })
   });
-}
+});
+
