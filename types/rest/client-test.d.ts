@@ -1,7 +1,7 @@
 export class Client {
     constructor(authid: string, authToken: string, proxy: string);
     calls: CallInterface;
-    toke: TokenInterface;
+    token: TokenInterface;
     accounts: AccountInterface;
     subAccounts: SubaccountInterface;
     applications: ApplicationInterface;
