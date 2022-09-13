@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.35.0](https://github.com/plivo/plivo-go/tree/v4.35.0) (2022-09-12)
+**Feature - Audio Streaming**
+- `Audio Stream over Call` added API to start, stop and get audioStream packets over a call.
+
 ## [v4.34.0](https://github.com/plivo/plivo-go/tree/v4.34.0) (2022-08-07)
 **Feature - Token Creation**
 - `JWT Token Creation API` added API to create a new JWT token.
