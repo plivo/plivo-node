@@ -20,12 +20,6 @@ export class CreateCallResponse {
 	message: string;
 	requestUuid: Array<string> | string;
 }
-export class StartStreamResponse {
-	constructor(params: object);
-	apiId: string;
-	message: string;
-	streamId: Array<string> | string;
-}
 export class GetQueuedCallResponse {
 	constructor(params: object);
 	apiId: string;
@@ -323,24 +317,6 @@ export class CallInterface extends PlivoResourceInterface {
 	 * @fail {Error} returns Error
 	 */
 	create(from: string, to: string, answerUrl: string, params ? : {}): Promise < CreateCallResponse > ;
-	
-	/**
-     * Start a Stream over a Call
-     * @method
-     * @param {string} serviceUrl - Wss url over which data packets will be send.
-     * @param {string} callUuid - For this callUuid audio streaming will start.
-     * @param {object} params - optional params to start a stream
-     * @param {string} [params.bidirectional] Specifies if the audio being streamed over web-sockets is oneway (read only for the wss service) only or bidirectional (the wss service can read as well as write audio back).
-     * @param {string} [params.audioTrack] The audio track (inbound or outbound) of the underlying call which Plivo will fork and stream to the wss service. Inbound [default], outbound, both. Note: only inbound is allowed if bidirectional is true.
-     * @param {string} [params.streamTimeout] Maximum duration, in seconds, for which audio will be streamed once streaming starts. At the end of the specified duration, streaming will stop. This will have no impact on the rest of the call flow. Defaults to 86400 (24 hrs).
-     * @param {string} [params.statusCallbackUrl] URL that is notified by Plivo when stream is connected, stopped, failed to connect or disconnected. Note: not called when the call gets disconnected.
-     * @param {string} [params.statusCallbackMethod] POST[default], GET.
-     * @param {string} [params.contentType] Preferred audio codec and sampling rate. Allowed, audio/x-l16;rate=8000 [default], audio/x-l16;rate=16000 and audio/x-mulaw;rate=8000.
-     * @param {string} [params.extraHeaders] These are key value pairs which will be passed to the wss service along with your stream. Total length of the string being passed should be less than equal to 512 bytes.
-     * @promise {object} returns PlivoGenericResponse Object
-     * @fail {Error} returns Error
-     */
-	 startStream(serviceUrl: string, callUuid: string, params ? : {}): Promise < StartStreamResponse > ;
 	
 	/**
 	 * Hangup A Specific Call
