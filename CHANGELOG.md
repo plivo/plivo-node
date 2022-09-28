@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.34.1](https://github.com/plivo/plivo-go/tree/v4.34.1) (2022-09-12)
+## [v4.34.1](https://github.com/plivo/plivo-go/tree/v4.34.1) (2022-09-28)
 **10DLC campaign creation**
 -  Adding more attributes to campaign creation request.
 
