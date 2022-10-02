@@ -281,5 +281,16 @@ describe('calls', function () {
         assert.equal(resp.length, 2)
       });
     });
-  })
+  });
+  describe('Stream', function () {
+    it('should start stream!', function () {
+      client.calls.stream('aaa-deeiei3-dfddd', 'wss://mystream.ngrok.io/audiostream')
+        .then(function(call){
+          return client.calls.stream(call.callUuid)
+        })
+        .then(function(streamDetail) {
+          assert.equal(streamDetail.message, 'stream started')
+        })
+    });
+  });
 });

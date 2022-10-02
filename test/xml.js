@@ -38,4 +38,20 @@ describe('PlivoXML', function () {
     assert.equal('<Response><MultiPartyCall role="Agent" maxDuration="1000" statusCallbackEvents="participant-speak-events, participant-digit-input-events, add-participant-api-events, participant-state-changes, mpc-state-changes" maxParticipants="10" recordMinMemberCount="1" waitMusicMethod="GET" agentHoldMusicMethod="GET" customerHoldMusicMethod="GET" record="false" recordFileFormat="mp3" recordingCallbackMethod="GET" statusCallbackMethod="POST" stayAlone="false" coachMode="true" mute="false" hold="false" startMpcOnEnter="true" endMpcOnExit="false" enterSound="beep:1" enterSoundMethod="GET" exitSound="beep:2" exitSoundMethod="GET" onExitActionMethod="POST" relayDTMFInputs="false" startRecordingAudioMethod="GET" stopRecordingAudioMethod="GET">Nairobi</MultiPartyCall></Response>',mpcResponse.toXML());
     done();
   });
+
+  it('tests Stream', function (done){
+    const streamResponse = new Response();
+    var stream_body = "text";
+    var extraHeaders = {
+          'key1': "val1",
+          'key2': "val2"
+    };
+    var params = {
+            'audioTrack': "inbound",
+            'extraHeaders': extraHeaders
+    };
+    streamResponse.addStream(stream_body, params);
+    assert.equal('<Response><Stream audioTrack="inbound" extraHeaders="{"key1X-PH":"val1","key2X-PH":"val2"}">text</Stream></Response>',streamResponse.toXML());
+    done();
+  });
 });
