@@ -4,6 +4,10 @@
 **Feature - Audio Streaming**
 - `Audio Stream over Call` added API to start, stop and get audioStream packets over a call.
 
+## [v4.34.1](https://github.com/plivo/plivo-go/tree/v4.34.1) (2022-09-28)
+**10DLC campaign creation**
+-  Adding more attributes to campaign creation request.
+
 ## [v4.34.0](https://github.com/plivo/plivo-go/tree/v4.34.0) (2022-08-07)
 **Feature - Token Creation**
 - `JWT Token Creation API` added API to create a new JWT token.
