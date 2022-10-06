@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.34.2](https://github.com/plivo/plivo-go/tree/v4.34.2) (2022-10-13)
+**Bug Fix - Retry Timeout**
+-  Implementing Retry logic for Connection timeout along with exponential retry backoff
+
 ## [v4.34.1](https://github.com/plivo/plivo-go/tree/v4.34.1) (2022-09-28)
 **10DLC campaign creation**
 -  Adding more attributes to campaign creation request.
