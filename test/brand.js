@@ -34,7 +34,7 @@ import {
       it('should get brand usecases', function () {
         return client.brand.get_usecases('BRPXS6E')
           .then(function (brand) {
-            assert.equal(brand.brand.brandId, 'BRPXS6E')
+            assert.equal(brand.brandId, 'BRPXS6E')
           })
       });
 
