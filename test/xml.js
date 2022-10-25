@@ -51,7 +51,7 @@ describe('PlivoXML', function () {
             'extraHeaders': extraHeaders
     };
     streamResponse.addStream(stream_body, params);
-    assert.equal('<Response><Stream audioTrack="inbound" extraHeaders="{"key1X-PH":"val1","key2X-PH":"val2"}">text</Stream></Response>',streamResponse.toXML());
+    assert.equal('<Response><Stream audioTrack="inbound" extraHeaders="{"key1":"val1","key2":"val2"}">text</Stream></Response>',streamResponse.toXML());
     done();
   });
 });
