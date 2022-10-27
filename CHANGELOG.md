@@ -1,8 +1,12 @@
 # Change Log
 
-## [v4.35.0](https://github.com/plivo/plivo-go/tree/v4.35.0) (2022-09-12)
+## [v4.35.0](https://github.com/plivo/plivo-go/tree/v4.35.0) (2022-10-27)
 **Feature - Audio Streaming**
 - `Audio Stream over Call` added API to start, stop and get audioStream packets over a call.
+
+## [v4.34.2](https://github.com/plivo/plivo-go/tree/v4.34.2) (2022-10-17)
+**List Endpoint query param support**
+-  Adding limit and offset to fetch list of endpoints.
 
 ## [v4.34.1](https://github.com/plivo/plivo-go/tree/v4.34.1) (2022-09-28)
 **10DLC campaign creation**
