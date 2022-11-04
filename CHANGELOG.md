@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.35.0](https://github.com/plivo/plivo-go/tree/v4.35.0) (2022-11-04)
+**Brand Usecase Request**
+-  Brand Usecase Request endpoint added
+
 ## [v4.34.2](https://github.com/plivo/plivo-go/tree/v4.34.2) (2022-10-17)
 **List Endpoint query param support**
 -  Adding limit and offset to fetch list of endpoints.
