@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.34.3](https://github.com/plivo/plivo-go/tree/v4.34.3) (2022-10-25)
+## [v4.34.3](https://github.com/plivo/plivo-go/tree/v4.34.3) (2022-11-07)
 **Bug fix - List all Endpoint**
 -  Removed duplicate responses
 
