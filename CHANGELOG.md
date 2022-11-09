@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.35.0](https://github.com/plivo/plivo-node/tree/v4.35.0) (2022-11-04)
+**Brand Usecase Request**
+-  Brand Usecase Request endpoint added
+
 ## [v4.34.3](https://github.com/plivo/plivo-go/tree/v4.34.3) (2022-11-07)
 **Bug fix - List all Endpoint**
 -  Removed duplicate responses
