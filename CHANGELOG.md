@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.35.0](https://github.com/plivo/plivo-go/tree/v4.35.0) (2022-11-04)
+## [v4.35.0](https://github.com/plivo/plivo-node/tree/v4.35.0) (2022-11-04)
 **Brand Usecase Request**
 -  Brand Usecase Request endpoint added
 
