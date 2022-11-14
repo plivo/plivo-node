@@ -33,4 +33,11 @@ import {
           assert.equal(campaign.campaignId, 'CFSOBZQ')
         })
     });
+
+    it('should delete campaign', function() {
+      return client.campaign.deleteCampaign("CMPT4EP")
+        .then(function(response) {
+          assert.equal(response.campaignId, "CMPT4EP")
+        })
+    });
   });
