@@ -1,8 +1,16 @@
 # Change Log
 
-## [v4.35.0](https://github.com/plivo/plivo-go/tree/v4.35.0) (2022-10-27)
+## [v4.36.0](https://github.com/plivo/plivo-go/tree/v4.35.0) (2022-11-15)
 **Feature - Audio Streaming**
 - `Audio Stream over Call` added API to start, stop and get audioStream packets over a call.
+
+## [v4.35.0](https://github.com/plivo/plivo-node/tree/v4.35.0) (2022-11-04)
+**Brand Usecase Request**
+-  Brand Usecase Request endpoint added
+
+## [v4.34.3](https://github.com/plivo/plivo-go/tree/v4.34.3) (2022-11-07)
+**Bug fix - List all Endpoint**
+-  Removed duplicate responses
 
 ## [v4.34.2](https://github.com/plivo/plivo-go/tree/v4.34.2) (2022-10-17)
 **List Endpoint query param support**

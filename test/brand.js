@@ -6,9 +6,9 @@ import {
   } from '../lib/base.js';
   import assert from 'assert';
   import sinon from 'sinon';
-  
+
   let client = new Client('sampleid', 'sammpletoken', 'sampleproxy');
-  
+
   describe('brand', function () {
     it('should get brand', function () {
       return client.brand.get('BRPXS6E')
@@ -16,7 +16,7 @@ import {
           assert.equal(brand.brand.brandId, 'B1QSGGS')
         })
     });
-  
+
     it('list brand', function () {
       return client.brand.list()
         .then(function (brand) {
@@ -31,5 +31,12 @@ import {
           })
       });
 
-  
+      it('should get brand usecases', function () {
+        return client.brand.get_usecases('BRPXS6E')
+          .then(function (brand) {
+            assert.equal(brand.brandId, 'BRPXS6E')
+          })
+      });
+
+
   });
