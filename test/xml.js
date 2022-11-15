@@ -42,16 +42,13 @@ describe('PlivoXML', function () {
   it('tests Stream', function (done){
     const streamResponse = new Response();
     var stream_body = "text";
-    var extraHeaders = {
-          'key1': "val1",
-          'key2': "val2"
-    };
+    var extraHeaders = "a=1,b=2";
     var params = {
             'audioTrack': "inbound",
             'extraHeaders': extraHeaders
     };
     streamResponse.addStream(stream_body, params);
-    assert.equal('<Response><Stream audioTrack="inbound" extraHeaders="{"key1":"val1","key2":"val2"}">text</Stream></Response>',streamResponse.toXML());
+    assert.equal('<Response><Stream audioTrack="inbound" extraHeaders="a=1,b=2">text</Stream></Response>',streamResponse.toXML());
     done();
   });
 });
