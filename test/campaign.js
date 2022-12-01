@@ -40,4 +40,11 @@ import {
           assert.equal(response.campaignId, "CMPT4EP")
         })
     });
+
+    it('update campaign', function () {
+      return client.campaign.update("CMPT4EP","","","","sample1 should be 20 minimum character","","","","","","","")
+        .then(function (response) {
+          assert.equal(response.campaign.campaignId, "CMPT4EP")
+        })
+    });
   });
