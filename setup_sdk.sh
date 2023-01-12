@@ -1,8 +1,14 @@
 #!/bin/bash
 
+set -e
 testDir="node-sdk-test"
 GREEN="\033[0;32m"
 NC="\033[0m"
+
+if [ ! $PLIVO_API_PROD_HOST ] || [ ! $PLIVO_API_DEV_HOST ] || [ ! $PLIVO_AUTH_ID ] || [ ! $PLIVO_AUTH_TOKEN ]; then
+    echo "Environment variables not properly set! Please refer to Local Development section in README!"
+    exit 126
+fi
 
 cd /usr/src/app
 
@@ -41,4 +47,5 @@ echo -e "\t3. Navigate to the test directory: $GREEN cd /usr/src/app/$testDir$NC
 echo -e "\t4. Run your test file: $GREEN node test.js$NC"
 echo -e "\t5. For running unit tests, run on host: $GREEN make test CONTAINER=$HOSTNAME$NC"
 
+# To keep the container running post setup
 /bin/bash
