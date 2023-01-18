@@ -31,12 +31,19 @@ import {
           })
       });
 
-      it('should get brand usecases', function () {
-        return client.brand.get_usecases('BRPXS6E')
-          .then(function (brand) {
-            assert.equal(brand.brandId, 'BRPXS6E')
-          })
-      });
+    it('should get brand usecases', function () {
+      return client.brand.get_usecases('BRPXS6E')
+        .then(function (brand) {
+          assert.equal(brand.brandId, 'BRPXS6E')
+        })
+    });
+
+    it('should delete brand', function() {
+      return client.brand.deleteBrand('BRPXS6E')
+        .then(function(brand) {
+          assert.equal(brand.brandId, 'BRPXS6E')
+        })
+    });
 
 
   });

@@ -11,6 +11,14 @@
 **Delete Brand and Campaign Request**
 -  Delete Brand and Campaign Request endpoint added
 
+## [v4.37.0](https://github.com/plivo/plivo-node/tree/v4.37.0) (2022-12-16)
+**Update Campaign Request**
+-  Update Campaign Request endpoint added
+
+## [v4.36.0](https://github.com/plivo/plivo-node/tree/v4.36.0) (2022-12-06)
+**Delete Brand and Campaign Request**
+-  Delete Brand and Campaign Request endpoint added
+
 ## [v4.35.0](https://github.com/plivo/plivo-node/tree/v4.35.0) (2022-11-04)
 **Brand Usecase Request**
 -  Brand Usecase Request endpoint added
