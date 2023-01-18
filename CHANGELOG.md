@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.38.0](https://github.com/plivo/plivo-node/tree/v4.38.0) (2022-12-16)
+**Feature - Added New Param(Message Expiry) in Send Message API**
+-  Added new param(Message Expiry) in Send Message API
+
 ## [v4.37.0](https://github.com/plivo/plivo-node/tree/v4.37.0) (2022-12-16)
 **Update Campaign Request**
 -  Update Campaign Request endpoint added
