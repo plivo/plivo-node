@@ -21,10 +21,11 @@ export class MessageGetResponse {
 	totalRate: string;
 	units: string;
 	powerpackId: string;
+	requesterIp: string;
 }
 export class MessageListResponse {
 	constructor(params: object);
-  errorCode: string;
+	errorCode: string;
 	fromNumber: string;
 	messageDirection: string;
 	messageState: string;
@@ -35,8 +36,9 @@ export class MessageListResponse {
 	toNumber: string;
 	totalAmount: string;
 	totalRate: string;
-  units: string;
+	units: string;
 	powerpackId: string;
+	requesterIp: string;
 }
 export class MMSMediaResponse {
 	constructor(params: object);

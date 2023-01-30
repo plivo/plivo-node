@@ -17,10 +17,25 @@ describe('message', function () {
       })
   });
 
+  it('should get requester_ip', function () {
+    return client.messages.get(1)
+      .then(function (message) {
+        assert.equal(message.requesterIP, "192.168.1.2")
+      })
+  });
+
   it('list messages', function () {
     return client.messages.list()
       .then(function (messages) {
         assert.equal(messages.length, 2)
+      })
+  });
+
+  it('should have requester_ip in listed messages', function () {
+    return client.messages.list()
+      .then(function (messages) {
+        assert.equal(messages[0].requesterIP, "192.168.1.1")
+        assert.equal(messages[1].requesterIP, "192.168.1.2")
       })
   });
 
