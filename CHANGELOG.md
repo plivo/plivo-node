@@ -1,5 +1,5 @@
 # Change Log
-## [4.39.1](https://github.com/plivo/plivo-node/tree/v4.39.1) (2023-02-06)
+## [4.40.0](https://github.com/plivo/plivo-node/tree/v4.40.0) (2023-02-06)
 **Feature - Added New Param 'source_ip' in GetCall and ListCalls**
 - Add `source_ip` to the response for the [retrieve a call details API](https://www.plivo.com/docs/voice/api/call#retrieve-a-call) and the [retreive all call details API](https://www.plivo.com/docs/voice/api/call#retrieve-all-calls)
 
