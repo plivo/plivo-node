@@ -64,7 +64,6 @@ describe('PowerpackInterface', function () {
         function (powerpack) {
           return powerpack.find_shortcode('444444')
         }).then(function (ppk) {
-          console.log(ppk)
         assert.equal(ppk.shortCode, "444444")
        });
   });
