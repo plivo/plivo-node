@@ -62,15 +62,16 @@ describe('PowerpackInterface', function () {
   it('find shortcode  via interface', function () {
     client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
         function (powerpack) {
-          return powerpack.find_shortcode('4444444')
+          return powerpack.find_shortcode('444444')
         }).then(function (ppk) {
-        assert.equal(ppk.shortcode, "4444444")
+          console.log(ppk)
+        assert.equal(ppk.shortCode, "444444")
        });
   });
   it('list shortcode  via interface', function () {
     client.powerpacks.get("5ec4c8c9-cd74-42b5-9e41-0d7670d6bb46").then(
         function (powerpack) {
-          return powerpack.list_shortcodes('4444444')
+          return powerpack.list_shortcodes('444444')
         })
       .then(function (result) {
         assert.notEqual(result.length, 0)
