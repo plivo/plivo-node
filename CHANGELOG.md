@@ -1,4 +1,7 @@
 # Change Log
+## [4.40.0](https://github.com/plivo/plivo-go/tree/v4.40.0) (2023-02-23)
+**Feature - Enhance MDR filtering capabilities **
+- Added new fields on MDR object response
 
 ## [4.39.0](https://github.com/plivo/plivo-node/tree/v4.39.0) (2022-01-25)
 **Feature - Added New Param(requesterIP) in Get Message and List Mssage APIs**
