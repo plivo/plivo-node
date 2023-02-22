@@ -3,7 +3,7 @@
 **Feature - Enhance MDR filtering capabilities **
 - Added new fields on MDR object response
 
-## [4.40.0](https://github.com/plivo/plivo-ruby/tree/v4.40.0) (2022-02-22)
+## [4.40.0](https://github.com/plivo/plivo-node/tree/v4.40.0) (2022-02-22)
 **Adding new attribute - 'isDomestic' in Get Message and List Message APIs**
 - Add `isDomestic` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
 
