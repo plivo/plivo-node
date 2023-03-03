@@ -1,4 +1,8 @@
 # Change Log
+## [4.41.0](https://github.com/plivo/plivo-node/tree/v4.41.0) (2023-03-03)
+**Adding new attribute - 'isDomestic' in Get Message and List Message APIs**
+- Add `isDomestic` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
+
 ## [4.40.0](https://github.com/plivo/plivo-node/tree/v4.40.0) (2023-02-23)
 **Feature - Enhance MDR filtering capabilities **
 - Added new fields on MDR object response
