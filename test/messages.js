@@ -53,20 +53,26 @@ describe('message', function () {
       })
   });
   
-  it('should send message via interface', function () {
+  it('should send SMS via interface', function () {
     return client.messages.create({src:'src', dst:'dst', text:'text'})
       .then(function(message){
             assert.equal(message.message, 'message(s) queued')
       })
   });
 
-  it('should send message via interface', function () {
-    return client.messages.create({src:'src', dst:'dst', text:'text'})
+  it('should send MMS via interface', function () {
+    return client.messages.create({src:'src', dst:'dst', type:'mms'})
       .then(function(message){
             assert.equal(message.message, 'message(s) queued')
       })
   });
 
+  it('should throw error - text is required field for SMS', function () {
+    return client.messages.create({src:'src', dst:'dst'})
+      .catch(function (err) {
+        assert.equal(err.message, 'Missing mandatory field: text')
+      })
+  });
 
   it('should throw error - id is required via interface', function () {
     return client.messages.get()
