@@ -1,4 +1,9 @@
 # Change Log
+## [4.42.0](https://github.com/plivo/plivo-node/tree/v4.42.0) (2023-03-07)
+**Bug fix - 'text' parameter should be optional for MMS**
+- Make `text` as an optional parameter for [sending MMS](https://www.plivo.com/docs/sms/api/message#send-a-message).
+- Fix code breaking due to undefined error.response while accessing response `status` property.
+
 ## [4.41.0](https://github.com/plivo/plivo-node/tree/v4.41.0) (2023-03-03)
 **Adding new attribute - 'isDomestic' in Get Message and List Message APIs**
 - Add `isDomestic` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
