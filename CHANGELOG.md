@@ -1,4 +1,9 @@
 # Change Log
+## [4.42.1](https://github.com/plivo/plivo-java/tree/v4.42.1) (2023-03-08)
+**Feature - Parameters added to Recordings API**
+- Added `cost`, `roundedDuration`, and `daysOfStorage` parameters to the response for [get single recording API](https://www.plivo.com/docs/voice/api/recording#retrieve-a-recording) and [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
+- Added `roundedDuration` parameter as a filter option for [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
+
 ## [4.42.0](https://github.com/plivo/plivo-node/tree/v4.42.0) (2023-03-07)
 **Bug fix - 'text' parameter should be optional for MMS**
 - Make `text` as an optional parameter for [sending MMS](https://www.plivo.com/docs/sms/api/message#send-a-message).
