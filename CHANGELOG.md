@@ -1,4 +1,8 @@
 # Change Log
+## [4.43.1](https://github.com/plivo/plivo-node/tree/v4.43.1) (2023-04-04)
+- Added `monthly_recording_storage_amount`, `recording_storage_rate`, `rounded_recording_duration`, and `recording_storage_duration` parameters to the response for [get single recording API](https://www.plivo.com/docs/voice/api/recording#retrieve-a-recording) and [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
+- Added `recording_storage_duration` parameter as a filter option for [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
+
 ## [4.43.0](https://github.com/plivo/plivo-node/tree/v4.43.0) (2023-03-14)
 **Adding new status code - Hosted Messaging order**
 - Added new status code for create hosted messaging order.
