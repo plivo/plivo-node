@@ -1,5 +1,5 @@
 # Change Log
-## [4.43.0](https://github.com/plivo/plivo-node/tree/v4.43.0) (2023-03-13)
+## [4.43.0](https://github.com/plivo/plivo-node/tree/v4.43.0) (2023-03-14)
 **Adding new status code - Hosted Messaging order**
 - Added new status code for create hosted messaging order.
 
