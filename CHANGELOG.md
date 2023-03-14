@@ -1,4 +1,8 @@
 # Change Log
+## [4.43.0](https://github.com/plivo/plivo-node/tree/v4.43.0) (2023-03-14)
+**Adding new status code - Hosted Messaging order**
+- Added new status code for create hosted messaging order.
+
 ## [4.42.0](https://github.com/plivo/plivo-node/tree/v4.42.0) (2023-03-07)
 **Bug fix - 'text' parameter should be optional for MMS**
 - Make `text` as an optional parameter for [sending MMS](https://www.plivo.com/docs/sms/api/message#send-a-message).
