@@ -1,6 +1,6 @@
 # Change Log
 
-## [4.44.0](https://github.com/plivo/plivo-node/tree/v4.44.0) (2023-17-03)
+## [4.44.0](https://github.com/plivo/plivo-node/tree/v4.44.0) (2023-20-03)
 **Added new param - 'created_at' in list and get Profile, Brand, Campaign details api response**
 - Added New Param `created_at` to the response of the [list all profiles API], [get profile API], [list all brands API], [get brand API], [list all campaigns API] and the [get campaign API]
 
