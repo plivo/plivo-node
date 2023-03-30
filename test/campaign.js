@@ -28,9 +28,23 @@ import {
       return client.campaign.create("B8OD95Z","campaign name sssample","INSURANCE","MIXED",[
         "CUSTOMER_CARE",
         "2FA"
-    ],"sample description text",false,false,false,false,true,true,true,"sample1","sample2")
+    ],"sample description text should 40 character",false,false,false,false,true,true,true,"sample1 should be 20 minimum character","sample2 should be 20 minimum character", "message_flow should be 40 minimum character", "help_message should be 20 minimum character", "optout_message should be 20 minimum character")
         .then(function (campaign) {
           assert.equal(campaign.campaignId, 'CFSOBZQ')
+        })
+    });
+
+    it('should delete campaign', function() {
+      return client.campaign.deleteCampaign("CMPT4EP")
+        .then(function(response) {
+          assert.equal(response.campaignId, "CMPT4EP")
+        })
+    });
+
+    it('update campaign', function () {
+      return client.campaign.update("CMPT4EP","","","","sample1 should be 20 minimum character","","","","","","","")
+        .then(function (response) {
+          assert.equal(response.campaign.campaignId, "CMPT4EP")
         })
     });
   });

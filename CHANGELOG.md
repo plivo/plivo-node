@@ -1,4 +1,64 @@
 # Change Log
+## [4.43.0](https://github.com/plivo/plivo-node/tree/v4.43.0) (2023-03-14)
+**Adding new status code - Hosted Messaging order**
+- Added new status code for create hosted messaging order.
+
+## [4.42.0](https://github.com/plivo/plivo-node/tree/v4.42.0) (2023-03-07)
+**Bug fix - 'text' parameter should be optional for MMS**
+- Make `text` as an optional parameter for [sending MMS](https://www.plivo.com/docs/sms/api/message#send-a-message).
+- Fix code breaking due to undefined error.response while accessing response `status` property.
+
+## [4.41.0](https://github.com/plivo/plivo-node/tree/v4.41.0) (2023-03-03)
+**Adding new attribute - 'isDomestic' in Get Message and List Message APIs**
+- Add `isDomestic` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
+
+## [4.40.0](https://github.com/plivo/plivo-node/tree/v4.40.0) (2023-02-23)
+**Feature - Enhance MDR filtering capabilities **
+- Added new fields on MDR object response
+
+## [4.39.0](https://github.com/plivo/plivo-node/tree/v4.39.0) (2022-01-25)
+**Feature - Added New Param(requesterIP) in Get Message and List Mssage APIs**
+- Add `requesterIP` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
+
+## [v4.38.0](https://github.com/plivo/plivo-node/tree/v4.38.0) (2023-01-18)
+**Feature - Added New Param(Message Expiry) in Send Message API**
+-  Added new param(Message Expiry) in Send Message API
+
+## [v4.37.0](https://github.com/plivo/plivo-node/tree/v4.37.0) (2022-12-16)
+**Update Campaign Request**
+-  Update Campaign Request endpoint added
+
+## [v4.36.0](https://github.com/plivo/plivo-node/tree/v4.36.0) (2022-12-06)
+**Delete Brand and Campaign Request**
+-  Delete Brand and Campaign Request endpoint added
+
+## [v4.37.0](https://github.com/plivo/plivo-node/tree/v4.37.0) (2022-12-16)
+**Update Campaign Request**
+-  Update Campaign Request endpoint added
+
+## [v4.36.0](https://github.com/plivo/plivo-node/tree/v4.36.0) (2022-12-06)
+**Delete Brand and Campaign Request**
+-  Delete Brand and Campaign Request endpoint added
+
+## [v4.35.0](https://github.com/plivo/plivo-node/tree/v4.35.0) (2022-11-04)
+**Brand Usecase Request**
+-  Brand Usecase Request endpoint added
+
+## [v4.34.3](https://github.com/plivo/plivo-go/tree/v4.34.3) (2022-11-07)
+**Bug fix - List all Endpoint**
+-  Removed duplicate responses
+
+## [v4.34.2](https://github.com/plivo/plivo-go/tree/v4.34.2) (2022-10-17)
+**List Endpoint query param support**
+-  Adding limit and offset to fetch list of endpoints.
+
+## [v4.34.1](https://github.com/plivo/plivo-go/tree/v4.34.1) (2022-09-28)
+**10DLC campaign creation**
+-  Adding more attributes to campaign creation request.
+
+## [v4.34.0](https://github.com/plivo/plivo-go/tree/v4.34.0) (2022-08-07)
+**Feature - Token Creation**
+- `JWT Token Creation API` added API to create a new JWT token.
 
 ## [v4.33.0](https://github.com/plivo/plivo-go/tree/v4.33.0) (2022-07-11)
 **Feature - STIR Attestation**

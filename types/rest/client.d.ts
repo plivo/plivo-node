@@ -9,6 +9,7 @@ export function validateSignature(uri: string, nonce: string, signature: string,
 export class Client {
     constructor(authId?: string, authToken?: string, options?: string);
     calls: CallInterface;
+    token: TokenInterface;
     accounts: AccountInterface;
     subaccounts: SubaccountInterface;
     subAccounts: SubaccountInterface;
@@ -42,6 +43,7 @@ export class PhloClient {
     phlo: (phloId: any) => Phlo;
 }
 import { CallInterface } from "../resources/call.js";
+import { TokenInterface } from "../resources/token.js";
 import { AccountInterface } from "../resources/accounts.js";
 import { SubaccountInterface } from "../resources/accounts.js";
 import { ApplicationInterface } from "../resources/applications.js";

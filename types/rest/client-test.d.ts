@@ -1,6 +1,7 @@
 export class Client {
     constructor(authid: string, authToken: string, proxy: string);
     calls: CallInterface;
+    token: TokenInterface;
     accounts: AccountInterface;
     subAccounts: SubaccountInterface;
     applications: ApplicationInterface;
@@ -26,6 +27,7 @@ export class PhloClient {
     phlo: (phloid: string) => Phlo;
 }
 import { CallInterface } from "../resources/call.js";
+import { TokenInterface } from "../resources/token.js";
 import { AccountInterface } from "../resources/accounts.js";
 import { SubaccountInterface } from "../resources/accounts.js";
 import { ApplicationInterface } from "../resources/applications.js";
