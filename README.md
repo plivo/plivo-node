@@ -147,5 +147,10 @@ export PLIVO_API_PROD_HOST=<plivoapi_public_endpoint>
 5. The sdk directory will be mounted as a volume in the container. So any changes in the sdk code will also be reflected inside the container. However, when any change is made, the dependencies for the test program need to be re-installed. To do that:
     * Either restart the docker container
     * Or Run the `setup_sdk.sh` script
-6. To run unit tests, run `make test CONTAINER=<cont_id>` in host, where `<cont_id>` is the docker container id created in 2.   
+6. To run test code, run `make run CONTAINER=<cont_id>` in host.
+7. To run unit tests, run `make test CONTAINER=<cont_id>` in host.
+> `<cont_id>` is the docker container id created in 2.
 (The docker container should be running)
+
+> Test code and unit tests can also be run within the container using
+`make run` and `make test` respectively. (`CONTAINER` argument should be omitted when running from the container)
