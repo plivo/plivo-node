@@ -38,6 +38,7 @@ rm -rf package*.json node_modules
 npm init -y
 npm install $package
 rm $package
+cd -
 
 echo -e "\n\nSDK setup complete! You can test changes either on host or inside the docker container:"
 echo -e "\ta. To test your changes ON HOST:"
