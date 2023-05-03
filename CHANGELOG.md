@@ -1,6 +1,10 @@
 # Change Log
 
-# Change Log
+## [4.45.0](https://github.com/plivo/plivo-node/tree/v4.45.0) (2023-04-25)
+**Adding new attribute - 'isDomestic' in Get Message and List Message APIs**
+- Add `replacedSender` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
+- Add `apiId` to the response for the list all messages API
+
 ## [v4.44.0](https://github.com/plivo/plivo-node/tree/v4.44.0) (2023-04-11)
 **Feature - Added New Param 'source_ip' in GetCall and ListCalls**
 - Add `source_ip` to the response for the [retrieve a call details API](https://www.plivo.com/docs/voice/api/call#retrieve-a-call) and the [retreive all call details API](https://www.plivo.com/docs/voice/api/call#retrieve-all-calls)
