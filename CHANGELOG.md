@@ -1,5 +1,10 @@
 # Change Log
 
+## [4.46.0](https://github.com/plivo/plivo-node/tree/v4.46.0) (2023-05-04)
+**Adding new attribute - 'renewalDate' in Get Number and List Numbers APIs**
+- Add New Param `renewalDate` to the response of the [list all numbers API], [list single number API]
+- Add 3 new filters to AccountPhoneNumber - list all my numbers API:`renewal_date`, `renewal_date__gt`, `renewal_date__gte`,`renewal_date__lt` and `renewal_date__lte` (https://www.plivo.com/docs/numbers/api/account-phone-number#list-all-my-numbers)
+
 ## [4.45.0](https://github.com/plivo/plivo-node/tree/v4.45.0) (2023-04-25)
 **Adding new attribute - 'isDomestic' in Get Message and List Message APIs**
 - Add `replacedSender` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
