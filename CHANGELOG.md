@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.46.1](https://github.com/plivo/plivo-node/tree/v4.46.1) (2023-05-08)
+**Chore - Bump xml2js from 0.4.19 to 0.5.0**
+- Resolves [xml2js is vulnerable to prototype pollution](https://github.com/advisories/GHSA-776f-qx25-q3cc)
+
 ## [4.46.0](https://github.com/plivo/plivo-node/tree/v4.46.0) (2023-05-04)
 **Adding new attribute - 'renewalDate' in Get Number and List Numbers APIs**
 - Add New Param `renewalDate` to the response of the [list all numbers API], [list single number API]
