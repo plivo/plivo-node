@@ -1,6 +1,6 @@
 # Change Log
 
-## [4.47.0](https://github.com/plivo/plivo-node/tree/v4.47.0) (2023-05-29)
+## [v4.47.0](https://github.com/plivo/plivo-node/tree/v4.47.0) (2023-05-29)
 - Added `monthly_recording_storage_amount`, `recording_storage_rate`, `rounded_recording_duration`, and `recording_storage_duration` parameters to the response for [get single recording API](https://www.plivo.com/docs/voice/api/recording#retrieve-a-recording) and [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
 - Added `recording_storage_duration` parameter as a filter option for [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
 
@@ -39,7 +39,7 @@
 **Feature - Enhance MDR filtering capabilities **
 - Added new fields on MDR object response
 
-## [4.39.0](https://github.com/plivo/plivo-node/tree/v4.39.0) (2022-01-25)
+## [v4.39.0](https://github.com/plivo/plivo-node/tree/v4.39.0) (2022-01-25)
 **Feature - Added New Param(requesterIP) in Get Message and List Mssage APIs**
 - Add `requesterIP` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
 
