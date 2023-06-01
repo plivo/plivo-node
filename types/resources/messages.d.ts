@@ -23,6 +23,7 @@ export class MessageGetResponse {
 	powerpackId: string;
 	requesterIp: string;
 	isDomestic: boolean;
+	replacedSender: string;
 }
 export class MessageListResponse {
 	constructor(params: object);
@@ -41,6 +42,7 @@ export class MessageListResponse {
 	powerpackId: string;
 	requesterIp: string;
 	isDomestic: boolean;
+	replacedSender: string;
 }
 export class MMSMediaResponse {
 	constructor(params: object);
