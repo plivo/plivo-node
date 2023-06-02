@@ -1,5 +1,13 @@
 # Change Log
 
+## [4.48.0](https://github.com/plivo/plivo-node/tree/v4.43.1) (2023-03-16)
+**Feature : Adding new param in getCallDetails API**
+- Added CNAM (Caller_id Name) details at CDR level.
+
+## [v4.47.0](https://github.com/plivo/plivo-node/tree/v4.47.0) (2023-05-29)
+- Added `monthly_recording_storage_amount`, `recording_storage_rate`, `rounded_recording_duration`, and `recording_storage_duration` parameters to the response for [get single recording API](https://www.plivo.com/docs/voice/api/recording#retrieve-a-recording) and [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
+- Added `recording_storage_duration` parameter as a filter option for [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
+
 ## [v4.46.1](https://github.com/plivo/plivo-node/tree/v4.46.1) (2023-05-08)
 **Chore - Bump xml2js from 0.4.19 to 0.5.0**
 - Resolves [xml2js is vulnerable to prototype pollution](https://github.com/advisories/GHSA-776f-qx25-q3cc)
@@ -34,7 +42,6 @@
 ## [4.40.0](https://github.com/plivo/plivo-node/tree/v4.40.0) (2023-02-23)
 **Feature - Enhance MDR filtering capabilities **
 - Added new fields on MDR object response
-
 
 ## [v4.39.0](https://github.com/plivo/plivo-node/tree/v4.39.0) (2022-01-25)
 **Feature - Added New Param(requesterIP) in Get Message and List Mssage APIs**
