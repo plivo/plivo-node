@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 WORKDIR /usr/src/app
-RUN apt-get update && apt-get install -y wget git vim
+RUN apt-get update && apt-get install -y wget git vim make
 
 # Install node using nvm
 RUN mkdir -p /usr/src/.nvm

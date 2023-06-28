@@ -14,6 +14,10 @@ export class RetrieveRecordingResponse {
     resourceUri: string;
 	fromNumber: string;
 	toNumber: string;
+  monthlyRecordingStorageAmount: string;
+  roundedRecordingDuration: string;
+  recordingStorageDuration: string;
+  recordingStorageRate: string;
 }
 export class ListRecordingResponse {
 	constructor(params: object);
@@ -34,6 +38,11 @@ export class ListRecordingResponse {
 	conferenceUuid: string;
 	mpcName: string;
 	mpcUuid: string;
+  monthlyRecordingStorageAmount: string;
+  roundedRecordingDuration: string;
+  recordingStorageDuration: string;
+  recordingStorageRate: string;
+
 }
 /**
  * Represents a Recording
@@ -80,6 +89,7 @@ export class RecordingInterface extends PlivoResourceInterface {
      * @param {string} [params.addTime] - Filter based on the timings they were added
      * @param {string} [params.limit] - Display no of results per page
      * @param {string} [params.offset] - No of value items by which results should be offset
+     * @param {string} [params.recordingStorageDuration] - Filter based on how old the recordings are
      */
     list(params?: {}): Promise<ListRecordingResponse>;
 }

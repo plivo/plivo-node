@@ -1,10 +1,60 @@
 # Change Log
 
-## [v4.40.0](https://github.com/plivo/plivo-go/tree/v4.40.0) (2022-02-10)
+## [v4.50.0](https://github.com/plivo/plivo-go/tree/v4.50.0) (2023-06-28)
 **Feature - Audio Streaming**
 - `Audio Stream over Call` added API to start and stop streaming on a live call and get details of running or stopped streams. Also implemented the ability to generate stream XML.
 
-## [4.39.0](https://github.com/plivo/plivo-node/tree/v4.39.0) (2022-01-25)
+## [4.49.0](https://github.com/plivo/plivo-node/tree/v4.49.0) (2023-06-02)
+**Feature - CNAM Lookup**
+- Added New Param `cnam_lookup` in to the response of the [list all numbers API], [list single number API]
+- Added `cnam_lookup` filter to AccountPhoneNumber - list all my numbers API.
+- Added `cnam_lookup` parameter to buy number[Buy a Phone Number]  to configure CNAM Lookup while buying a US number
+- Added `cnam_lookup` parameter to update number[Update an account phone number] to configure CNAM Lookup while buying a US number
+
+## [4.48.0](https://github.com/plivo/plivo-node/tree/v4.43.1) (2023-03-16)
+**Feature : Adding new param in getCallDetails API**
+- Added CNAM (Caller_id Name) details at CDR level.
+
+## [v4.47.0](https://github.com/plivo/plivo-node/tree/v4.47.0) (2023-05-29)
+- Added `monthly_recording_storage_amount`, `recording_storage_rate`, `rounded_recording_duration`, and `recording_storage_duration` parameters to the response for [get single recording API](https://www.plivo.com/docs/voice/api/recording#retrieve-a-recording) and [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
+- Added `recording_storage_duration` parameter as a filter option for [get all recordings API](https://www.plivo.com/docs/voice/api/recording#list-all-recordings)
+
+## [v4.46.1](https://github.com/plivo/plivo-node/tree/v4.46.1) (2023-05-08)
+**Chore - Bump xml2js from 0.4.19 to 0.5.0**
+- Resolves [xml2js is vulnerable to prototype pollution](https://github.com/advisories/GHSA-776f-qx25-q3cc)
+
+## [4.46.0](https://github.com/plivo/plivo-node/tree/v4.46.0) (2023-05-04)
+**Adding new attribute - 'renewalDate' in Get Number and List Numbers APIs**
+- Add New Param `renewalDate` to the response of the [list all numbers API], [list single number API]
+- Add 3 new filters to AccountPhoneNumber - list all my numbers API:`renewal_date`, `renewal_date__gt`, `renewal_date__gte`,`renewal_date__lt` and `renewal_date__lte` (https://www.plivo.com/docs/numbers/api/account-phone-number#list-all-my-numbers)
+
+## [4.45.0](https://github.com/plivo/plivo-node/tree/v4.45.0) (2023-04-25)
+**Adding new attribute - 'isDomestic' in Get Message and List Message APIs**
+- Add `replacedSender` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
+- Add `apiId` to the response for the list all messages API
+
+## [v4.44.0](https://github.com/plivo/plivo-node/tree/v4.44.0) (2023-04-11)
+**Feature - Added New Param 'source_ip' in GetCall and ListCalls**
+- Add `source_ip` to the response for the [retrieve a call details API](https://www.plivo.com/docs/voice/api/call#retrieve-a-call) and the [retreive all call details API](https://www.plivo.com/docs/voice/api/call#retrieve-all-calls)
+
+## [4.43.0](https://github.com/plivo/plivo-node/tree/v4.43.0) (2023-03-14)
+**Adding new status code - Hosted Messaging order**
+- Added new status code for create hosted messaging order.
+
+## [4.42.0](https://github.com/plivo/plivo-node/tree/v4.42.0) (2023-03-07)
+**Bug fix - 'text' parameter should be optional for MMS**
+- Make `text` as an optional parameter for [sending MMS](https://www.plivo.com/docs/sms/api/message#send-a-message).
+- Fix code breaking due to undefined error.response while accessing response `status` property.
+
+## [4.41.0](https://github.com/plivo/plivo-node/tree/v4.41.0) (2023-03-03)
+**Adding new attribute - 'isDomestic' in Get Message and List Message APIs**
+- Add `isDomestic` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
+
+## [4.40.0](https://github.com/plivo/plivo-node/tree/v4.40.0) (2023-02-23)
+**Feature - Enhance MDR filtering capabilities **
+- Added new fields on MDR object response
+
+## [v4.39.0](https://github.com/plivo/plivo-node/tree/v4.39.0) (2022-01-25)
 **Feature - Added New Param(requesterIP) in Get Message and List Mssage APIs**
 - Add `requesterIP` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
 
