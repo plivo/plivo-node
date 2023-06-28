@@ -40,7 +40,8 @@
     "gulp-plumber": "^1.0.0",
     "isparta": "^4.0.0",
     "merge-stream": "^2.0.0",
-    "sinon": "^2.1.0"
+    "sinon": "^2.1.0",
+    "typescript": "^5.1.5"
   },
   "eslintConfig": {
     "extends": "xo-space",
@@ -60,9 +61,9 @@
     "@types/node": "^14.14.14",
     "axios": "^0.21.1",
     "base-64": "^0.1.0",
-    "https-proxy-agent": "^5.0.0",
     "build-url": "^1.0.10",
     "form-data": "^4.0.0",
+    "https-proxy-agent": "^5.0.0",
     "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.4",
     "querystring": "^0.2.0",
