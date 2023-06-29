@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.50.0](https://github.com/plivo/plivo-go/tree/v4.50.0) (2023-06-28)
+**Feature - Audio Streaming**
+- `Audio Stream over Call` added API to start and stop streaming on a live call and get details of running or stopped streams. Also implemented the ability to generate stream XML.
+
 ## [4.49.0](https://github.com/plivo/plivo-node/tree/v4.49.0) (2023-06-02)
 **Feature - CNAM Lookup**
 - Added New Param `cnam_lookup` in to the response of the [list all numbers API], [list single number API]
@@ -57,14 +61,6 @@
 ## [v4.38.0](https://github.com/plivo/plivo-node/tree/v4.38.0) (2023-01-18)
 **Feature - Added New Param(Message Expiry) in Send Message API**
 -  Added new param(Message Expiry) in Send Message API
-
-## [v4.37.0](https://github.com/plivo/plivo-node/tree/v4.37.0) (2022-12-16)
-**Update Campaign Request**
--  Update Campaign Request endpoint added
-
-## [v4.36.0](https://github.com/plivo/plivo-node/tree/v4.36.0) (2022-12-06)
-**Delete Brand and Campaign Request**
--  Delete Brand and Campaign Request endpoint added
 
 ## [v4.37.0](https://github.com/plivo/plivo-node/tree/v4.37.0) (2022-12-16)
 **Update Campaign Request**
