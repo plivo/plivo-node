@@ -45,6 +45,7 @@ export class Client {
   hostedMessagingNumber: HostedMessagingNumberInterface;
   brand: BrandInterface;
   campaign: CampaignInterface;
+  profile: ProfileInterface;
   toJSON(...args: any[]): any;
 }
 /**
@@ -81,3 +82,4 @@ import { LOAInterface } from "../resources/loa";
 import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber";
 import { BrandInterface } from "../resources/brand.js";
 import { CampaignInterface } from "../resources/campaign.js";
+import { ProfileInterface } from "../resources/profile.js";
