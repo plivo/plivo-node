@@ -1,4 +1,7 @@
 # Change Log
+## [v4.51.0](https://github.com/plivo/plivo-go/tree/v4.51.0) (2023-07-07)
+**Fix Intermediate GET request failure**
+- GET API request body removed
 
 ## [v4.50.0](https://github.com/plivo/plivo-go/tree/v4.50.0) (2023-06-28)
 **Feature - Audio Streaming**
