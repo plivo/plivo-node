@@ -20,6 +20,19 @@ export class CreateCallResponse {
 	message: string;
 	requestUuid: Array<string> | string;
 }
+export class CreateMaskingSessionResponse {
+	constructor(params: object);
+	apiId: string;
+	sessionUuid:string;
+	virtualNumber:string;
+	message: string;
+	session: object;
+}
+export class GetMaskingSessionResponse {
+	constructor(params: object);
+	apiId: string;
+	response: object;
+}
 export class GetQueuedCallResponse {
 	constructor(params: object);
 	apiId: string;
@@ -317,6 +330,38 @@ export class CallInterface extends PlivoResourceInterface {
 	 * @fail {Error} returns Error
 	 */
 	create(from: string, to: string, answerUrl: string, params ? : {}): Promise < CreateCallResponse > ;
+	
+    /**
+     * Create a masking session
+     * @method
+     * @param {string} firstParty - The phone number or SIP endpoint of the first party.
+     * @param {string} secondParty - The phone number or SIP endpoint of the second party.
+     * @param {object} params - optional params to make a call
+     * @param {number} [params.sessionExpiry]- The duration in seconds for which the masking session will be active.
+     * @param {number} [params.callTimeLimit] - The maximum duration in seconds for each call in the masking session.
+     * @param {boolean} [params.record] - Indicates whether the calls in the masking session should be recorded.
+     * @param {string} [params.recordFileFormat] - The file format for the recorded calls.
+     * @param {string} [params.recordingCallbackUrl] - The URL to which the recording callback will be sent.
+     * @param {boolean} [params.initiateCallToFirstParty] - Indicates whether the call to the first party should be initiated automatically.
+     * @param {string} [params.callbackUrl] - The URL to which the callback for the masking session will be sent.
+     * @param {string} [params.callbackMethod] - The HTTP method for the callback request.
+     * @param {number} [params.ringTimeout] - The duration in seconds for which the call will ring before being canceled.
+     * @param {string} [params.firstPartyPlayUrl] - The URL to play audio to the first party when the call is established.
+     * @param {string} [params.secondPartyPlayUrl] - The URL to play audio to the second party when the call is established.
+     * @param {string} [params.recordingCallbackMethod] - The HTTP method for the recording callback request.
+     * @promise {object} returns PlivoGenericResponse Object
+     * @fail {Error} returns Error
+     */
+	createMaskingSession(firstParty: string, secondParty: string, params ? : {}): Promise < CreateMaskingSessionResponse > ;
+
+	/**
+     * Get a masking session
+     * @method
+	 * @param {string} sessionUuid - unique idenfier of a session
+	 * @promise {object} returns PlivoGenericResponse Object
+     * @fail {Error} returns Error
+     */
+	getMaskingSession(sessionUuid: string): Promise < GetMaskingSessionResponse > ;
 	
 	/**
 	 * Hangup A Specific Call
