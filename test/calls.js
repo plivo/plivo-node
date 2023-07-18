@@ -300,13 +300,13 @@ describe('calls', function () {
                   callTimeLimit: 14600,
               },
           ).then(function (response) {
-            assert.equal(response.message, 'session created')
+            assert.equal(response.message, 'Session created')
         })
     });
     it('should delete a masking session!', function () {
       client.calls.deleteMaskingSession("197aa6e0-1abe-4d1c-b887-2b2406764360")
           .then(function (response) {
-            assert.equal(response.message, 'session expired')
+            assert.equal(response.message, 'Session expired')
         })
     });
     it('should get masking session by session uuid!', function () {
@@ -316,9 +316,9 @@ describe('calls', function () {
         })
     });
     it('should update masking session using session uuid!', function () {
-      client.calls.updateMaskingSession("197aa6e0-1abe-4d1c-b887-2b2406764360")
+      client.calls.updateMaskingSession("63690013-52bb-43fa-9b0b-bf81c9f4d766")
           .then(function (response) {
-            assert.equal(response.message, 'session updated')
+            assert.equal(response.message, 'Session updated')
         })
     });
     it('should list masking session!', function () {
