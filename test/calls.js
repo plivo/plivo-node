@@ -322,7 +322,7 @@ describe('calls', function () {
         })
     });
     it('should list masking session!', function () {
-      client.calls.listMaskingSession("197aa6e0-1abe-4d1c-b887-2b2406764360")
+      client.calls.listMaskingSession()
           .then(function (response) {
             assert.equal(response.length, 2)
         })
