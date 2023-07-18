@@ -48,33 +48,6 @@ export class ListMaskingSessionResponse {
 	constructor(params: object);
 	apiId: string;
 	response: object;
-	firstParty: string;
-	secondParty: string;
-	virtualNumber: string;
-	status: string;
-	initiateCallToFirstParty: string;
-	sessionUuid: string;
-	callbackUrl: string;
-	callbackMethod: string;
-	createdAt: string;
-	updatedAt: string;
-	expiryAt: string;
-	duration: string;
-	sessionCreationAmount: string;
-	callTimeLimit: string
-	ringTimeout: string;
-	firstPartyPlayUrl: string;
-	secondPartyPlayUrl: string;
-	record: string;
-	recordFileFormat: string;
-	recordingCallbackUrl: string;
-	recordingCallbackMethod: string;
-	interaction: object;
-	totalCallAmount: string;
-	totalCallCount: string;
-	totalCallBilledDuration: string;
-	totalSessionAmount: string;
-	lastInteractionTime: string;
 }
 export class GetQueuedCallResponse {
 	constructor(params: object);
