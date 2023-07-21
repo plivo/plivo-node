@@ -31,6 +31,7 @@ export class Client {
     complianceApplications: ComplianceApplicationInterface;
     loa: LOAInterface;
     hostedMessagingNumber: HostedMessagingNumberInterface;
+    maskingSession:MaskingSessionInterface;
     toJSON(...args: any[]): any;
 }
 /**
@@ -65,3 +66,5 @@ import { ComplianceRequirementInterface } from "../resources/complianceRequireme
 import { ComplianceApplicationInterface } from "../resources/complianceApplications";
 import { LOAInterface } from "../resources/loa";
 import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber";
+import { MaskingSessionInterface } from "../resources/maskingSession.js";
+
