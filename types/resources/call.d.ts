@@ -317,7 +317,8 @@ export class CallInterface extends PlivoResourceInterface {
 	 * @fail {Error} returns Error
 	 */
 	create(from: string, to: string, answerUrl: string, params ? : {}): Promise < CreateCallResponse > ;
-	/**
+	
+	 /**
 	 * Hangup A Specific Call
 	 * @method
 	 * @param {string} callUUID - call uuid to hangup call
