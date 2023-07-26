@@ -1,9 +1,16 @@
 # Change Log
-## [v4.51.0](https://github.com/plivo/plivo-go/tree/v4.51.0) (2023-07-07)
+## [v4.52.0](https://github.com/plivo/plivo-node/tree/v4.52.0) (2023-07-26)
+**Feature - WhatsApp message support**
+- Added new param `template` to [send message API](https://www.plivo.com/docs/sms/api/message#send-a-message)
+- Added new parameters `conversation_id`, `conversation_origin`,`conversation_expiry` in [list all messages API](https://www.plivo.com/docs/sms/api/message#list-all-messages) and [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
+- Added new filters `message_type`,`conversation_id`, `conversation_origin` in [list all messages API](https://www.plivo.com/docs/sms/api/message#list-all-messages)
+
+
+## [v4.51.0](https://github.com/plivo/plivo-node/tree/v4.51.0) (2023-07-07)
 **Fix Intermediate GET request failure**
 - GET API request body removed
 
-## [v4.50.0](https://github.com/plivo/plivo-go/tree/v4.50.0) (2023-06-28)
+## [v4.50.0](https://github.com/plivo/plivo-node/tree/v4.50.0) (2023-06-28)
 **Feature - Audio Streaming**
 - `Audio Stream over Call` added API to start and stop streaming on a live call and get details of running or stopped streams. Also implemented the ability to generate stream XML.
 
