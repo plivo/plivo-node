@@ -89,6 +89,20 @@ describe('message', function () {
       })
   });
 
+  it('should throw error - src parameter not present', function () {
+    return client.messages.create({src:null, dst:'dst', text:'text',type:'whatsapp', powerpackUUID:'916386027476'})
+      .catch(function (err) {
+        assert.equal(err.message, 'src parameter not present')
+      })
+  });
+
+  it('should throw error - Template paramater is only applicable when message_type is whatsapp', function () {
+    return client.messages.create({src:'91235456917375', dst:'dst', text:'text',type:'sms',template: {name: "plivo_verification", language: "en_US",}, powerpackUUID:null})
+      .catch(function (err) {
+        assert.equal(err.message, 'Template paramater is only applicable when message_type is whatsapp')
+      })
+  });
+
   it('should list media via plivo interface!', function (done) {
     client.messages.listMedia('xyz')
       .then(function (mmsMedia) {
