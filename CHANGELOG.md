@@ -1,6 +1,6 @@
 # Change Log
 
-## [4.52.0](https://github.com/plivo/plivo-python/tree/v4.52.0) (2022-07-31)
+## [4.52.0](https://github.com/plivo/plivo-python/tree/v4.52.0) (2023-07-31)
 **Feature - Number Masking**
 - Added Create, Delete, Update, Get and List Masking Session API
 
