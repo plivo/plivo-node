@@ -6,7 +6,7 @@ var plivo = require('plivo');
     'use strict';
     
    // If auth id and auth token are not specified, Plivo will fetch them from the environment variables.
-    var client = new plivo.Client("MAZTCXYJFKZJK3N2Q3YT","OWY2ZjUyYzA3NTZlOTg0MTYxZjdiYzg4MDhkZjlj");
+    var client = new plivo.Client("prod_auth_id","prod_auth_token");
     client.calls.create(
         "+14151234567", // from
         "sip:ajay6121801985815245533110@phone.plivo.com", // to
