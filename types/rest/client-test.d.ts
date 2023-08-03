@@ -16,6 +16,7 @@ export class Client {
     media: MediaInterface;
     loa: LOAInterface;
     hostedMessagingNumber: HostedMessagingNumberInterface;
+    maskingSession: MaskingSessionInterface;
 }
 /**
  * Plivo API client which can be used to access the Plivo APIs.
@@ -43,3 +44,5 @@ import { MediaInterface } from "../resources/media.js";
 import { Phlo } from "../resources/phlo.js";
 import { LOAInterface } from "../resources/loa.js";
 import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber.js";
+import { MaskingSessionInterface } from "../resources/maskingSession.js";
+
