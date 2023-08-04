@@ -1,9 +1,18 @@
 # Change Log
-## [v4.52.0](https://github.com/plivo/plivo-node/tree/v4.52.0) (2023-07-26)
+## [v4.54.0](https://github.com/plivo/plivo-node/tree/v4.52.0) (2023-08-07)
 **Feature - WhatsApp message support**
 - Added new param `template` to [send message API](https://www.plivo.com/docs/sms/api/message#send-a-message)
 - Added new parameters `conversation_id`, `conversation_origin`,`conversation_expiry` in [list all messages API](https://www.plivo.com/docs/sms/api/message#list-all-messages) and [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
 - Added new filters `message_type`,`conversation_id`, `conversation_origin` in [list all messages API](https://www.plivo.com/docs/sms/api/message#list-all-messages)
+
+## [4.53.0](https://github.com/plivo/plivo-node/tree/v4.53.0) (2023-08-03)
+**Feature - DLT parameters**
+- Added new params `DLTEntityID`, `DLTTemplateID`, `DLTTemplateCategory` to the [send message API](https://www.plivo.com/docs/sms/api/message/send-a-message/)
+- Added new params `DLTEntityID`, `DLTTemplateID`, `DLTTemplateCategory` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
+
+## [4.52.0](https://github.com/plivo/plivo-node/tree/v4.52.0) (2023-07-31)
+**Feature - Number Masking**
+- Added Create, Delete, Update, Get and List Masking Session API
 
 
 ## [v4.51.0](https://github.com/plivo/plivo-node/tree/v4.51.0) (2023-07-07)
@@ -84,23 +93,23 @@
 **Brand Usecase Request**
 -  Brand Usecase Request endpoint added
 
-## [v4.34.3](https://github.com/plivo/plivo-go/tree/v4.34.3) (2022-11-07)
+## [v4.34.3](https://github.com/plivo/plivo-node/tree/v4.34.3) (2022-11-07)
 **Bug fix - List all Endpoint**
 -  Removed duplicate responses
 
-## [v4.34.2](https://github.com/plivo/plivo-go/tree/v4.34.2) (2022-10-17)
+## [v4.34.2](https://github.com/plivo/plivo-node/tree/v4.34.2) (2022-10-17)
 **List Endpoint query param support**
 -  Adding limit and offset to fetch list of endpoints.
 
-## [v4.34.1](https://github.com/plivo/plivo-go/tree/v4.34.1) (2022-09-28)
+## [v4.34.1](https://github.com/plivo/plivo-node/tree/v4.34.1) (2022-09-28)
 **10DLC campaign creation**
 -  Adding more attributes to campaign creation request.
 
-## [v4.34.0](https://github.com/plivo/plivo-go/tree/v4.34.0) (2022-08-07)
+## [v4.34.0](https://github.com/plivo/plivo-node/tree/v4.34.0) (2022-08-07)
 **Feature - Token Creation**
 - `JWT Token Creation API` added API to create a new JWT token.
 
-## [v4.33.0](https://github.com/plivo/plivo-go/tree/v4.33.0) (2022-07-11)
+## [v4.33.0](https://github.com/plivo/plivo-node/tree/v4.33.0) (2022-07-11)
 **Feature - STIR Attestation**
 - Add stir attestation param as part of Get CDR and Get live call APIs Response
 

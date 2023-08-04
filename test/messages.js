@@ -24,6 +24,15 @@ describe('message', function () {
       })
   });
 
+  it('should have dlt parameter in get message', function () {
+    return client.messages.get(1)
+      .then(function (message) {
+        assert.equal(message.dltEntityID, "9876");
+        assert.equal(message.dltTemplateID, "5432");
+        assert.equal(message.dltTemplateCategory, "transactional");
+      })
+  });
+
   it('list messages', function () {
     return client.messages.list()
       .then(function (messages) {
@@ -36,6 +45,19 @@ describe('message', function () {
       .then(function (messages) {
         assert.equal(messages[0].requesterIP, "192.168.1.1")
         assert.equal(messages[1].requesterIP, "192.168.1.2")
+      })
+  });
+
+  it('should have dlt parameters in first listed message only', function () {
+    return client.messages.list()
+      .then(function (messages) {
+        assert.equal(messages[0].dltEntityID, "2233")
+        assert.equal(messages[0].dltTemplateID, "4455")
+        assert.equal(messages[0].dltTemplateCategory, "service_implicit")
+
+        assert.equal(messages[1].dltEntityID, null)
+        assert.equal(messages[1].dltTemplateID, null)
+        assert.equal(messages[1].dltTemplateCategory, null)
       })
   });
 
