@@ -32,7 +32,14 @@ describe('message', function () {
         assert.equal(message.dltTemplateCategory, "transactional");
       })
   });
-
+  it('should have conversation parameter in get message', function () {
+    return client.messages.get(1)
+      .then(function (message) {
+        assert.equal(message.conversationId, "1234");
+        assert.equal(message.conversationOrigin, "service");
+        assert.equal(message.conversationExpirationTimestamp, "2023-08-03 23:02:00+05:30");
+      })
+  });
   it('list messages', function () {
     return client.messages.list()
       .then(function (messages) {
@@ -58,6 +65,19 @@ describe('message', function () {
         assert.equal(messages[1].dltEntityID, null)
         assert.equal(messages[1].dltTemplateID, null)
         assert.equal(messages[1].dltTemplateCategory, null)
+      })
+  });
+
+  it('should have conversation parameters in first listed message only', function () {
+    return client.messages.list()
+      .then(function (messages) {
+        assert.equal(messages[0].conversationId, "9876")
+        assert.equal(messages[0].conversationOrigin, "marketing")
+        assert.equal(messages[0].conversationExpirationTimestamp, "2023-08-03 23:02:00+05:30")
+
+        assert.equal(messages[1].conversationId, null)
+        assert.equal(messages[1].conversationOrigin, null)
+        assert.equal(messages[1].conversationExpirationTimestamp, null)
       })
   });
 

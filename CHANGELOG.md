@@ -1,9 +1,9 @@
 # Change Log
 ## [v4.54.0](https://github.com/plivo/plivo-node/tree/v4.52.0) (2023-08-07)
 **Feature - WhatsApp message support**
-- Added new param `template` to [send message API](https://www.plivo.com/docs/sms/api/message#send-a-message)
-- Added new parameters `conversation_id`, `conversation_origin`,`conversation_expiry` in [list all messages API](https://www.plivo.com/docs/sms/api/message#list-all-messages) and [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
-- Added new filters `message_type`,`conversation_id`, `conversation_origin` in [list all messages API](https://www.plivo.com/docs/sms/api/message#list-all-messages)
+- Added new param `template` and  new message_type `whatsapp` to [send message API](https://www.plivo.com/docs/sms/api/message#send-a-message)
+- Added new parameters `conversationID`, `conversationOrigin`,`conversationExpirationTimestamp` in [list all messages API](https://www.plivo.com/docs/sms/api/message#list-all-messages) and [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message) reponse
+- Added  new filters including `message_states` (`read`,`deleted`)   `message_type`(`whatsapp`),`conversation_id`, `conversation_origin` in [list all messages API](https://www.plivo.com/docs/sms/api/message#list-all-messages)
 
 ## [4.53.0](https://github.com/plivo/plivo-node/tree/v4.53.0) (2023-08-03)
 **Feature - DLT parameters**
