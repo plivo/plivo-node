@@ -1,17 +1,26 @@
 # Change Log
 
-## [v4.52.0](https://github.com/plivo/plivo-go/tree/v4.52.0)
+## [v4.54.0](https://github.com/plivo/plivo-go/tree/v4.54.0)
 **Verify Service API's**
 - Create Session API
 - Get Session API
 - List Session API
 - Validate Session API
 
-## [v4.51.0](https://github.com/plivo/plivo-go/tree/v4.51.0) (2023-07-07)
+## [4.53.0](https://github.com/plivo/plivo-node/tree/v4.53.0) (2023-08-03)
+**Feature - DLT parameters**
+- Added new params `DLTEntityID`, `DLTTemplateID`, `DLTTemplateCategory` to the [send message API](https://www.plivo.com/docs/sms/api/message/send-a-message/)
+- Added new params `DLTEntityID`, `DLTTemplateID`, `DLTTemplateCategory` to the response for the [list all messages API](https://www.plivo.com/docs/sms/api/message/list-all-messages/) and the [get message details API](https://www.plivo.com/docs/sms/api/message#retrieve-a-message)
+
+## [4.52.0](https://github.com/plivo/plivo-node/tree/v4.52.0) (2023-07-31)
+**Feature - Number Masking**
+- Added Create, Delete, Update, Get and List Masking Session API
+
+## [v4.51.0](https://github.com/plivo/plivo-node/tree/v4.51.0) (2023-07-07)
 **Fix Intermediate GET request failure**
 - GET API request body removed
 
-## [v4.50.0](https://github.com/plivo/plivo-go/tree/v4.50.0) (2023-06-28)
+## [v4.50.0](https://github.com/plivo/plivo-node/tree/v4.50.0) (2023-06-28)
 **Feature - Audio Streaming**
 - `Audio Stream over Call` added API to start and stop streaming on a live call and get details of running or stopped streams. Also implemented the ability to generate stream XML.
 
@@ -85,23 +94,23 @@
 **Brand Usecase Request**
 -  Brand Usecase Request endpoint added
 
-## [v4.34.3](https://github.com/plivo/plivo-go/tree/v4.34.3) (2022-11-07)
+## [v4.34.3](https://github.com/plivo/plivo-node/tree/v4.34.3) (2022-11-07)
 **Bug fix - List all Endpoint**
 -  Removed duplicate responses
 
-## [v4.34.2](https://github.com/plivo/plivo-go/tree/v4.34.2) (2022-10-17)
+## [v4.34.2](https://github.com/plivo/plivo-node/tree/v4.34.2) (2022-10-17)
 **List Endpoint query param support**
 -  Adding limit and offset to fetch list of endpoints.
 
-## [v4.34.1](https://github.com/plivo/plivo-go/tree/v4.34.1) (2022-09-28)
+## [v4.34.1](https://github.com/plivo/plivo-node/tree/v4.34.1) (2022-09-28)
 **10DLC campaign creation**
 -  Adding more attributes to campaign creation request.
 
-## [v4.34.0](https://github.com/plivo/plivo-go/tree/v4.34.0) (2022-08-07)
+## [v4.34.0](https://github.com/plivo/plivo-node/tree/v4.34.0) (2022-08-07)
 **Feature - Token Creation**
 - `JWT Token Creation API` added API to create a new JWT token.
 
-## [v4.33.0](https://github.com/plivo/plivo-go/tree/v4.33.0) (2022-07-11)
+## [v4.33.0](https://github.com/plivo/plivo-node/tree/v4.33.0) (2022-07-11)
 **Feature - STIR Attestation**
 - Add stir attestation param as part of Get CDR and Get live call APIs Response
 
