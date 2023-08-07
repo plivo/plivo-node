@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.52.0]
+## [v4.52.0](https://github.com/plivo/plivo-go/tree/v4.52.0)
 **Verify Service API's**
 - Create Session API
 - Get Session API
