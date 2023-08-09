@@ -30,7 +30,7 @@ describe('session', function () {
   it('list sessions', function () {
     return client.verify_session.list()
       .then(function (session) {
-        assert.equal(session[0].count, 1)
+        assert.equal(session.sessions[0].count, 1)
       })
   });
 
