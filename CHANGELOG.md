@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.56.0](https://github.com/plivo/plivo-go/tree/v4.56.0) (2023-08-16)
+**Feature - Added New Param 'carrier_fees', 'carrier_fees_rate', 'destination_network' in Get Message and List Message APIs**
+- Added new params on message get and list response
+
 ## [v4.55.0](https://github.com/plivo/plivo-node/tree/v4.55.0) (2023-08-10)
 **Verify Service API's**
 - Create Session API - To initiate a session
