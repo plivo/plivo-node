@@ -1,9 +1,12 @@
 # Change Log
 
+## [v4.56.2](https://github.com/plivo/plivo-node/tree/v4.56.2) (2023-09-01)
+**Bug fix - Unable to build TypeScript on Version 4.56.0**
+- Fix TypeScript build error
+
 ## [v4.56.1](https://github.com/plivo/plivo-node/tree/v4.56.1) (2023-09-01)
 **Bug Fix - unrent powerpack number**
 - Fix for Error: invalid powerpack number delete request (400) - Unrent Powerpack Number
-
 
 ## [v4.56.0](https://github.com/plivo/plivo-node/tree/v4.56.0) (2023-08-25)
 **Feature - Added New Param 'carrier_fees', 'carrier_fees_rate', 'destination_network' in Get Message and List Message APIs**
