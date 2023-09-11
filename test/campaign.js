@@ -23,7 +23,13 @@ import {
             assert.equal(response.campaigns.length, 2)
           })
       });
-
+    
+    it('list campaign with param', function () {
+        return client.campaign.list({campaign_source:'plivo'})
+          .then(function (response) {
+            assert.equal(response.campaigns.length, 2)
+          })
+      });
     it('create campaign', function () {
       return client.campaign.create("B8OD95Z","campaign name sssample","INSURANCE","MIXED",[
         "CUSTOMER_CARE",
