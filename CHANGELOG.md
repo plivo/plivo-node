@@ -1,5 +1,10 @@
 # Change Log
 
+## [v4.57.0](https://github.com/plivo/plivo-node/tree/v4.57.0) (2023-09-21)
+**Support starter brand**
+- OTP validation
+- starter brand creation
+
 ## [v4.55.0](https://github.com/plivo/plivo-node/tree/v4.55.0) (2023-08-10)
 **Verify Service API's**
 - Create Session API - To initiate a session
