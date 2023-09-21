@@ -1,9 +1,23 @@
 # Change Log
 
+
 ## [v4.57.0](https://github.com/plivo/plivo-node/tree/v4.57.0) (2023-09-21)
 **Support starter brand**
 - OTP validation
 - starter brand creation
+
+## [v4.56.2](https://github.com/plivo/plivo-node/tree/v4.56.2) (2023-09-01)
+**Bug fix - Unable to build TypeScript on Version 4.56.0**
+- Fix TypeScript build error
+
+## [v4.56.1](https://github.com/plivo/plivo-node/tree/v4.56.1) (2023-09-01)
+**Bug Fix - unrent powerpack number**
+- Fix for Error: invalid powerpack number delete request (400) - Unrent Powerpack Number
+
+## [v4.56.0](https://github.com/plivo/plivo-node/tree/v4.56.0) (2023-08-25)
+**Feature - Added New Param 'carrier_fees', 'carrier_fees_rate', 'destination_network' in Get Message and List Message APIs**
+- Added new params on message get and list response
+
 
 ## [v4.55.0](https://github.com/plivo/plivo-node/tree/v4.55.0) (2023-08-10)
 **Verify Service API's**

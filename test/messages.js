@@ -40,6 +40,12 @@ describe('message', function () {
         assert.equal(message.conversationExpirationTimestamp, "2023-08-03 23:02:00+05:30");
       })
   });
+  it('should have destination network parameter in get message', function () {
+    return client.messages.get(1)
+      .then(function (message) {
+        assert.equal(message.destinationNetwork, "Verizon");
+      })
+  });
   it('list messages', function () {
     return client.messages.list()
       .then(function (messages) {

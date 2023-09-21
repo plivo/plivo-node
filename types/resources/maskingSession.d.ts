@@ -141,7 +141,7 @@ export class MaskingSessionInterface extends PlivoResourceInterface {
 	 * @returns {Promise<PlivoGenericResponse>} - Resolves to a PlivoGenericResponse object
 	 * @throws {Error} - Throws an error if the list masking sessions request fails
 	 */
-	listMaskingSession(params ? : {}): Promise < ListMaskingSessionResponse > ;	
+	listMaskingSession(params ? : {}): Promise < ListMaskingSessionResponse > ;
 
 	/**
      * Get a masking session
@@ -160,3 +160,7 @@ export class MaskingSessionInterface extends PlivoResourceInterface {
      */
 	deleteMaskingSession(sessionUuid: string): Promise < DeleteMaskingSessionResponse > ;
 }
+import {
+  PlivoResource,
+	PlivoResourceInterface
+} from "../base";
