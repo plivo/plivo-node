@@ -45,5 +45,12 @@ import {
         })
     });
 
+    it('trigger brand otp', function() {
+      return client.brand.trigger_otp('BRPXS6E')
+        .then(function(brand) {
+          assert.equal(brand.message, 'Message sent to XXXXXXXX1234, reply YES to confirm registration.')
+        })
+    });
+
 
   });
