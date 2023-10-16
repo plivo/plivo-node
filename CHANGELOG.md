@@ -1,5 +1,8 @@
 # Change Log
 
+## [v4.58.0](https://github.com/plivo/plivo-node/tree/v4.58.0) (2023-10-16)
+**Introducing camapign_source field**
+- campaign_source field added for LIST / GET
 
 ## [v4.57.0](https://github.com/plivo/plivo-node/tree/v4.57.0) (2023-09-21)
 **Support starter brand**
