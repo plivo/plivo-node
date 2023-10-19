@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.59.0](https://github.com/plivo/plivo-node/tree/v4.59.0) (2023-10-19)
+**Feature - Verify Caller ID**
+- API support for verifying, updating, getting and deleting caller IDs.
+
 ## [v4.58.0](https://github.com/plivo/plivo-node/tree/v4.58.0) (2023-10-16)
 **Introducing camapign_source field**
 - campaign_source field added for LIST / GET
