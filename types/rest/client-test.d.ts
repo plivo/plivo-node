@@ -17,6 +17,7 @@ export class Client {
     loa: LOAInterface;
     hostedMessagingNumber: HostedMessagingNumberInterface;
     maskingSession: MaskingSessionInterface;
+    verifyCallerId: VerifyCallerIdInterface;
 }
 /**
  * Plivo API client which can be used to access the Plivo APIs.
@@ -45,4 +46,5 @@ import { Phlo } from "../resources/phlo.js";
 import { LOAInterface } from "../resources/loa.js";
 import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber.js";
 import { MaskingSessionInterface } from "../resources/maskingSession.js";
+import { VerifyCallerIdInterface } from "../resources/verifyCallerId.js";
 
