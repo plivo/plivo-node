@@ -17,6 +17,7 @@ export class Client {
     loa: LOAInterface;
     hostedMessagingNumber: HostedMessagingNumberInterface;
     maskingSession: MaskingSessionInterface;
+    tollfreeVerification: TollfreeVerificationInterface;
     verifyCallerId: VerifyCallerIdInterface;
 }
 /**
@@ -46,5 +47,6 @@ import { Phlo } from "../resources/phlo.js";
 import { LOAInterface } from "../resources/loa.js";
 import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber.js";
 import { MaskingSessionInterface } from "../resources/maskingSession.js";
+import { TollfreeVerificationInterface } from "../resources/tollfree_verification.js";
 import { VerifyCallerIdInterface } from "../resources/verifyCallerId.js";
 
