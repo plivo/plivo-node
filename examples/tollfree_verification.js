@@ -1,8 +1,13 @@
 var Plivo =  require('../dist/rest/client.js');
 var client = new Plivo.Client();
 
-client.tollfreeVerification.create({"extra_data": "", "message_sample": "", "number": "99999999999",
-"optin_image_url": "https://some_url", "optin_type": "MOBILE_QR_CODE","profile_uuid": "abcxxxxx-xxxx"})
+client.tollfreeVerification.create({
+  extra_data: "", "message_sample": "", 
+  number: "99999999999",
+  optin_image_url: "https://some_url", 
+  optin_type: "MOBILE_QR_CODE",
+  profile_uuid: "abcxxxxx-xxxx"
+})
   .then(function(response) {
     console.log("\n============ create ===========\n", response)
     return response.get(response.uuid);
@@ -17,7 +22,7 @@ client.tollfreeVerification.create({"extra_data": "", "message_sample": "", "num
   })
   .then(function(response) {
     console.log("\n============ list ===========\n", response)
-    return response.update(response[0].uuid,{"extra_data":"New_extra_data"});
+    return response.update(response[0].uuid,{"extra_data":"New_Extra_Data"});
   })
   .then(function(response) {
     console.log("\n============ update ===========\n", response)
