@@ -18,7 +18,7 @@ export class Client {
     hostedMessagingNumber: HostedMessagingNumberInterface;
     maskingSession: MaskingSessionInterface;
     tollfreeVerification: TollfreeVerificationInterface;
-    verifyCallerId: VerifyCallerIdInterface;
+    verifyCallerId: VerifyInterface;
 }
 /**
  * Plivo API client which can be used to access the Plivo APIs.
@@ -48,5 +48,5 @@ import { LOAInterface } from "../resources/loa.js";
 import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber.js";
 import { MaskingSessionInterface } from "../resources/maskingSession.js";
 import { TollfreeVerificationInterface } from "../resources/tollfree_verification.js";
-import { VerifyCallerIdInterface } from "../resources/verifyCallerId.js";
+import { VerifyInterface } from "../resources/verifyCallerId.js";
 
