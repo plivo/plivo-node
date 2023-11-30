@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.60.1](https://github.com/plivo/plivo-node/tree/v4.60.1) (2023-11-28)
+**Bug Fix - JWT Token Creation Issues**
+- Fix for incorrect token getting created when generated using TypeScript
+
 ## [v4.60.0](https://github.com/plivo/plivo-node/tree/v4.60.0) (2023-11-08)
 **[BETA] Feature - TollFree Verification API Support**
 - API support for Create, Update, Get, Delete and List Tollfree Verification.

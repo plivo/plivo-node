@@ -17,7 +17,7 @@ export class CreateTokenResponse {
 	 * @promise {object} returns Call Object
 	 * @fail {Error} returns Error
 	 */
-     create( iss: string, sub: string, nbf: number, exp: number, incoming_allow: boolean, outgoing_allow: boolean, app: string, params ? : {}): Promise < CreateTokenResponse > ;
+     create( iss: string, params ? : {}): Promise < CreateTokenResponse > ;
      /**
       * Create a token
       * @method

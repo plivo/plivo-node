@@ -12,7 +12,7 @@ export class VerifyCallerIdResponse {
     country:string;
     createdAt:string;
     phoneNumber:string;
-    subaccount:internal;
+    subaccount:string;
     verificationUuid:string;
 }
 
@@ -24,7 +24,7 @@ export class GetVerifiedCallerIdResponse {
     createdAt:string;
     modifiedAt:string;
     phoneNumber:string;
-    subaccount:internal;
+    subaccount:string;
     verificationUuid:string;
 }
 
@@ -54,7 +54,7 @@ export class VerifyInterface extends PlivoResourceInterface {
 
 	getVerifiedCallerId(phoneNumber: string): Promise < GetVerifiedCallerIdResponse > ;
 
-	deleteVerifiedCallerId(phoneNumber: string): Promise < > ;
+	deleteVerifiedCallerId(phoneNumber: string): Promise < any > ;
 }
 import {
   PlivoResource,

@@ -33,7 +33,7 @@ export class Client {
     hostedMessagingNumber: HostedMessagingNumberInterface;
     maskingSession:MaskingSessionInterface;
     tollfreeVerification: TollfreeVerificationInterface;
-    verifyCallerId:VerifyCallerIdInterface;
+    verify:VerifyInterface;
     toJSON(...args: any[]): any;
 }
 /**
@@ -70,6 +70,5 @@ import { LOAInterface } from "../resources/loa";
 import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber";
 import { MaskingSessionInterface } from "../resources/maskingSession.js";
 import { TollfreeVerificationInterface } from "../resources/tollfree_verification.js";
-import { VerifyCallerIdInterface } from "../resources/verifyCallerId.js";
-
+import { VerifyInterface } from "../resources/verifyCallerId.js";
 
