@@ -18,7 +18,7 @@ export class Client {
     hostedMessagingNumber: HostedMessagingNumberInterface;
     maskingSession: MaskingSessionInterface;
     tollfreeVerification: TollfreeVerificationInterface;
-    verifyCallerId: VerifyInterface;
+    verify: VerifyInterface;
 }
 /**
  * Plivo API client which can be used to access the Plivo APIs.

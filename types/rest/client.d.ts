@@ -33,7 +33,7 @@ export class Client {
     hostedMessagingNumber: HostedMessagingNumberInterface;
     maskingSession:MaskingSessionInterface;
     tollfreeVerification: TollfreeVerificationInterface;
-    verifyCallerId:VerifyInterface;
+    verify:VerifyInterface;
     toJSON(...args: any[]): any;
 }
 /**
