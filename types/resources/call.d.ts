@@ -340,12 +340,20 @@ export class CallInterface extends PlivoResourceInterface {
 	 * @fail {Error} returns Error
 	 */
 	transfer(callUUID: string, params: {
-		legs: string;
+		legs: "both";
 		alegUrl: string;
-		alegMethod: string;
+		alegMethod?: string;
 		blegUrl: string;
-		blegMethod: string;
-	}): Promise < any > ;
+		blegMethod?: string;
+	} | {
+        legs: "aleg";
+        alegUrl: string;
+		alegMethod?: string;
+    } | {
+        legs: "bleg";
+        blegUrl: string;
+        blegMethod?: string;
+    }): Promise < any > ;
 
     /**
      * Start a Stream over a Call
