@@ -1,5 +1,10 @@
 # Change Log
 
+## [v4.60.2](https://github.com/plivo/plivo-node/tree/v4.60.2) (2024-02-29)
+**Feature - Log Redaction Enhancement**
+- Added log attribute in GET and List MDR response
+- Change log field from bool to string in send SMS 
+
 ## [v4.60.1](https://github.com/plivo/plivo-node/tree/v4.60.1) (2023-11-28)
 **Bug Fix - JWT Token Creation Issues**
 - Fix for incorrect token getting created when generated using TypeScript
