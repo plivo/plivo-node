@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.60.2](https://github.com/plivo/plivo-node/tree/v4.60.2) (2024-02-05)
+## [v4.60.2](https://github.com/plivo/plivo-node/tree/v4.60.2) (2024-02-29)
 **Feature - Log Redaction Enhancement**
 - Added log attribute in GET and List MDR response
 - Change log field from bool to string in send SMS 
