@@ -40,7 +40,7 @@ import {
         })
     });
     if('import campaign', function (){
-      return client.campaign.importcamp('CNTQ0OD','New Contact by vinay for ct')
+      return client.campaign.import_campaign('CNTQ0OD','New Contact by vinay for ct')
         .then(function(campaign){
           assert.equal(campaign.campaignId, 'CNTQ0OD')
         })
