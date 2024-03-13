@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.61.0](https://github.com/plivo/plivo-node/tree/v4.61.0) (2024-03-12)
+## [v4.61.0](https://github.com/plivo/plivo-node/tree/v4.61.0) (2024-03-13)
 **Feature - Import Campaign API**
 -  Import Campaign API endpoint added
 
