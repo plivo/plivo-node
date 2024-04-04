@@ -39,6 +39,12 @@ import {
           assert.equal(campaign.campaignId, 'CFSOBZQ')
         })
     });
+    if('import campaign', function (){
+      return client.campaign.import_campaign('CNTQ0OD','New Contact by vinay for ct')
+        .then(function(campaign){
+          assert.equal(campaign.campaignId, 'CNTQ0OD')
+        })
+    })
 
     it('should delete campaign', function() {
       return client.campaign.deleteCampaign("CMPT4EP")
