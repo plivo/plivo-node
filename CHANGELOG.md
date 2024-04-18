@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.62.0](https://github.com/plivo/plivo-node/tree/v4.62.0) (2024-04-12)
+## [v4.62.0](https://github.com/plivo/plivo-node/tree/v4.62.0) (2024-04-18)
 **Feature - Support for dynamic button components when sending a templated WhatsApp message**
 - Added new param `payload` in templates to support dynamic payload in templates
 
