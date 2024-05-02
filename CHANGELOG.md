@@ -1,8 +1,8 @@
 # Change Log
 
-## [v4.62.1](https://github.com/plivo/plivo-node/tree/v4.62.1) (2024-04-15)
-**Feature - Pin Based Authentication, SubAccount and GeoMatch**
--  Pin Based Authentication, SubAccount and GeoMatch added in Create Session API
+## [v4.63.0](https://github.com/plivo/plivo-node/tree/v4.62.1) (2024-05-02)
+**Feature - Pin Based Authentication, SubAccount and GeoMatch for Number Masking**
+-  Pin Based Authentication, SubAccount and GeoMatch added in Create Session API for Number Masking
 
 ## [v4.62.0](https://github.com/plivo/plivo-node/tree/v4.62.0) (2024-04-18)
 **Feature - Support for dynamic button components when sending a templated WhatsApp message**
