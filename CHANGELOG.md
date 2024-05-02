@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.63.0](https://github.com/plivo/plivo-node/tree/v4.62.1) (2024-05-02)
+## [v4.63.0](https://github.com/plivo/plivo-node/tree/v4.63.0) (2024-05-02)
 **Feature - Pin Based Authentication, SubAccount and GeoMatch for Number Masking**
 -  Pin Based Authentication, SubAccount and GeoMatch added in Create Session API for Number Masking
 
