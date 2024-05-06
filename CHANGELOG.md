@@ -3,6 +3,14 @@
 **Vulnerabilities Fix**
 -  Axios Cross-Site Request Forgery Vulnerability Fix.
 
+## [v4.63.0](https://github.com/plivo/plivo-node/tree/v4.63.0) (2024-05-02)
+**Feature - Pin Based Authentication, SubAccount and GeoMatch for Number Masking**
+-  Pin Based Authentication, SubAccount and GeoMatch added in Create Session API for Number Masking
+
+## [v4.62.0](https://github.com/plivo/plivo-node/tree/v4.62.0) (2024-04-18)
+**Feature - Support for dynamic button components when sending a templated WhatsApp message**
+- Added new param `payload` in templates to support dynamic payload in templates
+
 ## [v4.61.0](https://github.com/plivo/plivo-node/tree/v4.61.0) (2024-03-13)
 **Feature - Import Campaign API**
 -  Import Campaign API endpoint added
