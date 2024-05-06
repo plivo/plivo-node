@@ -1,5 +1,5 @@
 # Change Log
-## [v4.62.0](https://github.com/plivo/plivo-node/tree/v4.62.0) (2024-04-04)
+## [v4.64.0](https://github.com/plivo/plivo-node/tree/v4.64.0) (2024-04-04)
 **Vulnerabilities Fix**
 -  Axios Cross-Site Request Forgery Vulnerability Fix.
 
