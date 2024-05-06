@@ -1,4 +1,7 @@
 # Change Log
+## [v4.64.0](https://github.com/plivo/plivo-node/tree/v4.64.0) (2024-04-04)
+**Vulnerabilities Fix**
+-  Axios Cross-Site Request Forgery Vulnerability Fix.
 
 ## [v4.63.0](https://github.com/plivo/plivo-node/tree/v4.63.0) (2024-05-02)
 **Feature - Pin Based Authentication, SubAccount and GeoMatch for Number Masking**
