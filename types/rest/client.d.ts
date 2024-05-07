@@ -7,7 +7,7 @@ export function validateSignature(uri: string, nonce: string, signature: string,
  * You can also pass in additional parameters accepted by the node requests module.
  */
 export class Client {
-    constructor(authId?: string, authToken?: string, options?: string);
+    constructor(authId?: string, authToken?: string, options?: any);
     calls: CallInterface;
     token: TokenInterface;
     accounts: AccountInterface;
