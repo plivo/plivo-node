@@ -1,6 +1,6 @@
 # Change Log
 
-## [v4.66.0](https://github.com/plivo/plivo-node/tree/v4.66.0) (2024-05-07)
+## [v4.66.0](https://github.com/plivo/plivo-node/tree/v4.66.0) (2024-05-17)
 **Feature - Adding support for location whatsapp messages**
 - Added new param `location` to [send message API](https://www.plivo.com/docs/sms/api/message#send-a-message) to support location `whatsapp` messages
 - Added new param `location` in templates to support location based templated messages
