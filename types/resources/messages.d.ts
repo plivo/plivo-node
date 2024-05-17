@@ -92,6 +92,7 @@ export class MessageInterface extends PlivoResourceInterface {
 	 * @param {boolean} [optionalParams.log] If set to false, the content of this message will not be logged on the Plivo infrastructure and the dst value will be masked (e.g., 141XXXXX528). Default is set to true.
 	 * @param {Template} [optionalParams.template] For sending templated whatsapp messages.
 	 * @param {Interactive} [optionalParams.interactive] For sending interactive whatsapp messages.
+	 * @param {Location} [optionalParams.location] For sending location whatsapp messages.
 	 * @promise {object} return {@link PlivoGenericMessage} object if success
 	 * @fail {Error} return Error
 	 */
@@ -116,6 +117,7 @@ export class MessageInterface extends PlivoResourceInterface {
 	 * @param {Array} [optionalParams.media_urls] For sending mms, specify the media urls in list of string
 	 * @param {Template} [optionalParams.template] For sending templated whatsapp messages.
 	 * @param {Interactive} [optionalParams.interactive] For sending interactive whatsapp messages.
+	 * @param {Location} [optionalParams.location] For sending location whatsapp messages.
 	 * @promise {object} return {@link MessageResponse} object if success
 	 * @fail {Error} return Error
 	 */
