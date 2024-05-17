@@ -135,6 +135,43 @@ WhatsApp templates support 4 components:  `header` ,  `body`,  `footer`  and `bu
 
 Example:
 ```javascript
+var plivo = require('plivo');
+
+var client = new plivo.Client("<auth_id>", "<auth_token>");
+
+const template = { 
+            "name": "template_name",
+            "language": "en_US",
+            "components": [
+                {
+                    "type": "header",
+                    "parameters": [
+                        {
+                            "type": "media",
+                            "media": "https://xyz.com/s3/img.jpg"
+                        }
+                    ]
+                },
+                {
+                    "type": "body",
+                    "parameters": [
+                        {
+                            "type": "text",
+                            "text": "WA-Text"
+                        }
+                    ]
+                }
+            ]
+          }
+client.messages.create({
+  src:"+14156667778",
+  dst:"+14156667777",
+  type:"whatsapp",
+  template:template,
+  url: "https://foo.com/wa_status/"
+}).then(function (response) {
+  console.log(response);
+});
 ```
 
 ### Free Form Messages
@@ -143,11 +180,36 @@ Non-templated or Free Form WhatsApp messages can be sent as a reply to a user-in
 #### Free Form Text Message
 Example:
 ```javascript
+var plivo = require('plivo');
+
+var client = new plivo.Client("<auth_id>", "<auth_token>");
+client.messages.create({
+  src:"+14156667778",
+  dst:"+14156667777",
+  type:"whatsapp",
+  text: "Hello, this is sample text",
+  url: "https://foo.com/wa_status/"
+}).then(function (response) {
+  console.log(response);
+});
 ```
 
 #### Free Form Media Message
 Example:
 ```javascript
+var plivo = require('plivo');
+
+var client = new plivo.Client("<auth_id>", "<auth_token>");
+client.messages.create({
+  src:"+14156667778",
+  dst:"+14156667777",
+  type:"whatsapp",
+  text: "Hello, this is sample text",
+  media_urls:["https://sample-videos.com/img/Sample-png-image-1mb.png"],
+  url: "https://foo.com/wa_status/"
+}).then(function (response) {
+  console.log(response);
+});
 ```
 
 ### Interactive Messages
@@ -158,6 +220,45 @@ Quick reply buttons allow customers to quickly respond to your message with pred
 
 Example:
 ```javascript
+let plivo = require('plivo');
+
+var client = new plivo.Client("<auth_id>","<auth_token>");
+
+const interactive = {
+        "type": "button",
+        "header": {
+            "type": "media",
+            "media": "https://xyz.com/s3/img.jpg"
+        },
+        "body": {
+            "text": "Make your selection"
+        },
+        "action": {
+            "buttons": [
+                {
+                    "title": "Click here",
+                    "id": "bt1"
+                },
+                {
+                    "title": "Know More",
+                    "id": "bt2"
+                },
+                {
+                    "title": "Request Callback",
+                    "id": "bt3"
+                }
+            ]
+        }
+    }
+
+client.messages.create({
+  src:"+14156667778",
+  dst:"+14156667777",
+  type:"whatsapp",
+  interactive:interactive
+}).then(function (response) {
+  console.log(response);
+});
 ```
 
 #### Interactive Lists
@@ -165,6 +266,69 @@ Interactive lists allow you to present customers with a list of options.
 
 Example:
 ```javascript
+let plivo = require('plivo');
+
+var client = new plivo.Client("<auth_id>","<auth_token>");
+
+const interactive = {
+        "type": "list",
+        "header": {
+            "type": "text",
+            "text": "Welcome to Plivo"
+        },
+        "body": {
+            "text": "You can review the list of rewards we offer"
+        },
+        "footer": {
+            "text": "Yours Truly"
+        },
+        "action": {
+            "buttons": [{
+                "title": "Click here"
+            }],
+            "sections": [
+                {
+                    "title": "SECTION_1_TITLE",
+                    "rows": [
+                        {
+                            "id": "SECTION_1_ROW_1_ID",
+                            "title": "SECTION_1_ROW_1_TITLE",
+                            "description": "SECTION_1_ROW_1_DESCRIPTION"
+                        },
+                        {
+                            "id": "SECTION_1_ROW_2_ID",
+                            "title": "SECTION_1_ROW_2_TITLE",
+                            "description": "SECTION_1_ROW_2_DESCRIPTION"
+                        }
+                    ]
+                },
+                {
+                    "title": "SECTION_2_TITLE",
+                    "rows": [
+                        {
+                            "id": "SECTION_2_ROW_1_ID",
+                            "title": "SECTION_2_ROW_1_TITLE",
+                            "description": "SECTION_2_ROW_1_DESCRIPTION"
+                        },
+                        {
+                            "id": "SECTION_2_ROW_2_ID",
+                            "title": "SECTION_2_ROW_2_TITLE",
+                            "description": "SECTION_2_ROW_2_DESCRIPTION"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+
+client.messages.create({
+  src:"+14156667778",
+  dst:"+14156667777",
+  type:"whatsapp",
+  interactive:interactive
+}).then(function (response) {
+  console.log(response);
+});
 ```
 
 #### Interactive CTA URLs
@@ -172,6 +336,40 @@ CTA URL messages allow you to send links and call-to-action buttons.
 
 Example:
 ```javascript
+let plivo = require('plivo');
+
+var client = new plivo.Client("<auth_id>","<auth_token>");
+
+const interactive = {
+        "type": "cta_url",
+        "header": {
+            "type": "media",
+            "media": "https://xyz.com/s3/img.jpg"
+        },
+        "body": {
+            "text": "Know More"
+        },
+        "footer": {
+            "text": "Plivo"
+        },
+        "action": {
+            "buttons": [
+                {
+                    "title": "Click here",
+                    "cta_url": "https:plivo.com"
+                }
+            ]
+        }
+    }
+
+client.messages.create({
+  src:"+14156667778",
+  dst:"+14156667777",
+  type:"whatsapp",
+  interactive:interactive
+}).then(function (response) {
+  console.log(response);
+});
 ```
 
 ### Location Messages
@@ -180,11 +378,63 @@ This guide shows how to send templated and non-templated location messages to re
 #### Templated Location Messages
 Example:
 ```javascript
+let plivo = require('plivo');
+
+var client = new plivo.Client("<auth_id>","<auth_token>");
+
+const template = {
+        "name": "plivo_order_pickup",
+        "language": "en_US",
+        "components": [
+            {
+                "type": "header",
+                "parameters": [
+                    {
+                        "type": "location",
+                        "location": {
+                            "longitude": "122.148981",
+                            "latitude": "37.483307",
+                            "name": "Pablo Morales",
+                            "address": "1 Hacker Way, Menlo Park, CA 94025"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+
+client.messages.create({
+  src:"+14156667778",
+  dst:"+14156667777",
+  type:"whatsapp",
+  template:template
+}).then(function (response) {
+  console.log(response);
+});
 ```
 
 #### Non-Templated Location Messages
 Example:
 ```javascript
+let plivo = require('plivo');
+
+var client = new plivo.Client("<auth_id>","<auth_token>");
+
+const location = {
+        "longitude": "122.148981",
+        "latitude": "37.483307",
+        "name": "Pablo Morales",
+        "address": "1 Hacker Way, Menlo Park, CA 94025"
+    }
+
+client.messages.create({
+  src:"+14156667778",
+  dst:"+14156667777",
+  type:"whatsapp",
+  location:location
+}).then(function (response) {
+  console.log(response);
+});
 ```
 
 ### More examples
