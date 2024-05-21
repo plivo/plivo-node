@@ -24,7 +24,7 @@ describe('multiPartyCalls', function (){
   });
 
   it('should add a Participant', function (){
-    return client.multiPartyCalls.addParticipant('Agent', {'friendlyName' : 'Voice', 'from' : '+919090909090', 'to' : '+918309866821'}).then(function (response){
+    return client.multiPartyCalls.addParticipant('Agent', {'friendlyName' : 'Voice', 'from' : '+919090909090', 'to' : '+918309866821', 'recordParticipantTrack': 'false'}).then(function (response){
       assert(response instanceof PlivoGenericResponse)
       assert.equal(response.message, 'add participant action initiated')
     })
@@ -94,25 +94,25 @@ describe('multiPartyCalls', function (){
   });
 
   it('should start MPC Participant Recording', function (){
-    return client.multiPartyCalls.startParticipantRecording(10, {friendlyName: 'TestMPC'}).then(function (response){
+    return client.multiPartyCalls.startParticipantRecording(10, {friendlyName: 'TestMPC', recordTrackType: "all"}).then(function (response){
       assert(response.message, "MPC: TestMPC participant record started")
     })
   });
 
   it('should stop MPC Participant Recording', function (){
-    return client.multiPartyCalls.stopParticipantRecording(10,{friendlyName: 'TestMPC'}).then(function (response){
+    return client.multiPartyCalls.stopParticipantRecording(10,{friendlyName: 'TestMPC', recordTrackType: "all"}).then(function (response){
       assert(response instanceof PlivoGenericResponse)
     })
   });
 
   it('should pause MPC Participant Recording', function (){
-    return client.multiPartyCalls.pauseParticipantRecording(10,{friendlyName: 'TestMPC'}).then(function (response){
+    return client.multiPartyCalls.pauseParticipantRecording(10,{friendlyName: 'TestMPC', recordTrackType: "all"}).then(function (response){
       assert(response instanceof PlivoGenericResponse)
     })
   });
 
   it('should resume MPC Participant Recording', function (){
-    return client.multiPartyCalls.resumeParticipantRecording(10,{friendlyName: 'TestMPC'}).then(function (response){
+    return client.multiPartyCalls.resumeParticipantRecording(10,{friendlyName: 'TestMPC', recordTrackType: "all"}).then(function (response){
       assert(response instanceof PlivoGenericResponse)
     })
   });

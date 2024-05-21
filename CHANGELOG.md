@@ -1,5 +1,10 @@
 # Change Log
 
+## [v4.67.0](https://github.com/plivo/plivo-node/tree/v4.67.0) (2024-05-22)
+**Feature - Adding support for participant level recording**
+- Added new param `recordParticipantTrack` to [add participant API](https://www.plivo.com/docs/voice/api/multiparty-call/participants#add-a-participant) to support `participant` level recording
+- Added new param `recordTrackType` in start/stop/pause/resume to support participant level recording
+
 ## [v4.66.0](https://github.com/plivo/plivo-node/tree/v4.66.0) (2024-05-17)
 **Feature - Adding support for location whatsapp messages**
 - Added new param `location` to [send message API](https://www.plivo.com/docs/sms/api/message#send-a-message) to support location `whatsapp` messages
