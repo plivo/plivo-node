@@ -122,7 +122,7 @@ describe('PhloMultiPartyCallInterface', function () {
     let phloClient = new PhloClient(authId, authToken);
     let phlo = phloClient.phlo(phloId);
     phlo.multiPartyCall(mpcId).abortTransfer('919920700964').then(function (abortTransferResult) {
-      console.log('cold Transfer result', abortTransferResult);
+      // console.log('cold Transfer result', abortTransferResult);
     });
 
   });
