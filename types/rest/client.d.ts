@@ -34,6 +34,7 @@ export class Client {
     maskingSession:MaskingSessionInterface;
     tollfreeVerification: TollfreeVerificationInterface;
     verify:VerifyInterface;
+    verify_session:SessionInterface;
     toJSON(...args: any[]): any;
 }
 /**
@@ -71,4 +72,5 @@ import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumb
 import { MaskingSessionInterface } from "../resources/maskingSession.js";
 import { TollfreeVerificationInterface } from "../resources/tollfree_verification.js";
 import { VerifyInterface } from "../resources/verifyCallerId.js";
+import { SessionInterface } from "../resources/verify.js";
 
