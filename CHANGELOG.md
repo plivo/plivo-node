@@ -1,8 +1,8 @@
 # Change Log
 
 ## [v4.68.0](https://github.com/plivo/plivo-node/tree/v4.68.0) (2024-06-22)
-**Feature - Locale param supported for Create Verify Session API's**
-- Added new param 'locale' to Create Session API
+**Feature - Locale param supported for Create, Get and List Verify Session API's**
+- Added new param 'locale' to create, get and list Session API
 
 ## [v4.67.0](https://github.com/plivo/plivo-node/tree/v4.67.0) (2024-05-22)
 **Feature - Adding support for participant level recording**
