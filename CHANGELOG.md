@@ -1,8 +1,13 @@
 # Change Log
+## [v4.68.2](https://github.com/plivo/plivo-node/tree/v4.68.2) (2024-09-06)
+**Feature - Adding support for brand_name and app_hash in Create,Get and List Session**
+- Added new request param `brand_name` and `app_hash` in create Session API
+- Added support for `brand_name` and `app_hash` param in get and list Session response
 
 ## [v4.68.1](https://github.com/plivo/plivo-node/tree/v4.68.1) (2024-09-03)
 **Feature - Adding new element for Audio Stream XML **
 - Added `keepCallAlive` element in Audio Stream XML
+
 
 ## [v4.68.0](https://github.com/plivo/plivo-node/tree/v4.68.0) (2024-07-11)
 **Feature - Locale param supported for Create, Get and List Verify Session API's**
