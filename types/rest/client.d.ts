@@ -71,4 +71,4 @@ import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumb
 import { MaskingSessionInterface } from "../resources/maskingSession.js";
 import { TollfreeVerificationInterface } from "../resources/tollfree_verification.js";
 import { VerifyInterface } from "../resources/verifyCallerId.js";
-
+import { VerifyCallerIdInterface } from "../resources/verifyCallerId.js";
