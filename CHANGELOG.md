@@ -1,5 +1,5 @@
 # Change Log
-## [v4.67.0](https://github.com/plivo/plivo-node/tree/v4.67.0) (2024-09-10)
+## [v4.69.0](https://github.com/plivo/plivo-node/tree/v4.69.0) (2024-09-30)
 **Feature - Adding new param support for Number Masking session with single party **
 - Added `create_session_with_single_party`, `virtual_number_cooloff_period` and `force_pin_authentication` attributes in Masking Session
 
