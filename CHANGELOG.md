@@ -1,5 +1,5 @@
 # Change Log
-## [v4.69.1](https://github.com/plivo/plivo-go/tree/v4.69.1) (2024-10-10)
+## [v4.69.1](https://github.com/plivo/plivo-node/tree/v4.69.1) (2024-10-10)
 **Feature - Dtmf param in Create, Get and List Session**
 - Support for the `dtmf` parameter in voice verify session request
 - Added support for `dtmf` in GET and LIST verify session.
