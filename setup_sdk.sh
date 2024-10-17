@@ -15,10 +15,10 @@ cd /usr/src/app
 echo "Setting plivo-api endpoint to dev..."
 find /usr/src/app/lib/rest -type f -exec sed -i "s/$PLIVO_API_PROD_HOST/$PLIVO_API_DEV_HOST/g" {} \;
 
-echo "Packaging SDK..."
-echo "npm install" && npm install
+echo "Preparing SDK..."
+rm -rf node_modules package-lock.json
+echo "npm install" && npm install --no-package-lock
 echo "npm run prepublish" && npm run prepublish
-echo "npm pack | tail -n 1" && package=$( npm pack | tail -n 1 )
 
 if [ ! -d $testDir ]; then
     echo "Creating test dir..."
@@ -32,12 +32,10 @@ if [ ! -f $testDir/test.js ]; then
 fi
 
 echo "Installing dependencies for testing..."
-mv $package $testDir 
 cd $testDir 
 rm -rf package*.json node_modules
 npm init -y
-npm install $package
-rm $package
+npm install /usr/src/app/
 cd -
 
 echo -e "\n\nSDK setup complete! You can test changes either on host or inside the docker container:"
