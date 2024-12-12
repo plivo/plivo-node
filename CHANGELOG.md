@@ -1,4 +1,8 @@
 # Change Log
+## [v4.69.3](https://github.com/plivo/plivo-node/tree/v4.69.3) (2024-12-12)
+**Feature - Typescript support for verify session**
+- Added typescript support for verify session
+
 ## [v4.69.2](https://github.com/plivo/plivo-node/tree/v4.69.2) (2024-10-23)
 **Feature - FraudCheck param in Create, Get and List Session**
 - Support for the `fraud_check` parameter in sms verify session request
