@@ -1,4 +1,7 @@
 # Change Log
+## [v4.69.4](https://github.com/plivo/plivo-node/tree/v4.69.4) (2025-02-18)
+**Feature - Throw GeoPermissionException on synchronous geopermissions error**
+
 ## [v4.69.3](https://github.com/plivo/plivo-node/tree/v4.69.3) (2024-12-12)
 **Feature - Typescript support for verify session**
 - Added typescript support for verify session
