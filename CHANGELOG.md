@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.69.6](https://github.com/plivo/plivo-node/tree/v4.69.6) (2025-03-18)
+**Vulnerabilities Fix**
+-  Update library: Axios
+
 ## [v4.69.5](https://github.com/plivo/plivo-node/tree/v4.69.5) (2025-02-25)
 **Feature - Supporting parameter_name in WhatsApp Template .**
 - Supporting `parameter_name` in WhatsApp Template .
