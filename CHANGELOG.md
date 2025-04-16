@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.70.0](https://github.com/plivo/plivo-node/tree/v4.70.0) (2025-04-21)
+**Feature - New Param added for Start Recording API.**
+- Support `record_channel_type` in Start Recording API and `recordChannelType` in Record XML.
+
 ## [v4.69.6](https://github.com/plivo/plivo-node/tree/v4.69.6) (2025-03-18)
 **Vulnerabilities Fix**
 -  Update library: Axios
