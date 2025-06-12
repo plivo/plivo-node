@@ -1,5 +1,11 @@
 # Change Log
 
+## [v4.71.0](https://github.com/plivo/plivo-node/tree/v4.71.0) (2025-06-13)
+**Bug Fix**
+- Added HTTP/HTTPS agent configuration with connection pooling to prevent progressive API latency increase.
+- Fixed memory leak in retryWrapper interceptors that accumulated over time causing CPU spikes and performance degradation.
+- Improved resource cleanup in voice request handling to maintain stable memory usage and eliminate need for server restarts
+
 ## [v4.70.0](https://github.com/plivo/plivo-node/tree/v4.70.0) (2025-04-30)
 **Feature - New Param added for Start Recording API.**
 - Support `record_channel_type` in Start Recording API and `recordChannelType` in Record XML.
