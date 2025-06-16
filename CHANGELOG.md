@@ -1,5 +1,9 @@
 # Change Log
 
+## [v4.72.0](https://github.com/plivo/plivo-node/tree/v4.72.0) (2025-04-30)
+**Feature - New Param added for MPC - Update participant state API.**
+- Support `disable_state_change_sound` in MPC - Update participant state API.
+
 ## [v4.70.0](https://github.com/plivo/plivo-node/tree/v4.70.0) (2025-04-30)
 **Feature - New Param added for Start Recording API.**
 - Support `record_channel_type` in Start Recording API and `recordChannelType` in Record XML.
