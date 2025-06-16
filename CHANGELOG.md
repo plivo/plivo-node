@@ -1,5 +1,10 @@
 # Change Log
 
+## [v4.72.0](https://github.com/plivo/plivo-node/tree/v4.72.0) (2025-06-16)
+**Bug Fix - sendDigits validation issue**
+- Fixed `isRequired` validator to properly handle falsy values including the number `0`, resolving "Missing mandatory field: digits" error when sending digit "0"
+- Updated TypeScript definitions for `sendDigits` method to accept `string` instead of `number` to match API expectations and existing tests
+
 ## [v4.71.0](https://github.com/plivo/plivo-node/tree/v4.71.0) (2025-06-13)
 **Bug Fix**
 - Added HTTP/HTTPS agent configuration with connection pooling to prevent progressive API latency increase.

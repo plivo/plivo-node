@@ -248,12 +248,12 @@ export class Call extends PlivoResource {
 	/**
 	 * Send digits on a call
 	 * @method
-	 * @param {number} digits - digits to be send
+	 * @param {string} digits - digits to be send
 	 * @param {object} optionalParams - to send digits for call
 	 * @promise {object} returns PlivoGenericResponse Object
 	 * @fail {Error} returns Error
 	 */
-	sendDigits(digits: number, optionalParams: object): Promise < SendDigitsResponse > ;
+	sendDigits(digits: string, optionalParams: object): Promise < SendDigitsResponse > ;
 	/**
 	 * Hangup a Call Request
 	 * @method
@@ -424,12 +424,12 @@ export class CallInterface extends PlivoResourceInterface {
 	 * Send digits on a call
 	 * @method
 	 * @param {string} callUUID - call uuid to send digits on a call
-	 * @param {number} digits - digits to be send
+	 * @param {string} digits - digits to be send
 	 * @param {object} optionalParams - optional params to send digits
 	 * @promise {object} returns PlivoGenericResponse Object
 	 * @fail {Error} returns Error
 	 */
-	sendDigits(callUUID: string, digits: number, optionalParams: object): Promise < any > ;
+	sendDigits(callUUID: string, digits: string, optionalParams: object): Promise < any > ;
 	/**
 	 * Hangup a call request
 	 * @method
