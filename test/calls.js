@@ -152,6 +152,10 @@ describe('calls', function () {
     it('should send digits', function () {
       return client.calls.sendDigits('aaa-deeiei3-dfddd', '123');
     });
+
+    it('should send digits with zero', function () {
+      return client.calls.sendDigits('aaa-deeiei3-dfddd', '0');
+    });
   });
 
   describe('Play', function () {

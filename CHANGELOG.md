@@ -1,8 +1,21 @@
 # Change Log
 
-## [v4.72.0](https://github.com/plivo/plivo-node/tree/v4.72.0) (2025-04-30)
+
+## [v4.73.0](https://github.com/plivo/plivo-node/tree/v4.73.0) (2025-06-20)
 **Feature - New Param added for MPC - Update participant state API.**
 - Support `disable_state_change_sound` in MPC - Update participant state API.
+
+## [v4.72.0](https://github.com/plivo/plivo-node/tree/v4.72.0) (2025-06-16)
+**Bug Fix - sendDigits validation issue**
+- Fixed `isRequired` validator to properly handle falsy values including the number `0`, resolving "Missing mandatory field: digits" error when sending digit "0"
+- Updated TypeScript definitions for `sendDigits` method to accept `string` instead of `number` to match API expectations and existing tests
+
+## [v4.71.0](https://github.com/plivo/plivo-node/tree/v4.71.0) (2025-06-13)
+**Bug Fix**
+- Added HTTP/HTTPS agent configuration with connection pooling to prevent progressive API latency increase.
+- Fixed memory leak in retryWrapper interceptors that accumulated over time causing CPU spikes and performance degradation.
+- Improved resource cleanup in voice request handling to maintain stable memory usage and eliminate need for server restarts
+
 
 ## [v4.70.0](https://github.com/plivo/plivo-node/tree/v4.70.0) (2025-04-30)
 **Feature - New Param added for Start Recording API.**
