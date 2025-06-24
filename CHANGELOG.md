@@ -1,5 +1,8 @@
 # Change Log
 
+## [v4.74.0](https://github.com/plivo/plivo-node/tree/v4.74.0) (2025-06-20)
+**Feature - New Param added for Dial XML.**
+- Added support for two new elements - `callerId` and `callerName` - in Number and User element in Dial XML
 
 ## [v4.73.0](https://github.com/plivo/plivo-node/tree/v4.73.0) (2025-06-20)
 **Feature - New Param added for MPC - Update participant state API.**
