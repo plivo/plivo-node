@@ -1,4 +1,7 @@
 # Change Log
+## [v4.75.0](https://github.com/plivo/plivo-node/tree/v4.75.0) (2025-07-07)
+**Bug Fix - Update Number API**
+- Fixed the issue where the subaccount parameter was not being updated in the Plivo Number API in node SDK
 
 ## [v4.74.0](https://github.com/plivo/plivo-node/tree/v4.74.0) (2025-06-20)
 **Feature - New Param added for Dial XML.**
