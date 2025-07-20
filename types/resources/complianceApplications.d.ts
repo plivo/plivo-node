@@ -2,7 +2,7 @@ export class ComplianceApplicationResponse {
     constructor(params: object);
     apiId: string;
     complianceApplicationId: string;
-    endUserID: string;
+    endUserId: string;
     endUserType: string;
     alias: string;
     status: string;
@@ -17,7 +17,7 @@ export class CreateComplianceApplicationResponse {
     constructor(params: object);
     apiId: string;
     complianceApplicationId: string;
-    endUserID: string;
+    endUserId: string;
     endUserType: string;
     alias: string;
     status: string;
@@ -70,7 +70,7 @@ export class ComplianceApplication extends PlivoResource {
     * @promise {boolean} return true if success
     * @fail {Error} return Error
     */
-    delete(): Promise<unknown>;
+    delete(): Promise<boolean>;
     [clientKey]: symbol;
 }
 
@@ -136,7 +136,15 @@ export class ComplianceApplicationInterface extends PlivoResourceInterface {
     * @promise {boolean} return true if success
     * @fail {Error} return Error
     */
-    delete(id: string): any;
+    delete(id: string): Promise<boolean>;
+
+    /**
+     * submit an application by given id
+     * @method
+     * @param {string} id - id of application
+     * @fail {Error} return Error
+     */
+    submit(id: string): Promise<ComplianceApplicationResponse>;
     [clientKey]: symbol;
 }
 

@@ -2,11 +2,10 @@ export class ComplianceDocumentResponse {
     constructor(params: object);
     apiId: string;
     documentTypeId: string;
-    complianceDocumentId: string;
     documentId: string;
+    endUserId: string;
     alias: string;
     metaInformation: string;
-    file: string;
     fileName: string;
     createdAt: string;
 }
@@ -15,7 +14,6 @@ export class CreateComplianceDocumentResponse {
     constructor(params: object);
     apiId: string;
     documentTypeId: string;
-    complianceDocumentId: string;
     documentId: string;
     endUserId: string;
     alias: string;
@@ -25,7 +23,7 @@ export class CreateComplianceDocumentResponse {
     createdAt: string;
 }
 
-export class ListComplianceDocumentResponse {
+export class ListComplianceDocumentsResponse {
     constructor(params: object);
     apiId: string;
     meta: Object;
@@ -64,7 +62,7 @@ export class ComplianceDocument extends PlivoResource {
     * @promise {boolean} return true if success
     * @fail {Error} return Error
     */
-    delete(): Promise<unknown>;
+    delete(): Promise<boolean>;
     [clientKey]: symbol;
 }
 
@@ -92,7 +90,7 @@ export class ComplianceDocumentInterface extends PlivoResourceInterface {
      * @method
      * @param {object} params - params containing options to list compliance documents by.
      */
-    list(params: object): Promise<ListComplianceDocumentResponse>;
+    list(params: object): Promise<ListComplianceDocumentsResponse>;
 
     /**
      * Create a complaince document
@@ -124,7 +122,7 @@ export class ComplianceDocumentInterface extends PlivoResourceInterface {
     * @promise {boolean} return true if success
     * @fail {Error} return Error
     */
-    delete(id: string): any;
+    delete(id: string): Promise<boolean>;
     [clientKey]: symbol;
 }
 
