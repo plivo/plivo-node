@@ -1,7 +1,7 @@
 export class ComplianceDocumentTypeResponse {
     constructor(params: object);
     apiId: string;
-    documentTypeID: string;
+    documentTypeId: string;
     documentName: string;
     description: string;
     information: object;

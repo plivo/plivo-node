@@ -1,10 +1,10 @@
 export class ComplianceRequirementResponse {
     constructor(params: object);
     apiId: string;
-    ComplianceRequirementId: string;
+    complianceRequirementId: string;
     countryIso2: string;
     numberType: string;
-    endUserType: object;
+    endUserType: string;
     acceptableDocumentTypes: string;
 }
 

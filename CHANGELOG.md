@@ -1,4 +1,13 @@
 # Change Log
+## [v4.75.1](https://github.com/plivo/plivo-node/tree/v4.75.1) (2025-07-21)
+**Feature - Comprehensive Compliance APIs TypeScript Support**
+- Added missing `submit` method for compliance applications
+- Fixed property name inconsistencies (`endUserID` → `endUserId`, `ComplianceRequirementId` → `complianceRequirementId`, `documentTypeID` → `documentTypeId`)
+- Corrected property types (`endUserType: object` → `endUserType: string`)
+- Fixed class name consistency (`ListComplianceDocumentResponse` → `ListComplianceDocumentsResponse`)
+- Improved return type accuracy for delete methods (`Promise<unknown>` → `Promise<boolean>`)
+- Added missing properties and removed incorrect ones in compliance document responses
+- Enhanced TypeScript definitions to match JavaScript implementations for better type safety and IntelliSense support
 ## [v4.75.0](https://github.com/plivo/plivo-node/tree/v4.75.0) (2025-07-07)
 **Bug Fix - Update Number API**
 - Fixed the issue where the subaccount parameter was not being updated in the Plivo Number API in node SDK
