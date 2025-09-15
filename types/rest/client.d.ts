@@ -35,6 +35,7 @@ export class Client {
     tollfreeVerification: TollfreeVerificationInterface;
     verify:VerifyInterface;
     verify_session:SessionInterface;
+    multiPartyCalls: multiPartyCalls;
     toJSON(...args: any[]): any;
 }
 /**
@@ -63,6 +64,7 @@ import { CallFeedbackInterface } from "../resources/callFeedback.js";
 import { MediaInterface } from "../resources/media.js";
 import { Phlo } from "../resources/phlo.js";
 import { EndUserInterface } from "../resources/endUsers";
+import {multiPartyCalls} from "../resources/multiPartyCalls";
 import { ComplianceDocumentTypeInterface } from "../resources/complianceDocumentTypes";
 import { ComplianceDocumentInterface} from "../resources/complianceDocuments";
 import { ComplianceRequirementInterface } from "../resources/complianceRequirements";
