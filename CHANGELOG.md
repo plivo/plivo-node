@@ -1,4 +1,9 @@
 # Change Log
+## [v4.76.0](https://github.com/plivo/plivo-node/tree/v4.76.0) (2025-10-15)
+**Feature - Compliance application rejection reason**
+- Added `rejectionReason` to compliance application responses (get, create)
+- Updated TypeScript definitions to include `rejectionReason`
+
 ## [v4.75.1](https://github.com/plivo/plivo-node/tree/v4.75.1) (2025-07-21)
 **Feature - Comprehensive Compliance APIs TypeScript Support**
 - Added missing `submit` method for compliance applications
