@@ -10,6 +10,7 @@ export class ComplianceApplicationResponse {
     numberType: string;
     complianceRequirementId: string;
     documents: Array<Object>;
+    rejectionReason: string;
     createdAt: string;
 }
 
@@ -27,6 +28,7 @@ export class CreateComplianceApplicationResponse {
     documents: Array<Object>;
     createdAt: string;
     message: string;
+    rejectionReason: string;
 }
 
 export class UpdateComplianceApplicationResponse {
