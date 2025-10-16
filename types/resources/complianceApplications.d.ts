@@ -28,7 +28,6 @@ export class CreateComplianceApplicationResponse {
     documents: Array<Object>;
     createdAt: string;
     message: string;
-    rejectionReason: string;
 }
 
 export class UpdateComplianceApplicationResponse {
