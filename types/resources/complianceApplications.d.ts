@@ -10,7 +10,7 @@ export class ComplianceApplicationResponse {
     numberType: string;
     complianceRequirementId: string;
     documents: Array<Object>;
-    rejectionReason: string;
+    rejectionReason?: string;
     createdAt: string;
 }
 
