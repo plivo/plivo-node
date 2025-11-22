@@ -12,7 +12,17 @@ var isparta = require('isparta');
 const merge = require("merge-stream");
 // Initialize the babel transpiler so ES2015 files gets compiled
 // when they're loaded
-require('babel-register');
+require('babel-register')({
+  ignore: function(filePath) {
+    // Transpile axios from node_modules, ignore everything else in node_modules
+    if (filePath.includes('node_modules')) {
+      return !filePath.includes('node_modules/axios');
+    }
+    return false;
+  },
+  presets: ['es2015', 'flow'],
+  extensions: ['.js', '.jsx', '.es6', '.es']
+});
 
 gulp.task('static', function () {
   return gulp.src(['lib/**/*.js', '!lib/rest/request-test.js', '!lib/rest/client-test.js'])
