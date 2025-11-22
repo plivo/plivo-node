@@ -46,7 +46,9 @@ gulp.task('pre-test', function () {
     .pipe(excludeGitignore())
     .pipe(istanbul({
       includeUntested: false,
-      instrumenter: isparta.Instrumenter
+      instrumenter: isparta.Instrumenter,
+      // Exclude node_modules (including axios) from instrumentation
+      ignore: ['**/node_modules/**']
     }))
     .pipe(istanbul.hookRequire());
 });
