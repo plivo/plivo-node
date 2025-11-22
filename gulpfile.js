@@ -14,9 +14,10 @@ const merge = require("merge-stream");
 // when they're loaded
 require('babel-register')({
   ignore: function(filePath) {
-    // Transpile axios from node_modules, ignore everything else in node_modules
+    // Ignore all node_modules (including axios) - they're already transpiled or CommonJS
+    // axios is CommonJS and doesn't need transpilation
     if (filePath.includes('node_modules')) {
-      return !filePath.includes('node_modules/axios');
+      return true;
     }
     return false;
   },
