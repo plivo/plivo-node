@@ -1,4 +1,8 @@
 # Change Log
+## [v4.75.3](https://github.com/plivo/plivo-node/tree/v4.75.3) (2025-11-25)
+**Vulnerabilities Fix**
+- removed dependency on request
+- 
 ## [v4.75.2](https://github.com/plivo/plivo-node/tree/v4.75.2) (2025-10-15)
 **Feature - Compliance application rejection reason**
 - Added `rejectionReason` to compliance application responses (get, create)
