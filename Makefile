@@ -13,8 +13,8 @@ start:
 
 test:
 	@[ "${CONTAINER}" ] && \
-		(docker exec -it $$CONTAINER /bin/bash -c "npm install request --no-save && npm test") || \
-		(npm install request --no-save && npm test)
+		(docker exec -it $$CONTAINER /bin/bash -c "npm test") || \
+		(npm test)
 
 run:
 	@[ "${CONTAINER}" ] && \
