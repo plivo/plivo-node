@@ -20,6 +20,7 @@ export class Client {
     lookup: LookupInterface;
     powerpacks: PowerpackInterface;
     brand: BrandInterface;
+    campaign: CampaignInterface;
     profile: ProfileInterface;
     numbers: NumberInterface;
     pricings: PricingInterface;
@@ -60,6 +61,7 @@ import { LookupInterface } from "../resources/lookup.js";
 import { PowerpackInterface } from "../resources/powerpacks.js";
 import { NumberInterface } from "../resources/numbers.js";
 import { PricingInterface } from "../resources/pricings.js";
+import { CampaignInterface } from "../resources/campaign.js";
 import { BrandInterface } from "../resources/brand.js";
 import { RecordingInterface } from "../resources/recordings.js";
 import { ProfileInterface } from "../resources/profile.js";
