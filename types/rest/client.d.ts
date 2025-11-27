@@ -31,6 +31,7 @@ export class Client {
     complianceDocumentTypes: ComplianceDocumentTypeInterface;
     complianceDocuments: ComplianceDocumentInterface;
     complianceRequirements: ComplianceRequirementInterface;
+    multiPartyCalls: MultiPartyCallInterface;
     complianceApplications: ComplianceApplicationInterface;
     loa: LOAInterface;
     hostedMessagingNumber: HostedMessagingNumberInterface;
@@ -74,6 +75,7 @@ import { ComplianceDocumentInterface} from "../resources/complianceDocuments";
 import { ComplianceRequirementInterface } from "../resources/complianceRequirements";
 import { ComplianceApplicationInterface } from "../resources/complianceApplications";
 import { LOAInterface } from "../resources/loa";
+import { MultiPartyCallInterface } from "../resources/multiPartyCall.js";
 import { HostedMessagingNumberInterface } from "../resources/hostedMessagingNumber";
 import { MaskingSessionInterface } from "../resources/maskingSession.js";
 import { TollfreeVerificationInterface } from "../resources/tollfree_verification.js";
