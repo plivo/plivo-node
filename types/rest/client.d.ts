@@ -19,6 +19,7 @@ export class Client {
     messages: MessageInterface;
     lookup: LookupInterface;
     powerpacks: PowerpackInterface;
+    profile: ProfileInterface;
     numbers: NumberInterface;
     pricings: PricingInterface;
     recordings: RecordingInterface;
@@ -59,6 +60,7 @@ import { PowerpackInterface } from "../resources/powerpacks.js";
 import { NumberInterface } from "../resources/numbers.js";
 import { PricingInterface } from "../resources/pricings.js";
 import { RecordingInterface } from "../resources/recordings.js";
+import { ProfileInterface } from "../resources/profile.js";
 import { CallFeedbackInterface } from "../resources/callFeedback.js";
 import { MediaInterface } from "../resources/media.js";
 import { Phlo } from "../resources/phlo.js";
