@@ -1,4 +1,8 @@
 # Change Log
+## [v4.75.4](https://github.com/plivo/plivo-node/tree/v4.75.4) (2026-01-06)
+**Feature - Typescript definition for list endpoints function**
+- Added Typescript definition for `list endpoints` function params
+
 ## [v4.75.3](https://github.com/plivo/plivo-node/tree/v4.75.3) (2025-11-27)
 **Feature - TypeScript Definitions for Missing APIs**
 - Added TypeScript definitions for Profile API

@@ -84,7 +84,14 @@ export class EndpointInterface extends PlivoResourceInterface {
      * @fail {Error} return Error
      */
     get(id: string): Promise<RetrieveEndpointResponse>;
-    list(): Promise<ListAllEndpointResponse>;
+    /**
+     * List all Endpoints
+     * @method
+     * @param {object} params - params to list endpoints
+     * @promise {object} return {@link ListAllEndpointResponse} object if success
+     * @fail {Error} return Error
+     */
+    list(params?: {}): Promise<ListAllEndpointResponse>;
     /**
      * Create Endpoint
      * @method
