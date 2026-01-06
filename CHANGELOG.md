@@ -1,7 +1,11 @@
 # Change Log
-## [v4.75.3](https://github.com/plivo/plivo-node/tree/v4.75.3) (2026-01-06)
-**Feature - Typescript definition for list endpoints function**
-- Added Typescript definition for `list endpoints` function params
+## [v4.75.3](https://github.com/plivo/plivo-node/tree/v4.75.3) (2025-11-27)
+**Feature - TypeScript Definitions for Missing APIs**
+- Added TypeScript definitions for Profile API
+- Added TypeScript definitions for Brand API
+- Added TypeScript definitions for Campaign API
+- Added TypeScript definitions for MultiPartyCall API
+
 ## [v4.75.2](https://github.com/plivo/plivo-node/tree/v4.75.2) (2025-10-15)
 **Feature - Compliance application rejection reason**
 - Added `rejectionReason` to compliance application responses (get, create)
