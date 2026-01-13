@@ -2,9 +2,24 @@ export class LookupResponse {
     constructor(params: object);
     apiId: string;
     phoneNumber: string;
-    country: object;
-    format: object;
-    carrier: object;
+    country: {
+      name: string;
+      iso2: string;
+      iso3: string;
+    };
+    format: {
+      e164: string;
+      national: string;
+      international: string;
+      rfc3966: string;
+    };
+    carrier: {
+      mobileCountryCode: string;
+      mobileNetworkCode: string;
+      name: string;
+      type: string;
+      ported: string;
+    };
     resourceUri: string;
 }
 export class Number extends PlivoResource {
