@@ -32,11 +32,41 @@ import {
       });
 
     it('create profile', function () {
-        var authorized_contact = {"first_name":"Hello", "last_name":"Test", "email":"vishnu@plivo.com", "title":"bro", "seniority":"admin"}
-        var address = {"street":"123", "city":"Band", "state":"NY", "postal_code":"10001", "country":"US"}
-      return client.profile.create("vishnu104", "SECONDARY", "RESELLER","PRIVATE_PROFIT","ABC Inc", "111111111", "PROFESSIONAL", "US", "ABC","NASDAQ","NONE", "google.com", address,authorized_contact)
+        var authorized_contact = {
+          "first_name": "John",
+          "last_name": "Doe",
+          "email": "test@example.com",
+          "title": "CEO",
+          "seniority": "C_LEVEL"
+        }
+        var address = {
+          "street": "123 Main Street",
+          "city": "San Francisco",
+          "state": "CA",
+          "postal_code": "94105",
+          "country": "US"
+        }
+        var business_contact_email = "employee@company.com"
+      return client.profile.create(
+        "Test Profile",
+        "",
+        "DIRECT",
+        "PUBLIC",
+        "Test Company Inc",
+        "12-3456789",
+        "TECHNOLOGY",
+        "US",
+        "TEST",
+        "NASDAQ",
+        "NONE",
+        "https://testcompany.com",
+        address,
+        authorized_contact,
+        business_contact_email
+      )
         .then(function (profile) {
           assert.equal(profile.profileUuid, '43d0616e-d50a-445a-a84e-310a089f0618')
         })
     });
+
   });

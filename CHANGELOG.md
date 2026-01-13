@@ -1,4 +1,8 @@
 # Change Log
+## [v4.75.5](https://github.com/plivo/plivo-node/tree/v4.75.5) (2026-01-13)
+**Feature - Profile API business_contact_email support**
+- Added `business_contact_email` parameter support to Profile `create` and `update` methods for PUBLIC entity types
+
 ## [v4.75.4](https://github.com/plivo/plivo-node/tree/v4.75.4) (2026-01-06)
 **Feature - Typescript definition for list endpoints function**
 - Added Typescript definition for `list endpoints` function params
