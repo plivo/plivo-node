@@ -3,6 +3,7 @@ export class BuyNumberResponse {
 	apiId: string;
 	numbers: object;
 	status: string;
+	fallbackNumber: string;
 }
 export class UpdateNumberResponse {
 	constructor(params: object);
@@ -45,10 +46,12 @@ export class PhoneNumber extends PlivoResource {
 	 * Buy Phone Number
 	 * @method
 	 * @param {string} appId - app id
+	 * @param {string} cnamLookup - cnam lookup
+	 * @param {boolean} haEnabled - enable HA Number
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(appId?: string): Promise < any > ;
+	buy(appId?: string, cnamLookup?: string, haEnabled?: boolean): Promise < any > ;
 	[clientKey]: symbol;
 }
 /**
@@ -64,10 +67,12 @@ export class PhoneNumberInterface extends PlivoResourceInterface {
 	 * Buy Phone Number
 	 * @method
 	 * @param {string} appId - app id
+	 * @param {string} cnamLookup - cnam lookup
+	 * @param {boolean} haEnabled - enable HA Number
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId?: string): Promise < any > ;
+	buy(number: string, appId?: string, cnamLookup?: string, haEnabled?: boolean): Promise < any > ;
 	[clientKey]: symbol;
 }
 /**
@@ -101,10 +106,12 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @method
 	 * @param {string} number - number to buy
 	 * @param {string} appId - app id
+	 * @param {string} cnamLookup - cnam lookup
+	 * @param {boolean} haEnabled - enable HA Number
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId?: string): Promise < BuyNumberResponse > ;
+	buy(number: string, appId?: string, cnamLookup?: string, haEnabled?: boolean): Promise < BuyNumberResponse > ;
 	/**
 	 * Add own number from carrier
 	 * @method
