@@ -3,7 +3,7 @@ export class BuyNumberResponse {
 	apiId: string;
 	numbers: object;
 	status: string;
-	fallbackNumber: string;
+	fallbackNumber?: string;
 }
 export class UpdateNumberResponse {
 	constructor(params: object);
@@ -15,7 +15,7 @@ export class SearchNumberResponse {
 	constructor(params: object);
 	number: string;
 	prefix: string;
-	city: string;	
+	city: string;
 	country: string;
 	region: string;
 	rate_center: string;
@@ -40,18 +40,18 @@ export class SearchNumberResponse {
  * @param {object} [data] - data of call
  */
 export class PhoneNumber extends PlivoResource {
-	constructor(client: Function, data ? : {});
+	constructor(client: Function, data?: {});
 	id: string;
 	/**
 	 * Buy Phone Number
 	 * @method
 	 * @param {string} appId - app id
 	 * @param {string} cnamLookup - cnam lookup
-	 * @param {boolean} haEnabled - enable HA Number
+	 * @param {boolean} haEnable - enable HA Number
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(appId?: string, cnamLookup?: string, haEnabled?: boolean): Promise < any > ;
+	buy(number: string, appId?: string, cnamLookup?: string, haEnable?: boolean): Promise<any>;
 	[clientKey]: symbol;
 }
 /**
@@ -62,17 +62,17 @@ export class PhoneNumber extends PlivoResource {
  * @param {string} [data.test] - test data
  */
 export class PhoneNumberInterface extends PlivoResourceInterface {
-	constructor(client: Function, data ? : {});
+	constructor(client: Function, data?: {});
 	/**
 	 * Buy Phone Number
 	 * @method
 	 * @param {string} appId - app id
 	 * @param {string} cnamLookup - cnam lookup
-	 * @param {boolean} haEnabled - enable HA Number
+	 * @param {boolean} haEnable - enable HA Number
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId?: string, cnamLookup?: string, haEnabled?: boolean): Promise < any > ;
+	buy(number: string, appId?: string, cnamLookup?: string, haEnable?: boolean): Promise<any>;
 	[clientKey]: symbol;
 }
 /**
@@ -82,7 +82,7 @@ export class PhoneNumberInterface extends PlivoResourceInterface {
  * @param {object} [data] - data of call
  */
 export class NumberResource extends PlivoResource {
-	constructor(client: Function, data ? : {});
+	constructor(client: Function, data?: {});
 	id: string;
 	/**
 	 * Unrent Number
@@ -90,7 +90,7 @@ export class NumberResource extends PlivoResource {
 	 * @promise {boolean} return true if success
 	 * @fail {Error} return Error
 	 */
-	unrent(number: string): Promise < any > ;
+	unrent(number: string): Promise<any>;
 	[clientKey]: symbol;
 }
 /**
@@ -107,11 +107,11 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @param {string} number - number to buy
 	 * @param {string} appId - app id
 	 * @param {string} cnamLookup - cnam lookup
-	 * @param {boolean} haEnabled - enable HA Number
+	 * @param {boolean} haEnable - enable HA Number
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId?: string, cnamLookup?: string, haEnabled?: boolean): Promise < BuyNumberResponse > ;
+	buy(number: string, appId?: string, cnamLookup?: string, haEnable?: boolean): Promise<BuyNumberResponse>;
 	/**
 	 * Add own number from carrier
 	 * @method
@@ -122,7 +122,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	addOwnNumber(numbers: string, carrier: string, region: string, optionalParams: object): Promise < UpdateNumberResponse > ;
+	addOwnNumber(numbers: string, carrier: string, region: string, optionalParams: object): Promise<UpdateNumberResponse>;
 	/**
 	 * Add own number from carrier
 	 * @method
@@ -131,7 +131,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {@link PhoneNumberInterface} return PhoneNumbers Object if success
 	 * @fail {Error} return Error
 	 */
-	search(countryISO: string, optionalParams: object): Promise < SearchNumberResponse[] > ;
+	search(countryISO: string, optionalParams: object): Promise<SearchNumberResponse[]>;
 	/**
 	 * Update Number
 	 * @method
@@ -147,7 +147,7 @@ export class NumberInterface extends PlivoResourceInterface {
 		appId: string;
 		subAccount: string;
 		alias: string;
-	}): Promise < UpdateNumberResponse > ;
+	}): Promise<UpdateNumberResponse>;
 	/**
 	 * Unrent Number
 	 * @method
@@ -155,7 +155,7 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @promise {boolean} return true if success
 	 * @fail {Error} return Error
 	 */
-	unrent(number: string): Promise < any > ;
+	unrent(number: string): Promise<any>;
 	[clientKey]: symbol;
 }
 import {
@@ -165,4 +165,4 @@ declare const clientKey: unique symbol;
 import {
 	PlivoResourceInterface
 } from "../base";
-export {};
+export { };
