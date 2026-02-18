@@ -71,9 +71,14 @@ export class CampaignInterface extends PlivoResource {
      * @param {boolean} affiliate_marketing
      * @param {string} sample1
      * @param {string} sample2
+     * @param {string} sample3
+     * @param {string} sample4
+     * @param {string} sample5
      * @param {string} message_flow
      * @param {string} help_message
      * @param {string} optout_message
+     * @param {string} terms_and_conditions_link
+     * @param {string} privacy_policy_link
      * @param {object} params - additional params
      * @promise {object} return {@link CampaignCreateResponse} object
      * @fail {Error} return Error
@@ -95,9 +100,14 @@ export class CampaignInterface extends PlivoResource {
         affiliate_marketing: boolean,
         sample1: string,
         sample2: string,
+        sample3: string,
+        sample4: string,
+        sample5: string,
         message_flow: string,
         help_message: string,
         optout_message: string,
+        terms_and_conditions_link: string,
+        privacy_policy_link: string,
         params?: {}
     ): Promise<CampaignCreateResponse>;
 
@@ -124,6 +134,9 @@ export class CampaignInterface extends PlivoResource {
      * @param {string} description
      * @param {string} sample1
      * @param {string} sample2
+     * @param {string} sample3
+     * @param {string} sample4
+     * @param {string} sample5
      * @param {string} message_flow
      * @param {string} help_message
      * @param {string} optin_keywords
@@ -131,6 +144,8 @@ export class CampaignInterface extends PlivoResource {
      * @param {string} optout_keywords
      * @param {string} optout_message
      * @param {string} help_keywords
+     * @param {string} terms_and_conditions_link
+     * @param {string} privacy_policy_link
      * @param {object} params - additional params
      * @promise {object} return {@link PlivoGenericResponse} object
      * @fail {Error} return Error
@@ -141,6 +156,9 @@ export class CampaignInterface extends PlivoResource {
         description: string,
         sample1: string,
         sample2: string,
+        sample3: string,
+        sample4: string,
+        sample5: string,
         message_flow: string,
         help_message: string,
         optin_keywords: string,
@@ -148,6 +166,8 @@ export class CampaignInterface extends PlivoResource {
         optout_keywords: string,
         optout_message: string,
         help_keywords: string,
+        terms_and_conditions_link: string,
+        privacy_policy_link: string,
         params?: {}
     ): Promise<any>;
 
