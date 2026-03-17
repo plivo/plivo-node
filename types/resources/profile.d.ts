@@ -111,6 +111,10 @@ export class ProfileInterface extends PlivoResource {
             company_name?: string;
             website?: string;
             business_contact_email?: string;
+            ein?: string;
+            ein_issuing_country?: string;
+            alt_business_id?: string;
+            alt_business_id_type?: string;
         }
     ): Promise<ProfileResponse>;
     [clientKey]: symbol;
