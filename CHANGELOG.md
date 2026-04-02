@@ -1,4 +1,10 @@
 # Change Log
+## [v4.75.9](https://github.com/plivo/plivo-node/tree/v4.75.9) (2026-04-02)
+**Bug Fix - Multipart file upload for Compliance Documents**
+- Fixed `recursivelyRenameObject` in `camelCaseRequestWrapper` destroying non-plain objects (ReadStream, Buffer) by running `_mapKeys`/`_mapValues` on them, which stripped their prototype methods and caused `"source.on is not a function"` errors
+- Fixed multipart handler in axios to accept ReadStream and Buffer objects directly in addition to string file paths, resolving `"The 'path' argument must be of type string"` errors
+- `complianceDocuments.create()`, `complianceDocuments.update()`, `media.upload()`, and `loa.create()` now support both file path strings and ReadStream objects for the `file` parameter
+
 ## [v4.75.8](https://github.com/plivo/plivo-node/tree/v4.75.8) (2026-03-18)
 **Feature - Profile Update API additional fields support**
 - Added `ein`, `ein_issuing_country`, `alt_business_id`, `alt_business_id_type` parameters to Profile `update` method
