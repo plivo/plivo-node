@@ -39,6 +39,9 @@ export class Client {
     tollfreeVerification: TollfreeVerificationInterface;
     verify:VerifyInterface;
     verify_session:SessionInterface;
+    phoneNumberCompliance: PhoneNumberComplianceInterface;
+    phoneNumberComplianceRequirements: PhoneNumberComplianceRequirementInterface;
+    phoneNumberComplianceLink: PhoneNumberComplianceLinkInterface;
     toJSON(...args: any[]): any;
 }
 /**
@@ -81,4 +84,4 @@ import { MaskingSessionInterface } from "../resources/maskingSession.js";
 import { TollfreeVerificationInterface } from "../resources/tollfree_verification.js";
 import { VerifyInterface } from "../resources/verifyCallerId.js";
 import { SessionInterface } from "../resources/verify.js";
-
+import { PhoneNumberComplianceInterface, PhoneNumberComplianceRequirementInterface, PhoneNumberComplianceLinkInterface } from "../resources/phoneNumberCompliance";
