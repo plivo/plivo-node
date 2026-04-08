@@ -1,4 +1,13 @@
 # Change Log
+## [v4.76.0](https://github.com/plivo/plivo-node/tree/v4.76.0) (2026-04-08)
+**Feature - PhoneNumber Compliance API support**
+- Added `phoneNumberComplianceRequirements` interface for discovering compliance requirements by country, number type, and user type
+- Added `phoneNumberCompliance` interface with full CRUD support (create, get, list, update, delete) for compliance applications
+- Added `phoneNumberComplianceLink` interface for bulk linking phone numbers to accepted compliance applications
+- Create and update operations support multipart file uploads for compliance documents
+- Fixed `camelCaseRequestWrapper` in `utils.js` to preserve bracket-notation keys (e.g., `documents[0].file`)
+- Extended multipart handler in `axios.js` to support indexed document file fields
+
 ## [v4.75.9](https://github.com/plivo/plivo-node/tree/v4.75.9) (2026-04-02)
 **Bug Fix - Multipart file upload for Compliance Documents**
 - Fixed `recursivelyRenameObject` in `camelCaseRequestWrapper` destroying non-plain objects (ReadStream, Buffer) by running `_mapKeys`/`_mapValues` on them, which stripped their prototype methods and caused `"source.on is not a function"` errors
