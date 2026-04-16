@@ -1,4 +1,8 @@
 # Change Log
+## [v4.76.1](https://github.com/plivo/plivo-node/tree/v4.76.1) (2026-04-16)
+**Bug Fix - TollfreeVerification TypeScript declaration**
+- Removed broken import in `tollfree_verification.d.ts` that referenced `../../lib/resources/tollfree_verification` — a path that doesn't exist in the published npm package, causing `TS2307: Cannot find module` errors for TypeScript consumers
+
 ## [v4.76.0](https://github.com/plivo/plivo-node/tree/v4.76.0) (2026-04-08)
 **Feature - PhoneNumber Compliance API support**
 - Added `phoneNumberComplianceRequirements` interface for discovering compliance requirements by country, number type, and user type
