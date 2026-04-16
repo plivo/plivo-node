@@ -11,28 +11,28 @@ describe('PhoneNumberComplianceRequirementInterface', function () {
 
   it('should get compliance requirements successfully', function () {
     return client.phoneNumberComplianceRequirements.get({
-      countryIso2: 'US',
+      countryIso: 'US',
       numberType: 'local',
-      endUserType: 'business'
+      userType: 'business'
     })
     .then(function (res) {
-      assert.equal(res.complianceRequirementId, 'cr-123');
-      assert.equal(res.countryIso2, 'US');
+      assert.equal(res.requirementId, 'cr-123');
+      assert.equal(res.countryIso, 'US');
       assert.equal(res.numberType, 'local');
-      assert.equal(res.endUserType, 'business');
-      assert.ok(Array.isArray(res.acceptableDocumentTypes));
-      assert.equal(res.acceptableDocumentTypes.length, 2);
+      assert.equal(res.userType, 'business');
+      assert.ok(Array.isArray(res.documentTypes));
+      assert.equal(res.documentTypes.length, 2);
     });
   });
 
-  it('should return acceptable document types with details', function () {
+  it('should return document types with details', function () {
     return client.phoneNumberComplianceRequirements.get({
-      countryIso2: 'US',
+      countryIso: 'US',
       numberType: 'local',
-      endUserType: 'business'
+      userType: 'business'
     })
     .then(function (res) {
-      let docTypes = res.acceptableDocumentTypes;
+      let docTypes = res.documentTypes;
       // Keys are camelCased by the camelCaseRequestWrapper
       assert.equal(docTypes[0].documentTypeId, 'dt-001');
       assert.equal(docTypes[0].documentName, 'Address Proof');
@@ -46,7 +46,7 @@ describe('PhoneNumberComplianceRequirementInterface', function () {
     return client.phoneNumberComplianceRequirements.get()
     .then(function (res) {
       assert.ok(res.apiId);
-      assert.ok(res.acceptableDocumentTypes);
+      assert.ok(res.documentTypes);
     });
   });
 });
@@ -59,37 +59,29 @@ describe('PhoneNumberComplianceInterface', function () {
 
   it('should create compliance application successfully', function () {
     return client.phoneNumberCompliance.create({
-      complianceRequirementId: 'cr-123',
-      endUserId: 'eu-789',
+      requirementId: 'cr-123',
       alias: 'test-compliance',
-      endUserType: 'business',
-      countryIso2: 'US',
+      userType: 'business',
+      countryIso: 'US',
       numberType: 'local'
     })
     .then(function (res) {
       assert.equal(res.complianceId, 'pnc-456');
-      assert.equal(res.alias, 'test-compliance');
-      assert.equal(res.status, 'draft');
       assert.equal(res.message, 'Compliance application created successfully');
     });
   });
 
-  it('should create compliance and return all fields', function () {
+  it('should create compliance and return complianceId and message', function () {
     return client.phoneNumberCompliance.create({
-      complianceRequirementId: 'cr-123',
-      endUserId: 'eu-789',
+      requirementId: 'cr-123',
       alias: 'my-compliance',
-      endUserType: 'business',
-      countryIso2: 'US',
+      userType: 'business',
+      countryIso: 'US',
       numberType: 'local'
     })
     .then(function (res) {
       assert.ok(res.complianceId);
-      assert.equal(res.endUserType, 'business');
-      assert.equal(res.countryIso2, 'US');
-      assert.equal(res.numberType, 'local');
-      assert.equal(res.complianceRequirementId, 'cr-123');
-      assert.ok(res.createdAt);
+      assert.ok(res.message);
     });
   });
 
@@ -99,8 +91,8 @@ describe('PhoneNumberComplianceInterface', function () {
     return client.phoneNumberCompliance.list()
     .then(function (res) {
       assert.ok(res.meta);
-      assert.ok(res.objects);
-      assert.equal(res.objects.length, 2);
+      assert.ok(res.compliances);
+      assert.equal(res.compliances.length, 2);
       assert.equal(res.meta.totalCount, 2);
     });
   });
@@ -108,14 +100,13 @@ describe('PhoneNumberComplianceInterface', function () {
   it('should list compliance applications with filters', function () {
     return client.phoneNumberCompliance.list({
       status: 'approved',
-      endUserId: 'eu-789',
       numberType: 'local',
       limit: 10,
       offset: 0
     })
     .then(function (res) {
       assert.ok(res.meta);
-      assert.ok(res.objects);
+      assert.ok(res.compliances);
     });
   });
 
@@ -137,17 +128,17 @@ describe('PhoneNumberComplianceInterface', function () {
   it('should list compliance and return object details', function () {
     return client.phoneNumberCompliance.list()
     .then(function (res) {
-      let first = res.objects[0];
+      let first = res.compliances[0];
       assert.equal(first.complianceId, 'pnc-456');
       assert.equal(first.alias, 'compliance-us-local');
       assert.equal(first.status, 'approved');
-      assert.equal(first.countryIso2, 'US');
+      assert.equal(first.countryIso, 'US');
 
-      let second = res.objects[1];
+      let second = res.compliances[1];
       assert.equal(second.complianceId, 'pnc-789');
       assert.equal(second.alias, 'compliance-de-mobile');
       assert.equal(second.status, 'draft');
-      assert.equal(second.countryIso2, 'DE');
+      assert.equal(second.countryIso, 'DE');
     });
   });
 
@@ -159,9 +150,8 @@ describe('PhoneNumberComplianceInterface', function () {
       assert.equal(res.complianceId, 'pnc-456');
       assert.equal(res.alias, 'compliance-us-local');
       assert.equal(res.status, 'approved');
-      assert.equal(res.endUserType, 'business');
-      assert.equal(res.endUserId, 'eu-789');
-      assert.equal(res.countryIso2, 'US');
+      assert.equal(res.userType, 'business');
+      assert.equal(res.countryIso, 'US');
       assert.equal(res.numberType, 'local');
     });
   });
@@ -185,6 +175,8 @@ describe('PhoneNumberComplianceInterface', function () {
       assert.equal(res.rejectionReason, 'Document expired');
       assert.ok(Array.isArray(res.documents));
       assert.equal(res.documents.length, 1);
+      assert.ok(Array.isArray(res.linkedNumbers));
+      assert.equal(res.linkedNumbers.length, 2);
     });
   });
 
@@ -286,7 +278,10 @@ describe('PhoneNumberComplianceLinkInterface', function () {
       phoneNumber: '+14155551234'
     })
     .then(function (res) {
-      assert.equal(res.message, 'Phone number(s) linked to compliance successfully');
+      assert.equal(res.totalCount, 1);
+      assert.equal(res.updatedCount, 1);
+      assert.ok(Array.isArray(res.report));
+      assert.equal(res.report[0].status, 'success');
       assert.ok(res.apiId);
     });
   });
@@ -294,7 +289,7 @@ describe('PhoneNumberComplianceLinkInterface', function () {
   it('should link with empty params and still resolve', function () {
     return client.phoneNumberComplianceLink.link({})
     .then(function (res) {
-      assert.ok(res.message);
+      assert.ok(res.totalCount !== undefined);
     });
   });
 });
@@ -306,7 +301,7 @@ describe('PhoneNumberCompliance URL paths', function () {
   it('should use correct URL path for requirements (PhoneNumber/Compliance/Requirements/)', function () {
     // This test verifies the requirement endpoint resolves, which means
     // request-test matched 'PhoneNumber/Compliance/Requirements/' action
-    return client.phoneNumberComplianceRequirements.get({ countryIso2: 'US' })
+    return client.phoneNumberComplianceRequirements.get({ countryIso: 'US' })
     .then(function (res) {
       assert.ok(res.apiId);
     });

@@ -1,11 +1,11 @@
 export class PhoneNumberComplianceRequirementResponse {
     constructor(params: object);
     apiId: string;
-    complianceRequirementId: string;
-    countryIso2: string;
+    requirementId: string;
+    countryIso: string;
     numberType: string;
-    endUserType: string;
-    acceptableDocumentTypes: Array<Object>;
+    userType: string;
+    documentTypes: Array<Object>;
 }
 
 /**
@@ -21,10 +21,9 @@ export class PhoneNumberComplianceRequirementInterface extends PlivoResourceInte
      * get phone number compliance requirements
      * @method
      * @param {object} params - params to get requirements
-     * @param {string} [params.countryIso2] - Country ISO2 code
+     * @param {string} [params.countryIso] - Country ISO code
      * @param {string} [params.numberType] - Number type
-     * @param {string} [params.endUserType] - End user type
-     * @param {string} [params.phoneNumber] - Phone number
+     * @param {string} [params.userType] - User type
      * @promise {object} return {@link PhoneNumberComplianceRequirementResponse} object
      * @fail {Error} return Error
      */
@@ -38,31 +37,23 @@ export class PhoneNumberComplianceResponse {
     complianceId: string;
     alias: string;
     status: string;
-    endUserType: string;
-    endUserId: string;
-    countryIso2: string;
+    countryIso: string;
     numberType: string;
-    complianceRequirementId: string;
-    documents: Array<Object>;
-    data: object;
+    userType: string;
+    callbackUrl?: string;
+    callbackMethod?: string;
     rejectionReason?: string;
     createdAt: string;
+    updatedAt?: string;
+    endUser?: object;
+    documents: Array<Object>;
+    linkedNumbers?: Array<string>;
 }
 
 export class CreatePhoneNumberComplianceResponse {
     constructor(params: object);
     apiId: string;
     complianceId: string;
-    alias: string;
-    status: string;
-    endUserType: string;
-    endUserId: string;
-    countryIso2: string;
-    numberType: string;
-    complianceRequirementId: string;
-    documents: Array<Object>;
-    data: object;
-    createdAt: string;
     message: string;
 }
 
@@ -70,13 +61,14 @@ export class ListPhoneNumberComplianceResponse {
     constructor(params: object);
     apiId: string;
     meta: Object;
-    objects: Array<Object>;
+    compliances: Array<Object>;
 }
 
 export class UpdatePhoneNumberComplianceResponse {
     constructor(params: object);
     apiId: string;
     message: string;
+    compliance?: object;
 }
 
 /**
@@ -134,8 +126,8 @@ export class PhoneNumberComplianceInterface extends PlivoResourceInterface {
      * @method
      * @param {object} params - params to list compliances
      * @param {string} [params.status] - Status of the compliance
-     * @param {string} [params.endUserId] - End user ID
      * @param {string} [params.numberType] - Number Type
+     * @param {string} [params.userType] - User type
      * @param {integer} [params.offset] - No of value items by which results should be offset
      * @param {integer} [params.limit] - No of value items by which results should be offset
      */
@@ -145,12 +137,13 @@ export class PhoneNumberComplianceInterface extends PlivoResourceInterface {
      * Create a phone number compliance
      * @method
      * @param {object} params
-     * @param {string} [params.complianceRequirementId] - compliance requirement ID
-     * @param {string} [params.endUserId] - End user ID
+     * @param {string} [params.requirementId] - Requirement ID
      * @param {string} [params.alias] - Alias
-     * @param {string} [params.endUserType] - End user type
-     * @param {string} [params.countryIso2] - Country ISO2
+     * @param {string} [params.countryIso] - Country ISO
      * @param {string} [params.numberType] - Number Type
+     * @param {string} [params.userType] - User type
+     * @param {string} [params.callbackUrl] - Callback URL
+     * @param {string} [params.callbackMethod] - Callback method
      * @param {object} [params.data] - Data object
      * @param {Array}  [params.documents] - Array of document objects with file paths
      * @fail {Error} return Error
@@ -181,7 +174,9 @@ export class PhoneNumberComplianceInterface extends PlivoResourceInterface {
 export class PhoneNumberComplianceLinkResponse {
     constructor(params: object);
     apiId: string;
-    message: string;
+    totalCount: number;
+    updatedCount: number;
+    report: Array<Object>;
 }
 
 /**
