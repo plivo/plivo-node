@@ -1,4 +1,16 @@
 # Change Log
+## [v4.76.1](https://github.com/plivo/plivo-node/tree/v4.76.1) (2026-04-16)
+**Bug Fix - PhoneNumber Compliance API response mapping and TypeScript types**
+- Fixed response field mapping for Requirements API (`requirementId`, `countryIso`, `userType`, `documentTypes` were mapped to wrong names)
+- Fixed GET single compliance to unwrap `compliance` wrapper key from API response
+- Fixed List response to use `compliances` key instead of `objects`
+- Fixed Link response to include `totalCount`, `updatedCount`, `report` fields
+- Fixed TypeScript `documents` field to be optional (only present with `expand=documents`)
+- Fixed TypeScript `linkedNumbers` type from `Array<string>` to `Array<Object>`
+- Added `expand` parameter documentation to `get()` method
+- Fixed misleading JSDoc for `create()`, `list()`, and `link()` methods
+- Strengthened unit tests to catch response mapping bugs
+
 ## [v4.76.0](https://github.com/plivo/plivo-node/tree/v4.76.0) (2026-04-08)
 **Feature - PhoneNumber Compliance API support**
 - Added `phoneNumberComplianceRequirements` interface for discovering compliance requirements by country, number type, and user type
