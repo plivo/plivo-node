@@ -125,27 +125,28 @@ export class PhoneNumberComplianceInterface extends PlivoResourceInterface {
      * list phone number compliances
      * @method
      * @param {object} params - params to list compliances
-     * @param {string} [params.status] - Status of the compliance
-     * @param {string} [params.numberType] - Number Type
-     * @param {string} [params.userType] - User type
+     * @param {string} [params.status] - Filter by status (draft, submitted, accepted, rejected, suspended, expired)
+     * @param {string} [params.countryIso] - Filter by country ISO code (e.g., IN, DE, US)
+     * @param {string} [params.numberType] - Filter by number type (local, mobile, tollfree)
+     * @param {string} [params.userType] - Filter by user type (individual, business)
+     * @param {string} [params.alias] - Filter by alias
+     * @param {string} [params.expand] - Comma-separated related objects to include (end_user, documents, linked_numbers)
      * @param {integer} [params.offset] - No of value items by which results should be offset
-     * @param {integer} [params.limit] - No of value items by which results should be offset
+     * @param {integer} [params.limit] - Max results per page (default 20, max 100)
      */
     list(params?: object): Promise<ListPhoneNumberComplianceResponse>;
 
     /**
-     * Create a phone number compliance
+     * Create a phone number compliance application
      * @method
      * @param {object} params
-     * @param {string} [params.requirementId] - Requirement ID
-     * @param {string} [params.alias] - Alias
-     * @param {string} [params.countryIso] - Country ISO
-     * @param {string} [params.numberType] - Number Type
-     * @param {string} [params.userType] - User type
-     * @param {string} [params.callbackUrl] - Callback URL
-     * @param {string} [params.callbackMethod] - Callback method
-     * @param {object} [params.data] - Data object
-     * @param {Array}  [params.documents] - Array of document objects with file paths
+     * @param {object} params.data - Compliance application data (JSON stringified internally). Contains:
+     *   country_iso (required), number_type (required), alias (required),
+     *   end_user (required: {type, name, email, address_line1, city, state, postal_code, country}),
+     *   documents (required: [{document_type_id, data_fields: {key: value}}]),
+     *   callback_url (optional), callback_method (optional: GET or POST)
+     * @param {Array} [params.documents] - Array of file objects [{file: '/path/to/file.pdf'}] for uploads
+     * @promise {object} return {@link CreatePhoneNumberComplianceResponse} object
      * @fail {Error} return Error
      */
     create(params: object): Promise<CreatePhoneNumberComplianceResponse>;
@@ -189,11 +190,10 @@ export class PhoneNumberComplianceLinkInterface extends PlivoResourceInterface {
     constructor(client: Function, data?: {});
 
     /**
-     * Link a phone number to a compliance
+     * Bulk link phone numbers to compliance applications
      * @method
      * @param {object} params
-     * @param {string} [params.complianceId] - Compliance ID
-     * @param {string} [params.phoneNumber] - Phone number
+     * @param {Array} params.numbers - Array of objects [{number: '+E.164', compliance_application_id: 'uuid'}]
      * @promise {object} return {@link PhoneNumberComplianceLinkResponse} object
      * @fail {Error} return Error
      */
