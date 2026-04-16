@@ -150,7 +150,6 @@ export class TollfreeVerificationInterface extends PlivoResourceInterface {
     [clientKey]: symbol;
 }
 
-import { TollfreeVerification } from "../../lib/resources/tollfree_verification";
 import { PlivoResource } from "../base";
 declare const clientKey: unique symbol;
 import { PlivoResourceInterface } from "../base";
