@@ -133,20 +133,61 @@ export class NumberInterface extends PlivoResourceInterface {
 	 */
 	search(countryISO: string, optionalParams: object): Promise<SearchNumberResponse[]>;
 	/**
+	 * List rented Account Phone Numbers
+	 * @method
+	 * @param {object} [params]
+	 */
+	list(params?: {
+		type?: string;
+		numberStartswith?: string;
+		subAccount?: string;
+		alias?: string;
+		services?: string;
+		cnamLookup?: string;
+		renewal_date?: string;
+		renewal_date__lt?: string;
+		renewal_date__lte?: string;
+		renewal_date__gt?: string;
+		renewal_date__gte?: string;
+		tendlcRegistrationStatus?: string;
+		tendlcCampaignId?: string;
+		tollFreeSmsVerification?: string;
+		limit?: number;
+		offset?: number;
+	}): Promise<NumberResource[]>;
+	/**
 	 * Update Number
 	 * @method
 	 * @param {string} number - number to update
 	 * @param {object} params
-	 * @param {string} [params.appId] - app id
-	 * @param {string} [params.subAccount] - auth_id of subaccount
-	 * @param {string} [params.alias] - textual name of number
+	 * @param {string} [params.appId] - app id linked to the number
+	 * @param {string} [params.subAccount] - auth_id of subaccount the number is transferred to
+	 * @param {string} [params.alias] - textual name of the number
+	 * @param {string} [params.complianceApplicationId] - approved regulatory compliance application id to link to the number (note: the public docs show this as `compliance_id` but the backend wire param is `compliance_application_id`)
+	 * @param {string} [params.cnamLookup] - 'enabled' or 'disabled' (US numbers only)
+	 * @param {string} [params.cnam] - caller ID name to use for outbound calls
+	 * @param {string} [params.cnamCallbackUrl] - URL to notify when CNAM registration changes
+	 * @param {string} [params.cnamCallbackMethod] - 'GET' or 'POST' for the CNAM callback
+	 * @param {string} [params.callerReputation] - 'enabled' or 'disabled'
+	 * @param {string} [params.profileUuid] - business profile uuid to associate with the number
+	 * @param {string} [params.callerReputationCallbackUrl] - URL to notify on caller reputation status changes
+	 * @param {string} [params.callerReputationCallbackMethod] - 'GET' or 'POST' for the caller reputation callback
 	 * @promise {@link NumberResource} return NumberResource Object if success
 	 * @fail {Error} return Error
 	 */
-	update(number: string, params: {
-		appId: string;
-		subAccount: string;
-		alias: string;
+	update(number: string, params?: {
+		appId?: string;
+		subAccount?: string;
+		alias?: string;
+		complianceApplicationId?: string;
+		cnamLookup?: string;
+		cnam?: string;
+		cnamCallbackUrl?: string;
+		cnamCallbackMethod?: string;
+		callerReputation?: string;
+		profileUuid?: string;
+		callerReputationCallbackUrl?: string;
+		callerReputationCallbackMethod?: string;
 	}): Promise<UpdateNumberResponse>;
 	/**
 	 * Unrent Number

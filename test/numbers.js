@@ -35,10 +35,55 @@ describe('NumberInterface', function () {
   });
 
   it('edit a number', function () {
-    return client.numbers.update('+919999999990', 'appid', 'subaccount', 'alias')
+    return client.numbers.update('+919999999990', { appId: 'appid', subAccount: 'SA1234567890ABCDEFGH', alias: 'alias' })
       .then(function(numbers) {
         assert.equal(numbers.message, 'changed')
       })
+  });
+
+  it('edit a number with full param surface', function () {
+    return client.numbers.update('+919999999990', {
+      appId: '12345',
+      subAccount: 'SA1234567890ABCDEFGH',
+      alias: 'support-line',
+      complianceApplicationId: 'comp-app-uuid',
+      cnamLookup: 'enabled',
+      cnam: 'Plivo Inc',
+      cnamCallbackUrl: 'https://example.com/cnam',
+      cnamCallbackMethod: 'POST',
+      callerReputation: 'enabled',
+      profileUuid: 'profile-uuid',
+      callerReputationCallbackUrl: 'https://example.com/reputation',
+      callerReputationCallbackMethod: 'POST'
+    }).then(function(numbers) {
+      assert.equal(numbers.message, 'changed')
+    })
+  });
+
+  it('edit a number with no params does not throw', function () {
+    return client.numbers.update('+919999999990')
+      .then(function(numbers) {
+        assert.equal(numbers.message, 'changed')
+      })
+  });
+
+  it('list rented numbers with full filter surface', function () {
+    return client.numbers.list({
+      type: 'local',
+      numberStartswith: '1408',
+      subAccount: 'SA1234567890ABCDEFGH',
+      alias: 'support-line',
+      services: 'voice,sms',
+      cnamLookup: 'enabled',
+      tendlcRegistrationStatus: 'COMPLETED',
+      tendlcCampaignId: 'CXXXX',
+      tollFreeSmsVerification: 'VERIFIED',
+      renewal_date__gte: '2026-01-01',
+      limit: 10,
+      offset: 0
+    }).then(function(numbers) {
+      assert.equal(numbers.length, 1)
+    })
   });
 
   it('should throw error for number', function () {

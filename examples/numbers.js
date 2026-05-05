@@ -12,7 +12,7 @@ client.numbers.search('US')
   })
   .then(function(number){
     console.log("\n============ get ===========\n", number)
-    return number.update(null, null, 'new alias')
+    return number.update(number.id, { alias: 'new alias' })
   })
   .then(function(number){
     console.log("\n============ update ===========\n", number)
