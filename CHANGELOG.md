@@ -1,4 +1,14 @@
 # Change Log
+## [v4.77.0](https://github.com/plivo/plivo-node/tree/v4.77.0) (2026-05-05)
+**Feature - Account Phone Number typed param surface + bug fixes**
+- Extended `numbers.update()` typed surface to cover all documented params: `complianceApplicationId`, `cnam`, `cnamCallbackUrl`, `cnamCallbackMethod`, `callerReputation`, `profileUuid`, `callerReputationCallbackUrl`, `callerReputationCallbackMethod` (in addition to existing `appId`, `subAccount`, `alias`, `cnamLookup`)
+- Added typed `numbers.list()` filter surface: `type`, `numberStartswith`, `subAccount`, `alias`, `services`, `cnamLookup`, `renewal_date` (with `__lt`/`__lte`/`__gt`/`__gte` operators), `tendlcRegistrationStatus`, `tendlcCampaignId`, `tollFreeSmsVerification`, `limit`, `offset`
+- Note: the public docs label the compliance param as `compliance_id`, but the backend wire param is `compliance_application_id` — the SDK uses `complianceApplicationId` (camelCase), which serializes to the correct wire name. JSDoc + `.d.ts` flag the docs discrepancy.
+- Fixed `numbers.update(number)` crashing when called with no `params` arg (`TypeError: Cannot read properties of undefined`)
+- Fixed broken `examples/numbers.js` update call that passed positional args instead of an object
+- Fixed misleading `test/numbers.js` update test that passed a string instead of a params object
+- TypeScript declarations updated to mirror the new typed surface
+
 ## [v4.76.2](https://github.com/plivo/plivo-node/tree/v4.76.2) (2026-04-16)
 **Bug Fix - PhoneNumber Compliance API response mapping and TypeScript types**
 - Fixed response field mapping for Requirements API (`requirementId`, `countryIso`, `userType`, `documentTypes` were mapped to wrong names)
