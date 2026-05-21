@@ -14,7 +14,7 @@ import {
       return client.profile.get("06ecae31-4bf8-40b9-ac62-e902418e9935")
         .then(function (response) {
           assert.equal(response.profile.profileUuid, "06ecae31-4bf8-40b9-ac62-e902418e9935")
-          assert.equal(response.profile.dba, "ABC DBA")
+          assert.equal(response.profile.doing_business_as, "ABC DBA")
         })
     });
     

@@ -117,7 +117,7 @@ export class ProfileInterface extends PlivoResource {
             ein_issuing_country?: string;
             alt_business_id?: string;
             alt_business_id_type?: string;
-            dba?: string;
+            doing_business_as?: string;
         }
     ): Promise<ProfileResponse>;
     [clientKey]: symbol;
