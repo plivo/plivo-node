@@ -69,7 +69,7 @@ export class ProfileInterface extends PlivoResource {
      * @param {object} address
      * @param {object} authorized_contact
      * @param {string} business_contact_email
-     * @param {string} dba - Doing Business As (customer-facing name, optional)
+     * @param {string} doing_business_as - Doing Business As (customer-facing name, optional)
      * @return profileResponse response output
      */
     create(
@@ -88,7 +88,7 @@ export class ProfileInterface extends PlivoResource {
         address: object,
         authorized_contact: object,
         business_contact_email?: string,
-        dba?: string
+        doing_business_as?: string
     ): Promise<ProfileResponse>;
 
     /**
