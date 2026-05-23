@@ -1,4 +1,27 @@
 # Change Log
+## [4.78.0](https://github.com/plivo/plivo-node/tree/v4.78.0) (2026-05-23)
+**Feature - whatsapp_templates, verify_apps, rcs_capability, rcs_assistant_events, verify_session, messages API updates**
+- Added `waba_id`, `name`, `category`, `language`, `components`, `allow_category_change` parameters to whatsapp_templates.create (POST /v1/Account/{auth_id}/WhatsApp/Template/{waba_id}/)
+- Added `waba_id`, `template_id`, `name`, `category`, `language`, `components`, `allow_category_change` parameters to whatsapp_templates.update (POST /v1/Account/{auth_id}/WhatsApp/Template/{waba_id}/{template_id}/)
+- Added `waba_id`, `template_id` parameters to whatsapp_templates.get (GET /v1/Account/{auth_id}/WhatsApp/Template/{waba_id}/{template_id}/)
+- Added `waba_id`, `template_name`, `limit`, `offset` parameters to whatsapp_templates.list (GET /v1/Account/{auth_id}/WhatsApp/Template/{waba_id}/)
+- Added `waba_id`, `template_id`, `name` parameters to whatsapp_templates.delete (DELETE /v1/Account/{auth_id}/WhatsApp/Template/{waba_id}/{template_id}/)
+- Added `name`, `brand_name`, `otp_type`, `otp_length`, `otp_expiry`, `otp_attempts`, `max_validation_attempts`, `sms_channel`, `voice_channel`, `wa_channel`, `waba_id`, `waba_phone_number`, `waba_template_id`, `template_uuid`, `is_default`, `message_redaction`, `enable_fraudshield`, `fs_protection_level`, `customer_app_hash`, `number_pool` parameters to verify_apps.create (POST /v1/Account/{auth_id}/Verify/App/)
+- Added `name`, `subaccount`, `limit`, `offset`, `created_at`, `created_at__lt`, `created_at__lte`, `created_at__gt`, `created_at__gte` parameters to verify_apps.list (GET /v1/Account/{auth_id}/Verify/App/)
+- GET /v1/Account/{auth_id}/Verify/App/templates/ — verify_apps.list_templates. List default Verify templates available to the account.
+- Added `app_uuid` required parameter to verify_apps.get (GET /v1/Account/{auth_id}/Verify/App/{app_uuid}/)
+- Added `app_uuid`, `name`, `brand_name`, `otp_type`, `otp_length`, `otp_expiry`, `otp_attempts`, `max_validation_attempts`, `sms_channel`, `voice_channel`, `wa_channel`, `waba_id`, `waba_phone_number`, `waba_template_id`, `template_uuid`, `is_default`, `message_redaction`, `enable_fraudshield`, `fs_protection_level`, `customer_app_hash`, `client` parameters to verify_apps.update (POST /v1/Account/{auth_id}/Verify/App/{app_uuid}/)
+- Added `app_uuid` required parameter to verify_apps.delete (DELETE /v1/Account/{auth_id}/Verify/App/{app_uuid}/)
+- Added `phone_number`, `agent_uuid` parameters to rcs_capability.check (GET /v1/Account/{auth_id}/RCS/Capability/)
+- POST /v1/Account/{auth_id}/RCS/AssistantEvents/ — rcs_assistant_events.create. Send RCS assistant events.
+- Added `app_hash`, `brand_name`, `code_length`, `dlt_entity_id`, `dlt_sender_id`, `dlt_template_category`, `dlt_template_id`, `dlt_text`, `dtmf`, `fraud_check`, `text` parameters to verify_session.create (POST /v1/Account/{auth_id}/Verify/Session/)
+- Added `content_message` optional parameter to messages.create (POST /v1/Account/{auth_id}/Message/)
+- GET /v1/Account/{auth_id}/Message/ — messages.list. Add error_message, message_sent_time, and message_updated_time fields to the list messages response.
+- GET /v1/Account/{auth_id}/Message/{record_id}/ — messages.get. Add error_message, message_sent_time, and message_updated_time fields to the get message response.
+- Added `number_pool` optional parameter to verify_apps.create (POST /v1/Account/{auth_id}/Verify/App/)
+
+_Source: plivo/api-messaging#630_
+
 ## [v4.77.0](https://github.com/plivo/plivo-node/tree/v4.77.0) (2026-05-05)
 **Feature - Account Phone Number typed param surface + bug fixes**
 - Extended `numbers.update()` typed surface to cover all documented params: `complianceApplicationId`, `cnam`, `cnamCallbackUrl`, `cnamCallbackMethod`, `callerReputation`, `profileUuid`, `callerReputationCallbackUrl`, `callerReputationCallbackMethod` (in addition to existing `appId`, `subAccount`, `alias`, `cnamLookup`)
