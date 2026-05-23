@@ -1,4 +1,17 @@
 # Change Log
+## [4.78.0](https://github.com/plivo/plivo-node/tree/v4.78.0) (2026-05-23)
+**Feature - whatsapp_templates, verify_apps, verify_app_templates API updates**
+- Added `application_id` optional parameter to whatsapp_templates.create (POST /v1/Account/{auth_id}/WhatsApp/Template/{waba_id}/)
+- Added `application_id` optional parameter to whatsapp_templates.update (POST /v1/Account/{auth_id}/WhatsApp/Template/{waba_id}/{template_id}/)
+- Added `name`, `otp_type`, `otp_length`, `otp_expiry`, `otp_attempts`, `brand_name`, `sms_channel`, `voice_channel`, `wa_channel`, `is_default`, `template_uuid`, `message_redaction`, `customer_app_hash`, `max_validation_attempts`, `enable_fraudshield`, `fs_protection_level`, `waba_id`, `waba_phone_number`, `waba_template_id` parameters to verify_apps.create (POST /v1/Account/{auth_id}/Verify/App/)
+- Added `name`, `app_uuid`, `channel`, `status`, `limit`, `offset`, `created_at`, `created_at__lt`, `created_at__lte`, `created_at__gt`, `created_at__gte`, `subaccount_auth_id` parameters to verify_apps.list (GET /v1/Account/{auth_id}/Verify/App/)
+- GET /v1/Account/{auth_id}/Verify/App/templates/ — verify_app_templates.list. List available SMS OTP templates for the account including account-owned and Plivo system defaults.
+- GET /v1/Account/{auth_id}/Verify/App/{app_uuid}/ — verify_apps.get. Retrieve details of a specific Verify App by its UUID.
+- Added `name`, `brand_name`, `otp_type`, `otp_length`, `otp_expiry`, `otp_attempts`, `sms_channel`, `voice_channel`, `wa_channel`, `is_default`, `template_uuid`, `message_redaction`, `customer_app_hash`, `max_validation_attempts`, `enable_fraudshield`, `fs_protection_level`, `waba_id`, `waba_phone_number`, `waba_template_id` parameters to verify_apps.update (POST /v1/Account/{auth_id}/Verify/App/{app_uuid}/)
+- DELETE /v1/Account/{auth_id}/Verify/App/{app_uuid}/ — verify_apps.delete. Soft-delete a Verify App by its UUID.
+
+_Source: plivo/api-messaging#629_
+
 ## [v4.77.0](https://github.com/plivo/plivo-node/tree/v4.77.0) (2026-05-05)
 **Feature - Account Phone Number typed param surface + bug fixes**
 - Extended `numbers.update()` typed surface to cover all documented params: `complianceApplicationId`, `cnam`, `cnamCallbackUrl`, `cnamCallbackMethod`, `callerReputation`, `profileUuid`, `callerReputationCallbackUrl`, `callerReputationCallbackMethod` (in addition to existing `appId`, `subAccount`, `alias`, `cnamLookup`)
