@@ -1,4 +1,10 @@
 # Change Log
+## [4.78.0](https://github.com/plivo/plivo-node/tree/v4.78.0) (2026-05-23)
+**Major - bulk_messages.create**
+- Added `src`, `dst`, `text`, `type`, `url`, `method`, `log`, `powerpack_uuid` parameters to bulk_messages.create (POST /v1/Account/{auth_id}/Message/Bulk/)
+
+_Source: plivo/api-messaging#9001_
+
 ## [v4.77.0](https://github.com/plivo/plivo-node/tree/v4.77.0) (2026-05-05)
 **Feature - Account Phone Number typed param surface + bug fixes**
 - Extended `numbers.update()` typed surface to cover all documented params: `complianceApplicationId`, `cnam`, `cnamCallbackUrl`, `cnamCallbackMethod`, `callerReputation`, `profileUuid`, `callerReputationCallbackUrl`, `callerReputationCallbackMethod` (in addition to existing `appId`, `subAccount`, `alias`, `cnamLookup`)
