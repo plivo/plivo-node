@@ -10,6 +10,8 @@ describe('NumberInterface', function () {
     return client.numbers.get('+919999999990')
       .then(function(number) {
         assert.equal(number.id, '+919999999990')
+        assert.equal(number.subAccount, 'SAXXXXXXXXXXXXXXXXXX')
+        assert.equal(number.subAccountName, 'Marketing')
       })
   });
 
@@ -17,6 +19,8 @@ describe('NumberInterface', function () {
     return client.numbers.list()
       .then(function(numbers) {
         assert.equal(numbers.length, 1)
+        assert.equal(numbers[0].subAccount, 'SAXXXXXXXXXXXXXXXXXX')
+        assert.equal(numbers[0].subAccountName, 'Marketing')
       })
   });
 

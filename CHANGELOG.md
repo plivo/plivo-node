@@ -1,4 +1,8 @@
 # Change Log
+## [v4.77.1](https://github.com/plivo/plivo-node/tree/v4.77.1) (2026-05-25)
+**Feature - Expose sub_account_name on Number resource**
+- `Number` resource now surfaces `sub_account_name` alongside the existing `sub_account` (auth_id) on rented number listing and get APIs (dynamic property, already worked at runtime; this release adds explicit test coverage)
+
 ## [v4.77.0](https://github.com/plivo/plivo-node/tree/v4.77.0) (2026-05-05)
 **Feature - Account Phone Number typed param surface + bug fixes**
 - Extended `numbers.update()` typed surface to cover all documented params: `complianceApplicationId`, `cnam`, `cnamCallbackUrl`, `cnamCallbackMethod`, `callerReputation`, `profileUuid`, `callerReputationCallbackUrl`, `callerReputationCallbackMethod` (in addition to existing `appId`, `subAccount`, `alias`, `cnamLookup`)
