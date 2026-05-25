@@ -1,4 +1,8 @@
 # Change Log
+## [v4.78.0](https://github.com/plivo/plivo-node/tree/v4.78.0) (2026-05-25)
+**Feature - Profile API DBA field support**
+- Added Doing Business As (DBA) field support to Profile API
+
 ## [v4.77.0](https://github.com/plivo/plivo-node/tree/v4.77.0) (2026-05-05)
 **Feature - Account Phone Number typed param surface + bug fixes**
 - Extended `numbers.update()` typed surface to cover all documented params: `complianceApplicationId`, `cnam`, `cnamCallbackUrl`, `cnamCallbackMethod`, `callerReputation`, `profileUuid`, `callerReputationCallbackUrl`, `callerReputationCallbackMethod` (in addition to existing `appId`, `subAccount`, `alias`, `cnamLookup`)
