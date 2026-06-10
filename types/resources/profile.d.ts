@@ -70,6 +70,7 @@ export class ProfileInterface extends PlivoResource {
      * @param {object} authorized_contact
      * @param {string} business_contact_email
      * @param {string} doing_business_as - Doing Business As (customer-facing name, optional)
+     * @param {string} number_of_employees - Number of Employees (optional). Allowed values: BETWEEN_1_AND_10, BETWEEN_11_AND_50, BETWEEN_51_AND_200, BETWEEN_201_AND_500, BETWEEN_501_AND_2000, BETWEEN_2001_AND_10000, MORE_THAN_10001
      * @return profileResponse response output
      */
     create(
@@ -88,7 +89,8 @@ export class ProfileInterface extends PlivoResource {
         address: object,
         authorized_contact: object,
         business_contact_email?: string,
-        doing_business_as?: string
+        doing_business_as?: string,
+        number_of_employees?: string
     ): Promise<ProfileResponse>;
 
     /**
@@ -118,6 +120,7 @@ export class ProfileInterface extends PlivoResource {
             alt_business_id?: string;
             alt_business_id_type?: string;
             doing_business_as?: string;
+            number_of_employees?: string;
         }
     ): Promise<ProfileResponse>;
     [clientKey]: symbol;

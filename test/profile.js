@@ -15,6 +15,7 @@ import {
         .then(function (response) {
           assert.equal(response.profile.profileUuid, "06ecae31-4bf8-40b9-ac62-e902418e9935")
           assert.equal(response.profile.doing_business_as, "ABC DBA")
+          assert.equal(response.profile.number_of_employees, "BETWEEN_11_AND_50")
         })
     });
     
@@ -64,7 +65,8 @@ import {
         address,
         authorized_contact,
         business_contact_email,
-        "Test DBA"
+        "Test DBA",
+        "BETWEEN_11_AND_50"
       )
         .then(function (profile) {
           assert.equal(profile.profileUuid, '43d0616e-d50a-445a-a84e-310a089f0618')
