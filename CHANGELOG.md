@@ -1,4 +1,10 @@
 # Change Log
+## [v4.78.0](https://github.com/plivo/plivo-node/tree/v4.78.0) (2026-06-11)
+**Feature - complianceApplicationId support on numbers.buy()**
+- Added optional `complianceApplicationId` parameter to `numbers.buy(number, appId, cnamLookup, haEnable, complianceApplicationId)`, serialized to the `compliance_application_id` wire param. This lets regulated numbers (e.g. India) be purchased with an approved regulatory compliance application linked at purchase time, instead of only via `numbers.update()` after renting.
+- TypeScript declarations updated to mirror the new optional param across `PhoneNumber.buy`, `PhoneNumberInterface.buy`, and `NumberInterface.buy`.
+- Added unit test asserting `compliance_application_id` is forwarded on the buy request. Change is backward-compatible (trailing optional positional param).
+
 ## [v4.77.1](https://github.com/plivo/plivo-node/tree/v4.77.1) (2026-05-26)
 **Feature - Profile API DBA field support**
 - Added Doing Business As (DBA) field support to Profile API

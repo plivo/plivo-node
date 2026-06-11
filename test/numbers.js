@@ -132,6 +132,15 @@ describe('NumberInterface', function () {
       })
   });
 
+  it('Buy Number with complianceApplicationId', function () {
+    return client.numbers.buy('+919999999990', 'appId', undefined, undefined, 'comp-app-uuid')
+      .then(function(numbers) {
+        assert.equal(numbers.status, 'fulfilled')
+        // distinguishable mock branch only matches when compliance_application_id is forwarded on the wire
+        assert.equal(numbers.message, 'compliance-applied')
+      })
+  });
+
   it('should throw error for number in buy', function () {
     return client.numbers.buy()
       .catch(function(err) {
