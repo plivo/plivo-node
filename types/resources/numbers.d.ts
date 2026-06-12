@@ -48,10 +48,11 @@ export class PhoneNumber extends PlivoResource {
 	 * @param {string} appId - app id
 	 * @param {string} cnamLookup - cnam lookup
 	 * @param {boolean} haEnable - enable HA Number
+	 * @param {string} complianceApplicationId - approved regulatory compliance application id to link at purchase (required for regulated numbers such as India)
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId?: string, cnamLookup?: string, haEnable?: boolean): Promise<any>;
+	buy(number: string, appId?: string, cnamLookup?: string, haEnable?: boolean, complianceApplicationId?: string): Promise<any>;
 	[clientKey]: symbol;
 }
 /**
@@ -69,10 +70,11 @@ export class PhoneNumberInterface extends PlivoResourceInterface {
 	 * @param {string} appId - app id
 	 * @param {string} cnamLookup - cnam lookup
 	 * @param {boolean} haEnable - enable HA Number
+	 * @param {string} complianceApplicationId - approved regulatory compliance application id to link at purchase (required for regulated numbers such as India)
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId?: string, cnamLookup?: string, haEnable?: boolean): Promise<any>;
+	buy(number: string, appId?: string, cnamLookup?: string, haEnable?: boolean, complianceApplicationId?: string): Promise<any>;
 	[clientKey]: symbol;
 }
 /**
@@ -108,10 +110,11 @@ export class NumberInterface extends PlivoResourceInterface {
 	 * @param {string} appId - app id
 	 * @param {string} cnamLookup - cnam lookup
 	 * @param {boolean} haEnable - enable HA Number
+	 * @param {string} complianceApplicationId - approved regulatory compliance application id to link at purchase (required for regulated numbers such as India)
 	 * @promise {@link PlivoGenericResponse} return PlivoGenericResponse Object if success
 	 * @fail {Error} return Error
 	 */
-	buy(number: string, appId?: string, cnamLookup?: string, haEnable?: boolean): Promise<BuyNumberResponse>;
+	buy(number: string, appId?: string, cnamLookup?: string, haEnable?: boolean, complianceApplicationId?: string): Promise<BuyNumberResponse>;
 	/**
 	 * Add own number from carrier
 	 * @method
