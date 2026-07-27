@@ -1,4 +1,10 @@
 # Change Log
+## [v4.79.1](https://github.com/plivo/plivo-node/tree/v4.79.1) (2026-07-27)
+**Feature - internal flag on Endpoint create (VT-9534)**
+- Added optional `internal` boolean parameter to `endpoints.create(username, password, alias, appId, internal)`, serialized to the `internal` wire param. This lets callers (notably Plivo CX / Contacto) mark auto-created SIP endpoints as internal at creation time so they are hidden from the List API by default (Pylon #2460).
+- TypeScript declarations updated to mirror the new optional param on `EndpointInterface.create`.
+- Backward-compatible: when `internal` is unset, no `internal` key is sent on the request.
+
 ## [v4.78.0](https://github.com/plivo/plivo-node/tree/v4.78.0) (2026-06-11)
 **Feature - complianceApplicationId support on numbers.buy()**
 - Added optional `complianceApplicationId` parameter to `numbers.buy(number, appId, cnamLookup, haEnable, complianceApplicationId)`, serialized to the `compliance_application_id` wire param. This lets regulated numbers (e.g. India) be purchased with an approved regulatory compliance application linked at purchase time, instead of only via `numbers.update()` after renting.
