@@ -111,12 +111,22 @@ export class TollfreeVerificationInterface extends PlivoResourceInterface {
      * @param {string} [params.additional_information] - Any additional information related to the website. Max character limit = 500.
      * @param {string} [params.extra_data] - Any extra information which the customer would like to pass for internal references. 
      * @param {string} [params.number] - The toll free number in e.164 for which verification is being initiated. Only single US/CA number can be provided
-     * @param {string} [params.callback_url] - A valid URL where verification relatated callbacks will be sent. 
+     * @param {string} [params.callback_url] - A valid URL where verification relatated callbacks will be sent.
      * @param {string} [params.callback_method] - Valid Input: GET, POST
+     * @param {string} [params.terms_and_conditions_link] - A valid URL to the terms and conditions.
+     * @param {string} [params.privacy_policy_link] - A valid URL to the privacy policy.
+     * @param {string} [params.optin_message] - The opt-in message shown to the end user.
+     * @param {string} [params.help_message] - The help message sent in response to the HELP keyword.
      * @promise {object} return {@link PlivoGenericResponse} object
      * @fail {Error} return Error
      */
-    create(params?: {}): Promise<CreateTollfreeVerificationResponse>;
+    create(params?: {
+        terms_and_conditions_link?: string;
+        privacy_policy_link?: string;
+        optin_message?: string;
+        help_message?: string;
+        [key: string]: any;
+    }): Promise<CreateTollfreeVerificationResponse>;
     
     /**
      * update TollfreeVerification request
@@ -132,12 +142,22 @@ export class TollfreeVerificationInterface extends PlivoResourceInterface {
      * @param {string} [params.volume] - The monthly volume estimation of messages from the Toll-Free Number.
      * @param {string} [params.additional_information] - Any additional information related to the website. Max character limit = 500.
      * @param {string} [params.extra_data] - Any extra information which the customer would like to pass for internal references. 
-     * @param {string} [params.callback_url] - A valid URL where verification relatated callbacks will be sent. 
+     * @param {string} [params.callback_url] - A valid URL where verification relatated callbacks will be sent.
      * @param {string} [params.callback_method] - Valid Input: GET, POST
+     * @param {string} [params.terms_and_conditions_link] - A valid URL to the terms and conditions.
+     * @param {string} [params.privacy_policy_link] - A valid URL to the privacy policy.
+     * @param {string} [params.optin_message] - The opt-in message shown to the end user.
+     * @param {string} [params.help_message] - The help message sent in response to the HELP keyword.
      * @promise {object} return {@link TollfreeVerification} object
      * @fail {Error} return Error
      */
-    update(uuid: string, params?: {}): Promise<UpdateTollfreeVerificationResponse>;
+    update(uuid: string, params?: {
+        terms_and_conditions_link?: string;
+        privacy_policy_link?: string;
+        optin_message?: string;
+        help_message?: string;
+        [key: string]: any;
+    }): Promise<UpdateTollfreeVerificationResponse>;
 
     /**
      * delete TollfreeVerification request

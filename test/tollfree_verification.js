@@ -22,11 +22,33 @@ describe('TollfreeVerification', function () {
           .then(function(response){
                 assert.equal(response.message, 'created')
           })
-      }); 
+      });
+      it('create TollfreeVerification with zipwhip fields', function () {
+        return client.tollfreeVerification.create({
+          terms_and_conditions_link: 'https://plivo.com/terms',
+          privacy_policy_link: 'https://plivo.com/privacy',
+          optin_message: 'You have opted in to receive messages from Plivo',
+          help_message: 'Reply HELP for help, STOP to unsubscribe'
+        })
+          .then(function(response){
+                assert.equal(response.message, 'created with zipwhip fields')
+          })
+      });
       it('update response', function () {
         return client.tollfreeVerification.update(1, {extra_data: 'extra_data'})
           .then(function(response) {
             assert.equal(response.message, 'Tollfree verification request for 18XXXXXXXXX updated succesfully')
+          })
+      });
+      it('update TollfreeVerification with zipwhip fields', function () {
+        return client.tollfreeVerification.update(1, {
+          terms_and_conditions_link: 'https://plivo.com/terms',
+          privacy_policy_link: 'https://plivo.com/privacy',
+          optin_message: 'You have opted in to receive messages from Plivo',
+          help_message: 'Reply HELP for help, STOP to unsubscribe'
+        })
+          .then(function(response) {
+            assert.equal(response.message, 'Tollfree verification request for 18XXXXXXXXX updated succesfully with zipwhip fields')
           })
       });
     
