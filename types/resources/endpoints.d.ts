@@ -99,10 +99,11 @@ export class EndpointInterface extends PlivoResourceInterface {
      * @param {string} passwowrd - password to create
      * @param {string} alias - alias to create
      * @param {string} appId - app id to create
+     * @param {boolean} [internal] - mark endpoint as internal (hidden from list APIs by default)
      * @promise {object} return {@link PlivoGenericResponse} object if success
      * @fail {Error} return Error
      */
-    create(username: string, password: string, alias: string, appId: string): Promise<CreateEndpointResponse>;
+    create(username: string, password: string, alias: string, appId: string, internal?: boolean): Promise<CreateEndpointResponse>;
     /**
      * update Endpoint
      * @method
