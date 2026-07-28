@@ -81,6 +81,13 @@ describe('Account', function () {
       })
   });
 
+  it('should throw error for update subAccount via interface', function () {
+    return client.subAccounts.update()
+        .catch(function(errorResponse) {
+        assert.equal(errorResponse, 'Error: Missing mandatory field: id')
+      })
+  });
+
   it('list subAccounts', function () {
     return client.subAccounts.list()
       .then(function(accounts) {
@@ -93,5 +100,12 @@ describe('Account', function () {
       .then(function(accounts) {
         assert.equal(accounts, true)
       })
+  });
+
+  it('Should throw error for delete subAccounts via interface', function () {
+    return client.subAccounts.delete()
+     .catch(function(errorResponse) {
+      assert.equal(errorResponse, 'Error: Missing mandatory field: id')
+    })
   });
 });
