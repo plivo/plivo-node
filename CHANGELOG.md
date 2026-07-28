@@ -1,4 +1,8 @@
 # Change Log
+## [v4.79.0](https://github.com/plivo/plivo-node/tree/v4.79.0) (2026-07-28)
+**Feature - Toll-free verification terms, privacy, opt-in and help fields**
+- Added optional `terms_and_conditions_link`, `privacy_policy_link`, `optin_message` and `help_message` parameters to the toll-free verification create and update methods
+
 ## [v4.78.0](https://github.com/plivo/plivo-node/tree/v4.78.0) (2026-06-11)
 **Feature - complianceApplicationId support on numbers.buy()**
 - Added optional `complianceApplicationId` parameter to `numbers.buy(number, appId, cnamLookup, haEnable, complianceApplicationId)`, serialized to the `compliance_application_id` wire param. This lets regulated numbers (e.g. India) be purchased with an approved regulatory compliance application linked at purchase time, instead of only via `numbers.update()` after renting.
