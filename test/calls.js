@@ -48,6 +48,12 @@ describe('calls', function () {
         assert.equal(call.message, 'call fired')
       })
   });
+  it('should make call with retryOn!', function () {
+    return client.calls.create('+9100000000', '+920000000', 'http://google.com', {retryOn: 'busy_line,no_answer'})
+      .then(function(call) {
+        assert.equal(call.message, 'call fired with retry_on busy_line,no_answer')
+      })
+  });
   it('should get list of calls!', function (done) {
     client.calls.list()
       .then(function(calls){
