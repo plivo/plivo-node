@@ -483,6 +483,24 @@ client.messages.create({
 });
 ```
 
+### Validating webhooks for scoped API tokens
+Webhooks triggered by an API call made with a scoped token (`PLV...`) are signed with a key derived from that token. Validate them with `validateV3SignatureScoped`, which takes the same arguments as `validateV3Signature` with the scoped token in place of the auth token:
+
+```javascript
+let plivo = require('plivo');
+
+let valid = plivo.validateV3SignatureScoped(
+  req.method,
+  'https://example.com' + req.originalUrl,
+  req.headers['x-plivo-signature-v3-nonce'],
+  '<scoped_token>',
+  req.headers['x-plivo-signature-v3'],
+  req.body
+);
+```
+
+`plivo.deriveSigningKey(scopedToken)` returns the raw 32-byte HMAC key if you validate signatures yourself.
+
 ### More examples
 More examples are available [here](https://github.com/plivo/plivo-examples-node). Also refer to the [guides for configuring the Express server to run various scenarios](https://www.plivo.com/docs/sms/quickstart/node-expressjs/) & use it to test out your integration in under 5 minutes.
 
