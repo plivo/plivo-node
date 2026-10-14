@@ -26,4 +26,8 @@ describe('Jwt', function () {
       assert.equal(e.toString(), "Error: Please define at maximum any two of validFrom, lifetime and validTill");
     }
   });
+  it('should reject scoped API tokens', function () {
+    assert.throws(() => new AccessToken('MADADADADADADADADADA', 'PLV' + 'A'.repeat(43), 'username'), /scoped API tokens/);
+    assert.equal(new AccessToken('MADADADADADADADADADA', 'qwerty', 'username').key, 'qwerty');
+  });
 });
