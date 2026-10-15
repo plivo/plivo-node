@@ -1,6 +1,6 @@
 export function Response(): any;
 export function validateV3Signature(method: string, uri: string, nonce: string, auth_token: string, v3_signature: string, params?: {}): Boolean;
-export function validateV3SignatureScoped(method: string, uri: string, nonce: string, scoped_token: string, v3_signature: string, params?: {}): Boolean;
+export function validateV3SignatureScoped(method: string, uri: string, nonce: string, scoped_token: string | string[], v3_signature: string, params?: {}): Boolean;
 export function deriveSigningKey(token: string): Buffer;
 export function validateSignature(uri: string, nonce: string, signature: string, auth_token: string): Boolean;
 /**

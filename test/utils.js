@@ -1,5 +1,6 @@
 import assert from 'assert';
 import sinon from 'sinon';
+import crypto from 'crypto';
 
 import {computeOldSignature, verifyOldSignature, validateSignature} from '../lib/utils/security';
 import {validateV3Signature, validateV3SignatureScoped, deriveSigningKey} from '../lib/utils/v3Security';
@@ -68,5 +69,20 @@ describe('V3 signature with scoped token', function () {
     assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, tokenTwo, postSig, postParams()), false);
     assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, tokenOne, postSig, Object.assign(postParams(), {Status: 'failed'})), false);
     assert.equal(validateV3Signature('POST', postUrl, nonce, tokenOne, postSig, postParams()), false);
+  });
+
+  it('validates against a list of keys', function () {
+    const authToken = 'test-auth-token';
+    const authMessage = postUrl + '?MessageUUID6f1c2a90-0d7e-4b1e-9c11-1d2e3f4a5b6cStatusdeliveredTo14155550100.' + nonce;
+    const authSig = crypto.createHmac('sha256', authToken).update(authMessage).digest('base64');
+    assert.equal(validateV3Signature('POST', postUrl, nonce, authToken, authSig, postParams()), true);
+    const keys = [tokenOne, authToken];
+    assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, keys, postSig, postParams()), true);
+    assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, keys, authSig, postParams()), true);
+    assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, [tokenTwo, authToken], postSig + ',' + authSig, postParams()), true);
+    assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, [tokenTwo], postSig, postParams()), false);
+    assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, [], postSig, postParams()), false);
+    assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, [null, '', tokenOne], postSig, postParams()), true);
+    assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, authToken, authSig, postParams()), true);
   });
 });
