@@ -65,10 +65,16 @@ describe('V3 signature with scoped token', function () {
     assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, tokenOne, 'bogus,' + postSig, postParams()), true);
   });
 
-  it('rejects wrong token, tampered params and the auth-token validator', function () {
+  it('rejects wrong token and tampered params', function () {
     assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, tokenTwo, postSig, postParams()), false);
     assert.equal(validateV3SignatureScoped('POST', postUrl, nonce, tokenOne, postSig, Object.assign(postParams(), {Status: 'failed'})), false);
-    assert.equal(validateV3Signature('POST', postUrl, nonce, tokenOne, postSig, postParams()), false);
+  });
+
+  it('accepts a scoped token in the auth-token validator', function () {
+    const authMessage = postUrl + '?MessageUUID6f1c2a90-0d7e-4b1e-9c11-1d2e3f4a5b6cStatusdeliveredTo14155550100.' + nonce;
+    const authSig = crypto.createHmac('sha256', 'test-auth-token').update(authMessage).digest('base64');
+    assert.equal(validateV3Signature('POST', postUrl, nonce, tokenOne, postSig + ',' + authSig, postParams()), true);
+    assert.equal(validateV3Signature('POST', postUrl, nonce, tokenOne, authSig, postParams()), false);
   });
 
   it('validates against a list of keys', function () {
