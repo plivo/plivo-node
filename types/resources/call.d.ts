@@ -64,7 +64,13 @@ export class RetrieveCallResponse {
 	resourceUri: string;
 	toNumber: string;
 	totalAmount: string;
+	/** INR sibling of totalAmount; present only for INR-billed calls. */
+	totalAmountInr?: string;
 	totalRate: string;
+	/** INR sibling of totalRate; present only for INR-billed calls. */
+	totalRateInr?: string;
+	/** INR sibling of noise_cancellation_amount; present only for INR-billed calls (empty string when the amount is unknown). */
+	noiseCancellationAmountInr?: string;
 }
 export class ListAllCallsResponse {
 	constructor(params: object);
@@ -87,7 +93,13 @@ export class ListAllCallsResponse {
 	resourceUri: string;
 	toNumber: string;
 	totalAmount: string;
+	/** INR sibling of totalAmount; present only for INR-billed calls. */
+	totalAmountInr?: string;
 	totalRate: string;
+	/** INR sibling of totalRate; present only for INR-billed calls. */
+	totalRateInr?: string;
+	/** INR sibling of noise_cancellation_amount; present only for INR-billed calls (empty string when the amount is unknown). */
+	noiseCancellationAmountInr?: string;
 }
 export class StartPlayingMusicResponse {
 	constructor(params: object);

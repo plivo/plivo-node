@@ -46,10 +46,61 @@ describe('message', function () {
         assert.equal(message.destinationNetwork, "Verizon");
       })
   });
+  it('should expose INR cost fields in get message for an INR account', function () {
+    return client.messages.get('inr-msg-1')
+      .then(function (message) {
+        assert.equal(message.totalAmount, '0.00500');
+        assert.equal(message.totalAmountInr, '0.41500');
+        assert.equal(message.totalRate, '0.00500');
+        assert.equal(message.totalRateInr, '0.41500');
+        assert.equal(message.carrierFees, '0.00200');
+        assert.equal(message.carrierFeesInr, '0.16600');
+        assert.equal(message.carrierFeesRate, '0.00100');
+        assert.equal(message.carrierFeesRateInr, '0.08300');
+      })
+  });
+
+  it('should leave INR cost fields undefined in get message for a USD account', function () {
+    return client.messages.get(1)
+      .then(function (message) {
+        assert.equal(message.totalAmount, '0.00000');
+        assert.strictEqual(message.totalAmountInr, undefined);
+        assert.strictEqual(message.totalRateInr, undefined);
+        assert.strictEqual(message.carrierFeesInr, undefined);
+        assert.strictEqual(message.carrierFeesRateInr, undefined);
+      })
+  });
+
   it('list messages', function () {
     return client.messages.list()
       .then(function (messages) {
         assert.equal(messages.length, 2)
+      })
+  });
+
+  it('should expose INR cost fields in listed messages for an INR account', function () {
+    return client.messages.list({subaccount: 'SAINRACCOUNT00000000'})
+      .then(function (messages) {
+        assert.equal(messages.length, 1);
+        assert.equal(messages[0].totalAmount, '0.00500');
+        assert.equal(messages[0].totalAmountInr, '0.41500');
+        assert.equal(messages[0].totalRate, '0.00500');
+        assert.equal(messages[0].totalRateInr, '0.41500');
+        assert.equal(messages[0].carrierFees, '0.00200');
+        assert.equal(messages[0].carrierFeesInr, '0.16600');
+        assert.equal(messages[0].carrierFeesRate, '0.00100');
+        assert.equal(messages[0].carrierFeesRateInr, '0.08300');
+      })
+  });
+
+  it('should leave INR cost fields undefined in listed messages for a USD account', function () {
+    return client.messages.list()
+      .then(function (messages) {
+        assert.equal(messages[0].totalAmount, '0.00000');
+        assert.strictEqual(messages[0].totalAmountInr, undefined);
+        assert.strictEqual(messages[0].totalRateInr, undefined);
+        assert.strictEqual(messages[0].carrierFeesInr, undefined);
+        assert.strictEqual(messages[0].carrierFeesRateInr, undefined);
       })
   });
 

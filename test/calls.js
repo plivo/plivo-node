@@ -65,6 +65,46 @@ describe('calls', function () {
         done()
       })
   });
+  it('should expose INR cost fields when listing calls of an INR account', function () {
+    return client.calls.list({subaccount: 'SAINRACCOUNT00000000'})
+      .then(function(calls){
+        assert.equal(calls.length, 2)
+        assert.equal(calls[0].totalAmount, '0.13600')
+        assert.equal(calls[0].totalAmountInr, '11.28800')
+        assert.equal(calls[0].totalRate, '0.00850')
+        assert.equal(calls[0].totalRateInr, '0.70550')
+        assert.equal(calls[0].noiseCancellationAmountInr, '0.08300')
+        assert.strictEqual(calls[1].noiseCancellationAmountInr, '')
+      })
+  });
+  it('should leave INR cost fields undefined when listing calls of a USD account', function () {
+    return client.calls.list()
+      .then(function(calls){
+        assert.equal(calls[0].totalAmount, '0.13600')
+        assert.strictEqual(calls[0].totalAmountInr, undefined)
+        assert.strictEqual(calls[0].totalRateInr, undefined)
+        assert.strictEqual(calls[0].noiseCancellationAmountInr, undefined)
+      })
+  });
+  it('should expose INR cost fields when getting an INR-billed call', function () {
+    return client.calls.get('inr-call-1')
+      .then(function(call){
+        assert.equal(call.totalAmount, '0.13600')
+        assert.equal(call.totalAmountInr, '11.28800')
+        assert.equal(call.totalRate, '0.00850')
+        assert.equal(call.totalRateInr, '0.70550')
+        assert.equal(call.noiseCancellationAmountInr, '0.08300')
+      })
+  });
+  it('should leave INR cost fields undefined when getting a USD-billed call', function () {
+    return client.calls.get('aaa-deeiei3-dfddd')
+      .then(function(call){
+        assert.equal(call.totalRate, '0.03570')
+        assert.strictEqual(call.totalAmountInr, undefined)
+        assert.strictEqual(call.totalRateInr, undefined)
+        assert.strictEqual(call.noiseCancellationAmountInr, undefined)
+      })
+  });
   describe('transfer', function () {
     it('should transfer call!', function () {
       client.calls.get('aaa-deeiei3-dfddd')

@@ -31,6 +31,14 @@ export class SearchNumberResponse {
 	restriction: string;
 	restriction_text: string;
 	resource_uri: string;
+	// INR siblings of the rate fields, present only for INR accounts. At runtime
+	// search() returns PhoneNumber objects whose keys are camelCased, hence the
+	// camelCase names here.
+	setupRateInr?: string;
+	monthlyRentalRateInr?: string;
+	smsRateInr?: string;
+	mmsRateInr?: string;
+	voiceRateInr?: string;
 }
 
 /**
@@ -86,6 +94,11 @@ export class PhoneNumberInterface extends PlivoResourceInterface {
 export class NumberResource extends PlivoResource {
 	constructor(client: Function, data?: {});
 	id: string;
+	// INR siblings of the rate fields, present only for INR accounts.
+	monthlyRentalRateInr?: string;
+	smsRateInr?: string;
+	mmsRateInr?: string;
+	voiceRateInr?: string;
 	/**
 	 * Unrent Number
 	 * @method

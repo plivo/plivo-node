@@ -1,4 +1,11 @@
 # Change Log
+## [v4.80.0](https://github.com/plivo/plivo-node/tree/v4.80.0) (2026-11-16)
+**Feature - INR response fields for INR-currency accounts**
+- `MessageGetResponse` / `MessageListResponse` now expose `totalAmountInr`, `totalRateInr`, `carrierFeesInr` and `carrierFeesRateInr` (from `total_amount_inr`, `total_rate_inr`, `carrier_fees_inr`, `carrier_fees_rate_inr`). Previously these keys were dropped.
+- `RetrieveCallResponse` / `ListAllCallsResponse` now expose `totalAmountInr`, `totalRateInr` and `noiseCancellationAmountInr`. Previously these keys were dropped.
+- TypeScript declarations updated for the above, for the rented `Number` (`monthlyRentalRateInr`, `smsRateInr`, `mmsRateInr`, `voiceRateInr`), number search (the same plus `setupRateInr`) and Verify sessions (`charges.totalChargeInr`, `charges.attemptCharges[].chargeInr`, `attemptDetails[].amountInr`). These keys already came through at runtime, camelCased.
+- All INR fields are strings except `attemptDetails[].amountInr`, which is a number. They are present only for INR accounts and omitted for USD accounts, so they are optional. USD fields are unchanged.
+
 ## [v4.79.0](https://github.com/plivo/plivo-node/tree/v4.79.0) (2026-07-28)
 **Feature - Toll-free verification terms, privacy, opt-in and help fields**
 - Added optional `terms_and_conditions_link`, `privacy_policy_link`, `optin_message` and `help_message` parameters to the toll-free verification create and update methods
