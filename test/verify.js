@@ -27,6 +27,51 @@ describe('session', function () {
       })
   });
 
+  it('should expose INR charges camelCased when getting an INR session', function () {
+    return client.verify_session.get('inr-session-1')
+      .then(function (session) {
+        assert.equal(session.charges.totalCharge, '0.07100')
+        assert.equal(session.charges.totalChargeInr, '5.89300')
+        assert.equal(session.charges.attemptCharges[0].charge, '0.02100')
+        assert.equal(session.charges.attemptCharges[0].chargeInr, '1.74300')
+        assert.strictEqual(session.attemptDetails[0].amount, 0.021)
+        assert.strictEqual(session.attemptDetails[0].amountInr, 1.743)
+      })
+  });
+
+  it('should leave INR charges undefined when getting a USD session', function () {
+    return client.verify_session.get(1)
+      .then(function (session) {
+        assert.equal(session.charges.totalCharge, '0.07100')
+        assert.strictEqual(session.charges.totalChargeInr, undefined)
+        assert.strictEqual(session.charges.attemptCharges[0].chargeInr, undefined)
+        assert.strictEqual(session.attemptDetails[0].amountInr, undefined)
+      })
+  });
+
+  it('should expose INR charges camelCased when listing INR sessions', function () {
+    return client.verify_session.list({subaccount: 'SAINRACCOUNT00000000'})
+      .then(function (result) {
+        let session = result.sessions[0]
+        assert.equal(session.charges.totalChargeInr, '5.89300')
+        assert.equal(session.charges.attemptCharges[0].charge, '0.02100')
+        assert.equal(session.charges.attemptCharges[0].chargeInr, '1.74300')
+        assert.strictEqual(session.attemptDetails[0].amount, 0.021)
+        assert.strictEqual(session.attemptDetails[0].amountInr, 1.743)
+      })
+  });
+
+  it('should leave INR charges undefined when listing USD sessions', function () {
+    return client.verify_session.list()
+      .then(function (result) {
+        let session = result.sessions[0]
+        assert.equal(session.charges.totalCharge, '0.07100')
+        assert.strictEqual(session.charges.totalChargeInr, undefined)
+        assert.strictEqual(session.charges.attemptCharges[0].chargeInr, undefined)
+        assert.strictEqual(session.attemptDetails[0].amountInr, undefined)
+      })
+  });
+
   it('list sessions', function () {
     return client.verify_session.list()
       .then(function (session) {

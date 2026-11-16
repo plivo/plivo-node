@@ -24,6 +24,56 @@ describe('NumberInterface', function () {
       })
   });
 
+  it('Get Details of a Rented Number exposes INR rates camelCased for an INR account', function () {
+    return client.numbers.get('+919999999991')
+      .then(function(number) {
+        assert.equal(number.monthlyRentalRate, '0.80000')
+        assert.equal(number.monthlyRentalRateInr, '66.40000')
+        assert.equal(number.smsRate, '0.00350')
+        assert.equal(number.smsRateInr, '0.29050')
+        assert.equal(number.mmsRate, '0.01000')
+        assert.equal(number.mmsRateInr, '0.83000')
+        assert.equal(number.voiceRate, '0.00850')
+        assert.equal(number.voiceRateInr, '0.70550')
+        assert.strictEqual(number.setupRateInr, undefined)
+      })
+  });
+
+  it('Get Details of a Rented Number leaves INR rates undefined for a USD account', function () {
+    return client.numbers.get('+919999999990')
+      .then(function(number) {
+        assert.equal(number.monthlyRentalRate, '0.80000')
+        assert.strictEqual(number.monthlyRentalRateInr, undefined)
+        assert.strictEqual(number.smsRateInr, undefined)
+        assert.strictEqual(number.mmsRateInr, undefined)
+        assert.strictEqual(number.voiceRateInr, undefined)
+      })
+  });
+
+  it('List All Rented Numbers exposes INR rates camelCased for an INR account', function () {
+    return client.numbers.list({subAccount: 'SAINRACCOUNT00000000'})
+      .then(function(numbers) {
+        assert.equal(numbers.length, 1)
+        assert.equal(numbers[0].monthlyRentalRate, '0.80000')
+        assert.equal(numbers[0].smsRate, '0.00350')
+        assert.equal(numbers[0].mmsRate, '0.01000')
+        assert.equal(numbers[0].voiceRate, '0.00850')
+        assert.equal(numbers[0].monthlyRentalRateInr, '66.40000')
+        assert.equal(numbers[0].smsRateInr, '0.29050')
+        assert.equal(numbers[0].mmsRateInr, '0.83000')
+        assert.equal(numbers[0].voiceRateInr, '0.70550')
+      })
+  });
+
+  it('List All Rented Numbers leaves INR rates undefined for a USD account', function () {
+    return client.numbers.list()
+      .then(function(numbers) {
+        assert.equal(numbers[0].voiceRate, '0.00850')
+        assert.strictEqual(numbers[0].monthlyRentalRateInr, undefined)
+        assert.strictEqual(numbers[0].voiceRateInr, undefined)
+      })
+  });
+
   // it('add own number', function () {
   //   return client.numbers.addOwnNumber('+919999999990', 'carrier', 'region')
   //     .then(function(numbers) {
@@ -115,6 +165,35 @@ describe('NumberInterface', function () {
     return client.numbers.search('US')
       .then(function(numbers) {
         assert.equal(numbers.length, 2)
+      })
+  });
+
+  it('Search for New Numbers exposes INR rates camelCased for an INR account', function () {
+    return client.numbers.search('IN')
+      .then(function(numbers) {
+        assert.equal(numbers.length, 1)
+        assert.equal(numbers[0].setupRate, '1.00000')
+        assert.equal(numbers[0].setupRateInr, '83.00000')
+        assert.equal(numbers[0].monthlyRentalRate, '0.80000')
+        assert.equal(numbers[0].monthlyRentalRateInr, '66.40000')
+        assert.equal(numbers[0].smsRate, '0.00350')
+        assert.equal(numbers[0].smsRateInr, '0.29050')
+        assert.equal(numbers[0].mmsRate, '0.01000')
+        assert.equal(numbers[0].mmsRateInr, '0.83000')
+        assert.equal(numbers[0].voiceRate, '0.00850')
+        assert.equal(numbers[0].voiceRateInr, '0.70550')
+      })
+  });
+
+  it('Search for New Numbers leaves INR rates undefined for a USD account', function () {
+    return client.numbers.search('US')
+      .then(function(numbers) {
+        assert.equal(numbers[0].setupRate, '0.00000')
+        assert.strictEqual(numbers[0].setupRateInr, undefined)
+        assert.strictEqual(numbers[0].monthlyRentalRateInr, undefined)
+        assert.strictEqual(numbers[0].smsRateInr, undefined)
+        assert.strictEqual(numbers[0].mmsRateInr, undefined)
+        assert.strictEqual(numbers[0].voiceRateInr, undefined)
       })
   });
 

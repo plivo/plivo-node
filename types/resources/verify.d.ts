@@ -13,10 +13,30 @@ export class ValidateSessionResponse {
     invalid_number: string;
 }
 
+// Only the charge fields are declared; other keys come through camelCased.
+interface AttemptCharge {
+    /** Attempt charge in USD. */
+    charge?: string;
+    /** INR sibling of charge; present only for INR accounts. */
+    chargeInr?: string;
+    [key: string]: any;
+}
+
+// Only the amount fields are declared; other keys come through camelCased.
+interface AttemptDetail {
+    /** Attempt amount in USD. */
+    amount?: number;
+    /** INR sibling of amount; present only for INR accounts. */
+    amountInr?: number;
+    [key: string]: any;
+}
+
 interface Charges {
     totalCharge: number;
+    /** INR sibling of totalCharge; present only for INR accounts, and omitted when any attempt has no INR amount (e.g. voice). */
+    totalChargeInr?: string;
     validationCharge: number;
-    attemptCharges: number;
+    attemptCharges: AttemptCharge[];
 }
 
 export class SessionGetResponse {
@@ -32,7 +52,7 @@ export class SessionGetResponse {
     requestor_ip: string;
     destination_country_iso2: string;
     destination_network: string;
-    attemptDetails: any;
+    attemptDetails: AttemptDetail[];
     createdAt: string;
     updatedAt: string;
     charges: Charges;
@@ -50,7 +70,7 @@ export class SessionListResponse {
     requestor_ip: string;
     destination_country_iso2: string;
     destination_network: string;
-    attemptDetails: any;
+    attemptDetails: AttemptDetail[];
     createdAt: string;
     updatedAt: string;
     charges: Charges;

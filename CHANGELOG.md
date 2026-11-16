@@ -1,4 +1,13 @@
 # Change Log
+## [v4.80.0](https://github.com/plivo/plivo-node/tree/v4.80.0) (2026-11-16)
+**Feature - INR response fields for INR-currency accounts**
+- `MessageGetResponse` / `MessageListResponse` now expose `totalAmountInr`, `totalRateInr`, `carrierFeesInr` and `carrierFeesRateInr` (from `total_amount_inr`, `total_rate_inr`, `carrier_fees_inr`, `carrier_fees_rate_inr`). Previously these keys were dropped.
+- `RetrieveCallResponse` / `ListAllCallsResponse` now expose `totalAmountInr`, `totalRateInr`, `noiseCancellationAmount` and `noiseCancellationAmountInr` (the noise cancellation amounts can be `""`). Previously these keys were dropped.
+- TypeScript declarations updated for the above, for the rented `Number` (`monthlyRentalRateInr`, `smsRateInr`, `mmsRateInr`, `voiceRateInr`), number search (the same plus `setupRateInr`) and Verify sessions (`charges.totalChargeInr`, `charges.attemptCharges[].chargeInr`, `attemptDetails[].amountInr`). These keys already came through at runtime, camelCased.
+- TypeScript declarations now also declare the USD partner of every INR field where it was missing: `carrierFees` / `carrierFeesRate` on messages, `monthlyRentalRate` / `smsRate` / `mmsRate` / `voiceRate` on the rented `Number`, and `setupRate` / `monthlyRentalRate` / `smsRate` / `mmsRate` / `voiceRate` on number search results. The old snake_case rate fields on `SearchNumberResponse` (always `undefined` at runtime) are kept but marked `@deprecated`.
+- TypeScript-visible change in Verify typings: `Charges.attemptCharges` changes from `number` to `AttemptCharge[]` (with `charge` / `chargeInr`), and `SessionGetResponse.attemptDetails` / `SessionListResponse.attemptDetails` change from `any` to `AttemptDetail[]` (with `amount` / `amountInr`). The new types match the runtime shape, but code that relied on the old declared types may need updating.
+- All INR fields are strings except `attemptDetails[].amountInr`, which is a number. They are present only for INR accounts and omitted for USD accounts, so they are optional. USD fields are unchanged.
+
 ## [v4.79.0](https://github.com/plivo/plivo-node/tree/v4.79.0) (2026-07-28)
 **Feature - Toll-free verification terms, privacy, opt-in and help fields**
 - Added optional `terms_and_conditions_link`, `privacy_policy_link`, `optin_message` and `help_message` parameters to the toll-free verification create and update methods

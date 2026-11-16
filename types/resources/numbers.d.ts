@@ -22,15 +22,32 @@ export class SearchNumberResponse {
 	lata: number;
 	type: string;
 	sub_type: string;
+	/** @deprecated Always undefined at runtime; search() camelCases keys. Use setupRate. */
 	setup_rate: string;
+	/** @deprecated Always undefined at runtime; search() camelCases keys. Use monthlyRentalRate. */
 	monthly_rental_rate: string;
 	sms_enabled: boolean;
+	/** @deprecated Always undefined at runtime; search() camelCases keys. Use smsRate. */
 	sms_rate: string;
 	voice_enabled: boolean;
+	/** @deprecated Always undefined at runtime; search() camelCases keys. Use voiceRate. */
 	voice_rate: string;
 	restriction: string;
 	restriction_text: string;
 	resource_uri: string;
+	// At runtime search() returns PhoneNumber objects whose keys are camelCased,
+	// hence the camelCase names below. USD rates:
+	setupRate?: string;
+	monthlyRentalRate?: string;
+	smsRate?: string;
+	mmsRate?: string;
+	voiceRate?: string;
+	// INR siblings of the rate fields, present only for INR accounts.
+	setupRateInr?: string;
+	monthlyRentalRateInr?: string;
+	smsRateInr?: string;
+	mmsRateInr?: string;
+	voiceRateInr?: string;
 }
 
 /**
@@ -86,6 +103,16 @@ export class PhoneNumberInterface extends PlivoResourceInterface {
 export class NumberResource extends PlivoResource {
 	constructor(client: Function, data?: {});
 	id: string;
+	// USD rates.
+	monthlyRentalRate?: string;
+	smsRate?: string;
+	mmsRate?: string;
+	voiceRate?: string;
+	// INR siblings of the rate fields, present only for INR accounts.
+	monthlyRentalRateInr?: string;
+	smsRateInr?: string;
+	mmsRateInr?: string;
+	voiceRateInr?: string;
 	/**
 	 * Unrent Number
 	 * @method
