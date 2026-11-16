@@ -23,9 +23,13 @@ export class MessageGetResponse {
 	totalRate: string;
 	/** INR sibling of totalRate; present only for INR accounts. */
 	totalRateInr?: string;
-	/** INR sibling of carrier_fees; present only for INR accounts. */
+	/** Carrier fees in USD (from carrier_fees). */
+	carrierFees?: string;
+	/** INR sibling of carrierFees; present only for INR accounts. */
 	carrierFeesInr?: string;
-	/** INR sibling of carrier_fees_rate; present only for INR accounts. */
+	/** Carrier fees rate in USD (from carrier_fees_rate). */
+	carrierFeesRate?: string;
+	/** INR sibling of carrierFeesRate; present only for INR accounts. */
 	carrierFeesRateInr?: string;
 	units: string;
 	powerpackId: string;
@@ -50,9 +54,13 @@ export class MessageListResponse {
 	totalRate: string;
 	/** INR sibling of totalRate; present only for INR accounts. */
 	totalRateInr?: string;
-	/** INR sibling of carrier_fees; present only for INR accounts. */
+	/** Carrier fees in USD (from carrier_fees). */
+	carrierFees?: string;
+	/** INR sibling of carrierFees; present only for INR accounts. */
 	carrierFeesInr?: string;
-	/** INR sibling of carrier_fees_rate; present only for INR accounts. */
+	/** Carrier fees rate in USD (from carrier_fees_rate). */
+	carrierFeesRate?: string;
+	/** INR sibling of carrierFeesRate; present only for INR accounts. */
 	carrierFeesRateInr?: string;
 	units: string;
 	powerpackId: string;

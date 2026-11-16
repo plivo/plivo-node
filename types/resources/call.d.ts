@@ -69,7 +69,9 @@ export class RetrieveCallResponse {
 	totalRate: string;
 	/** INR sibling of totalRate; present only for INR-billed calls. */
 	totalRateInr?: string;
-	/** INR sibling of noise_cancellation_amount; present only for INR-billed calls (empty string when the amount is unknown). */
+	/** Noise cancellation charge in USD (from noise_cancellation_amount). May be "" when there is no noise cancellation amount. */
+	noiseCancellationAmount?: string;
+	/** INR sibling of noiseCancellationAmount; present only for INR-billed calls. May be "" when there is no noise cancellation amount. */
 	noiseCancellationAmountInr?: string;
 }
 export class ListAllCallsResponse {
@@ -98,7 +100,9 @@ export class ListAllCallsResponse {
 	totalRate: string;
 	/** INR sibling of totalRate; present only for INR-billed calls. */
 	totalRateInr?: string;
-	/** INR sibling of noise_cancellation_amount; present only for INR-billed calls (empty string when the amount is unknown). */
+	/** Noise cancellation charge in USD (from noise_cancellation_amount). May be "" when there is no noise cancellation amount. */
+	noiseCancellationAmount?: string;
+	/** INR sibling of noiseCancellationAmount; present only for INR-billed calls. May be "" when there is no noise cancellation amount. */
 	noiseCancellationAmountInr?: string;
 }
 export class StartPlayingMusicResponse {

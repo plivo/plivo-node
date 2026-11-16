@@ -73,7 +73,9 @@ describe('calls', function () {
         assert.equal(calls[0].totalAmountInr, '11.28800')
         assert.equal(calls[0].totalRate, '0.00850')
         assert.equal(calls[0].totalRateInr, '0.70550')
+        assert.equal(calls[0].noiseCancellationAmount, '0.00100')
         assert.equal(calls[0].noiseCancellationAmountInr, '0.08300')
+        assert.strictEqual(calls[1].noiseCancellationAmount, '')
         assert.strictEqual(calls[1].noiseCancellationAmountInr, '')
       })
   });
@@ -93,6 +95,7 @@ describe('calls', function () {
         assert.equal(call.totalAmountInr, '11.28800')
         assert.equal(call.totalRate, '0.00850')
         assert.equal(call.totalRateInr, '0.70550')
+        assert.equal(call.noiseCancellationAmount, '0.00100')
         assert.equal(call.noiseCancellationAmountInr, '0.08300')
       })
   });

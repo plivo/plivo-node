@@ -54,7 +54,9 @@ describe('session', function () {
       .then(function (result) {
         let session = result.sessions[0]
         assert.equal(session.charges.totalChargeInr, '5.89300')
+        assert.equal(session.charges.attemptCharges[0].charge, '0.02100')
         assert.equal(session.charges.attemptCharges[0].chargeInr, '1.74300')
+        assert.strictEqual(session.attemptDetails[0].amount, 0.021)
         assert.strictEqual(session.attemptDetails[0].amountInr, 1.743)
       })
   });

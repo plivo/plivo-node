@@ -13,15 +13,19 @@ export class ValidateSessionResponse {
     invalid_number: string;
 }
 
-// Only the INR sibling is declared; other keys come through camelCased.
+// Only the charge fields are declared; other keys come through camelCased.
 interface AttemptCharge {
+    /** Attempt charge in USD. */
+    charge?: string;
     /** INR sibling of charge; present only for INR accounts. */
     chargeInr?: string;
     [key: string]: any;
 }
 
-// Only the INR sibling is declared; other keys come through camelCased.
+// Only the amount fields are declared; other keys come through camelCased.
 interface AttemptDetail {
+    /** Attempt amount in USD. */
+    amount?: number;
     /** INR sibling of amount; present only for INR accounts. */
     amountInr?: number;
     [key: string]: any;

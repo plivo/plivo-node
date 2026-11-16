@@ -54,6 +54,10 @@ describe('NumberInterface', function () {
     return client.numbers.list({subAccount: 'SAINRACCOUNT00000000'})
       .then(function(numbers) {
         assert.equal(numbers.length, 1)
+        assert.equal(numbers[0].monthlyRentalRate, '0.80000')
+        assert.equal(numbers[0].smsRate, '0.00350')
+        assert.equal(numbers[0].mmsRate, '0.01000')
+        assert.equal(numbers[0].voiceRate, '0.00850')
         assert.equal(numbers[0].monthlyRentalRateInr, '66.40000')
         assert.equal(numbers[0].smsRateInr, '0.29050')
         assert.equal(numbers[0].mmsRateInr, '0.83000')
